@@ -1,0 +1,33 @@
+repos:
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v3.1.0
+  hooks:
+  - id: check-added-large-files
+    args: ['--maxkb=700']
+  - id: check-executables-have-shebangs
+  - id: pretty-format-json
+    args: ['--autofix', '--no-sort-keys', '--indent=2']
+  - id: check-byte-order-marker
+  - id: check-case-conflict
+  - id: check-executables-have-shebangs
+  - id: check-merge-conflict
+  - id: check-symlinks
+  - id: end-of-file-fixer
+  - id: detect-private-key
+  - id: debug-statements
+- repo: https://github.com/smian/pre-commit-makefile.git
+  rev: 261f8fb4b31dfdc05d1a1d7fbde1f1462ecde66d
+  hooks:
+  - id: makefile-doc
+- repo: git@github.com:Yelp/detect-secrets
+  rev: v0.13.1
+  hooks:
+  - id: detect-secrets
+    args: ['--baseline', '.secrets.baseline']
+- repo: meta
+  hooks:
+  - id: check-useless-excludes
+- repo: https://github.com/gruntwork-io/pre-commit
+  rev: v0.1.9 # Get the latest from: https://github.com/gruntwork-io/pre-commit/releases
+  hooks:
+  - id: shellcheck
