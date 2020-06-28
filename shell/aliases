@@ -1,0 +1,28 @@
+# Pretty print the path
+alias path='echo $PATH | tr -s ":" "\n"'
+
+alias back="-"
+alias home="cd ~"
+alias creds="aws-vault exec $AWS_PROFILE"
+alias zs="source ~/.zshrc"
+alias nomore='find ./ -iname .DS_Store -delete'
+alias clearhist='echo "" > ~/.zsh_history & exec $SHELL -l'
+alias drm='docker rmi $(docker images -a | grep "^<none>" | awk '{print $3}') -f'
+alias ugen='uuidgen | tr "[:upper:]" "[:upper:]"'
+# Kubernetes
+alias k=kubectl
+alias ks=kubens
+alias kd=kubedecode
+alias kx=kubectx
+# Brewfile
+alias brewup='brew cu -y && brew update && brew upgrade && brew cleanup'
+# Directory,File Folder Usage
+alias diskusage="df -h"
+alias folderusage="du -ch"
+alias totalfolderusage="du -sh"
+alias sshl="ssh-add -l -E md5"
+
+# Include custom aliases
+if [[ -f ~/.aliases.local ]]; then
+  source ~/.aliases.local
+fi
