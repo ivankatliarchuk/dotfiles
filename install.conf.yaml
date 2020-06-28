@@ -1,0 +1,13 @@
+- defaults:
+    link:
+      relink: true
+
+- clean: ['~']
+
+- create:
+    - ~/test-downloads
+    - ~/undo-history
+
+# TODO: should pull tagged/release one
+- shell:
+  - [git pull, Pull the repo]

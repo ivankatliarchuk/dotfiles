@@ -30,10 +30,16 @@ SCRIPT
 $priviledged = <<SCRIPT
 #!/bin/sh
 set -e
-
 pip3 install --upgrade pip dotbot --user
-
 dotbot --version
+SCRIPT
+
+$project_setup = <<SCRIPT
+#!/bin/sh
+set -e
+git clone https://github.com/ivankatliarchuk/dotfiles.git
+echo "cd dotfiles; git pull" > gitpull.sh
+chmod +x gitpull.sh
 SCRIPT
 
 Vagrant.configure("2") do |config|
@@ -51,8 +57,11 @@ Vagrant.configure("2") do |config|
   config.vm.provision "prereq", type: "shell", inline: $non_priviledged,
     privileged: false, name: "prereq"
 
-  config.vm.provision "prereq", type: "shell", inline: $priviledged,
-    privileged: false, name: "prereq"
+  config.vm.provision "prereq_v2", type: "shell", inline: $priviledged,
+    privileged: false, name: "prereq_v2"
+
+  config.vm.provision "project_setup", type: "shell", inline: $project_setup,
+    privileged: false, name: "project_setup"
 
   config.vm.provider :virtualbox do |v, override|
     v.name   = "macos.dotenv"
