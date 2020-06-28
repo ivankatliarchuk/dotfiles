@@ -1,0 +1,150 @@
+[apply]
+	# Detect whitespace errors when applying a patch
+	whitespace = fix
+
+[alias]
+
+  alias=!git config -l | grep ^alias | cut -c 7- | sort
+  # List aliases
+	aliases = config --get-regexp alias
+
+[user]
+
+  name = no-name
+  initals = legend
+	username = not-set
+  email = __redacted_to_stop_spam_scrapers__@gmail.org
+
+[branch]
+
+  autosetuprebase = always
+
+[pager]
+
+  status = true
+
+[pager]
+
+	branch = false
+  log = false
+
+[push]
+
+  default = current
+  # Make `git push` push relevant annotated tags when pushing branches out.
+	followTags = true
+
+[diff]
+
+	# Detect copies as well as renames
+	renames = copies
+
+[diff "sopsdiffer"]
+
+	textconv = sops -d
+
+[diff "bin"]
+	# Use `hexdump` to diff binary files
+	textconv = hexdump -v -C
+
+[merge]
+
+  tool = vimdiff
+  # Include summaries of merged commits in newly created merge commit messages
+  log = true
+
+[help]
+	# Automatically correct and execute mistyped commands
+	autocorrect = 1
+
+[tag]
+
+  forceSignAnnotated = false
+
+[core]
+    # Use custom `.gitignore` and `.gitattributes`
+	excludesfile = ~/.gitignore
+	attributesfile = ~/.gitattributes
+
+  repositoryformatversion = 0
+  filemode = false
+  logallrefupdates = true
+  autocrlf = input
+  # Treat spaces before tabs and all kinds of trailing whitespace as an error
+  # [default] trailing-space: looks for spaces at the end of a line
+  # [default] space-before-tab: looks for spaces before tabs at the beginning of a line
+  whitespace = fix,space-before-tab,-indent-with-non-tab,trailing-space,cr-at-eol
+  safecrlf = false
+  # Make `git rebase` safer on macOS
+  # More info: <http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/>
+  trustctime = false
+	pager =
+  # Prevent showing files whose names contain non-ASCII symbols as unversioned.
+	# http://michael-kuehnel.de/git/2014/11/21/git-mac-osx-and-german-umlaute.html
+	precomposeunicode = false
+  # Speed up commands involving untracked files such as `git status`.
+	# https://git-scm.com/docs/git-update-index#_untracked_cache
+	untrackedCache = true
+
+[commit]
+  verbose = true
+  template = ~/.gitmessage
+
+[color]
+	# Use colors in Git commands that are capable of colored output when
+	# outputting to the terminal. (This is the default setting in Git ≥ 1.8.4.)
+	ui = auto
+
+[color "branch"]
+
+  current = yellow reverse
+  local = yellow
+  remote = green
+
+[color "status"]
+
+  added = green
+  changed = blue normal bold
+  untracked = magenta
+  deleted = red
+
+[color "diff"]
+
+	meta = yellow bold
+	frag = magenta bold # line info
+	old = blue # deletions
+	new = green # additions
+  whitespace = cyan reverse
+
+[include]
+
+  path = ~/.gitconfig.local
+  path = ~/.gitconfig.alias
+
+[secrets]
+
+  providers = git secrets --aws-provider
+  patterns = [A-Z0-9]{20}
+  allowed = AKIAISUPERSECRETEXAMPLE
+  allowed = wJalrXUtnFSUPERSECRETiCYEXAMPLEKEY
+
+# URL shorthands
+[url "git@github.com:"]
+
+	insteadOf = "gh:"
+	pushInsteadOf = "github:"
+	pushInsteadOf = "git://github.com/"
+
+[url "git://github.com/"]
+
+	insteadOf = "github:"
+
+[url "git@gist.github.com:"]
+
+	insteadOf = "gst:"
+	pushInsteadOf = "gist:"
+	pushInsteadOf = "git://gist.github.com/"
+
+[url "git://gist.github.com/"]
+
+  insteadOf = "gist:"

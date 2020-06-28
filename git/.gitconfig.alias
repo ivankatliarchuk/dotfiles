@@ -1,0 +1,241 @@
+### BEGINNING ####
+[alias]
+    set-upstream = !git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`
+    co = checkout
+    ci = commit
+
+    type = cat-file -t
+    dump = cat-file -p
+    commend = commit --amend --no-edit
+    it = !git init && git commit -m \"root\" --allow-empty
+    stsh = stash --keep-index
+    staash = stash --include-untracked
+    staaash = stash --all
+
+    untrack = ls-files --ignored --exclude-standard | xargs git rm --cached
+
+    unreleased = "!f() { git fetch --tags && git diff $(git tag | tail -n 1); }; f"
+    # List contributors with number of commits
+    contributors = shortlog --summary --numbered
+    top-contributors = !git log --format=format:%an | sort | uniq -c | sort -r | head -n 20
+    # Remove branches that have already been merged with master
+    # a.k.a. ‘delete merged’
+    dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d; git remote -v update -p"
+    # Amend the currently staged files to the latest commit
+    amend = commit --amend --reuse-message=HEAD
+    # Show verbose output about branches or remotes
+    tags = tag -l
+    branches = branch -a
+    remotes = remote -v
+    # Switch to a branch, creating it if necessary
+    go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
+    # Clone a repository including all submodules
+    c = clone --recursive
+    # Pull in remote changes for the current repository and all its submodules
+    p = !"git pull; git submodule foreach git pull origin master"
+    # Pull in remote changes for the current repository and all its submodules
+    prec = pull --recurse-submodules
+    # Remove the old tag with this name and tag the latest commit with it.
+    retag = "!r() { git tag -d $1 && git push origin :refs/tags/$1 && git tag $1; }; r"
+    # Find branches containing commit
+    fb = "!f() { git branch -a --contains $1; }; f"
+    # Find tags containing commit
+    ft = "!f() { git describe --always --contains $1; }; f"
+
+    #### CONFIG ####
+    # Show the user email for the current repository.
+    iam = config user.username
+    cfg = config -l
+    # Output output of all queried config options with the origin type and a scope
+    caug = config --list --show-origin --show-scope
+    # Show the user email for the current repository.
+    user = config --get user.username
+
+    #### LOGS ####
+    hists = log --pretty=format:'%h %ad | %s%d [%an]' --reverse --date=short -n 85
+    hist = log --reverse -n 55 --decorate --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %Cblue<%an>%Creset' --abbrev-commit --date=relative --all
+    grog = log --graph -n 95 --abbrev-commit --decorate --all --format=format:\"%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(dim white) - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n %C(white)%s%C(reset)\"
+    # Color graph log view
+    graph = log --graph --color --pretty=format:"%C(yellow)%H%C(green)%d%C(reset)%n%x20%cd%n%x20%cn%x20(%ce)%n%x20%s%n"
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %Cblue<%an>%Creset' --abbrev-commit --date=relative --all
+    lgc = log --color --decorate --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an (%G?)>%Creset' --abbrev-commit
+    # View abbreviated SHA, description, and history graph of the latest 20 commits
+    l = log --pretty=oneline -n 20 --graph --abbrev-commit
+    plog = log --graph --pretty=format:'%h -%d %s %n' --abbrev-commit --date=relative --branches
+
+    #### DIFF ####
+
+    # `git di $number` shows the diff between the state `$number` revisions ago and the current state
+    di = !"d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD -- || clear; d"
+    # Show the diff between the latest commit and the current state
+    d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
+    dc = diff --cached
+    changes = show --color --pretty=format:%b
+    dp = diff --patience
+    dc = diff --cached
+    dk = diff --check
+    dck = diff --cached --check
+    dt = difftool
+    dct = difftool --cached
+
+    #### STATUS ####
+    st = status
+    s = status -s
+    stb = status -sb
+    shorty = status --short --branch
+    # View the current working tree status using the short format
+
+    #### SEARCH ####
+    # Provide pattern to search `git g test`
+    g = grep -p
+    #### TAGS ####
+    # Show verbose output about tags, branches or remotes
+    tags = tag -l
+
+    #### PLACEHOLDER ####
+
+    #### COMMIT ####
+
+    c = commit
+    ca = commit -a
+    cm = commit -m
+    cam = commit -am
+    cem = commit --allow-empty -m
+    cd = commit --amend
+    cad = commit -a --amend
+    ced = commit --allow-empty --amend
+
+    #### CLONE ####
+
+    cl = clone
+    cld = clone --depth 1
+    clg = !sh -c 'git clone git://github.com/$1 $(basename $1)' -
+    clgp = !sh -c 'git clone git@github.com:$1 $(basename $1)' -
+    clgu = !sh -c 'git clone git@github.com:$(git config --get user.username)/$1 $1' -
+
+    #### FILES ####
+    ls = ls-files
+    lsf = !git ls-files | grep -i
+
+    #### MERGE ####
+
+    m = merge
+    ma = merge --abort
+    mc = merge --continue
+    ms = merge --skip
+
+    #### CHECKOUT ####
+
+    o = checkout
+    om = checkout master
+    ob = checkout -b
+    opr = !sh -c 'git fo pull/$1/head:pr-$1 && git o pr-$1'
+
+    #### PUSH ####
+
+    ps = push
+    psf = push -f
+    pushf = push -f
+    psu = push -u
+    pst = push --tags
+    pso = push origin
+    psao = push --all origin
+    psfo = push -f origin
+    psuo = push -u origin
+    psom = push origin master
+    psaom = push --all origin master
+    psfom = push -f origin master
+    psuom = push -u origin master
+    psoc = !git push origin $(git bc)
+    psaoc = !git push --all origin $(git bc)
+    psfoc = !git push -f origin $(git bc)
+    psuoc = !git push -u origin $(git bc)
+    psdc = !git push origin :$(git bc)
+
+    #### REMOTE ####
+
+    r = remote
+    ra = remote add
+    rr = remote rm
+    rv = remote -v
+    rn = remote rename
+    rp = remote prune
+    rs = remote show
+    rao = remote add origin
+    rau = remote add upstream
+    rro = remote remove origin
+    rru = remote remove upstream
+    rso = remote show origin
+    rsu = remote show upstream
+    rpo = remote prune origin
+    rpu = remote prune upstream
+
+    #### STASH ####
+
+    sa = stash apply
+    sc = stash clear
+    sd = stash drop
+    sl = stash list
+    sp = stash pop
+    ss = stash save
+    ssk = stash save -k
+    sw = stash show
+    sta = !git stash list | wc -l 2>/dev/null | grep -oEi '[0-9][0-9]*'
+
+    #### REBASE ####
+
+    rb = rebase
+    rba = rebase --abort
+    rbc = rebase --continue
+    rbi = rebase --interactive
+    rbs = rebase --skip
+
+    #### SUB-MODULE ####
+    subadd = !sh -c 'git submodule add git://github.com/$1 $2/$(basename $1)' -
+    subrm = !sh -c 'git submodule deinit -f -- $1 && rm -rf .git/modules/$1 && git rm -f $1' -
+    subup = submodule update --init --recursive
+    subpull = !git submodule foreach git pull --tags origin master
+
+    #### LIST COMMITS ####
+    behind = !git rev-list --pretty --left-only --count $(git bu)...HEAD
+    ahead = !git rev-list --pretty --right-only --count $(git bu)...HEAD
+
+    #### BRANCH ####
+
+    br = branch
+    ba = branch -a
+    bd = branch -d
+    bdd = branch -D
+    br = branch -r
+    bc = rev-parse --abbrev-ref HEAD
+    bu = !git rev-parse --abbrev-ref --symbolic-full-name "@{u}"
+    bs = !git-branch-status
+
+    #### PULL ####
+
+    pl = pull
+    pb = pull --rebase
+    plo = pull origin
+    pbo = pull --rebase origin
+    plom = pull origin master
+    ploc = !git pull origin $(git bc)
+    pbom = pull --rebase origin master
+    pboc = !git pull --rebase origin $(git bc)
+
+    #### COMMANDS ####
+    bump = !sh -c 'git commit -am \"Version bump v$1\" && git psuoc && git release $1' -
+    release = !sh -c 'git tag v$1 && git pst' -
+    unrelease = !sh -c 'git tag -d v$1 && git pso :v$1' -
+    merged = !sh -c 'git o master && git plom && git bd $1 && git rpo' -
+    aliases = !git config -l | grep alias | cut -c 7-
+    snap = !git stash save 'snapshot: $(date)' && git stash apply 'stash@{0}'
+    bare = !sh -c 'git symbolic-ref HEAD refs/heads/$1 && git rm --cached -r . && git clean -xfd' -
+    whois = !sh -c 'git log -i -1 --author=\"$1\" --pretty=\"format:%an <%ae>\"' -
+    serve = daemon --reuseaddr --verbose --base-path=. --export-all ./.git
+    ours = "!f() { git checkout --ours $@ && git add $@; }; f"
+    theirs = "!f() { git checkout --theirs $@ && git add $@; }; f"
+    subrepo = !sh -c 'git filter-branch --prune-empty --subdirectory-filter $1 master' -
+    human = name-rev --name-only --refs=refs/heads/*
+    #### PLACEHOLDER ####
+
+### END ####

@@ -12,6 +12,15 @@
     ~/.vimrc:
       relink: true
       path: vim/.vimrc
+    ~/.gitconfig:
+      relink: true
+      path: git/.gitconfig
+    ~/.gitconfig.alias:
+      relink: true
+      path: git/.gitconfig.alias
+    ~/.gitconfig.message:
+      relink: true
+      path: git/.gitconfig.message
 
 # TODO: should pull tagged/release one
 - shell:
