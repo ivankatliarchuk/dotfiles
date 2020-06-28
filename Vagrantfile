@@ -37,9 +37,19 @@ SCRIPT
 $project_setup = <<SCRIPT
 #!/bin/sh
 set -e
-git clone https://github.com/ivankatliarchuk/dotfiles.git
-echo "cd dotfiles; git pull" > gitpull.sh
-chmod +x gitpull.sh
+
+reposrc=https://github.com/ivankatliarchuk/dotfiles.git
+localrepo=dotfiles
+localrepo_vc_dir=$localrepo/.git
+
+if [ ! -d $localrepo_vc_dir ]
+then
+    git clone $reposrc $localrepo
+po
+    # git pull $reposrc
+fi
+echo "dotbot -c dotfiles/dotbot.conf.yaml" > run.sh
+chmod +x run.sh
 SCRIPT
 
 Vagrant.configure("2") do |config|

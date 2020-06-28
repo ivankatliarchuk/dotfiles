@@ -11,3 +11,4 @@
 # TODO: should pull tagged/release one
 - shell:
   - [git pull, Pull the repo]
+  - [echo 'dotbot -c dotfiles/dotbot.conf.yaml' > ~/run.sh, Execute from parent folder]
