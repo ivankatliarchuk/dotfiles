@@ -19,11 +19,6 @@ repos:
   rev: 261f8fb4b31dfdc05d1a1d7fbde1f1462ecde66d
   hooks:
   - id: makefile-doc
-- repo: git@github.com:Yelp/detect-secrets
-  rev: v0.13.1
-  hooks:
-  - id: detect-secrets
-    args: ['--baseline', '.secrets.baseline']
 - repo: meta
   hooks:
   - id: check-useless-excludes

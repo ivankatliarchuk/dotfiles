@@ -5,13 +5,13 @@ root = true
 end_of_line = lf
 charset = utf-8
 indent_style = space
-indent_size = 4
+indent_size = 2
 insert_final_newline = false
 trim_trailing_whitespace = true
 
 [*.py]
 indent_style = space
-indent_size = 4
+indent_size = 2
 max_line_length = 140
 
 [*.{sh,html,bash,bats}]
@@ -53,3 +53,7 @@ indent_style = space
 [{package.json, .env-cmdrc}]
 indent_size = 2
 indent_style = space
+
+[Vagrantfile]
+indent_size = 2
+max_line_length = 100

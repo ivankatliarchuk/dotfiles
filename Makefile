@@ -1,4 +1,8 @@
 SHELL := /bin/bash
+.ONESHELL:
+.SHELLFLAGS := -eu -o pipefail -c
+MAKEFLAGS += --warn-undefined-variables
+MAKEFLAGS += --no-builtin-rules
 
 help:
 	@printf "Usage: make [target] [VARIABLE=value]\nTargets:\n"
@@ -11,4 +15,11 @@ hooks: ## Setup pre commit.
 
 validate: ## Validate files with pre-commit hooks
 	@pre-commit run --all-files
-	
+
+vm-up: ## Run on Mac. Up
+	@vagrant up
+
+vm-dowm: ## Run on Mac. Down
+	@vagrant down
+
+.PHONY: vm-up vm-dowm validate hooks
