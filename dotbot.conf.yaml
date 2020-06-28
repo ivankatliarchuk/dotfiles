@@ -8,6 +8,11 @@
     - ~/test-downloads
     - ~/undo-history
 
+- link:
+    ~/.vimrc:
+      relink: true
+      path: vim/.vimrc
+
 # TODO: should pull tagged/release one
 - shell:
   - [git pull, Pull the repo]

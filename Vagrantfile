@@ -4,20 +4,9 @@
 CPUCOUNT = "2"
 RAM = "4096"
 
-$non_priviledged = <<SCRIPT
+$brew = <<SCRIPT
 #!/bin/sh
 set -e
-
-PROFILE=~/.profile
-BASH_PROFILE=~/.bash_profile
-RAW_GITHUB=https://raw.githubusercontent.com
-
-yes | /bin/bash -c "$(curl -fsSL ${RAW_GITHUB}/Homebrew/install/master/install.sh)"
-test -d ~/.linuxbrew && eval $(~/.linuxbrew/bin/brew shellenv)
-test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
-line="eval \$($(brew --prefix)/bin/brew shellenv)"
-test -r ~/.bash_profile &&  grep -qF -- "$line" "${BASH_PROFILE}" || echo "$line" >> "${BASH_PROFILE}"
-test -r ~/.bash_profile &&  grep -qF -- ". ~/.profile" "${BASH_PROFILE}" || echo ". ~/.profile" >> "${BASH_PROFILE}"
 
 brew doctor
 brew install git
@@ -25,13 +14,6 @@ brew install chezmoi
 brew list
 
 git --version
-SCRIPT
-
-$priviledged = <<SCRIPT
-#!/bin/sh
-set -e
-pip3 install --upgrade pip dotbot --user
-dotbot --version
 SCRIPT
 
 $project_setup = <<SCRIPT
@@ -45,17 +27,14 @@ localrepo_vc_dir=$localrepo/.git
 if [ ! -d $localrepo_vc_dir ]
 then
     git clone $reposrc $localrepo
-po
-    # git pull $reposrc
 fi
 echo "dotbot -c dotfiles/dotbot.conf.yaml" > run.sh
 chmod +x run.sh
 SCRIPT
 
 Vagrant.configure("2") do |config|
-  # config.vm.box = "crystax/macos15"
-  config.vm.box = "ramsey/macos-catalina"
-  config.vm.box_version = "1.0.0"
+  config.vm.box         = "cloudkats/macos"
+  config.vm.box_version = "10.15.1-2020.06.28"
 
   if Vagrant.has_plugin?('vagrant-vbguest') then
       config.vbguest.auto_update = false
@@ -63,12 +42,6 @@ Vagrant.configure("2") do |config|
 
   config.vm.network "private_network", ip: "10.0.0.100"
   config.vm.synced_folder ".", "/vagrant", disabled: true
-
-  config.vm.provision "prereq", type: "shell", inline: $non_priviledged,
-    privileged: false, name: "prereq"
-
-  config.vm.provision "prereq_v2", type: "shell", inline: $priviledged,
-    privileged: false, name: "prereq_v2"
 
   config.vm.provision "project_setup", type: "shell", inline: $project_setup,
     privileged: false, name: "project_setup"
