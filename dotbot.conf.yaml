@@ -31,9 +31,9 @@
     ~/.exports:
       relink: true
       path: shell/exports
-    ~/.bash_profile:
+    ~/.profile:
       relink: true
-      path: shell/bash_profile
+      path: shell/profile
     ~/.locals:
       create: true
       path: locals
