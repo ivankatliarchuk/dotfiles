@@ -41,6 +41,8 @@
       create: true
       path: locals
 
+- clean: ['~']
+
 # TODO: should pull tagged/release one
 - shell:
   - [echo 'dotbot -c dotfiles/dotbot.conf.yaml' > ~/run.sh, Execute from parent folder]

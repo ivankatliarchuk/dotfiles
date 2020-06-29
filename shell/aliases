@@ -1,11 +1,11 @@
 # Pretty print the path
-alias path='echo $PATH | tr -s ":" "\n"'
-
-
 alias creds="aws-vault exec $AWS_PROFILE"
-alias zs="source ~/.zshrc"
 alias clearhist='echo "" > ~/.zsh_history & exec $SHELL -l'
 alias ugen='uuidgen | tr "[:upper:]" "[:upper:]"'
+
+# Source
+alias zs="source ~/.zshrc"
+alias ps="source ~/.profile"
 
 # Docker
 alias drm='docker rmi $(docker images -a | grep "^<none>" | awk '{print $3}') -f'
@@ -32,7 +32,6 @@ alias -- -="cd -"
 alias tf="tail -f"
 alias dl="cd ~/Downloads"
 
-
 # Shortcuts
 alias h="history"
 alias d="cd ~/Documents/Dropbox"
@@ -48,6 +47,7 @@ alias k=kubectl
 alias ks=kubens
 alias kd=kubedecode
 alias kx=kubectx
+
 # Brewfile
 alias brewup='brew cu -y && brew update && brew upgrade && brew cleanup'
 # Directory,File Folder Usage
@@ -65,6 +65,7 @@ alias mounted='mount'
 alias pwdcfg="cat /etc/passwd"
 alias pwdcfgusers="cat /etc/passwd | cut -f 1 -d ':'"
 alias resolvcfg="cat /etc/resolv.conf"
+alias chosts='cat /etc/hosts'
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
@@ -90,6 +91,7 @@ alias week='date +%V'
 
 # Print each PATH entry on a separate line
 alias path='echo -e ${PATH//:/\\n}'
+alias pathp='echo $PATH | tr -s ":" "\n"'
 
 ## Networking
 
@@ -113,9 +115,6 @@ alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\\: .*|GE
 command -v md5sum > /dev/null || alias md5sum="md5"
 # OS X has no `sha1sum`, so use `shasum` as a fallback
 command -v sha1sum > /dev/null || alias sha1sum="shasum"
-
-# chosts
-alias chosts='cat /etc/hosts'
 
 # Kill all the tabs in Chrome to free up memory
 # [C] explained: http://www.commandlinefu.com/commands/view/402/exclude-grep-from-your-grepped-output-of-ps-alias-included-in-description
