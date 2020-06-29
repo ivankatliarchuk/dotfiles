@@ -11,10 +11,14 @@ alias ugen='uuidgen | tr "[:upper:]" "[:upper:]"'
 alias drm='docker rmi $(docker images -a | grep "^<none>" | awk '{print $3}') -f'
 
 # MacOS
+
 alias nomore='find ./ -iname .DS_Store -delete'
+# Recursively delete `.DS_Store` files
+alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
 
 # SSH
 alias sshmd5="ssh-keygen -E md5 -lf ~/.ssh/id_rsa.pub | awk '{print $2}'"
+alias sshl="ssh-add -l -E md5"
 
 # Easier navigation Utilities
 alias ..="cd .."
@@ -28,8 +32,16 @@ alias -- -="cd -"
 alias tf="tail -f"
 alias dl="cd ~/Downloads"
 
+
 # Shortcuts
 alias h="history"
+alias d="cd ~/Documents/Dropbox"
+alias dl="cd ~/Downloads"
+alias dt="cd ~/Desktop"
+alias pr="cd ~/projects"
+alias wr="cd ~/workspaces"
+alias sf="cd ~/self"
+alias work="cd ~/work"
 
 # Kubernetes
 alias k=kubectl
@@ -42,7 +54,17 @@ alias brewup='brew cu -y && brew update && brew upgrade && brew cleanup'
 alias diskusage="df -h"
 alias folderusage="du -ch"
 alias totalfolderusage="du -sh"
-alias sshl="ssh-add -l -E md5"
+alias mountpoints="df -h"
+alias mountpoints="df -h"
+alias folderfast='du -sh * | sort -h'
+alias foldersort='du -ksh * | sort -h -r'
+alias foldertotal='du -cksh * | sort -hr | head -n 15'
+alias mounted='mount'
+
+# Files
+alias pwdcfg="cat /etc/passwd"
+alias pwdcfgusers="cat /etc/passwd | cut -f 1 -d ':'"
+alias resolvcfg="cat /etc/resolv.conf"
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
@@ -66,12 +88,20 @@ alias lsd="ls -lhF ${colorflag} | grep --color=never '^d'"
 # Get week number
 alias week='date +%V'
 
+# Print each PATH entry on a separate line
+alias path='echo -e ${PATH//:/\\n}'
+
 ## Networking
 
 # IP addresses
 alias pubip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias localip="sudo ifconfig | grep -Eo 'inet (addr:)?([0-9]*\\.){3}[0-9]*' | grep -Eo '([0-9]*\\.){3}[0-9]*' | grep -v '127.0.0.1'"
 alias ips="sudo ifconfig -a | grep -o 'inet6\\? \\(addr:\\)\\?\\s\\?\\(\\(\\([0-9]\\+\\.\\)\\{3\\}[0-9]\\+\\)\\|[a-fA-F0-9:]\\+\\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
+
+# Show active network interfaces
+alias ifactive="ifconfig | pcregrep -M -o '^[^\t:]+:([^\n]|\n\t)*status: active'"
+# Flush Directory Service cache
+alias flush="dscacheutil -flushcache && killall -HUP mDNSResponder"
 
 # View HTTP traffic
 alias sniff="sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'"
