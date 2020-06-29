@@ -15,7 +15,7 @@
       path: vim/vimrc
     ~/.gitconfig:
       relink: true
-      path: .gitconfig
+      path: git/.gitconfig
     ~/.gitconfig.alias:
       relink: true
       path: git/.gitconfig.alias
