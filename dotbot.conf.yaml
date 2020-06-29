@@ -18,13 +18,13 @@
       path: vim/vimrc
     ~/.gitconfig:
       relink: true
-      path: git/.gitconfig
+      path: git/gitconfig
     ~/.gitconfig.alias:
       relink: true
-      path: git/.gitconfig.alias
+      path: git/gitconfig.alias
     ~/.gitconfig.message:
       relink: true
-      path: git/.gitconfig.message
+      path: git/gitconfig.message
     ~/.aliases:
       relink: true
       path: shell/aliases
