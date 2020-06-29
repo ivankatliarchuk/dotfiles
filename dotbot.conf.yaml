@@ -7,6 +7,7 @@
 - create:
     - ~/test-downloads
     - ~/undo-history
+    - ~/locals
 
 - link:
     ~/.vimrc:
@@ -33,6 +34,9 @@
     ~/.bash_profile:
       relink: true
       path: shell/bash_profile
+    ~/.locals:
+      create: true
+      path: locals
 
 # TODO: should pull tagged/release one
 - shell:
