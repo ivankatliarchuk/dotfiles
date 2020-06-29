@@ -23,7 +23,16 @@
       path: git/.gitconfig.message
     ~/.aliases:
       relink: true
-      path: shell/.aliases
+      path: shell/aliases
+    ~/.bashrc:
+      relink: true
+      path: shell/bashrc
+    ~/.exports:
+      relink: true
+      path: shell/exports
+    ~/.bash_profile:
+      relink: true
+      path: shell/bash_profile
 
 # TODO: should pull tagged/release one
 - shell:

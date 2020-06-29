@@ -1,14 +1,36 @@
 # Pretty print the path
 alias path='echo $PATH | tr -s ":" "\n"'
 
-alias back="-"
-alias home="cd ~"
+
 alias creds="aws-vault exec $AWS_PROFILE"
 alias zs="source ~/.zshrc"
-alias nomore='find ./ -iname .DS_Store -delete'
 alias clearhist='echo "" > ~/.zsh_history & exec $SHELL -l'
-alias drm='docker rmi $(docker images -a | grep "^<none>" | awk '{print $3}') -f'
 alias ugen='uuidgen | tr "[:upper:]" "[:upper:]"'
+
+# Docker
+alias drm='docker rmi $(docker images -a | grep "^<none>" | awk '{print $3}') -f'
+
+# MacOS
+alias nomore='find ./ -iname .DS_Store -delete'
+
+# SSH
+alias sshmd5="ssh-keygen -E md5 -lf ~/.ssh/id_rsa.pub | awk '{print $2}'"
+
+# Easier navigation Utilities
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias back="-"
+alias home="cd ~"
+alias ~="cd ~"
+alias -- -="cd -"
+alias tf="tail -f"
+alias dl="cd ~/Downloads"
+
+# Shortcuts
+alias h="history"
+
 # Kubernetes
 alias k=kubectl
 alias ks=kubens
@@ -21,6 +43,56 @@ alias diskusage="df -h"
 alias folderusage="du -ch"
 alias totalfolderusage="du -sh"
 alias sshl="ssh-add -l -E md5"
+
+# Detect which `ls` flavor is in use
+if ls --color > /dev/null 2>&1; then # GNU `ls`
+	colorflag="--color"
+else # OS X `ls`
+	colorflag="-G"
+fi
+
+# List all files colorized in long format
+# shellcheck disable=SC2139
+alias l="ls -lhF ${colorflag}"
+
+# List all files colorized in long format, including dot files
+# shellcheck disable=SC2139
+alias la="ls -lahF ${colorflag}"
+
+# List only directories
+# shellcheck disable=SC2139
+alias lsd="ls -lhF ${colorflag} | grep --color=never '^d'"
+
+# Get week number
+alias week='date +%V'
+
+## Networking
+
+# IP addresses
+alias pubip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias localip="sudo ifconfig | grep -Eo 'inet (addr:)?([0-9]*\\.){3}[0-9]*' | grep -Eo '([0-9]*\\.){3}[0-9]*' | grep -v '127.0.0.1'"
+alias ips="sudo ifconfig -a | grep -o 'inet6\\? \\(addr:\\)\\?\\s\\?\\(\\(\\([0-9]\\+\\.\\)\\{3\\}[0-9]\\+\\)\\|[a-fA-F0-9:]\\+\\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
+
+# View HTTP traffic
+alias sniff="sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'"
+alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\\: .*|GET \\/.*\""
+
+## Miscelanious
+
+# OS X has no `md5sum`, so use `md5` as a fallback
+command -v md5sum > /dev/null || alias md5sum="md5"
+# OS X has no `sha1sum`, so use `shasum` as a fallback
+command -v sha1sum > /dev/null || alias sha1sum="shasum"
+
+# chosts
+alias chosts='cat /etc/hosts'
+
+# Kill all the tabs in Chrome to free up memory
+# [C] explained: http://www.commandlinefu.com/commands/view/402/exclude-grep-from-your-grepped-output-of-ps-alias-included-in-description
+alias chromekill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v extension-process | tr -s ' ' | cut -d ' ' -f2 | xargs kill"
+
+# untar
+alias untar='tar xvf'
 
 # Include custom aliases
 if [[ -f ~/.aliases.local ]]; then
