@@ -1,4 +1,24 @@
+tap "warrensbox/tap"
+
 # Process YAML documents from the CLI
 brew "yq"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
+# Bash Automated Testing System
+brew "bats-core"
+# CloudFlare's PKI toolkit
+brew "cfssl"
+# Open source programming language to build simple/reliable/efficient software
+brew "go"
+# Smarter Dockerfile linter to validate best practices
+brew "hadolint"
+# Open-source video transcoder available for Linux, Mac, and Windows
+brew "handbrake"
+# Static analysis and lint tool, for (ba)sh scripts
+brew "shellcheck"
+# Automate deployment, configuration, and upgrading
+brew "ansible"
+# Tool to generate documentation from Terraform modules
+brew "terraform-docs"
+# Linter for Terraform files
+brew "tflint"

@@ -1,4 +1,6 @@
 tap "homebrew/cask-fonts"
 # XML-based font configuration API for X Windows
 brew "fontconfig"
+if OS.mac?
 cask "font-inconsolata"
+end

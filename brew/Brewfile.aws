@@ -4,4 +4,6 @@ brew "iamy"
 brew "awscli"
 # CLI for managing secrets through AWS SSM Parameter Store
 brew "chamber"
+if OS.mac?
 cask "aws-vault"
+end
