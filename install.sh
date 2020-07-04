@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -x
+
 BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 CONFIG=dotbot.conf.yaml
 dbot=$(which dotbot)
