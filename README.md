@@ -14,3 +14,24 @@ Dotfiles setup
 ### Add custom commands without creating a new fork
 
 > TODO
+
+- [ ] ZSH (zsh-config) path = vendor/zsh-config
+- [ ] Tmux (tmux-config) path = vendor/tmux-config
+- [ ] Chezmoi integration
+
+https://github.com/holman/dotfiles (install homebrew and other stuff)
+https://github.com/gpakosz/.tmux
+
+## Motivation
+
+- [ThoughBot](https://github.com/thoughtbot/dotfiles)
+
+## Dotbot Plugins
+
+- [Brew](https://github.com/d12frosted/dotbot-brew)
+- [Pip]()
+
+## Documentation
+
+- [DotBot](https://github.com/anishathalye/dotbot/wiki)
+- [Chezmoi Quick Start](https://www.chezmoi.io/docs/quick-start/)

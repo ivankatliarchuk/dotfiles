@@ -50,4 +50,6 @@
 - shell:
   - [echo 'dotbot -c dotfiles/dotbot.conf.yaml' > ~/run.sh, Execute from parent folder]
   # the following have to run after linking ~/.gitconfig
-  - git update-submodules
+  - git pull --recurse-submodules
+  - git submodule update --init --recursive
+  - git submodule foreach git pull origin master
