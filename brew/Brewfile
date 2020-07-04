@@ -19,6 +19,7 @@ brew "tree"
 # Terminal multiplexer
 brew "tmux"
 # UNIX shell (command interpreter)
+# https://github.com/ohmyzsh/ohmyzsh
 brew "zsh"
 # Command-line fuzzy finder written in Go
 brew "fzf"
