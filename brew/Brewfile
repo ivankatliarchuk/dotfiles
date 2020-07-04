@@ -2,6 +2,7 @@ tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
+tap "denisidoro/tools"
 # Manage your dotfiles across multiple machines, securely
 brew "chezmoi"
 # GNU File, Shell, and Text utilities
@@ -18,3 +19,9 @@ brew "tmux"
 brew "zsh"
 # Command-line fuzzy finder written in Go
 brew "fzf"
+# Tracks most-used directories to make cd smarter
+brew "z"
+# Interactive cheatsheet tool for the command-line.
+brew "denisidoro/tools/navi"
+# Mac App Store command-line interface
+brew "mas"

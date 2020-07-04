@@ -9,6 +9,7 @@
     - brew/Brewfile.secure
     - brew/Brewfile.aws
     - brew/Brewfile.development
+    - brew/Brewfile.k8s
     - brew/Brewfile.fonts
 
 - pip:

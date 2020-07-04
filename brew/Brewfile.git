@@ -5,3 +5,4 @@ brew "pre-commit"
 brew "hub"
 # Distributed revision control system
 brew "git"
+brew "git-chglog/git-chglog/git-chglog"

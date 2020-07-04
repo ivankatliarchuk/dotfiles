@@ -8,3 +8,8 @@ brew "pinentry-mac"
 brew "sops"
 # GNU Pretty Good Privacy (PGP) package
 brew "gnupg"
+# Tool for managing your YubiKey configuration
+brew "ykman"
+# Command-line tool for the YubiKey PIV application
+brew "yubico-piv-tool"
+cask "keepassxc"
