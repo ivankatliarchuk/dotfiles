@@ -3,12 +3,8 @@
       create: true
       relink: true
 
-# - shell:
-  # - [git pull, Pull the repo]
-  # - [git submodule sync --recursive, Sync submodules]
-
 - pip:
-    file: requirements.txt
+    file: pip/requirements.txt
     binary: /usr/local/bin/pip3
     user: true    # Like --user
     stdout: true # Print the execution stdout
