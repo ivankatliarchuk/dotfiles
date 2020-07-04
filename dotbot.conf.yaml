@@ -8,11 +8,11 @@
   - [git submodule sync --recursive, Sync submodules]
 
 - pip:
-  file: requirements.txt
-  binary: /usr/local/bin/pip3
-  user: true    # Like --user
-  stdout: true # Print the execution stdout
-  stderr: true  # Print the execution stderr
+    file: requirements.txt
+    binary: /usr/local/bin/pip3
+    user: true    # Like --user
+    stdout: true # Print the execution stdout
+    stderr: true  # Print the execution stderr
 
 - clean: ['~']
 
