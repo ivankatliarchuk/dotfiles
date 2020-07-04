@@ -18,6 +18,7 @@ Dotfiles setup
 - [ ] ZSH (zsh-config) path = vendor/zsh-config
 - [ ] Tmux (tmux-config) path = vendor/tmux-config
 - [ ] Chezmoi integration
+- [ ] Support Linux/Debian at least
 
 https://github.com/holman/dotfiles (install homebrew and other stuff)
 https://github.com/gpakosz/.tmux

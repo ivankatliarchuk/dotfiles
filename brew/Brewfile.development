@@ -8,8 +8,14 @@ brew "jq"
 brew "bats-core"
 # CloudFlare's PKI toolkit
 brew "cfssl"
+# ---start--- GO
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
+# Go version management
+brew "goenv"
+# Go dependency management tool
+brew "dep"
+# ---end--- GO
 # Smarter Dockerfile linter to validate best practices
 brew "hadolint"
 # Open-source video transcoder available for Linux, Mac, and Windows
@@ -24,8 +30,6 @@ brew "terraform-docs"
 brew "tflint"
 # Load/unload environment variables based on $PWD
 brew "direnv"
-# Go version management
-brew "goenv"
 # The tfswitch command lets you switch between terraform versions.
 brew "warrensbox/tap/tfswitch"
 # The tgswitch command lets you switch between terragrunt versions.
