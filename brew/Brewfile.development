@@ -31,6 +31,9 @@ brew "go"
 brew "goenv"
 # Go dependency management tool
 brew "dep"
+# Interactive system monitor, process viewer, and process manager for Unix
+# https://hisham.hm/htop/
+brew "htop"
 # ---end--- GO
 # Smarter Dockerfile linter to validate best practices
 # https://github.com/hadolint/hadolint

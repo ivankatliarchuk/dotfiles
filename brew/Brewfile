@@ -31,6 +31,9 @@ brew "fzf"
 brew "z"
 # Interactive cheatsheet tool for the command-line.
 brew "denisidoro/tools/navi"
+# An archey script for OS X. archey -c
+# https://obihann.github.io/archey-osx/
+brew "archey"
 # --- Casks
 # Easily organize windows without using a mouse.
 cask "spectacle"
