@@ -4,22 +4,25 @@ tap "derailed/k9s"
 # Use AWS IAM credentials to authenticate to Kubernetes
 brew "aws-iam-authenticator"
 # The Kubernetes package manager
+# https://github.com/helm/helm
 brew "helm"
 # Kubernetes command-line interface
+# https://github.com/kubernetes/kubectl
 brew "kubernetes-cli"
 # Kubernetes prompt info for bash and zsh
+# https://github.com/jonmosco/kube-ps1
 brew "kube-ps1"
-# Traceroute implementation using TCP packets
-brew "tcptraceroute"
-# User interface to the TELNET protocol
-brew "telnet"
 # kubernetes tail - pod log viewer
 brew "boz/repo/kail"
 # Kubernetes CLI To Manage Your Clusters In Style!
+# https://github.com/derailed/k9s
 brew "derailed/k9s/k9s"
 # Tail multiple Kubernetes pods & their containers
+# https://github.com/wercker/stern
 brew "stern"
 # Tool that can switch between kubectl contexts easily and create aliases
+# https://github.com/ahmetb/kubectx
 brew "kubectx"
 # Decode all parts of a kubernetes secret, no more copypasting!
+# https://github.com/mveritym/kubedecode
 brew "mveritym/mel/kubedecode"
