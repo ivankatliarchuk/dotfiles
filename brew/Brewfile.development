@@ -86,6 +86,8 @@ cask "visual-studio-code"
 # https://www.pjrc.com/teensy/loader_mac.html
 cask "teensy"
 cask "the-unarchiver"
-cask "docker-toolbox"
 # https://macdown.uranusjr.com/
 cask "macdown"
+# The Collaboration Platform for API Development.
+# https://github.com/postmanlabs
+cask "postman"

@@ -24,3 +24,6 @@ brew "gobuster"
 cask "charles"
 # https://obdev.at/products/littlesnitch/index.html
 cask "little-snitch"
+# Public URLs for exposing your local web server
+# https://ngrok.com/
+cask "ngrok"

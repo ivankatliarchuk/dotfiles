@@ -4,4 +4,7 @@ cask "virtualbox"
 # Toolkit for embedding hypervisor capabilities in your application
 brew "hyperkit", link: false
 # Run a Kubernetes cluster locally
+# minikube implements a local Kubernetes cluster on macOS, Linux, and Windows
+# https://github.com/kubernetes/minikube
 brew "minikube", link: false
+cask "docker-toolbox"

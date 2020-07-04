@@ -45,3 +45,12 @@ cask "firefox"
 cask "google-chrome"
 # https://github.com/gnachman/iTerm2
 cask "iterm2"
+# CCleaner is the number-one tool for fixing a slow Mac
+# https://www.ccleaner.com/ccleaner-mac
+cask "ccleaner"
+# Clipy is a Clipboard extension app for macOS.
+# https://github.com/Clipy/Clipy
+cask "clipy"
+# With all of your communication and tools in one place
+# https://slack.com/intl/en-gb/
+cask "slack"
