@@ -36,8 +36,6 @@ brew "warrensbox/tap/tfswitch"
 brew "warrensbox/tap/tgswitch"
 # --- Casks
 cask "jetbrains-toolbox"
-cask "vagrant"
-cask "virtualbox"
 cask "visual-studio-code"
 cask "teensy"
 cask "the-unarchiver"
