@@ -6,6 +6,9 @@ BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 CONFIG=dotbot.conf.yaml
 dbot=$(which dotbot)
 
+git clean -dxf
+git reset --hard
+git diff | git apply --reverse
 git pull
 git submodule sync --recursive
 git submodule update --init --recursive

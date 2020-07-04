@@ -36,6 +36,11 @@ brew "warrensbox/tap/tfswitch"
 brew "warrensbox/tap/tgswitch"
 # Modern load testing tool, using Go and JavaScript
 brew "k6"
+# ISO-C API and CLI for generating UUIDs
+brew "ossp-uuid"
+# Internet file retriever
+brew "wget"
+
 # --- Casks
 cask "jetbrains-toolbox"
 cask "visual-studio-code"

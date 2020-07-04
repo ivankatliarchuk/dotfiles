@@ -6,6 +6,9 @@ brew "netcat"
 brew "nikto"
 # SSL/TLS VPN implementing OSI layer 2 or 3 secure network extension
 brew "openvpn"
+# Port scanning utility for large networks
+brew "nmap"
+
 # -- Casks
 # Charles is an HTTP proxy / HTTP monitor / Reverse Proxy that enables a developer to view all of the HTTP and SSL / HTTPS traffic between their machine and the Internet.
 cask "charles"
