@@ -70,8 +70,22 @@ brew "curl"
 # Tool for creating identical machine images for multiple platforms
 # https://github.com/hashicorp/packer
 brew "packer"
+# The universal file transfer tool duck which runs in your shell on Linux and OS X
+# https://duck.sh/
+brew "duck"
+# Docker Machine driver for hyperkit
+brew "docker-machine-driver-hyperkit"
 # --- Casks
+# Manage your Jet Brains tools the easy way
+# https://www.jetbrains.com/toolbox-app/
 cask "jetbrains-toolbox"
+# Visual Studio Code combines the simplicity of a code editor with what developers need for their core edit-build-debug cycle.
+# https://github.com/microsoft/vscode
 cask "visual-studio-code"
+# The Teensy is a complete USB-based microcontroller development system, in a very small footprint.
+# https://www.pjrc.com/teensy/loader_mac.html
 cask "teensy"
 cask "the-unarchiver"
+cask "docker-toolbox"
+# https://macdown.uranusjr.com/
+cask "macdown"

@@ -17,6 +17,10 @@ brew "nmap"
 brew "tcptraceroute"
 # User interface to the TELNET protocol
 brew "telnet"
+# Directory/file & DNS busting tool written in Go
+brew "gobuster"
 # -- Casks
 # Charles is an HTTP proxy / HTTP monitor / Reverse Proxy that enables a developer to view all of the HTTP and SSL / HTTPS traffic between their machine and the Internet.
 cask "charles"
+# https://obdev.at/products/littlesnitch/index.html
+cask "little-snitch"

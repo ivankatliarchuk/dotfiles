@@ -39,3 +39,9 @@ brew "archey"
 cask "spectacle"
 # LibreOffice is free and open source software, originally based on OpenOffice.org
 cask "libreoffice"
+# https://www.mozilla.org/en-GB/firefox/
+cask "firefox"
+# https://www.google.com/intl/en_uk/chrome/
+cask "google-chrome"
+# https://github.com/gnachman/iTerm2
+cask "iterm2"
