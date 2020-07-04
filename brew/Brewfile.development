@@ -36,11 +36,8 @@ brew "warrensbox/tap/tfswitch"
 brew "warrensbox/tap/tgswitch"
 # --- Casks
 cask "jetbrains-toolbox"
-if USER.vagrant?
-else
 cask "vagrant"
-cask "virtualbox"
-end
+cask "virtualbox" unless system "bin/user.sh"
 cask "visual-studio-code"
 cask "teensy"
 cask "the-unarchiver"
