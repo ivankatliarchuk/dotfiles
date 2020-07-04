@@ -1,6 +1,6 @@
 # Secure your credentials in environment variables
 brew "envchain"
-# Password manager
+# Unix Password manager. https://www.passwordstore.org/
 brew "pass"
 # Pinentry for GPG on Mac
 brew "pinentry-mac"
@@ -12,4 +12,7 @@ brew "gnupg"
 brew "ykman"
 # Command-line tool for the YubiKey PIV application
 brew "yubico-piv-tool"
+# KeePassXC is a cross-platform community fork of KeePassX. https://github.com/keepassxreboot/keepassxc
 cask "keepassxc"
+# Put passwords in their place https://www.dashlane.com/
+cask "dashlane"

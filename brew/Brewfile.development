@@ -40,7 +40,8 @@ brew "k6"
 brew "ossp-uuid"
 # Internet file retriever
 brew "wget"
-
+# Tool for creating identical machine images for multiple platforms
+brew "packer"
 # --- Casks
 cask "jetbrains-toolbox"
 cask "visual-studio-code"
