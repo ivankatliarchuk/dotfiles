@@ -37,7 +37,7 @@ brew "warrensbox/tap/tgswitch"
 # --- Casks
 cask "jetbrains-toolbox"
 cask "vagrant"
-cask "virtualbox" unless system '$(whoami) != vagrant'
+cask "virtualbox" unless system 'if [ "$(whoami)" != "vagrant" ]'
 cask "visual-studio-code"
 cask "teensy"
 cask "the-unarchiver"
