@@ -1,0 +1,10 @@
+# Secure your credentials in environment variables
+brew "envchain"
+# Password manager
+brew "pass"
+# Pinentry for GPG on Mac
+brew "pinentry-mac"
+# Editor of encrypted files
+brew "sops"
+# GNU Pretty Good Privacy (PGP) package
+brew "gnupg"

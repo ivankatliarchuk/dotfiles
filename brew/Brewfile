@@ -1,0 +1,20 @@
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/cask-versions"
+tap "homebrew/core"
+# Manage your dotfiles across multiple machines, securely
+brew "chezmoi"
+# GNU File, Shell, and Text utilities
+brew "coreutils"
+# Terminal-based visual file manager
+brew "midnight-commander"
+# Ambitious Vim-fork focused on extensibility and agility
+brew "neovim"
+# Display directories as trees (with optional color/HTML output)
+brew "tree"
+# Terminal multiplexer
+brew "tmux"
+# UNIX shell (command interpreter)
+brew "zsh"
+# Command-line fuzzy finder written in Go
+brew "fzf"

@@ -35,3 +35,8 @@ https://github.com/gpakosz/.tmux
 
 - [DotBot](https://github.com/anishathalye/dotbot/wiki)
 - [Chezmoi Quick Start](https://www.chezmoi.io/docs/quick-start/)
+
+## Brew
+
+- [Bundle](https://github.com/Homebrew/homebrew-bundle)
+- [WhaleBrew](https://github.com/whalebrew/whalebrew)

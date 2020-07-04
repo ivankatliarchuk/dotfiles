@@ -1,0 +1,4 @@
+tap "homebrew/cask-fonts"
+# XML-based font configuration API for X Windows
+brew "fontconfig"
+cask "font-inconsolata"

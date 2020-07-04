@@ -1,0 +1,4 @@
+# Process YAML documents from the CLI
+brew "yq"
+# Lightweight and flexible command-line JSON processor
+brew "jq"

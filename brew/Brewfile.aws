@@ -1,0 +1,7 @@
+# AWS IAM import and export tool
+brew "iamy"
+# Official Amazon AWS command-line interface
+brew "awscli"
+# CLI for managing secrets through AWS SSM Parameter Store
+brew "chamber"
+cask "aws-vault"

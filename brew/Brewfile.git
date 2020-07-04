@@ -1,0 +1,7 @@
+tap "git-chglog/git-chglog"
+# Framework for managing multi-language pre-commit hooks
+brew "pre-commit"
+# Add GitHub support to git on the command-line
+brew "hub"
+# Distributed revision control system
+brew "git"

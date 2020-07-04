@@ -3,6 +3,12 @@
       create: true
       relink: true
 
+- brewfile:
+    - brew/Brewfile
+    - brew/Brewfile.git
+    - brew/Brewfile.secure
+    - brew/Brewfile.fonts
+
 - pip:
     file: pip/requirements.txt
     binary: /usr/local/bin/pip3
