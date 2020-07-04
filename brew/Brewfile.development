@@ -10,6 +10,20 @@ brew "jq"
 brew "bats-core"
 # CloudFlare's PKI toolkit
 brew "cfssl"
+# Extendable version manager with support for Ruby, Node.js, Erlang & more
+# https://asdf-vm.com/#/
+brew "asdf"
+# Manage multiple Node.js versions
+# https://github.com/nvm-sh/nvm
+brew "nvm"
+# Python version management
+# https://github.com/pyenv/pyenv
+brew "pyenv"
+# Python dependency management tool
+# https://pipenv.pypa.io/en/latest/
+brew "pipenv", link: false
+# Powerful, clean, object-oriented scripting language
+brew "ruby"
 # ---start--- GO
 # Open source programming language to build simple/reliable/efficient software
 brew "go"

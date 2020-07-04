@@ -5,10 +5,14 @@ tap "homebrew/core"
 tap "denisidoro/tools"
 tap "buo/cask-upgrade"
 # Manage your dotfiles across multiple machines, securely
+# https://github.com/twpayne/chezmoi
 brew "chezmoi"
 # GNU File, Shell, and Text utilities
 brew "coreutils"
+# Generic library support script
+brew "libtool"
 # Terminal-based visual file manager
+# https://github.com/MidnightCommander/mc
 brew "midnight-commander"
 # Keep your Mac's application settings in sync
 brew "mackup"
