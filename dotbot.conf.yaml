@@ -16,7 +16,7 @@
   # - brew/Brewfile.vms
 
 - shell:
-  - brew cu -y && brew update && brew upgrade && brew cleanup --force
+  - brew cu -y && brew update && brew upgrade && brew cleanup
 
 - pip:
     file: pip/requirements.txt
