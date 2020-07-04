@@ -42,3 +42,7 @@ https://github.com/gpakosz/.tmux
 - [Bundle](https://github.com/Homebrew/homebrew-bundle)
 - [WhaleBrew](https://github.com/whalebrew/whalebrew)
 - [MackUP](https://github.com/lra/mackup)
+
+## MacOS
+
+- https://github.com/mathiasbynens/dotfiles/blob/main/.macos

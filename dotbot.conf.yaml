@@ -53,8 +53,12 @@
       path: shell/profile
     ~/.dotfiles-local:
       path: dotfiles-local
-
-- clean: ['~']
+    ~/.zshrc:
+      path: zsh/zshrc
+    ~/.zsh/functions:
+      path: zsh/functions
+    /usr/local/etc/tor/torrc:
+      path: tor/torrc
 
 
 # TODO: should pull tagged/release one

@@ -12,6 +12,10 @@ brew "gnupg"
 brew "ykman"
 # Command-line tool for the YubiKey PIV application
 brew "yubico-piv-tool"
+# Tor is free software and an open network that helps you defend against traffic analysis,
+# a form of network surveillance that threatens personal freedom and privacy
+# https://2019.www.torproject.org/docs/tor-doc-osx.html.en
+brew "tor"
 # KeePassXC is a cross-platform community fork of KeePassX. https://github.com/keepassxreboot/keepassxc
 cask "keepassxc"
 # Put passwords in their place https://www.dashlane.com/
