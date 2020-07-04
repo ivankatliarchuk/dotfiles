@@ -1,9 +1,18 @@
 - defaults:
     link:
+      create: true
       relink: true
 
 - shell:
   - [git pull, Pull the repo]
+  - [git submodule sync --recursive, Sync submodules]
+
+- pip:
+  file: requirements.txt
+  binary: /usr/local/bin/pip3
+  user: true    # Like --user
+  stdout: true # Print the execution stdout
+  stderr: true  # Print the execution stderr
 
 - clean: ['~']
 
@@ -14,38 +23,31 @@
 
 - link:
     ~/.vimrc:
-      relink: true
       path: vim/vimrc
     ~/.gitconfig:
-      relink: true
       path: git/gitconfig
     ~/.gitconfig.alias:
-      relink: true
       path: git/gitconfig.alias
     ~/.gitconfig.message:
-      relink: true
       path: git/gitconfig.message
     ~/.gitattributes:
-      relink: true
       path: git/gitattributes
     ~/.aliases:
-      relink: true
       path: shell/aliases
     ~/.bashrc:
-      relink: true
       path: shell/bashrc
     ~/.exports:
-      relink: true
       path: shell/exports
     ~/.profile:
-      relink: true
       path: shell/profile
-    ~/.locals:
-      create: true
-      path: locals
+    ~/.dotfiles-local:
+      path: dotfiles-local
 
 - clean: ['~']
+
 
 # TODO: should pull tagged/release one
 - shell:
   - [echo 'dotbot -c dotfiles/dotbot.conf.yaml' > ~/run.sh, Execute from parent folder]
+  # the following have to run after linking ~/.gitconfig
+  - git update-submodules

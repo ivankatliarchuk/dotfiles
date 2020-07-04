@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# shellcheck source=/dev/null
+. ~/.profile
