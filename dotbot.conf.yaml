@@ -12,11 +12,11 @@
   - brew/Brewfile.networking
   - brew/Brewfile.fonts
   - brew/Brewfile.development
+  - brew/Brewfile.mas
   # - brew/Brewfile.vms
 
 - shell:
   - brew cu -y && brew update && brew upgrade && brew cleanup --force
-  - rm -f -r /Library/Caches/Homebrew/*
 
 - pip:
     file: pip/requirements.txt

@@ -1,3 +1,4 @@
+if OS.mac?
 # Mac App Store command-line interface
 brew "mas"
 # packages
@@ -9,3 +10,4 @@ mas "Evernote", id: 406056744
 mas "Magnet", id: 441258766
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
+end
