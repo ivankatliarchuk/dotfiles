@@ -9,6 +9,7 @@ dbot=$(which dotbot)
 git clean -dxf
 git reset --hard
 git diff | git apply --reverse
+git config pull.ff only
 git pull
 git submodule sync --recursive
 git submodule update --init --recursive

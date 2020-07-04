@@ -3,44 +3,39 @@
 	whitespace = fix
 
 [alias]
-
   alias=!git config -l | grep ^alias | cut -c 7- | sort
   # List aliases
 	aliases = config --get-regexp alias
 
 [user]
-
   name = no-name
   initals = legend
 	username = not-set
   email = __redacted_to_stop_spam_scrapers__@gmail.org
 
 [branch]
-
   autosetuprebase = always
 
 [pager]
-
   status = true
 
 [pager]
-
 	branch = false
   log = false
 
 [push]
-
   default = current
   # Make `git push` push relevant annotated tags when pushing branches out.
 	followTags = true
 
-[diff]
+[pull]
+	ff = only
 
+[diff]
 	# Detect copies as well as renames
 	renames = copies
 
 [diff "sopsdiffer"]
-
 	textconv = sops -d
 
 [diff "bin"]
@@ -48,7 +43,6 @@
 	textconv = hexdump -v -C
 
 [merge]
-
   tool = vimdiff
   # Include summaries of merged commits in newly created merge commit messages
   log = true
@@ -58,7 +52,6 @@
 	autocorrect = 1
 
 [tag]
-
   forceSignAnnotated = false
 
 [core]
@@ -110,7 +103,6 @@
   deleted = red
 
 [color "diff"]
-
 	meta = yellow bold
 	frag = magenta bold # line info
 	old = blue # deletions
@@ -118,12 +110,10 @@
   whitespace = cyan reverse
 
 [include]
-
   path = ~/.gitconfig.local
   path = ~/.gitconfig.alias
 
 [secrets]
-
   providers = git secrets --aws-provider
   patterns = [A-Z0-9]{20}
   allowed = AKIAISUPERSECRETEXAMPLE
@@ -131,21 +121,17 @@
 
 # URL shorthands
 [url "git@github.com:"]
-
 	insteadOf = "gh:"
 	pushInsteadOf = "github:"
 	pushInsteadOf = "git://github.com/"
 
 [url "git://github.com/"]
-
 	insteadOf = "github:"
 
 [url "git@gist.github.com:"]
-
 	insteadOf = "gst:"
 	pushInsteadOf = "gist:"
 	pushInsteadOf = "git://gist.github.com/"
 
 [url "git://gist.github.com/"]
-
   insteadOf = "gist:"
