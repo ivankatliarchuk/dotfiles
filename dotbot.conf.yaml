@@ -25,6 +25,9 @@
     ~/.gitconfig.message:
       relink: true
       path: git/gitconfig.message
+    ~/.gitattributes:
+      relink: true
+      path: git/gitattributes
     ~/.aliases:
       relink: true
       path: shell/aliases
