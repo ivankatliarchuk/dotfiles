@@ -17,6 +17,9 @@
 - shell:
   - brew cu -y && brew update && brew upgrade && brew cleanup --force
   - rm -f -r /Library/Caches/Homebrew/*
+  - git clean -dxf
+  - git reset --hard
+  - git diff | git apply --reverse
 
 - pip:
     file: pip/requirements.txt
@@ -64,4 +67,5 @@
   - git pull --recurse-submodules
   - git submodule update --init --recursive
   - git submodule foreach git pull origin master
-  - [chsh -s $(which zsh), Making zsh the default shell]
+  - git clean -f
+  - [sudo chsh -s $(which zsh), Making zsh the default shell]

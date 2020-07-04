@@ -34,6 +34,8 @@ brew "direnv"
 brew "warrensbox/tap/tfswitch"
 # The tgswitch command lets you switch between terragrunt versions.
 brew "warrensbox/tap/tgswitch"
+# Modern load testing tool, using Go and JavaScript
+brew "k6"
 # --- Casks
 cask "jetbrains-toolbox"
 cask "visual-studio-code"

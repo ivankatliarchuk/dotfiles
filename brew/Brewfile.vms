@@ -1,2 +1,4 @@
 cask "vagrant"
 cask "virtualbox"
+# Toolkit for embedding hypervisor capabilities in your application
+brew "hyperkit", link: false
