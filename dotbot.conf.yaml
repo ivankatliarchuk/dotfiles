@@ -3,9 +3,9 @@
       create: true
       relink: true
 
-- shell:
-  - [git pull, Pull the repo]
-  - [git submodule sync --recursive, Sync submodules]
+# - shell:
+  # - [git pull, Pull the repo]
+  # - [git submodule sync --recursive, Sync submodules]
 
 - pip:
     file: requirements.txt
@@ -48,7 +48,7 @@
 
 # TODO: should pull tagged/release one
 - shell:
-  - [echo 'dotbot -c dotfiles/dotbot.conf.yaml' > ~/run.sh, Execute from parent folder]
+  - [echo 'cd dotfiles && ./install.sh' > ~/run.sh, Execute from parent folder]
   # the following have to run after linking ~/.gitconfig
   - git pull --recurse-submodules
   - git submodule update --init --recursive
