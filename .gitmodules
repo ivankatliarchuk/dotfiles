@@ -1,0 +1,6 @@
+[submodule "vendor/dotbot-pip"]
+	path = vendor/dotbot-pip
+	url = https://github.com/sobolevn/dotbot-pip.git
+[submodule "vendor/dotbot-brew"]
+	path = vendor/dotbot-brew
+	url = https://github.com/d12frosted/dotbot-brew.git
