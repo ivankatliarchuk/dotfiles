@@ -4,14 +4,18 @@
       relink: true
 
 - brewfile:
-    - brew/Brewfile
-    - brew/Brewfile.git
-    - brew/Brewfile.secure
-    - brew/Brewfile.aws
-    - brew/Brewfile.development
-    - brew/Brewfile.k8s
-    - brew/Brewfile.networking
-    - brew/Brewfile.fonts
+  - brew/Brewfile
+  - brew/Brewfile.git
+  - brew/Brewfile.secure
+  - brew/Brewfile.aws
+  - brew/Brewfile.development
+  - brew/Brewfile.k8s
+  - brew/Brewfile.networking
+  - brew/Brewfile.fonts
+  
+- shell:
+  - brew cu -y && brew update && brew upgrade && brew cleanup --force
+  - rm -f -r /Library/Caches/Homebrew/*
 
 - pip:
     file: pip/requirements.txt
