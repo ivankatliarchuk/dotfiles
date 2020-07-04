@@ -9,6 +9,8 @@ brew "chezmoi"
 brew "coreutils"
 # Terminal-based visual file manager
 brew "midnight-commander"
+# Keep your Mac's application settings in sync
+brew "mackup"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
 # Display directories as trees (with optional color/HTML output)
@@ -23,5 +25,6 @@ brew "fzf"
 brew "z"
 # Interactive cheatsheet tool for the command-line.
 brew "denisidoro/tools/navi"
-# Mac App Store command-line interface
-brew "mas"
+# --- Casks
+cask "spectacle"
+cask "libreoffice"

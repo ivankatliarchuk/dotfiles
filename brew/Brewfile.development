@@ -34,3 +34,10 @@ brew "direnv"
 brew "warrensbox/tap/tfswitch"
 # The tgswitch command lets you switch between terragrunt versions.
 brew "warrensbox/tap/tgswitch"
+# --- Casks
+cask "jetbrains-toolbox"
+cask "vagrant"
+cask "virtualbox"
+cask "visual-studio-code"
+cask "teensy"
+cask "the-unarchiver"
