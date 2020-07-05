@@ -64,7 +64,7 @@
     ~/.zpreztorc:
       path: zsh/settings/zpreztorc
     ~/.zprezto:
-      path: vendor/zprezto
+      path: vendor/prezto
     /usr/local/etc/tor/torrc:
       path: tor/torrc
     ~/.bash-it:
