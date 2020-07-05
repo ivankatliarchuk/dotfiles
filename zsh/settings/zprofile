@@ -27,11 +27,12 @@ typeset -gU cdpath fpath mailpath path
 
 export PATH=/usr/local/share/python:$PATH
 #PYTHONPATH
+set -x
 export PYTHON_PATH="$(python3 -m site --user-site):$(python -m site --user-site):$PYTHONPATH"
 export PATH=$PYTHON_PATH:$PATH
-
+set +x
 # Set the list of directories that Zsh searches for programs.
-set -x
+
 path=(
   $HOME/bin
   ~/dotfiles/bin
