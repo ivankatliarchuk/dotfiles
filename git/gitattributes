@@ -11,8 +11,14 @@ Dockerfile  eol=lf
 .tmux.conf.local eol=lf
 
 ###############################################################################
+# enforce correct line endings for shell and batch files.
+###############################################################################
+*.sh text eol=lf
+script/* text eol=lf
+script/*.bat text eol=crlf
+
+###############################################################################
 # behavior for SOPS encrypted files
-#
 ###############################################################################
 *.enc diff=sopsdiffer
 *.enc.json diff=sopsdiffer
