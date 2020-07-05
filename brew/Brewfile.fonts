@@ -6,4 +6,15 @@ brew "fontconfig"
 if OS.mac?
 # https://github.com/Homebrew/homebrew-cask-fonts
 cask "font-inconsolata"
+cask "font-awesome-terminal-fonts"
+cask "font-courier-new"
+cask "font-droid-sans-mono-for-powerline"
+cask "font-fontawesome"
+cask "font-source-code-pro"
+cask "font-source-code-pro-for-powerline"
+cask "font-consolas-for-powerline"
+cask "font-droid-sans-mono-for-powerline"
+cask "font-consolas-for-powerline"
+cask "font-inconsolata-for-powerline-bold"
+cask "font-inconsolata-for-powerline"
 end
