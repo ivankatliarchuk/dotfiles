@@ -4,7 +4,6 @@
       relink: true
 
 - brewfile:
-  - brew/Brewfile.before
   - brew/Brewfile
   - brew/Brewfile.git
   - brew/Brewfile.secure
@@ -15,7 +14,6 @@
   - brew/Brewfile.development
   # - brew/Brewfile.mas
   # - brew/Brewfile.vms
-  - brew/Brewfile.after
 
 - shell:
   - brew cu -y && brew update && brew upgrade && brew cleanup
