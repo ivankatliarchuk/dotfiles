@@ -1,7 +1,7 @@
 #
 # Executes commands at login pre-zshrc.
 #
-echo "!!run zprofile!!"
+
 #
 # Browser
 #
