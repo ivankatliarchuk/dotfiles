@@ -34,8 +34,8 @@ load-tgswitch() {
 	fi
 }
 
-# add-zsh-hook chpwd load-tfswitch
-# load-tfswitch
+add-zsh-hook chpwd load-tfswitch
+load-tfswitch
 
-# add-zsh-hook chpwd load-tgswitch
-# load-tgswitch
+add-zsh-hook chpwd load-tgswitch
+load-tgswitch
