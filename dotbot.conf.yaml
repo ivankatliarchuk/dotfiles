@@ -57,6 +57,8 @@
       path: zsh/zshrc
     ~/.zsh/functions:
       path: zsh/functions
+    ~/.zsh/settings:
+      path: zsh/settings
     /usr/local/etc/tor/torrc:
       path: tor/torrc
 

@@ -12,3 +12,6 @@
 
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
+
+# Settings
+[[ -f ~/.zsh/settings.zsh ]] && source ~/.zsh/settings.zsh
