@@ -1,8 +1,8 @@
 # Created by dotfiles
 # load custom executable functions
-# for function in ~/zsh/functions/*; do
-#   source $function
-# done
+for function in ~/zsh/functions/*; do
+  source $function
+done
 
 # Local config
 [[ -f ~/local/.zshrc ]] && source ~/local/.zshrc

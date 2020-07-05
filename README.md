@@ -46,3 +46,4 @@ https://github.com/gpakosz/.tmux
 ## MacOS
 
 - https://github.com/mathiasbynens/dotfiles/blob/main/.macos
+- https://github.com/powerline/fonts
