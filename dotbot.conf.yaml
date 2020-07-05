@@ -28,9 +28,9 @@
 - clean: ['~']
 
 - create:
-    - ~/test-downloads
     - ~/undo-history
     - ~/locals
+    - ~/Library/ApplicationSupport/iTerm2/DynamicProfiles
 
 - link:
     ~/.vimrc:
@@ -63,12 +63,18 @@
       path: zsh/settings
     ~/.zpreztorc:
       path: zsh/settings/zpreztorc
+    ~/.ghupg/gpg.conf:
+      path: ghupg/gpg.conf
+    ~/.ghupg/gpg-agent.conf:
+      path: ghupg/gpg-agent.conf
     ~/.zprezto:
       path: vendor/prezto
     /usr/local/etc/tor/torrc:
       path: tor/torrc
     ~/.bash-it:
       path: vendor/bash-it
+    ~/Library/ApplicationSupport/iTerm2/DynamicProfiles/profile.json:
+      path: iTerm/profiles.json
 
 # TODO: should pull tagged/release one
 - shell:

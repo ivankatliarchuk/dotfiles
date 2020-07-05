@@ -32,9 +32,7 @@ zstyle ':prezto:load' pmodule \
   'prompt' \
   'gpg' \
   'autosuggestions' \
-  'ssh' \
-  'jump' \
-  'colored-man-pages'
+  'ssh'
 
 # Set syntax highlighters.
 # By default, only the main highlighter is enabled.
