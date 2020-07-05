@@ -63,10 +63,10 @@
       path: zsh/settings
     ~/.zpreztorc:
       path: zsh/settings/zpreztorc
-    ~/.ghupg/gpg.conf:
-      path: ghupg/gpg.conf
-    ~/.ghupg/gpg-agent.conf:
-      path: ghupg/gpg-agent.conf
+    ~/.gnupg/gpg.conf:
+      path: gnupg/gpg.conf
+    ~/.gnupg/gpg-agent.conf:
+      path: gnupg/gpg-agent.conf
     ~/.zprezto:
       path: vendor/prezto
     /usr/local/etc/tor/torrc:
