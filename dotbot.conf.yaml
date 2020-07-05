@@ -68,4 +68,5 @@
   - git submodule update --init --recursive
   - git submodule foreach git pull origin master
   - [sudo chsh -s $(which zsh), Making zsh the default shell]
+  - echo "My current shell is $SHELL ($0)"
   - archey -c
