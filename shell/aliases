@@ -1,3 +1,7 @@
+#
+# Shell aliases.
+#
+
 # Pretty print the path
 alias creds="aws-vault exec $AWS_PROFILE"
 alias clearhist='echo "" > ~/.zsh_history & exec $SHELL -l'
@@ -210,27 +214,6 @@ alias chromekill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v exten
 
 # untar
 alias untar='tar xvf'
-
-## Utils
-
-# Update dotfiles
-dfu() {
-    (
-        cd ~/dotfiles && git pull --ff-only
-    )
-}
-
-# Create a directory and cd into it
-mcd() {
-    mkdir "${1}" && cd "${1}"
-}
-
-# Execute a command in a specific directory
-xin() {
-    (
-        cd "${1}" && shift && ${@}
-    )
-}
 
 # Include custom aliases
 if [[ -f ~/.aliases.local ]]; then

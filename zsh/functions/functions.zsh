@@ -1,4 +1,9 @@
 #!/bin/zsh
+# -*- mode: sh -*-
+
+#
+# Helper functions that don't belong elsewhere.
+#
 
 prompt_dir() {
 	# prompt_segment blue black " `basename ${PWD/#$HOME/'%2~'}` "

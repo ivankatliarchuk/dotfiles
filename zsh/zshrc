@@ -1,6 +1,8 @@
 # Created by dotfiles
+[[ "$TERM" == "screen" ]] && export TERM=screen-256color
+
 # load custom executable functions
-for function in ~/zsh/functions/*; do
+for function in ~/.zsh/functions/*; do
   source $function
 done
 
@@ -15,3 +17,8 @@ done
 
 # Settings
 [[ -f ~/.zsh/settings.zsh ]] && source ~/.zsh/settings.zsh
+
+# Eval
+[[ -f ~/.zsh/functions/eval.zsh ]] && source ~/.zsh/functions/eval.zsh
+
+eval "$(starship init zsh)"

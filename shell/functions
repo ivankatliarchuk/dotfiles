@@ -1,0 +1,75 @@
+## Utils
+
+# Update dotfiles
+dfu() {
+    (
+        cd ~/dotfiles && git pull --ff-only
+    )
+}
+
+# Create a directory and cd into it
+mcd() {
+    mkdir "${1}" && cd "${1}"
+}
+
+# Create a new directory and enter it
+function mkcd() { mkdir -p "$@" && cd "$_"; }
+
+# Execute a command in a specific directory
+xin() {
+    (
+        cd "${1}" && shift && ${@}
+    )
+}
+
+# Zip the directory
+function zd() { zip -r "$1".zip "$1"; }
+
+# 7zip the directory
+function 7zd() { 7z a "$1" "$1"/*; }
+
+# Extract most known archives with one command
+function extract() {
+  if [ -f $1 ]; then
+    case $1 in
+      *.tar.bz2) tar xvjf $1                                   ;;
+      *.tar.gz)  tar xvzf $1                                   ;;
+      *.tar.xz)  tar xvJf $1                                   ;;
+      *.lzma)    unlzma $1                                     ;;
+      *.bz2)     bunzip2 $1                                    ;;
+      *.rar)     unrar x -ad $1                                ;;
+      *.gz)      gunzip $1                                     ;;
+      *.tar)     tar xvf $1                                    ;;
+      *.tbz2)    tar xvjf $1                                   ;;
+      *.tgz)     tar xvzf $1                                   ;;
+      *.zip)     unzip $1                                      ;;
+      *.Z)       uncompress $1                                 ;;
+      *.7z)      7z x $1                                       ;;
+      *.xz)      unxz $1                                       ;;
+      *.exe)     cabextract $1                                 ;;
+      *)         echo "extract: '$1' - unknown archive method" ;;
+    esac
+  else
+    echo "$1 - file does not exist"
+  fi
+}
+
+# to ascii
+function decode() {
+  case $1 in
+    base64) shift 1; echo -n "$@" | base64 --decode            ;;
+    binary) shift 1; echo -n "$@" | perl -lpe '$_=pack"B*",$_' ;;
+    hex)    shift 1; echo -n "0x$@" | xxd -r                   ;;
+  esac
+}
+
+# from ascii
+function encode() {
+  case $1 in
+    base64) shift 1; echo -n "$@" | openssl base64            ;;
+    binary) shift 1; echo -n "$@" | perl -lpe '$_=unpack"B*"' ;;
+    hex)    shift 1; echo -n "$@" | xxd -p                    ;;
+    md5)    shift 1; echo -n "$@" | openssl md5               ;;
+    sha1)   shift 1; echo -n "$@" | openssl sha1              ;;
+  esac
+}

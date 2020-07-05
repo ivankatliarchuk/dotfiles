@@ -34,6 +34,9 @@ brew "denisidoro/tools/navi"
 # An archey script for OS X. archey -c
 # https://obihann.github.io/archey-osx/
 brew "archey"
+# The cross-shell prompt for astronauts
+# https://starship.rs/
+brew "starship"
 # --- Casks
 # Easily organize windows without using a mouse.
 cask "spectacle"

@@ -9,7 +9,6 @@ repos:
     args: ['--autofix', '--no-sort-keys', '--indent=2']
   - id: check-byte-order-marker
   - id: check-case-conflict
-  - id: check-executables-have-shebangs
   - id: check-merge-conflict
   - id: check-symlinks
   - id: end-of-file-fixer
