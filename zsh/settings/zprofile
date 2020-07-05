@@ -1,0 +1,26 @@
+#
+# Executes commands at login pre-zshrc.
+#
+echo "!!run zprofile!!"
+#
+# Browser
+#
+
+if [[ "$OSTYPE" == darwin* ]]; then
+  export BROWSER='open'
+fi
+
+#
+# Editors
+#
+
+export EDITOR='vim'
+export VISUAL='code'
+export PAGER=''
+
+#
+# Paths
+#
+
+# Ensure path arrays do not contain duplicates.
+typeset -gU cdpath fpath mailpath path

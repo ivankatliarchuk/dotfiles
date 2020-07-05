@@ -55,6 +55,8 @@
       path: locals
     ~/.zshrc:
       path: zsh/zshrc
+    ~/.zprofile:
+      path: zsh/settings/zprofile
     ~/.zsh/functions:
       path: zsh/functions
     ~/.zsh/settings:
