@@ -42,6 +42,8 @@
       path: git/gitconfig.alias
     ~/.gitconfig.message:
       path: git/gitconfig.message
+    ~/.gitconfig.include:
+      path: git/gitconfig.message
     ~/.gitattributes:
       path: git/gitattributes
     ~/.aliases:

@@ -1,2 +1,2 @@
-[includeIf "gitdir:~/project/"]
-    path = ~/.gitconfig-personal
+[includeIf "gitdir:~/gitconfigs/"]
+    path = ~/.gitconfigs.local

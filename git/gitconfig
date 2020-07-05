@@ -59,6 +59,9 @@
 	# Automatically correct and execute mistyped commands
 	autocorrect = 1
 
+[hub]
+  protocol = https
+
 [tag]
   forceSignAnnotated = false
 
@@ -119,10 +122,11 @@
 
 [credential]
 	helper = osxkeychain
-  
+
 [include]
   path = ~/.gitconfig.local
   path = ~/.gitconfig.alias
+  path = ~/.gitconfigs.external
 
 [secrets]
   providers = git secrets --aws-provider
