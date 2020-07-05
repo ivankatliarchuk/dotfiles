@@ -6,6 +6,14 @@
 
 for f in $(compaudit);do sudo chmod -R 755 $f;done;
 
+#
+# Zprezto
+#
+# Load zprezto if it's installed
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
+
 # load custom executable functions
 for function in ~/.zsh/functions/*; do
   source $function

@@ -61,9 +61,14 @@
       path: zsh/functions
     ~/.zsh/settings:
       path: zsh/settings
+    ~/.zpreztorc:
+      path: zsh/settings/zpreztorc
+    ~/.zprezto:
+      path: vendor/zprezto
     /usr/local/etc/tor/torrc:
       path: tor/torrc
-
+    ~/.bash-it:
+      path: vendor/bash-it
 
 # TODO: should pull tagged/release one
 - shell:

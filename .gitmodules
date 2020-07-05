@@ -4,3 +4,12 @@
 [submodule "vendor/dotbot-brew"]
 	path = vendor/dotbot-brew
 	url = https://github.com/d12frosted/dotbot-brew.git
+[submodule "vendor/bash-it"]
+	path = vendor/bash-it
+	url = https://github.com/Bash-it/bash-it.git
+[submodule "vendor/prezto"]
+	path = vendor/prezto
+	url = https://github.com/sorin-ionescu/prezto.git
+[submodule "vendor/powerline-fonts"]
+	path = vendor/powerline-fonts
+	url = https://github.com/powerline/fonts.git

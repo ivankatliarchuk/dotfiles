@@ -2,6 +2,10 @@
 	# Detect whitespace errors when applying a patch
 	whitespace = fix
 
+[advice]
+	pushNonFastForward = false
+	statusHints = false
+
 [alias]
   alias=!git config -l | grep ^alias | cut -c 7- | sort
   # List aliases
@@ -22,11 +26,15 @@
 [pager]
 	branch = false
   log = false
+  status = false
 
 [push]
   default = current
   # Make `git push` push relevant annotated tags when pushing branches out.
 	followTags = true
+
+[github]
+	ssl = true
 
 [pull]
 	ff = only
@@ -109,6 +117,9 @@
 	new = green # additions
   whitespace = cyan reverse
 
+[credential]
+	helper = osxkeychain
+  
 [include]
   path = ~/.gitconfig.local
   path = ~/.gitconfig.alias

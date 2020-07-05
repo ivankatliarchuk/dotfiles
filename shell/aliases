@@ -2,8 +2,6 @@
 # Shell aliases.
 #
 
-alias mac='archey -c'
-
 # Pretty print the path
 alias creds="aws-vault exec $AWS_PROFILE"
 alias clearhist='echo "" > ~/.zsh_history & exec $SHELL -l'
@@ -57,12 +55,6 @@ alias mergepdf='/System/Library/Automator/Combine\ PDF\ Pages.action/Contents/Re
 # find . -name .gitattributes | map dirname
 alias map="xargs -n1"
 
-# One of @janmoesen’s ProTip™s
-for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
-	# shellcheck disable=SC2139,SC2140
-	alias "$method"="lwp-request -m \"$method\""
-done
-
 # Kill all the tabs in Chrome to free up memory
 # [C] explained: http://www.commandlinefu.com/commands/view/402/exclude-grep-from-your-grepped-output-of-ps-alias-included-in-description
 alias chromekill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v extension-process | tr -s ' ' | cut -d ' ' -f2 | xargs kill"
@@ -103,7 +95,7 @@ alias cls='clear' # Good 'ol Clear Screen command
 alias drm='docker rmi $(docker images -a | grep "^<none>" | awk '{print $3}') -f'
 
 # MacOS
-
+alias macv='archey -c'
 alias nomore='find ./ -iname .DS_Store -delete'
 # Recursively delete `.DS_Store` files
 alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
@@ -204,6 +196,9 @@ alias sniff="sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'"
 alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\\: .*|GET \\/.*\""
 
 ## Miscelanious
+
+# Run curl command 'curl-hdr google.com'
+alias curl-hdr='curl -Ss -D - -o /dev/null'
 
 # OS X has no `md5sum`, so use `md5` as a fallback
 command -v md5sum > /dev/null || alias md5sum="md5"
