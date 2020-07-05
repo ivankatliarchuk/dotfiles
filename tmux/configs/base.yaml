@@ -1,0 +1,22 @@
+session_name: tmuxp
+start_directory: ./ # load session relative to config location (project root).
+windows:
+- window_name: tmuxp
+  focus: True
+  layout: main-horizontal
+  options:
+    main-pane-height: 35
+  panes:
+  - focus: true
+  - pane
+  - make watch_test
+- window_name: docs
+  layout: main-horizontal
+  options:
+    main-pane-height: 35
+  start_directory: ~/Documents/
+  panes:
+  - focus: true
+  - pane
+  - make serve
+  - make watch

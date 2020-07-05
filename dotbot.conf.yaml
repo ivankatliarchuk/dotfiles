@@ -31,6 +31,7 @@
     - ~/undo-history
     - ~/locals
     - ~/Library/ApplicationSupport/iTerm2/DynamicProfiles
+    - ~/.tmuxp
 
 - link:
     ~/.vimrc:
@@ -77,6 +78,8 @@
       path: iTerm/profiles.json
     ~/.config/starship.toml:
       path: zsh/settings/
+    ~/.tmuxp:
+      path: tmux/configs/
 
 # TODO: should pull tagged/release one
 - shell:
