@@ -1,0 +1,43 @@
+[battery]
+full_symbol = "🔋"
+charging_symbol = "⚡️"
+discharging_symbol = "💀"
+
+[directory]
+truncation_length = 8
+
+[docker_context]
+symbol = "🐋 "
+
+[env_var]
+variable = "SHELL"
+default = "unknown shell"
+
+[git_status]
+conflicted = "🏳"
+ahead = "🏎💨"
+behind = "😰"
+diverged = "😵"
+untracked = "🤷‍"
+stashed = "📦"
+modified = "📝"
+staged.value = "++"
+staged.style = "green"
+staged_count.enabled = true
+staged_count.style = "green"
+renamed = "👅"
+deleted = "🗑"
+
+[hostname]
+ssh_only = false
+prefix = "⟪"
+suffix = "⟫"
+trim_at = ".companyname.com"
+disabled = false
+
+[kubernetes]
+symbol = "⛵ "
+style = "dimmed green"
+disabled = false
+[kubernetes.context_aliases]
+"dev.local.cluster.k8s" = "dev"
