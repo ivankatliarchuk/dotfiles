@@ -21,7 +21,7 @@
 - pip:
     file: pip/requirements.txt
     binary: /usr/local/bin/pip3
-    user: false   # Like --user
+    user: true   # Like --user
     stdout: true # Print the execution stdout
     stderr: true # Print the execution stderr
 
@@ -86,6 +86,7 @@
       path: tmux/configs/
     ~/.tmuxp/aliases:
       path: tmux/aliases
+
 
 # TODO: should pull tagged/release one
 - shell:

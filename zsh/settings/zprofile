@@ -26,8 +26,8 @@ export PAGER=''
 typeset -gU cdpath fpath mailpath path
 
 export PATH=/usr/local/share/python:$PATH
-export PYTHON_PATH="$(python3 -m site --user-site):$(python -m site --user-site):$PYTHONPATH"
-export PATH=$(which python3):$(which python):$PATH
+export PYTHON_PATH="$(python3 -m site --user-base)/bin:$(python -m site --user-site)/bin:$PYTHONPATH"
+export PATH=$(which python3):$(which python):$PYTHON_PATH:$PATH
 # Set the list of directories that Zsh searches for programs.
 
 path=(
