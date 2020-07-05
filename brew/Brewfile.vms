@@ -1,4 +1,4 @@
-https://github.com/hashicorp/vagrant
+# https://github.com/hashicorp/vagrant
 cask "vagrant"
 cask "virtualbox"
 # Toolkit for embedding hypervisor capabilities in your application

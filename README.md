@@ -30,7 +30,7 @@ https://github.com/gpakosz/.tmux
 ## Dotbot Plugins
 
 - [Brew](https://github.com/d12frosted/dotbot-brew)
-- [Pip]()
+- [Pip](https://github.com/sobolevn/dotbot-pip)
 
 ## Documentation
 

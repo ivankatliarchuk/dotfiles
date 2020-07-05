@@ -51,8 +51,8 @@
       path: shell/exports
     ~/.profile:
       path: shell/profile
-    ~/.dotfiles-local:
-      path: dotfiles-local
+    ~/.locals:
+      path: locals
     ~/.zshrc:
       path: zsh/zshrc
     ~/.zsh/functions:
@@ -68,3 +68,4 @@
   - git submodule update --init --recursive
   - git submodule foreach git pull origin master
   - [sudo chsh -s $(which zsh), Making zsh the default shell]
+  - archey -c
