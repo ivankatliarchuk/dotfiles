@@ -78,8 +78,10 @@
       path: iTerm/profiles.json
     ~/.config/starship.toml:
       path: zsh/settings/
-    ~/.tmuxp:
+    ~/.tmuxp/configs:
       path: tmux/configs/
+    ~/.tmuxp/aliases:
+      path: tmux/aliases
 
 # TODO: should pull tagged/release one
 - shell:

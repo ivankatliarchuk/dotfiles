@@ -15,13 +15,17 @@ Dotfiles setup
 
 > TODO
 
-- [ ] ZSH (zsh-config) path = vendor/zsh-config
+- [X] ZSH (zsh-config)
 - [ ] Tmux (tmux-config) path = vendor/tmux-config
 - [ ] Chezmoi integration
 - [ ] Support Linux/Debian at least
 
 https://github.com/holman/dotfiles (install homebrew and other stuff)
 https://github.com/gpakosz/.tmux
+
+## Caveats
+
+These scripts are meant to run only on OS X
 
 ## Motivation
 
@@ -46,4 +50,17 @@ https://github.com/gpakosz/.tmux
 ## MacOS
 
 - https://github.com/mathiasbynens/dotfiles/blob/main/.macos
+- https://github.com/BarryMode/macos-prime/blob/master/dotfiles/.macos
 - https://github.com/powerline/fonts
+
+## Speed UP ZSH
+
+- https://carlosbecker.com/posts/speeding-up-zsh/
+- https://gist.github.com/ctechols/ca1035271ad134841284
+- https://blog.askesis.pl/post/2017/04/how-to-debug-zsh-startup-time.html
+- https://memo.ecp.plus/optimize_zshrc/
+
+## Tools
+
+- https://github.com/clvv/fasd
+- https://github.com/tony/tmuxp-config/tree/master/python

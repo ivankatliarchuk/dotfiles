@@ -27,6 +27,7 @@ done
 
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
+[[ -f ~/.tmuxp/aliases ]] && source ~/.tmuxp/aliases
 
 # Settings
 [[ -f ~/.zsh/settings.zsh ]] && source ~/.zsh/settings.zsh
