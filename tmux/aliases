@@ -3,7 +3,9 @@
 #
 
 # Pretty print the path
+alias tmuxbase="tmuxp load ~/.tmuxp/configs/base.yaml"
 alias tmux2payne="tmuxp load ~/.tmuxp/configs/2-payne.yaml"
 alias tmux2payne-sync="tmuxp load ~/.tmuxp/configs/2-payne-sync.yaml"
 alias tmux3payne="tmuxp load ~/.tmuxp/configs/3-payne.yaml"
-alias tmux4payne="tmuxp load ~/.tmuxp/configs/3-payne.yaml"
+alias tmux4payne="tmuxp load ~/.tmuxp/configs/4-payne.yaml"
+alias tmuxshorthands="tmuxp load ~/.tmuxp/configs/shorthands.yaml"
