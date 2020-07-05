@@ -1,3 +1,48 @@
+prompt_order = [
+    "username",
+    "hostname",
+    "kubernetes",
+    "directory",
+    "git_branch",
+    "git_commit",
+    "git_state",
+    "git_status",
+    "hg_branch",
+    "docker_context",
+    "package",
+    "dotnet",
+    "elixir",
+    "elm",
+    "erlang",
+    "golang",
+    "haskell",
+    "java",
+    "julia",
+    "nim",
+    "nodejs",
+    "ocaml",
+    "php",
+    "purescript",
+    "python",
+    "ruby",
+    "rust",
+    "terraform",
+    "zig",
+    "nix_shell",
+    "conda",
+    "memory_usage",
+    "aws",
+    "env_var",
+    "crystal",
+    "cmd_duration",
+    "custom",
+    "line_break",
+    "jobs",
+    "battery",
+    "time",
+    "character",
+]
+
 [battery]
 full_symbol = "🔋"
 charging_symbol = "⚡️"
@@ -41,3 +86,19 @@ style = "dimmed green"
 disabled = false
 [kubernetes.context_aliases]
 "dev.local.cluster.k8s" = "dev"
+
+[python]
+symbol = "👾 "
+pyenv_version_name = true
+pyenv_prefix = "ik "
+
+[terraform]
+symbol = "🏎💨 "
+
+[aws]
+style = "bold blue"
+symbol = "🅰 "
+displayed_items = "region"
+[aws.region_aliases]
+ap-southeast-2 = "au"
+us-east-1 = "va"
