@@ -2,6 +2,8 @@
 # Shell aliases.
 #
 
+alias mac='archey -c'
+
 # Pretty print the path
 alias creds="aws-vault exec $AWS_PROFILE"
 alias clearhist='echo "" > ~/.zsh_history & exec $SHELL -l'

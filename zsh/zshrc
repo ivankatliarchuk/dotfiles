@@ -1,6 +1,11 @@
 # Created by dotfiles
 [[ "$TERM" == "screen" ]] && export TERM=screen-256color
 
+# Eval
+[[ -f ~/.zsh/functions/eval.zsh ]] && source ~/.zsh/functions/eval.zsh
+
+for f in $(compaudit);do sudo chmod -R 755 $f;done;
+
 # load custom executable functions
 for function in ~/.zsh/functions/*; do
   source $function
@@ -17,9 +22,6 @@ done
 
 # Settings
 [[ -f ~/.zsh/settings.zsh ]] && source ~/.zsh/settings.zsh
-
-# Eval
-[[ -f ~/.zsh/functions/eval.zsh ]] && source ~/.zsh/functions/eval.zsh
 
 # Ensure that a non-login, non-interactive shell has a defined environment.
 if [[ ( "$SHLVL" -eq 1 && ! -o LOGIN ) && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
