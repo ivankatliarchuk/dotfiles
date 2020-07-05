@@ -1,6 +1,8 @@
 #!/bin/zsh
 # -*- mode: sh -*-
-
+# shellcheck source=/dev/null
+# shellcheck source=/dev/null
+# shellcheck source=/dev/null
 #
 # Helper functions that don't belong elsewhere.
 #
@@ -10,11 +12,11 @@ prompt_dir() {
 	prompt_segment blue $CURRENT_FG '%2~'
 }
 
-function get_cluster_short() {
+get_cluster_short() {
 	echo "$1" | cut -d / -f2 | cut -d . -f1
 }
 
-function get_namespace_upper() {
+get_namespace_upper() {
     echo "$1" | tr '[:lower:]' '[:lower:]'
 }
 

@@ -18,6 +18,7 @@ fi
 for function in ~/.zsh/functions/*; do
   source $function
 done
+[[ -f ~/.functions ]] && source ~/.functions
 
 # Local config
 [[ -f ~/local/.zshrc ]] && source ~/local/.zshrc

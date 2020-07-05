@@ -1,7 +1,8 @@
-* text=auto
-
 # git
 .gitignore text
+
+# Automatically normalize line endings for all text-based files
+#* text=auto
 
 # Ensure shell script uses LF, coz Git will convert files to CRLF on Windows which means the Linux container will fail to build\run
 Dockerfile  eol=lf

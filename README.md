@@ -30,6 +30,7 @@ These scripts are meant to run only on OS X
 ## Motivation
 
 - [ThoughBot](https://github.com/thoughtbot/dotfiles)
+- [Dotfiles](https://dotfiles.github.io/)
 
 ## Dotbot Plugins
 
@@ -63,4 +64,3 @@ These scripts are meant to run only on OS X
 ## Tools
 
 - https://github.com/clvv/fasd
-- https://github.com/tony/tmuxp-config/tree/master/python
