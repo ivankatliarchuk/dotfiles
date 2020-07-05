@@ -3,5 +3,43 @@
 # git
 .gitignore text
 
+# Ensure shell script uses LF, coz Git will convert files to CRLF on Windows which means the Linux container will fail to build\run
+Dockerfile  eol=lf
+*.sh        eol=lf
 .tmux.conf eol=lf
 .tmux.conf.local eol=lf
+
+###############################################################################
+# behavior for SOPS encrypted files
+#
+###############################################################################
+*.enc diff=sopsdiffer
+*.enc.json diff=sopsdiffer
+*.enc.yaml diff=sopsdiffer
+
+###############################################################################
+# behavior for image files
+#
+# image files are treated as binary by default.
+###############################################################################
+#*.jpg   binary
+#*.png   binary
+#*.gif   binary
+
+###############################################################################
+# diff behavior for common document formats
+#
+# Convert binary document formats to text before diffing them. This feature
+# is only available from the command line. Turn it on by uncommenting the
+# entries below.
+###############################################################################
+#*.doc   diff=astextplain
+#*.DOC   diff=astextplain
+#*.docx  diff=astextplain
+#*.DOCX  diff=astextplain
+#*.dot   diff=astextplain
+#*.DOT   diff=astextplain
+#*.pdf   diff=astextplain
+#*.PDF   diff=astextplain
+#*.rtf   diff=astextplain
+#*.RTF   diff=astextplain
