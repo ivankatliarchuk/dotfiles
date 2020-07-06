@@ -19,6 +19,7 @@ Dotfiles setup
 - [ ] Tmux (tmux-config) path = vendor/tmux-config
 - [ ] Chezmoi integration
 - [ ] Support Linux/Debian at least
+- [ ] Docker RMI alias
 
 https://github.com/holman/dotfiles (install homebrew and other stuff)
 https://github.com/gpakosz/.tmux
@@ -64,3 +65,11 @@ These scripts are meant to run only on OS X
 ## Tools
 
 - https://github.com/clvv/fasd
+
+
+TODO:
+- https://github.com/drduh/config review different options from here
+- wgetrc
+- curlrc
+- omg https://github.com/drduh/config/blob/master/zshrc
+- docker clean function

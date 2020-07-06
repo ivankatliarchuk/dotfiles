@@ -3,9 +3,9 @@
 #
 
 # Pretty print the path
-alias tmuxbase="tmuxp load ~/.tmuxp/configs/base.yaml"
-alias tmux2payne="tmuxp load ~/.tmuxp/configs/2-pane.yaml"
-alias tmux2payne-sync="tmuxp load ~/.tmuxp/configs/2-pane-sync.yaml"
-alias tmux3payne="tmuxp load ~/.tmuxp/configs/3-pane.yaml"
-alias tmux4payne="tmuxp load ~/.tmuxp/configs/4-pane.yaml"
-alias tmuxshorthands="tmuxp load ~/.tmuxp/configs/shorthands.yaml"
+config_files=(configs/*.yaml)
+for file in ${(M)config_files}; do
+  filename=$(basename -- "$file")
+  aliasname="${filename%.*}"
+  alias "tmux-${aliasname}"="tmuxp load ~/.tmuxp/${file}"
+done

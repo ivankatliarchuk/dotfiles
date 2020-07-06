@@ -75,7 +75,7 @@
     ~/.zprezto:
       path: vendor/prezto
     /usr/local/etc/tor/torrc:
-      path: tor/torrc
+      path: browser/tor/torrc
     ~/.bash-it:
       path: vendor/bash-it
     ~/Library/ApplicationSupport/iTerm2/DynamicProfiles/profile.json:

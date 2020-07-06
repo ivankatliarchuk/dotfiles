@@ -104,6 +104,13 @@ alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
 alias sshmd5="ssh-keygen -E md5 -lf ~/.ssh/id_rsa.pub | awk '{print $2}'"
 alias sshl="ssh-add -l -E md5"
 
+# GPG
+alias gpglist="gpg --list-keys"
+alias gpggen="gpg --full-generate-key"
+alias gpgkill="gpgconf --kill gpg-agent"
+alias gpgstart="gpg-agent --daemon"
+alias gpgfing="gpg --fingerprint"
+
 # Easier navigation Utilities
 alias ..="cd .."
 alias ...="cd ../.."
@@ -128,6 +135,11 @@ alias work="cd ~/work"
 # cd to git root directory
 alias cdgr='cd "$(git root)"'
 
+# Dates
+alias now="$(date +%F-%H:%M:%S)"
+alias today="$(date +%F)"
+alias ts="$(date +%s)"
+
 # Kubernetes
 alias k=kubectl
 alias ks=kubens
@@ -142,10 +154,11 @@ alias folderusage="du -ch"
 alias totalfolderusage="du -sh"
 alias mountpoints="df -h"
 alias mountpoints="df -h"
-alias folderfast='du -sh * | sort -h'
+alias lt='du -sh * | sort -h'
 alias foldersort='du -ksh * | sort -h -r'
 alias foldertotal='du -cksh * | sort -hr | head -n 15'
 alias mounted='mount'
+alias mnt='mount | grep -E ^/dev | column -t'
 
 # Files
 alias pwdcfg="cat /etc/passwd"
@@ -163,11 +176,15 @@ fi
 # List all files colorized in long format
 # shellcheck disable=SC2139
 alias l="ls -lhF ${colorflag}"
-
+alias ltr="ls -ltrhsa ${colorflag}"
+alias ltl='ls --human-readable --size -1 -S --classify'
+# Sort by modification time
+alias left='ls -t -1'
 # List all files colorized in long format, including dot files
 # shellcheck disable=SC2139
 alias la="ls -lahF ${colorflag}"
-
+# Count files
+alias count='find . -type f | wc -l'
 # List only directories
 # shellcheck disable=SC2139
 alias lsd="ls -lhF ${colorflag} | grep --color=never '^d'"
@@ -188,6 +205,7 @@ alias ips="sudo ifconfig -a | grep -o 'inet6\\? \\(addr:\\)\\?\\s\\?\\(\\(\\([0-
 
 # Show active network interfaces
 alias ifactive="ifconfig | pcregrep -M -o '^[^\t:]+:([^\n]|\n\t)*status: active'"
+alias netinterface="$(/sbin/ifconfig | head -n1 | awk -F: '{print $1}')"
 # Flush Directory Service cache
 alias flush="dscacheutil -flushcache && killall -HUP mDNSResponder"
 
@@ -196,6 +214,11 @@ alias sniff="sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'"
 alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\\: .*|GET \\/.*\""
 
 ## Miscelanious
+
+# Find a command in grep history
+alias hgrep='history|grep'
+# Protect yourself from file removal accidents. Move to trash first
+alias tcn='mv --force -t ~/Trash '
 
 # Run curl command 'curl-hdr google.com'
 alias curl-hdr='curl -Ss -D - -o /dev/null'

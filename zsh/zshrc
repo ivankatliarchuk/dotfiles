@@ -1,3 +1,4 @@
+umask 077
 # Created by dotfiles
 [[ "$TERM" == "screen" ]] && export TERM=screen-256color
 
@@ -38,4 +39,9 @@ if [[ ( "$SHLVL" -eq 1 && ! -o LOGIN ) && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; t
   source "${ZDOTDIR:-$HOME}/.zprofile"
 fi
 
+if [[ -n "$TMUX" ]] ;then
+PS1="%{$fg[red]%}%h %{$fg[yellow]%}%~ %{$reset_color%}% "
+SPROMPT="$fg[red]%R$reset_color did you mean $fg[green]%r?$reset_color "
+else
 eval "$(starship init zsh)"
+fi

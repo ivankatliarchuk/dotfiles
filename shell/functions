@@ -1,5 +1,8 @@
 #!/bin/bash
 # shellcheck disable=SC2145,SC2199,SC2155,SC2164,SC2086
+
+ROOT="$(command -v sudo)"
+
 # Update dotfiles
 dfu() {
     (
@@ -154,4 +157,110 @@ op() {
 # small enough for one screen.
 tre() {
 	tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX;
+}
+
+# Change directories and view the contents at the same time
+function cl() {
+    DIR="$*";
+    # if no DIR given, go home
+    if [ $# -lt 1 ]; then
+      DIR=$HOME;
+    fi;
+    builtin cd "${DIR}" && \
+    # use your preferred ls command
+    ls -F
+}
+
+gpg-import() {
+  local public_key=$1
+  local private_key=$2
+  gpg --import "${public_key}"
+  gpg --allow-secret-key-import --import "${private_key}"
+}
+
+gpg-export() {
+  local armor=$1 # some-email@mydomain.local
+  gpg --export -a "${armor}" > public.key
+  gpg --export-secret-key -a "${armor}" > private.key
+}
+
+gpg-restart() {
+  pkill gpg
+  pkill pinentry
+  pkill ssh-agent
+  eval "$(gpg-agent --daemon --enable-ssh-support)"
+}
+
+# WWW
+grep-ip() {
+  grep -Eo \
+    "([0-9]{1,3}\.){3}[0-9]{1,3}" "${@}"
+}
+
+grep-url() {
+  grep -Eo \
+    "(https?|ftp|file)://[-A-Za-z0-9\+&@#/%?=~_|!:,.;]*[-A-Za-z0-9\+&@#/%=~_|]" "${@}"
+}
+
+cidr() {
+  whois -h "whois.arin.net" -- \
+  "n + $(curl -s https://icanhazip.com/)" | \
+    grep "CIDR:"
+}
+
+myip() {
+  curl -sq "https://icanhazip.com/"
+}
+
+# Network
+# shellcheck disable=SC2032,SC2033
+function vpn {
+  ssh -C -N -L 5555:127.0.0.1:8118 vpn
+}
+
+# Dump Traffic
+function dump_arp {
+  ${ROOT} tcpdump -eni ${NETWORK} -w arp-${NOW}.pcap \
+    "ether proto 0x0806"
+}
+
+function dump_icmp {
+  ${ROOT} tcpdump -ni ${NETWORK} -w icmp-${NOW}.pcap \
+    "icmp"
+}
+
+function dump_pflog {
+  ${ROOT} tcpdump -ni pflog0 -w pflog-${NOW}.pcap \
+    "not icmp6 and not host ff02::16 and not host ff02::d"
+}
+
+function dump_syn {
+  ${ROOT} tcpdump -ni ${NETWORK} -w syn-${NOW}.pcap \
+    "tcp[13] & 2 != 0"
+}
+
+function dump_udp {
+  ${ROOT} tcpdump -ni ${NETWORK} -w udp-${NOW}.pcap \
+    "udp and not port 443"
+}
+
+function dump_dns {
+  tshark -Y "dns.flags.response == 1" -Tfields \
+    -e frame.time_delta -e dns.qry.name -e dns.a \
+      -Eseparator=,
+}
+
+function dump_http {
+  tshark -Y "http.request or http.response" -Tfields \
+    -e ip.dst -e http.request.full_uri -e http.request.method \
+      -e http.response.code -e http.response.phrase \
+        -Eseparator=,
+}
+
+function dump_ssl {
+  tshark -Y "ssl.handshake.certificate" -Tfields \
+    -e ip.src -e x509sat.uTF8String -e x509sat.printableString \
+      -e x509sat.universalString -e x509sat.IA5String \
+        -e x509sat.teletexString \
+          -Eseparator=,
 }

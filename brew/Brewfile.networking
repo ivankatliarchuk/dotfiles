@@ -27,3 +27,6 @@ cask "little-snitch"
 # Public URLs for exposing your local web server
 # https://ngrok.com/
 cask "ngrok"
+# Wireshark is a network traffic analyzer, or "sniffer"
+# https://github.com/wireshark/wireshark
+cask "wireshark"
