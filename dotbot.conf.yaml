@@ -1,3 +1,4 @@
+# https://raw.githubusercontent.com/ivankatliarchuk/dotfiles/master/dotbot.conf.yaml
 - defaults:
     link:
       create: true
@@ -32,6 +33,7 @@
     - ~/locals
     - ~/Library/ApplicationSupport/iTerm2/DynamicProfiles
     - ~/.tmuxp
+    - ~/.config/mc
 
 - link:
     ~/.vimrc:
@@ -86,6 +88,8 @@
       path: tmux/configs/
     ~/.tmuxp/aliases:
       path: tmux/aliases
+    ~/.config/mc/ini:
+      path: tools/mc.ini
 
 
 # TODO: should pull tagged/release one

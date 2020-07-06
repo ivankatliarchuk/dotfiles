@@ -1,4 +1,5 @@
-#!/bin/zsh
+#!/bin/env zsh
+# https://raw.githubusercontent.com/ivankatliarchuk/dotfiles/master/zsh/functions/eval.zsh
 # -*- mode: sh -*-
 
 eval "$(direnv hook zsh)"

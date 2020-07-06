@@ -1,4 +1,5 @@
-#!/bin/zsh
+#!/bin/env zsh
+# https://raw.githubusercontent.com/ivankatliarchuk/dotfiles/master/zsh/functions/functions.zsh
 # -*- mode: sh -*-
 # shellcheck source=/dev/null
 # shellcheck source=/dev/null

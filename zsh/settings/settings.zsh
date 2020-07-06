@@ -1,4 +1,5 @@
-#!/bin/zsh
+#!/bin/env zsh
+# https://raw.githubusercontent.com/ivankatliarchuk/dotfiles/master/zsh/settings/settings.zsh
 
 # Initialize completion
 autoload -U colors && colors

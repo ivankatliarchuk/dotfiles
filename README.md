@@ -11,19 +11,6 @@ Dotfiles setup
 
 **Warning:** If you want to give these dotfiles a try, you should first fork this repository, review the code, and remove things you don’t want or need. Don’t blindly use my settings unless you know what that entails. Use at your own risk!
 
-### Add custom commands without creating a new fork
-
-> TODO
-
-- [X] ZSH (zsh-config)
-- [ ] Tmux (tmux-config) path = vendor/tmux-config
-- [ ] Chezmoi integration
-- [ ] Support Linux/Debian at least
-- [ ] Docker RMI alias
-
-https://github.com/holman/dotfiles (install homebrew and other stuff)
-https://github.com/gpakosz/.tmux
-
 ## Caveats
 
 These scripts are meant to run only on OS X
@@ -66,11 +53,17 @@ These scripts are meant to run only on OS X
 ## Tools
 
 - https://github.com/clvv/fasd
+- https://github.com/drduh/config/blob/master/dnscrypt-proxy.toml
 
 
-TODO:
-- https://github.com/drduh/config review different options from here
-- wgetrc
-- curlrc
-- omg https://github.com/drduh/config/blob/master/zshrc
-- docker clean function
+> TODO
+
+- [X] ZSH (zsh-config)
+- [X] Tmuxp configuration (tmux-config) path = vendor/tmux-config
+- [X] Docker RMI alias
+- [ ] Tmux configs setup
+- [ ] Chezmoi integration
+- [ ] Support Linux/Debian
+- [ ] wgetrc
+- [ ] curlrc
+- [ ] DNS Crypt (https://github.com/drduh/config/blob/master/dnscrypt-proxy.toml)

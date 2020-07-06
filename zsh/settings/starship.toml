@@ -1,3 +1,4 @@
+# https://raw.githubusercontent.com/ivankatliarchuk/dotfiles/master/zsh/settings/starship.toml
 prompt_order = [
     "username",
     "hostname",

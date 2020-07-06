@@ -1,6 +1,6 @@
 #!/bin/zsh
 # -*- mode: sh -*-
-
+# https://raw.githubusercontent.com/ivankatliarchuk/dotfiles/master/zsh/settings/key-remap.zsh
 #
 # Key remappings. Mostly related to OS X.
 #
