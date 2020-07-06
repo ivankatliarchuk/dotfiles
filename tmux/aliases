@@ -3,7 +3,7 @@
 #
 
 # Pretty print the path
-config_files=(configs/*.yaml)
+config_files=(~/.tmuxp/configs/*.yaml)
 for file in ${(M)config_files}; do
   filename=$(basename -- "$file")
   aliasname="${filename%.*}"

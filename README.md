@@ -54,6 +54,7 @@ These scripts are meant to run only on OS X
 - https://github.com/mathiasbynens/dotfiles/blob/main/.macos
 - https://github.com/BarryMode/macos-prime/blob/master/dotfiles/.macos
 - https://github.com/powerline/fonts
+- https://github.com/drduh/macOS-Security-and-Privacy-Guide
 
 ## Speed UP ZSH
 
