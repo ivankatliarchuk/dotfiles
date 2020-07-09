@@ -77,3 +77,4 @@ These scripts are meant to run only on OS X
 - [ ] DNS Crypt (https://github.com/drduh/config/blob/master/dnscrypt-proxy.toml)
 - [ ]  https://github.com/zdharma/fast-syntax-highlighting
 - [ ] Proper configre macup
+- [ ] Script to load in bash and zsh
