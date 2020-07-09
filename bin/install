@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -ex
+set -e
 
 CONFIG="install.conf.yaml"
 DOTBOT_DIR="vendor/dotbot"

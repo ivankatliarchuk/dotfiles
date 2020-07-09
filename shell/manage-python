@@ -1,0 +1,13 @@
+#!/bin/bash
+
+export PYTHON_VERSION=3.8.3
+export PYENV_VERSION=${PYTHON_VERSION}
+
+if [ -x "$(command -v pyenv)" ]; then
+  if [ "$(python3 --version)" != "Python 3.8.3" ]; then
+    echo "install python version ${PYTHON_VERSION}"
+    pyenv install --skip-existing "${PYTHON_VERSION}"
+    pyenv global "${PYTHON_VERSION}"
+  fi
+  eval "$(pyenv init -)"
+fi

@@ -286,3 +286,24 @@ docker-rmi() {
 pip-install() {
   python3 -m pip install "${@}"
 }
+
+python-local() {
+  # python-local 2.7.15
+  pyenv local "${@}"
+}
+
+python-shell() {
+  # pyenv shell 3.8-dev
+  pyenv shell "${@}"
+}
+
+# Different versions
+versions() {
+  echo "python >> "
+  pyenv versions
+  echo "python pip: $(pyenv which pip)"
+  [[ -f ~/.python-version ]] && cat .python-version
+  echo "go version: $(go version)"
+  echo ""
+  echo "macOS: $(archey -c)"
+}

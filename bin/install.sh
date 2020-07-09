@@ -1,7 +1,5 @@
 #!/bin/bash
 
-# set -x
-
 CONFIG=dotbot.conf.yaml
 dbot=$(which dotbot)
 

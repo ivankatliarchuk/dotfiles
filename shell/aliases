@@ -240,3 +240,5 @@ alias untar='tar xvf'
 # languages
 alias python=$(command -v python3)
 alias pip=$(command -v pip3)
+alias python-v=$(pyenv versions)
+alias pip-v=$(pyenv which pip)

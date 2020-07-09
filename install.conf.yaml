@@ -95,7 +95,8 @@
       path: tmux/aliases
     ~/.config/mc/ini:
       path: tools/mc.ini
-
+    ~/.config/manage/python:
+      path: shell/manage-python
 
 # TODO: should pull tagged/release one
 - shell:

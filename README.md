@@ -52,15 +52,23 @@ These scripts are meant to run only on OS X
 
 ## Tools
 
-- https://github.com/clvv/fasd
 - https://github.com/drduh/config/blob/master/dnscrypt-proxy.toml
-- https://starship.rs/
+
+## Documentation
+
+- [iTerm](https://sourabhbajaj.com/mac-setup/iTerm/)
+- [Starship](https://starship.rs/)
+- [Hyper](https://github.com/vercel/hyper)
+- [PyEnv](https://realpython.com/intro-to-pyenv)
+
+- [Hyper Blog](https://www.robertcooper.me/elegant-development-experience-with-zsh-and-hyper-terminal)
 
 > TODO
 
 - [X] ZSH (zsh-config)
 - [X] Tmuxp configuration (tmux-config) path = vendor/tmux-config
 - [X] Docker RMI alias
+- [ ] Tmux with Hyper
 - [ ] Tmux configs setup
 - [ ] Chezmoi integration
 - [ ] Support Linux/Debian
@@ -68,3 +76,4 @@ These scripts are meant to run only on OS X
 - [ ] curlrc
 - [ ] DNS Crypt (https://github.com/drduh/config/blob/master/dnscrypt-proxy.toml)
 - [ ]  https://github.com/zdharma/fast-syntax-highlighting
+- [ ] Proper configre macup
