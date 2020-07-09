@@ -5,7 +5,6 @@ Dotfiles setup
 ## Prerequisits
 
 - [DotBot](https://github.com/anishathalye/dotbot#configuration)
-- [Chezmoi](https://github.com/twpayne/chezmoi#flexible)
 
 ## Installation
 
@@ -68,6 +67,8 @@ These scripts are meant to run only on OS X
 - [X] ZSH (zsh-config)
 - [X] Tmuxp configuration (tmux-config) path = vendor/tmux-config
 - [X] Docker RMI alias
+- [ ] Badges
+- [ ] Github Hooks
 - [ ] Tmux with Hyper
 - [ ] Tmux configs setup
 - [ ] Chezmoi integration
