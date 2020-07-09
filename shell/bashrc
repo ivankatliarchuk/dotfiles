@@ -9,7 +9,7 @@ case $- in
 	*) return;;
 esac
 
-for file in ~/.{bash_prompt,aliases,functions,path,dockerfunc,extra,exports}; do
+for file in ~/.{bash_prompt,aliases,aliases.local,functions,path,dockerfunc,extra,exports}; do
 	if [[ -r "$file" ]] && [[ -f "$file" ]]; then
 		# shellcheck source=/dev/null
 		source "$file"

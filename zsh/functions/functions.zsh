@@ -8,8 +8,11 @@
 # Helper functions that don't belong elsewhere.
 #
 
+exists() {
+  command -v "$1" >/dev/null 2>&1
+}
+
 prompt_dir() {
-	# prompt_segment blue black " `basename ${PWD/#$HOME/'%2~'}` "
 	prompt_segment blue $CURRENT_FG '%2~'
 }
 
@@ -42,6 +45,23 @@ load-tfswitch
 
 add-zsh-hook chpwd load-tgswitch
 load-tgswitch
+
+# Automatically switch and load node versions when a directory has a `.nvmrc` file
+load-nvmrc() {
+  if exists nvm; then
+    if [[ -a "$nvmrc_path" ]]; then
+    local nvmrc_node_version=$(cat "${nvmrc_path}")
+      if [ "$nvmrc_node_version" = "N/A" ]; then
+        n latest
+      elif [ "$nvmrc_node_version" != "$current_node_version" ]; then
+        n $nvmrc_node_version
+      fi
+    fi
+  fi
+}
+# Run load-nvmrc on initial shell load
+add-zsh-hook chpwd load-nvmrc
+load-nvmrc
 
 # Execute code that does not affect the current session in the background.
 {

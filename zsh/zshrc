@@ -31,6 +31,7 @@ done
 
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
+[[ -f ~/.aliases.local ]] && source ~/.aliases.local
 [[ -f ~/.tmuxp/aliases ]] && source ~/.tmuxp/aliases
 
 # Settings
@@ -46,5 +47,6 @@ PS1="%{$fg[red]%}%h %{$fg[yellow]%}%~ %{$reset_color%}% "
 SPROMPT="$fg[red]%R$reset_color did you mean $fg[green]%r?$reset_color "
 # TODO: set correct prompt in tmux
 else
+export STARSHIP_CONFIG=~/.config/starship/starship.toml
 eval "$(starship init zsh)"
 fi

@@ -1,48 +1,10 @@
 # https://raw.githubusercontent.com/ivankatliarchuk/dotfiles/master/zsh/settings/starship.toml
-prompt_order = [
-    "username",
-    "hostname",
-    "kubernetes",
-    "directory",
-    "git_branch",
-    "git_commit",
-    "git_state",
-    "git_status",
-    "hg_branch",
-    "docker_context",
-    "package",
-    "dotnet",
-    "elixir",
-    "elm",
-    "erlang",
-    "golang",
-    "haskell",
-    "java",
-    "julia",
-    "nim",
-    "nodejs",
-    "ocaml",
-    "php",
-    "purescript",
-    "python",
-    "ruby",
-    "rust",
-    "terraform",
-    "zig",
-    "nix_shell",
-    "conda",
-    "memory_usage",
-    "aws",
-    "env_var",
-    "crystal",
-    "cmd_duration",
-    "custom",
-    "line_break",
-    "jobs",
-    "battery",
-    "time",
-    "character",
-]
+add_newline = false
+[line_break]
+disabled = false
+
+[username]
+disabled = true
 
 [battery]
 full_symbol = "🔋"
@@ -58,15 +20,16 @@ symbol = "🐋 "
 [env_var]
 variable = "SHELL"
 default = "unknown shell"
+style = "dimmed bold red"
 
 [git_status]
 conflicted = "🏳"
 ahead = "🏎💨"
 behind = "😰"
 diverged = "😵"
-untracked = "🤷‍"
+# untracked = "🤷‍"
 stashed = "📦"
-modified = "📝"
+# modified = "📝"
 staged.value = "++"
 staged.style = "green"
 staged_count.enabled = true
@@ -76,7 +39,7 @@ deleted = "🗑"
 
 [hostname]
 ssh_only = false
-prefix = "⟪"
+prefix = "⟫"
 suffix = "⟫"
 trim_at = ".companyname.com"
 disabled = false

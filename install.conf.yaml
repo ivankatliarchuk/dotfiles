@@ -4,20 +4,20 @@
       create: true
       relink: true
 
-- brewfile:
-  - brew/Brewfile
-  - brew/Brewfile.git
-  - brew/Brewfile.secure
-  - brew/Brewfile.aws
-  - brew/Brewfile.k8s
-  - brew/Brewfile.networking
-  - brew/Brewfile.fonts
-  - brew/Brewfile.development
+# - brewfile:
+#   - brew/Brewfile
+#   - brew/Brewfile.git
+#   - brew/Brewfile.secure
+#   - brew/Brewfile.aws
+#   - brew/Brewfile.k8s
+#   - brew/Brewfile.networking
+#   - brew/Brewfile.fonts
+#   - brew/Brewfile.development
   # - brew/Brewfile.mas
   # - brew/Brewfile.vms
 
-- shell:
-  - brew cu -y && brew update && brew upgrade && brew cleanup
+# - shell:
+#   - brew cu -y && brew update && brew upgrade && brew cleanup
 
 - pip:
     file: pip/requirements.txt
@@ -26,7 +26,12 @@
     stdout: true # Print the execution stdout
     stderr: true # Print the execution stderr
 
-- clean: ['~']
+- clean:
+    ~/:
+      force: true
+    ~/.config:
+      force: true
+      recursive: true
 
 - create:
     - ~/undo-history
@@ -80,10 +85,10 @@
       path: browser/tor/torrc
     ~/.bash-it:
       path: vendor/bash-it
-    ~/Library/ApplicationSupport/iTerm2/DynamicProfiles/profile.json:
+    ~/Library/ApplicationSupport/iTerm2/DynamicProfiles/custom-profiles.json:
       path: iTerm/profiles.json
-    ~/.config/starship.toml:
-      path: zsh/settings/
+    ~/.config/starship/starship.toml:
+      path: zsh/settings/starship.toml
     ~/.tmuxp/configs:
       path: tmux/configs/
     ~/.tmuxp/aliases:
@@ -94,10 +99,9 @@
 
 # TODO: should pull tagged/release one
 - shell:
-  - [echo 'cd dotfiles && ./install.sh' > ~/run.sh, Execute from parent folder]
-  - git pull --recurse-submodules
-  - git submodule update --init --recursive
-  - git submodule foreach git pull origin master
-  - [sudo chsh -s $(which zsh), Making zsh the default shell]
+  # - [echo 'cd dotfiles && ./install.sh' > ~/run.sh, Execute from parent folder]
+  # - git pull --recurse-submodules
+  # - git submodule update --init --recursive
+  # - git submodule foreach git pull origin master
+  # - [sudo chsh -s $(which zsh), Making zsh the default shell]
   - echo "My current shell is $SHELL ($0)"
-  - archey -c

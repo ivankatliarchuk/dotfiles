@@ -1,15 +1,24 @@
 [submodule "vendor/dotbot-pip"]
 	path = vendor/dotbot-pip
 	url = https://github.com/sobolevn/dotbot-pip.git
+	ignore = dirty
 [submodule "vendor/dotbot-brew"]
 	path = vendor/dotbot-brew
 	url = https://github.com/d12frosted/dotbot-brew.git
+	ignore = dirty
 [submodule "vendor/bash-it"]
 	path = vendor/bash-it
 	url = https://github.com/Bash-it/bash-it.git
+	ignore = dirty
 [submodule "vendor/prezto"]
 	path = vendor/prezto
 	url = https://github.com/sorin-ionescu/prezto.git
+	ignore = dirty
 [submodule "vendor/powerline-fonts"]
 	path = vendor/powerline-fonts
 	url = https://github.com/powerline/fonts.git
+	ignore = dirty
+[submodule "vendor/dotbot"]
+	path = vendor/dotbot
+	url = https://github.com/anishathalye/dotbot
+	ignore = dirty

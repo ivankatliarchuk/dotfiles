@@ -54,7 +54,7 @@ These scripts are meant to run only on OS X
 
 - https://github.com/clvv/fasd
 - https://github.com/drduh/config/blob/master/dnscrypt-proxy.toml
-
+- https://starship.rs/
 
 > TODO
 
@@ -67,3 +67,4 @@ These scripts are meant to run only on OS X
 - [ ] wgetrc
 - [ ] curlrc
 - [ ] DNS Crypt (https://github.com/drduh/config/blob/master/dnscrypt-proxy.toml)
+- [ ]  https://github.com/zdharma/fast-syntax-highlighting

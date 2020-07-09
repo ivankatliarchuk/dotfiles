@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+set -ex
+
+CONFIG="install.conf.yaml"
+DOTBOT_DIR="vendor/dotbot"
+DOTBOT_BIN="bin/dotbot"
+BASEDIR="$(pwd)"
+
+cd "${BASEDIR}"
+
+(cd "${DOTBOT_DIR}" && git submodule update --init --recursive)
+"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}"

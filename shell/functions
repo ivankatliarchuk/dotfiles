@@ -160,7 +160,7 @@ tre() {
 }
 
 # Change directories and view the contents at the same time
-function cl() {
+cdl() {
     DIR="$*";
     # if no DIR given, go home
     if [ $# -lt 1 ]; then
@@ -219,45 +219,45 @@ function vpn {
 }
 
 # Dump Traffic
-function dump_arp {
+function dump-arp {
   ${ROOT} tcpdump -eni ${NETWORK} -w arp-${NOW}.pcap \
     "ether proto 0x0806"
 }
 
-function dump_icmp {
+function dump-icmp {
   ${ROOT} tcpdump -ni ${NETWORK} -w icmp-${NOW}.pcap \
     "icmp"
 }
 
-function dump_pflog {
+function dump-pflog {
   ${ROOT} tcpdump -ni pflog0 -w pflog-${NOW}.pcap \
     "not icmp6 and not host ff02::16 and not host ff02::d"
 }
 
-function dump_syn {
+function dump-syn {
   ${ROOT} tcpdump -ni ${NETWORK} -w syn-${NOW}.pcap \
     "tcp[13] & 2 != 0"
 }
 
-function dump_udp {
+function dump-udp {
   ${ROOT} tcpdump -ni ${NETWORK} -w udp-${NOW}.pcap \
     "udp and not port 443"
 }
 
-function dump_dns {
+function dump-dns {
   tshark -Y "dns.flags.response == 1" -Tfields \
     -e frame.time_delta -e dns.qry.name -e dns.a \
       -Eseparator=,
 }
 
-function dump_http {
+function dump-http {
   tshark -Y "http.request or http.response" -Tfields \
     -e ip.dst -e http.request.full_uri -e http.request.method \
       -e http.response.code -e http.response.phrase \
         -Eseparator=,
 }
 
-function dump_ssl {
+function dump-ssl {
   tshark -Y "ssl.handshake.certificate" -Tfields \
     -e ip.src -e x509sat.uTF8String -e x509sat.printableString \
       -e x509sat.universalString -e x509sat.IA5String \
@@ -266,7 +266,7 @@ function dump_ssl {
 }
 
 # Docker
-docker_rmi() {
+docker-rmi() {
   docker container prune -f
   docker rmi "$(docker images -a | grep "^<none>" | awk '{print $3}')" -f
   docker rmi "$(docker images -f "dangling=true" -q)" -f
@@ -281,4 +281,8 @@ docker_rmi() {
   done
   # clean dangling images if any
   docker image prune -f
+}
+
+pip-install() {
+  python3 -m pip install "${@}"
 }

@@ -22,4 +22,16 @@ vm-up: ## Run on Mac. Up
 vm-dowm: ## Run on Mac. Down
 	@vagrant down
 
+install-local: ## Install locally
+	@bin/install.sh -t local
+
+ignore-dirty: ## Ignore dirty commits
+	@git config --file .gitmodules --get-regexp path | awk '{ print $2 }'
+	@git config -f .gitmodules submodule.vendor/dotbot-pip.ignore dirty
+	@git config -f .gitmodules submodule.vendor/dotbot-brew.ignore dirty
+	@git config -f .gitmodules submodule.vendor/bash-it.ignore dirty
+	@git config -f .gitmodules submodule.vendor/prezto.ignore dirty
+	@git config -f .gitmodules submodule.vendor/powerline-fonts.ignore dirty
+	@git config -f .gitmodules submodule.vendor/dotbot.ignore dirty
+
 .PHONY: vm-up vm-dowm validate hooks

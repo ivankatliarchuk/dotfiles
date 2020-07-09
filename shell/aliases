@@ -85,8 +85,8 @@ alias prikey="more ~/.ssh/id_ed25519 | xclip -selection clipboard | echo '=> Pri
 
 
 # Source
-alias zs="source ~/.zshrc"
-alias ps="source ~/.profile"
+alias update="source ~/.zshrc"
+alias update-ps="source ~/.profile"
 alias reload!='. ~/.zshrc'
 
 alias cls='clear' # Good 'ol Clear Screen command
@@ -235,7 +235,8 @@ alias chromekill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v exten
 # untar
 alias untar='tar xvf'
 
-# Include custom aliases
-if [[ -f ~/.aliases.local ]]; then
-  source ~/.aliases.local
-fi
+# editors
+
+# languages
+alias python=$(command -v python3)
+alias pip=$(command -v pip3)

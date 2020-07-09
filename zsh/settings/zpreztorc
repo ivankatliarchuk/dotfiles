@@ -27,12 +27,12 @@ zstyle ':prezto:load' pmodule \
   'archive' \
   'git' \
   'osx' \
-  'syntax-highlighting' \
   'history-substring-search' \
   'prompt' \
   'gpg' \
   'autosuggestions' \
-  'ssh'
+  'ssh' \
+  'syntax-highlighting'
 
 # Set syntax highlighters.
 # By default, only the main highlighter is enabled.
@@ -45,9 +45,9 @@ zstyle ':prezto:module:syntax-highlighting' highlighters \
 
 # Set syntax highlighting styles.
 zstyle ':prezto:module:syntax-highlighting' styles \
-  'builtin' 'bg=blue' \
-  'command' 'bg=blue' \
-  'function' 'bg=blue'
+  'builtin' 'bg=red' \
+  'command' 'bg=cyam' \
+  'function' 'bg=purple'
 
 #
 # Tmux
