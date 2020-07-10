@@ -32,16 +32,33 @@ These scripts are meant to run only on OS X
 - [Brew](https://github.com/d12frosted/dotbot-brew)
 - [Pip](https://github.com/sobolevn/dotbot-pip)
 
-## Documentation
-
-- [DotBot](https://github.com/anishathalye/dotbot/wiki)
-- [Chezmoi Quick Start](https://www.chezmoi.io/docs/quick-start/)
-
 ## Brew
 
 - [Bundle](https://github.com/Homebrew/homebrew-bundle)
 - [WhaleBrew](https://github.com/whalebrew/whalebrew)
 - [MackUP](https://github.com/lra/mackup)
+
+## Tools
+
+- https://github.com/drduh/config/blob/master/dnscrypt-proxy.toml
+
+## Documentation
+
+- [DotBot](https://github.com/anishathalye/dotbot/wiki)
+- [Chezmoi Quick Start](https://www.chezmoi.io/docs/quick-start/)
+
+- [PyEnv](https://realpython.com/intro-to-pyenv)
+
+- [iTerm](https://sourabhbajaj.com/mac-setup/iTerm/)
+- [Starship](https://starship.rs/)
+- [Hyper](https://github.com/vercel/hyper)
+
+- [Fasd](https://github.com/clvv/fasd)
+- [Z](https://github.com/rupa/z)
+
+- [Prezto](https://github.com/sorin-ionescu/prezto)
+
+- [Hyper Blog](https://www.robertcooper.me/elegant-development-experience-with-zsh-and-hyper-terminal)
 
 ## MacOS
 
@@ -57,26 +74,15 @@ These scripts are meant to run only on OS X
 - https://blog.askesis.pl/post/2017/04/how-to-debug-zsh-startup-time.html
 - https://memo.ecp.plus/optimize_zshrc/
 
-## Tools
-
-- https://github.com/drduh/config/blob/master/dnscrypt-proxy.toml
-
-## Documentation
-
-- [iTerm](https://sourabhbajaj.com/mac-setup/iTerm/)
-- [Starship](https://starship.rs/)
-- [Hyper](https://github.com/vercel/hyper)
-- [PyEnv](https://realpython.com/intro-to-pyenv)
-
-- [Hyper Blog](https://www.robertcooper.me/elegant-development-experience-with-zsh-and-hyper-terminal)
-
 > TODO
 
 - [X] ZSH (zsh-config)
 - [X] Tmuxp configuration (tmux-config) path = vendor/tmux-config
 - [X] Docker RMI alias
 - [X] Badges
-- [ ] Github Hooks
+- [X] Github Hooks
+- [ ] Move configs to its own folder
+- [ ] Install powerline fonts
 - [ ] Tmux with Hyper
 - [ ] Tmux configs setup
 - [ ] Chezmoi integration

@@ -67,6 +67,8 @@
       path: locals
     ~/.zshrc:
       path: zsh/zshrc
+    ~/.zshenv:
+      path: zsh/settings/zshenv
     ~/.zprofile:
       path: zsh/settings/zprofile
     ~/.zsh/functions:
@@ -100,6 +102,12 @@
 
 # TODO: should pull tagged/release one
 - shell:
+  -
+    command: make install-deps
+    stdin: true
+    stdout: true
+    description: Installing dependencies
+    quiet: true
   # - [echo 'cd dotfiles && ./install.sh' > ~/run.sh, Execute from parent folder]
   # - git pull --recurse-submodules
   # - git submodule update --init --recursive

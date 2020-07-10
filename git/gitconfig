@@ -11,59 +11,8 @@
   # List aliases
 	aliases = config --get-regexp alias
 
-[user]
-  name = no-name
-  initals = legend
-	username = not-set
-  email = __redacted_to_stop_spam_scrapers__@gmail.org
-
 [branch]
   autosetuprebase = always
-
-[pager]
-  status = true
-
-[pager]
-	branch = false
-  log = false
-  status = false
-
-[push]
-  default = current
-  # Make `git push` push relevant annotated tags when pushing branches out.
-	followTags = true
-
-[github]
-	ssl = true
-
-[pull]
-	ff = only
-
-[diff]
-	# Detect copies as well as renames
-	renames = copies
-
-[diff "sopsdiffer"]
-	textconv = sops -d
-
-[diff "bin"]
-	# Use `hexdump` to diff binary files
-	textconv = hexdump -v -C
-
-[merge]
-  tool = vimdiff
-  # Include summaries of merged commits in newly created merge commit messages
-  log = true
-
-[help]
-	# Automatically correct and execute mistyped commands
-	autocorrect = 1
-
-[hub]
-  protocol = https
-
-[tag]
-  forceSignAnnotated = false
 
 [core]
     # Use custom `.gitignore` and `.gitattributes`
@@ -123,6 +72,55 @@
 [credential]
 	helper = osxkeychain
 
+[pager]
+  status = true
+
+[pager]
+	branch = false
+  log = false
+  status = false
+
+[push]
+  default = current
+  # Make `git push` push relevant annotated tags when pushing branches out.
+	followTags = true
+
+[github]
+	ssl = true
+
+[pull]
+	ff = only
+
+[diff]
+	# Detect copies as well as renames
+	renames = copies
+
+[diff "sopsdiffer"]
+	textconv = sops -d
+
+[diff "bin"]
+	# Use `hexdump` to diff binary files
+	textconv = hexdump -v -C
+
+[merge]
+  tool = vimdiff
+  # Include summaries of merged commits in newly created merge commit messages
+  log = true
+
+[help]
+	# Automatically correct and execute mistyped commands
+	autocorrect = 1
+
+[hub]
+  protocol = https
+
+[tag]
+  forceSignAnnotated = false
+
+[log]
+	abbrevCommit = true
+	decorate = true
+
 [include]
   path = ~/.gitconfig.local
   path = ~/.gitconfig.alias
@@ -150,3 +148,10 @@
 
 [url "git://gist.github.com/"]
   insteadOf = "gist:"
+
+[user]
+  name = no-name
+  initals = legend
+	username = not-set
+  email = __redacted_to_stop_spam_scrapers__@gmail.org
+  

@@ -189,8 +189,19 @@ alias count='find . -type f | wc -l'
 # shellcheck disable=SC2139
 alias lsd="ls -lhF ${colorflag} | grep --color=never '^d'"
 
+# Jumping around
+alias fasda='fasd -a'        # any
+alias fasds='fasd -si'       # show / search / select
+alias fasdd='fasd -d'        # directory
+alias fasdf='fasd -f'        # file
+alias fasdsd='fasd -sid'     # interactive directory selection
+alias fasdsf='fasd -sif'     # interactive file selection
+alias fasdz='fasd_cd -d'     # cd, same functionality as j in autojump
+alias fasdzz='fasd_cd -d -i' # cd with interactive selection
+
 # Get week number
 alias week='date +%V'
+alias month='date +%m'
 
 # Print each PATH entry on a separate line
 alias path='echo -e ${PATH//:/\\n}'

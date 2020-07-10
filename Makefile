@@ -34,4 +34,12 @@ ignore-dirty: ## Ignore dirty commits
 	@git config -f .gitmodules submodule.vendor/powerline-fonts.ignore dirty
 	@git config -f .gitmodules submodule.vendor/dotbot.ignore dirty
 
+install-deps: ## Install dependencies
+	@bin/install-deps.sh
+
+.PHONY: git-submodule
+git-submodule:
+	git submodule sync --recursive
+	git submodule update --init --recursive --progress
+
 .PHONY: vm-up vm-dowm validate hooks
