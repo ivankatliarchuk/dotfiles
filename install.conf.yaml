@@ -16,16 +16,6 @@
   # - brew/Brewfile.mas
   # - brew/Brewfile.vms
 
-# - shell:
-#   - brew cu -y && brew update && brew upgrade && brew cleanup
-
-- pip:
-    file: pip/requirements.txt
-    binary: /usr/local/bin/pip3
-    user: true   # Like --user
-    stdout: true # Print the execution stdout
-    stderr: true # Print the execution stderr
-
 - clean:
     ~/:
       force: true
@@ -103,14 +93,26 @@
 # TODO: should pull tagged/release one
 - shell:
   -
+    command: brew cu -y && brew update && brew upgrade && brew cleanup
+    stdin: true
+    stdout: true
+    description: Brew cleanup
+    quiet: true
+  -
     command: make install-deps
     stdin: true
     stdout: true
     description: Installing dependencies
     quiet: true
+  -
+    command: pyenv global && python -m pip install -U -r py/requirements.txt && pyenv rehash
+    stdin: true
+    stdout: true
+    description: Installing dependencies & Rebuild shim files
+    quiet: true
+
   # - [echo 'cd dotfiles && ./install.sh' > ~/run.sh, Execute from parent folder]
-  # - git pull --recurse-submodules
-  # - git submodule update --init --recursive
+
   # - git submodule foreach git pull origin master
   # - [sudo chsh -s $(which zsh), Making zsh the default shell]
   - echo "My current shell is $SHELL ($0)"

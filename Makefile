@@ -39,7 +39,12 @@ install-deps: ## Install dependencies
 
 .PHONY: git-submodule
 git-submodule:
-	git submodule sync --recursive
-	git submodule update --init --recursive --progress
+	@git submodule sync --recursive
+	@git submodule foreach git pull origin master
+	@git submodule update --init --recursive --progress
+
+git-module-remove: ## Remove submodule MODULE=something
+	@git submodule deinit -f vendor/$(MODULE)
+	@git rm --cached vendor/$(MODULE)
 
 .PHONY: vm-up vm-dowm validate hooks
