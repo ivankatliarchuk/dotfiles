@@ -458,7 +458,7 @@
       "AWDS Pane Directory": "",
       "Blur": true,
       "Vertical Spacing": 1,
-      "Normal Font": "InconsolataForPowerline 20",
+      "Normal Font": "SourceCodeProForPowerline-MediumIt 22",
       "Use Underline Color": true,
       "Ansi 7 Color": {
         "Green Component": 0.7333333492279053,
@@ -981,7 +981,7 @@
       },
       "AWDS Pane Directory": "",
       "Blur": true,
-      "Normal Font": "InconsolataForPowerline 24",
+      "Normal Font": "SourceCodeProForPowerline-MediumIt 24",
       "Vertical Spacing": 1,
       "Use Underline Color": true,
       "Ansi 7 Color": {

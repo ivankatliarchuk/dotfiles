@@ -2,6 +2,14 @@
 
 Dotfiles setup
 
+[![](https://github.com/ivankatliarchuk/dotfiles/workflows/release/badge.svg)](https://github.com/ivankatliarchuk/dotfiles/actions?query=workflow%3Arelease)
+[![](https://img.shields.io/github/license/ivankatliarchuk/dotfiles)](https://github.com/ivankatliarchuk/dotfiles)
+[![](https://img.shields.io/github/repo-size/ivankatliarchuk/dotfiles)](https://github.com/ivankatliarchuk/dotfiles)
+![](https://img.shields.io/github/languages/top/ivankatliarchuk/dotfiles?color=green&logo=bash&logoColor=blue)
+![](https://img.shields.io/github/commit-activity/m/ivankatliarchuk/dotfiles)
+![](https://img.shields.io/github/last-commit/ivankatliarchuk/dotfiles)
+![](https://img.shields.io/github/contributors/ivankatliarchuk/dotfiles)
+
 ## Prerequisits
 
 - [DotBot](https://github.com/anishathalye/dotbot#configuration)
@@ -67,7 +75,7 @@ These scripts are meant to run only on OS X
 - [X] ZSH (zsh-config)
 - [X] Tmuxp configuration (tmux-config) path = vendor/tmux-config
 - [X] Docker RMI alias
-- [ ] Badges
+- [X] Badges
 - [ ] Github Hooks
 - [ ] Tmux with Hyper
 - [ ] Tmux configs setup
