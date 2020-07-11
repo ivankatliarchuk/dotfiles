@@ -45,9 +45,6 @@
     #### CONFIG ####
     # Show the user email for the current repository.
     iam = config user.username
-    cfg = config -l
-    # Output output of all queried config options with the origin type and a scope
-    caug = config --list --show-origin --show-scope
     # Show the user email for the current repository.
     user = config --get user.username
 

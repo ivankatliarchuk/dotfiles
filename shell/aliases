@@ -3,9 +3,8 @@
 #
 
 # Pretty print the path
-alias creds="aws-vault exec $AWS_PROFILE"
+command -v aws-vault > /dev/null || alias creds="aws-vault exec $AWS_PROFILE"
 alias clearhist='echo "" > ~/.zsh_history & exec $SHELL -l'
-alias ugen='uuidgen | tr "[:upper:]" "[:upper:]"'
 
 # Always enable colored `grep` output
 alias grep='grep --color=auto '
@@ -13,16 +12,8 @@ alias grep='grep --color=auto '
 # Enable aliases to be sudo’ed
 alias sudo='sudo '
 
-# Get week number
-alias week='date +%V'
-
 # Stopwatch
 alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
-
-# IP addresses
-alias pubip="dig +short myip.opendns.com @resolver1.opendns.com"
-alias localip="sudo ifconfig | grep -Eo 'inet (addr:)?([0-9]*\\.){3}[0-9]*' | grep -Eo '([0-9]*\\.){3}[0-9]*' | grep -v '127.0.0.1'"
-alias ips="sudo ifconfig -a | grep -o 'inet6\\? \\(addr:\\)\\?\\s\\?\\(\\(\\([0-9]\\+\\.\\)\\{3\\}[0-9]\\+\\)\\|[a-fA-F0-9:]\\+\\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
 
 # Flush Directory Service cache
 alias flush="dscacheutil -flushcache && killall -HUP mDNSResponder"
@@ -33,12 +24,6 @@ alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\\: .*|GE
 
 # Canonical hex dump; some systems have this symlinked
 command -v hd > /dev/null || alias hd="hexdump -C"
-
-# OS X has no `md5sum`, so use `md5` as a fallback
-command -v md5sum > /dev/null || alias md5sum="md5"
-
-# OS X has no `sha1sum`, so use `shasum` as a fallback
-command -v sha1sum > /dev/null || alias sha1sum="shasum"
 
 # Trim new lines and copy to clipboard
 alias c="tr -d '\\n' | xclip -selection clipboard"
@@ -59,12 +44,6 @@ alias map="xargs -n1"
 # [C] explained: http://www.commandlinefu.com/commands/view/402/exclude-grep-from-your-grepped-output-of-ps-alias-included-in-description
 alias chromekill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v extension-process | tr -s ' ' | cut -d ' ' -f2 | xargs kill"
 
-# Lock the screen (when going AFK)
-alias afk="i3lock -c 000000"
-
-# vhosts
-alias hosts='sudo vim /etc/hosts'
-
 # copy working directory
 alias cwd='pwd | tr -d "\r\n" | xclip -selection clipboard'
 
@@ -74,29 +53,17 @@ alias cp='cp -i'
 # move file interactive
 alias mv='mv -i'
 
-# untar
-alias untar='tar xvf'
-
 # Pipe my public key to my clipboard.
 alias pubkey="more ~/.ssh/id_ed25519.pub | xclip -selection clipboard | echo '=> Public key copied to pasteboard.'"
 
 # Pipe my private key to my clipboard.
 alias prikey="more ~/.ssh/id_ed25519 | xclip -selection clipboard | echo '=> Private key copied to pasteboard.'"
 
-
-# Source
-alias update="source ~/.zshrc"
-alias update-ps="source ~/.profile"
-alias reload!='. ~/.zshrc'
-
 alias cls='clear' # Good 'ol Clear Screen command
 
 # Docker
 alias drm='docker rmi $(docker images -a | grep "^<none>" | awk '{print $3}') -f'
 
-# MacOS
-alias macv='archey -c'
-alias nomore='find ./ -iname .DS_Store -delete'
 # Recursively delete `.DS_Store` files
 alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
 
@@ -105,11 +72,11 @@ alias sshmd5="ssh-keygen -E md5 -lf ~/.ssh/id_rsa.pub | awk '{print $2}'"
 alias sshl="ssh-add -l -E md5"
 
 # GPG
-alias gpglist="gpg --list-keys"
-alias gpggen="gpg --full-generate-key"
-alias gpgkill="gpgconf --kill gpg-agent"
-alias gpgstart="gpg-agent --daemon"
-alias gpgfing="gpg --fingerprint"
+alias gpglist="gpg --list-keys"          # list keys
+alias gpggen="gpg --full-generate-key"   # full featured key pair generation
+alias gpgkill="gpgconf --kill gpg-agent" # kill a given component
+alias gpgstart="gpg-agent --daemon"      # run in daemon mode (background)
+alias gpgfing="gpg --fingerprint"          # list keys and fingerprints
 
 # Easier navigation Utilities
 alias ..="cd .."
@@ -133,21 +100,17 @@ alias wr="cd ~/workspaces"
 alias sf="cd ~/self"
 alias work="cd ~/work"
 # cd to git root directory
-alias cdgr='cd "$(git root)"'
-
-# Dates
-alias now="$(date +%F-%H:%M:%S)"
-alias today="$(date +%F)"
-alias ts="$(date +%s)"
+alias groot='cd "$(git rev-parse --show-toplevel)"'
 
 # Kubernetes
-alias k=kubectl
-alias ks=kubens
-alias kd=kubedecode
-alias kx=kubectx
+alias k=kubectl      # https://kubernetes.io/docs/reference/kubectl/overview/
+alias ks=kubens      # https://github.com/ahmetb/kubectx
+alias kd=kubedecode  # https://github.com/mveritym/kubedecode
+alias kx=kubectx     # https://github.com/ahmetb/kubectx
 
 # Brewfile
 alias brewup='brew cu -y && brew update && brew upgrade && brew cleanup'
+
 # Directory,File Folder Usage
 alias diskusage="df -h"
 alias folderusage="du -ch"
@@ -158,13 +121,14 @@ alias lt='du -sh * | sort -h'
 alias foldersort='du -ksh * | sort -h -r'
 alias foldertotal='du -cksh * | sort -hr | head -n 15'
 alias mounted='mount'
-alias mnt='mount | grep -E ^/dev | column -t'
+alias mnt='mount | grep -E ^/ | column -t'
 
 # Files
 alias pwdcfg="cat /etc/passwd"
 alias pwdcfgusers="cat /etc/passwd | cut -f 1 -d ':'"
 alias resolvcfg="cat /etc/resolv.conf"
 alias chosts='cat /etc/hosts'
+alias vhosts='sudo vim /etc/hosts'
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
@@ -173,18 +137,14 @@ else # OS X `ls`
 	colorflag="-G"
 fi
 
-# List all files colorized in long format
 # shellcheck disable=SC2139
-alias l="ls -lhF ${colorflag}"
-alias ltr="ls -ltrhsa ${colorflag}"
-alias ltl='ls --human-readable --size -1 -S --classify'
-# Sort by modification time
-alias left='ls -t -1'
+alias l="ls -lhF ${colorflag}"      # List all files colorized in long format
+alias ltr="ls -ltrhsa ${colorflag}" # List all files colorized in long format
+alias left='ls -t -1' # Sort by modification time
 # List all files colorized in long format, including dot files
 # shellcheck disable=SC2139
 alias la="ls -lahF ${colorflag}"
-# Count files
-alias count='find . -type f | wc -l'
+alias count='find . -type f | wc -l' # Count files
 # List only directories
 # shellcheck disable=SC2139
 alias lsd="ls -lhF ${colorflag} | grep --color=never '^d'"
@@ -199,18 +159,23 @@ alias fasdsf='fasd -sif'     # interactive file selection
 alias fasdz='fasd_cd -d'     # cd, same functionality as j in autojump
 alias fasdzz='fasd_cd -d -i' # cd with interactive selection
 
-# Get week number
-alias week='date +%V'
-alias month='date +%m'
+# Dates
+alias now='date +%F-%H:%M:%S' # time now 2020-07-11-08:40:28
+alias today='date +%F'        # todays date 2020-07-11
+alias ts='date +%s'           # timestamp
+alias week='date +%V'         # day of a week
+alias month='date +%m'        # month number
 
-# Print each PATH entry on a separate line
-alias path='echo -e ${PATH//:/\\n}'
-alias pathp='echo $PATH | tr -s ":" "\n"'
+alias pathp='echo $PATH | tr -s ":" "\n"' # Print each PATH entry on a separate line
 
 ## Networking
 
 # IP addresses
-alias pubip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias pubip='ip'
+alias localip="sudo ifconfig | grep -Eo 'inet (addr:)?([0-9]*\\.){3}[0-9]*' | grep -Eo '([0-9]*\\.){3}[0-9]*' | grep -v '127.0.0.1'"
+alias ips="sudo ifconfig -a | grep -o 'inet6\\? \\(addr:\\)\\?\\s\\?\\(\\(\\([0-9]\\+\\.\\)\\{3\\}[0-9]\\+\\)\\|[a-fA-F0-9:]\\+\\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
+
 alias localip="sudo ifconfig | grep -Eo 'inet (addr:)?([0-9]*\\.){3}[0-9]*' | grep -Eo '([0-9]*\\.){3}[0-9]*' | grep -v '127.0.0.1'"
 alias ips="sudo ifconfig -a | grep -o 'inet6\\? \\(addr:\\)\\?\\s\\?\\(\\(\\([0-9]\\+\\.\\)\\{3\\}[0-9]\\+\\)\\|[a-fA-F0-9:]\\+\\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
 
@@ -224,27 +189,30 @@ alias flush="dscacheutil -flushcache && killall -HUP mDNSResponder"
 alias sniff="sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'"
 alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\\: .*|GET \\/.*\""
 
-## Miscelanious
+## Utils
+alias hgrep='history|grep'         # Find a command in grep history
+alias tcn='mv --force -t ~/Trash ' # Protect yourself from file removal accidents. Move to trash first
+alias curl-hdr='curl -Ss -D - -o /dev/null' # Run curl command 'curl-hdr google.com'
 
-# Find a command in grep history
-alias hgrep='history|grep'
-# Protect yourself from file removal accidents. Move to trash first
-alias tcn='mv --force -t ~/Trash '
+command -v uuidgen > /dev/null || alias ugen='uuidgen | tr "[:upper:]" "[:upper:]"'
+command -v md5sum > /dev/null || alias md5sum="md5" # OS X has no `md5sum`, so use `md5` as a fallback
+command -v sha1sum > /dev/null || alias sha1sum="shasum" # OS X has no `sha1sum`, so use `shasum` as a fallback
 
-# Run curl command 'curl-hdr google.com'
-alias curl-hdr='curl -Ss -D - -o /dev/null'
+# Source
+alias update="source ~/.zshrc"
+alias update-ps="source ~/.profile"
+alias reload!='. ~/.zshrc'
 
-# OS X has no `md5sum`, so use `md5` as a fallback
-command -v md5sum > /dev/null || alias md5sum="md5"
-# OS X has no `sha1sum`, so use `shasum` as a fallback
-command -v sha1sum > /dev/null || alias sha1sum="shasum"
+# MacOS
+alias macv='archey -c'
+alias nomore='find ./ -iname .DS_Store -delete'
+command -v i3lock > /dev/null || alias afk="i3lock -c 000000" # Lock the screen (when going AFK)
 
 # Kill all the tabs in Chrome to free up memory
 # [C] explained: http://www.commandlinefu.com/commands/view/402/exclude-grep-from-your-grepped-output-of-ps-alias-included-in-description
 alias chromekill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v extension-process | tr -s ' ' | cut -d ' ' -f2 | xargs kill"
 
-# untar
-alias untar='tar xvf'
+alias untar='tar xvf' # untar
 
 # editors
 

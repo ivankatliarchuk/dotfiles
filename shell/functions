@@ -208,10 +208,6 @@ cidr() {
     grep "CIDR:"
 }
 
-myip() {
-  curl -sq "https://icanhazip.com/"
-}
-
 # Network
 # shellcheck disable=SC2032,SC2033
 function vpn {
@@ -304,6 +300,17 @@ versions() {
   echo "python pip: $(pyenv which pip)"
   [[ -f ~/.python-version ]] && cat .python-version
   echo "go version: $(go version)"
+  echo "ruby version: $(ruby --version)"
   echo ""
   echo "macOS: $(archey -c)"
+}
+
+# Provide information about currect user
+iam() {
+  echo -e "$(whoami) < whoami"
+  if git rev-parse --git-dir > /dev/null 2>&1; then
+    echo -e "$(git iam) < git"
+  else
+    : # this is not a git repository
+  fi
 }

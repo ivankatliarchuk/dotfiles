@@ -9,6 +9,7 @@ Dotfiles setup
 ![](https://img.shields.io/github/commit-activity/m/ivankatliarchuk/dotfiles)
 ![](https://img.shields.io/github/last-commit/ivankatliarchuk/dotfiles)
 ![](https://img.shields.io/github/contributors/ivankatliarchuk/dotfiles)
+[![GitHub forks](https://img.shields.io/github/forks/ivankatliarchuk/dotfiles.svg?style=social&label=Fork)](https://github.com/ivankatliarchuk/dotfiles)
 
 ## Prerequisits
 
@@ -81,7 +82,10 @@ These scripts are meant to run only on OS X
 - [X] Docker RMI alias
 - [X] Badges
 - [X] Github Hooks
+- [] Mac setu pfrom here https://github.com/bitwolfe/dotbot#activity-monitor
+- [ ] Test from here > https://github.com/pyenv/pyenv/blob/master/test/version-name.bats. Copy them as well into own repo
 - [ ] Move configs to its own folder
+- [ ] Correctly isntall nerd fonts
 - [ ] Install powerline fonts
 - [ ] Tmux with Hyper
 - [ ] Tmux configs setup
@@ -93,3 +97,6 @@ These scripts are meant to run only on OS X
 - [ ]  https://github.com/zdharma/fast-syntax-highlighting
 - [ ] Proper configre macup
 - [ ] Script to load in bash and zsh
+- [ ] Document github setup, blog it as well
+- [ ] Dotbot templater plugin
+- [ ] Dotbot import private repos plugin

@@ -1,3 +1,9 @@
+[user]
+  name = no-name
+  initals = legend
+	username = not-set
+  email = __redacted_to_stop_spam_scrapers__@gmail.org
+
 [apply]
 	# Detect whitespace errors when applying a patch
 	whitespace = fix
@@ -8,8 +14,10 @@
 
 [alias]
   alias=!git config -l | grep ^alias | cut -c 7- | sort
-  # List aliases
-	aliases = config --get-regexp alias
+	aliases = config --get-regexp alias # list aliases
+  cfg = config -l                     # git configuration
+  # Output output of all queried config options with the origin type and a scope
+  caug = config --list --show-origin --show-scope
 
 [branch]
   autosetuprebase = always
@@ -42,7 +50,7 @@
 
 [commit]
   verbose = true
-  template = ~/.gitmessage
+  template = ~/.config/gitcfg/message
 
 [color]
 	# Use colors in Git commands that are capable of colored output when
@@ -122,9 +130,9 @@
 	decorate = true
 
 [include]
-  path = ~/.gitconfig.local
-  path = ~/.gitconfig.alias
-  path = ~/.gitconfigs.external
+  # https://git-scm.com/docs/git-config#_includes
+  path = ~/.config/gitcfg.local/include
+  path = ~/.config/gitcfg/alias
 
 [secrets]
   providers = git secrets --aws-provider
@@ -148,10 +156,3 @@
 
 [url "git://gist.github.com/"]
   insteadOf = "gist:"
-
-[user]
-  name = no-name
-  initals = legend
-	username = not-set
-  email = __redacted_to_stop_spam_scrapers__@gmail.org
-  
