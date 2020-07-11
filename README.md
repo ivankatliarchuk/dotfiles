@@ -103,6 +103,8 @@ These scripts are meant to run only on OS X
 - [DotBot](https://github.com/anishathalye/dotbot/wiki)
 - [Chezmoi Quick Start](https://www.chezmoi.io/docs/quick-start/)
 
+- [Github Hub](https://hub.github.com/)
+
 - [PyEnv](https://realpython.com/intro-to-pyenv)
 
 - [iTerm](https://sourabhbajaj.com/mac-setup/iTerm/)

@@ -12,4 +12,8 @@
 
 ## Wget
 
+- [Configuration Options](https://www.gnu.org/software/wget/manual/html_node/Sample-Wgetrc.html)
+
 ## Curl
+
+- [Configuration Options](https://ec.haxx.se/cmdline/cmdline-configfile)

@@ -79,7 +79,7 @@ alias gpgkill="gpgconf --kill gpg-agent"          # kill a given component
 alias gpgstart="gpg-agent --daemon"               # run in daemon mode (background)
 alias gpgfing="gpg --fingerprint"                   # list keys and fingerprints
 alias gpgcfg="gpg-connect-agent reloadagent /bye" # reload gpg configuration
-alias gpg!="gpgcfg" # reload gpg configuration
+alias gpg!="gpgcfg"                               # reload gpg configuration
 
 # Easier navigation Utilities
 alias ..="cd .."

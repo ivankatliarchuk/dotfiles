@@ -29,68 +29,41 @@
     - ~/Library/ApplicationSupport/iTerm2/DynamicProfiles
     - ~/.tmuxp
     - ~/.config/mc
+    - ~/.config/gitcfg.local
+    - ~/.config/hub
 
 - link:
-    ~/.vimrc:
-      path: vim/vimrc
-    ~/.gitconfig:
-      path: git/gitconfig
-    ~/.gitconfig.alias:
-      path: git/gitconfig.alias
-    ~/.gitconfig.message:
-      path: git/gitconfig.message
-    ~/.gitconfig.include:
-      path: git/gitconfig.message
-    ~/.gitattributes:
-      path: git/gitattributes
-    ~/.aliases:
-      path: shell/aliases
-    ~/.bashrc:
-      path: shell/bashrc
-    ~/.exports:
-      path: shell/exports
-    ~/.functions:
-      path: shell/functions
-    ~/.profile:
-      path: shell/profile
-    ~/.locals:
-      path: locals
-    ~/.zshrc:
-      path: zsh/zshrc
-    ~/.zshenv:
-      path: zsh/settings/zshenv
-    ~/.zprofile:
-      path: zsh/settings/zprofile
-    ~/.zsh/functions:
-      path: zsh/functions
-    ~/.zsh/settings:
-      path: zsh/settings
-    ~/.zpreztorc:
-      path: zsh/settings/zpreztorc
-    ~/.gnupg/gpg.conf:
-      path: gnupg/gpg.conf
-    ~/.gnupg/gpg-agent.conf:
-      path: gnupg/gpg-agent.conf
-    ~/.zprezto:
-      path: vendor/prezto
-    /usr/local/etc/tor/torrc:
-      path: browser/tor/torrc
-    ~/.bash-it:
-      path: vendor/bash-it
+    ~/.vimrc: vim/vimrc
+    ~/.gitconfig: git/gitconfig
+    ~/.config/gitcfg: git/gitcfg
+    ~/.gitattributes: git/gitattributes
+    ~/.aliases: shell/aliases
+    ~/.bashrc: shell/bashrc
+    ~/.exports: shell/exports
+    ~/.functions: shell/functions
+    ~/.profile: shell/profile
+    ~/.locals: locals
+    ~/.zshrc: zsh/zshrc
+    ~/.zshenv: zsh/settings/zshenv
+    ~/.zprofile: zsh/settings/zprofile
+    ~/.zsh/functions: zsh/functions
+    ~/.zsh/settings: zsh/settings
+    ~/.zpreztorc: zsh/settings/zpreztorc
+    ~/.gnupg/gpg.conf: gnupg/gpg.conf
+    ~/.gnupg/gpg-agent.conf: gnupg/gpg-agent.conf
+    ~/.zprezto: vendor/prezto
+    /usr/local/etc/tor/torrc: browser/tor/torrc
+    ~/.bash-it: vendor/bash-it
     ~/Library/ApplicationSupport/iTerm2/DynamicProfiles/custom-profiles.json:
       path: iTerm/profiles.json
-    ~/.config/starship/starship.toml:
-      path: zsh/settings/starship.toml
-    ~/.tmuxp/configs:
-      path: tmux/configs/
-    ~/.tmuxp/aliases:
-      path: tmux/aliases
-    ~/.config/mc/ini:
-      path: tools/mc.ini
-    ~/.config/manage/python:
-      path: shell/manage-python
+    ~/.config/starship/starship.toml: zsh/settings/starship.toml
+    ~/.tmuxp/configs: tmux/configs/
+    ~/.tmuxp/aliases: tmux/aliases
+    ~/.config/mc/ini: tools/mc.ini
+    ~/.curlrc: tools/curlrc
+    ~/.wgetrc: tools/wgetrc
+    ~/.config/manage/python: shell/manage-python
 
-# TODO: should pull tagged/release one
 - shell:
   -
     command: brew cu -y && brew update && brew upgrade && brew cleanup
@@ -111,8 +84,5 @@
     description: Installing dependencies & Rebuild shim files
     quiet: true
 
-  # - [echo 'cd dotfiles && ./install.sh' > ~/run.sh, Execute from parent folder]
-
-  # - git submodule foreach git pull origin master
   # - [sudo chsh -s $(which zsh), Making zsh the default shell]
   - echo "My current shell is $SHELL ($0)"
