@@ -1,3 +1,4 @@
+# https://raw.githubusercontent.com/ivankatliarchuk/dotfiles/master/shell/aliases
 #
 # Shell aliases.
 #
@@ -72,11 +73,12 @@ alias sshmd5="ssh-keygen -E md5 -lf ~/.ssh/id_rsa.pub | awk '{print $2}'"
 alias sshl="ssh-add -l -E md5"
 
 # GPG
-alias gpglist="gpg --list-keys"          # list keys
-alias gpggen="gpg --full-generate-key"   # full featured key pair generation
-alias gpgkill="gpgconf --kill gpg-agent" # kill a given component
-alias gpgstart="gpg-agent --daemon"      # run in daemon mode (background)
-alias gpgfing="gpg --fingerprint"          # list keys and fingerprints
+alias gpglist="gpg --list-keys"                   # list keys
+alias gpggen="gpg --full-generate-key"            # full featured key pair generation
+alias gpgkill="gpgconf --kill gpg-agent"          # kill a given component
+alias gpgstart="gpg-agent --daemon"               # run in daemon mode (background)
+alias gpgfing="gpg --fingerprint"                   # list keys and fingerprints
+alias gpgcfg="gpg-connect-agent reloadagent /bye" # reload gpg configuration
 
 # Easier navigation Utilities
 alias ..="cd .."

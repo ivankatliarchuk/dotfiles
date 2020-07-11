@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# https://raw.githubusercontent.com/ivankatliarchuk/dotfiles/master/shell/manage-python
 export PYTHON_VERSION=3.8.3
 export PYENV_VERSION=${PYTHON_VERSION}
 

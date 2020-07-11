@@ -1,5 +1,6 @@
 #!/bin/bash
 # shellcheck disable=SC2145,SC2199,SC2155,SC2164,SC2086
+# https://raw.githubusercontent.com/ivankatliarchuk/dotfiles/master/shell/functions
 
 ROOT="$(command -v sudo)"
 

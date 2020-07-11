@@ -138,10 +138,10 @@ These scripts are meant to run only on OS X
 - [X] Badges
 - [X] Github Hooks
 - [X] Move configs to own folders
+- [X] Install powerline fonts
 - [ ] Mac setu pfrom here https://github.com/bitwolfe/dotbot#activity-monitor
 - [ ] Test from here > https://github.com/pyenv/pyenv/blob/master/test/version-name.bats. Copy them as well into own repo
 - [ ] Correctly isntall nerd fonts
-- [ ] Install powerline fonts
 - [ ] Tmux with Hyper
 - [ ] Tmux configs setup
 - [ ] Chezmoi integration
@@ -159,7 +159,7 @@ These scripts are meant to run only on OS X
 
 <!-- START makefile-doc -->
 ```
-$ make help 
+$ make help
 Usage: make [target] [VARIABLE=value]
 Targets:
 hooks                          Setup pre commit.
@@ -169,7 +169,7 @@ vm-dowm                        Run on Mac. Down
 install-local                  Install locally
 ignore-dirty                   Ignore dirty commits
 install-deps                   Install dependencies
-git-module-remove              Remove submodule MODULE=something 
+git-module-remove              Remove submodule MODULE=something
 ```
 <!-- END makefile-doc -->
 

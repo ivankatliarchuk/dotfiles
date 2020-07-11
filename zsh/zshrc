@@ -3,8 +3,7 @@ umask 077
 # Created by dotfiles
 [[ "$TERM" == "screen" ]] && export TERM=screen-256color
 
-# Eval
-[[ -f ~/.zsh/functions/eval.zsh ]] && source ~/.zsh/functions/eval.zsh
+[[ -f ~/.zsh/functions/eval.zsh ]] && source ~/.zsh/functions/eval.zsh # source values
 
 for f in $(compaudit);do sudo chmod -R 755 $f;done;
 
@@ -21,21 +20,17 @@ for function in ~/.zsh/functions/*; do
   source $function
 done
 
-[[ -f ~/.functions ]] && source ~/.functions
-
-# Local config
-[[ -f ~/local/.zshrc ]] && source ~/local/.zshrc
-
-# Exports
-[[ -f ~/.exports ]] && source ~/.exports
+[[ -f ~/.functions ]] && source ~/.functions     # Global Functions
+[[ -f ~/local/.zshrc ]] && source ~/local/.zshrc # Local config
+[[ -f ~/.exports ]] && source ~/.exports         # Exports
 
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
 [[ -f ~/.aliases.local ]] && source ~/.aliases.local
 [[ -f ~/.tmuxp/aliases ]] && source ~/.tmuxp/aliases
 
-# Settings
-[[ -f ~/.zsh/settings.zsh ]] && source ~/.zsh/settings.zsh
+
+[[ -f ~/.zsh/settings.zsh ]] && source ~/.zsh/settings.zsh # Settings
 
 # Ensure that a non-login, non-interactive shell has a defined environment.
 if [[ ( "$SHLVL" -eq 1 && ! -o LOGIN ) && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then

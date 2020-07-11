@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# https://raw.githubusercontent.com/ivankatliarchuk/dotfiles/master/shell/exports
 # Larger bash history (allow 32³ entries; default is 500)
 export HISTSIZE='1048576';
 export HISTFILESIZE=$HISTSIZE;
@@ -18,6 +18,12 @@ export GPG_TTY;
 if [[ -n "$SSH_CONNECTION" || -n "$TMUX" ]] ;then
     export PINENTRY_USER_DATA="USE_CURSES=1"
 fi
-# aws-vault
+
+exists() {
+  command -v "$1" >/dev/null 2>&1
+}
+
+if exists aws-vault; then
 export AWS_VAULT_PROMPT=osascript
 export AWS_VAULT_KEYCHAIN_NAME=aws-vault
+fi
