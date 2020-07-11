@@ -1,6 +1,7 @@
 # Tmux Configuration Files
 
 - [TmuxP](https://github.com/tmux-python/tmuxp)
+- [Docs](http://tmuxp.readthedocs.io/en/latest/)
 
 ## TmuxP configs
 

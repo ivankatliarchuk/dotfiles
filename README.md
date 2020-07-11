@@ -141,15 +141,13 @@ These scripts are meant to run only on OS X
 - [X] Github Hooks
 - [X] Move configs to own folders
 - [X] Install powerline fonts
+- [X] wgetrc & curlrc
 - [ ] Mac setu pfrom here https://github.com/bitwolfe/dotbot#activity-monitor
-- [ ] Test from here > https://github.com/pyenv/pyenv/blob/master/test/version-name.bats. Copy them as well into own repo
 - [ ] Correctly isntall nerd fonts
 - [ ] Tmux with Hyper
 - [ ] Tmux configs setup
 - [ ] Chezmoi integration
 - [ ] Support Linux/Debian
-- [ ] wgetrc
-- [ ] curlrc
 - [ ] DNS Crypt (https://github.com/drduh/config/blob/master/dnscrypt-proxy.toml)
 - [ ] Proper configre macup
 - [ ] Script to load in bash and zsh
