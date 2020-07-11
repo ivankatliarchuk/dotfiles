@@ -11,6 +11,61 @@ Dotfiles setup
 ![](https://img.shields.io/github/contributors/ivankatliarchuk/dotfiles)
 [![GitHub forks](https://img.shields.io/github/forks/ivankatliarchuk/dotfiles.svg?style=social&label=Fork)](https://github.com/ivankatliarchuk/dotfiles)
 
+## Table of Contents
+
+- [CloudKat's dotfiles](#cloudkat-s-dotfiles)
+  * [Table of Contents](#table-of-contents)
+  * [Project Structure](#project-structure)
+  * [Prerequisits](#prerequisits)
+  * [Installation](#installation)
+  * [Caveats](#caveats)
+  * [Motivation](#motivation)
+  * [Dotbot Plugins](#dotbot-plugins)
+  * [Brew](#brew)
+  * [Tools](#tools)
+  * [Documentation](#documentation)
+  * [MacOS](#macos)
+  * [Speed UP ZSH](#speed-up-zsh)
+  * [Awailable Commands](#awailable-commands)
+    + [:memo: Guidelines](#-memo--guidelines)
+  * [License](#license)
+  * [How to Contribute](#how-to-contribute)
+- [Authors](#authors)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
+## Project Structure
+
+```
+	.
+	├── bin
+	├── brew
+	├── browser
+	│   ├── firefox
+	│   └── tor
+	├── git
+	│   ├── gitattributes
+	│   ├── gitcfg
+	│   ├── gitconfig
+	│   └── gitconfig.include
+	├── gnupg
+	├── iTerm
+	├── install.conf.yaml
+	├── locals
+	├── py
+	├── scripts
+	├── shell
+	├── tmux
+	├── tools
+	├── vendor
+	├── vim
+	└── zsh
+	├── LICENSE
+	├── Makefile
+	├── Vagrantfile
+	└── README.md
+```
+
 ## Prerequisits
 
 - [DotBot](https://github.com/anishathalye/dotbot#configuration)
@@ -82,9 +137,9 @@ These scripts are meant to run only on OS X
 - [X] Docker RMI alias
 - [X] Badges
 - [X] Github Hooks
-- [] Mac setu pfrom here https://github.com/bitwolfe/dotbot#activity-monitor
+- [X] Move configs to own folders
+- [ ] Mac setu pfrom here https://github.com/bitwolfe/dotbot#activity-monitor
 - [ ] Test from here > https://github.com/pyenv/pyenv/blob/master/test/version-name.bats. Copy them as well into own repo
-- [ ] Move configs to its own folder
 - [ ] Correctly isntall nerd fonts
 - [ ] Install powerline fonts
 - [ ] Tmux with Hyper
@@ -94,9 +149,49 @@ These scripts are meant to run only on OS X
 - [ ] wgetrc
 - [ ] curlrc
 - [ ] DNS Crypt (https://github.com/drduh/config/blob/master/dnscrypt-proxy.toml)
-- [ ]  https://github.com/zdharma/fast-syntax-highlighting
 - [ ] Proper configre macup
 - [ ] Script to load in bash and zsh
 - [ ] Document github setup, blog it as well
 - [ ] Dotbot templater plugin
 - [ ] Dotbot import private repos plugin
+
+## Awailable Commands
+
+<!-- START makefile-doc -->
+```
+$ make help 
+Usage: make [target] [VARIABLE=value]
+Targets:
+hooks                          Setup pre commit.
+validate                       Validate files with pre-commit hooks
+vm-up                          Run on Mac. Up
+vm-dowm                        Run on Mac. Down
+install-local                  Install locally
+ignore-dirty                   Ignore dirty commits
+install-deps                   Install dependencies
+git-module-remove              Remove submodule MODULE=something 
+```
+<!-- END makefile-doc -->
+
+### :memo: Guidelines
+
+ - :memo: Use a succinct title and description.
+ - :bug: Bugs & feature requests can be be opened
+ - :signal_strength: Support questions are better asked on [Stack Overflow](https://stackoverflow.com/)
+ - :blush: Be nice, civil and polite ([as always](http://contributor-covenant.org/version/1/4/)).
+
+## License
+
+Copyright 2019 Ivan Katliarhcuk
+
+MIT Licensed. See [LICENSE](./LICENSE) for full details.
+
+## How to Contribute
+
+Submit a pull request
+
+# Authors
+
+Currently maintained by [Ivan Katliarchuk](https://github.com/ivankatliarchuk) and these [awesome contributors](https://github.com/terraform-module/terraform-module-blueprint/graphs/contributors).
+
+[![ForTheBadge uses-git](http://ForTheBadge.com/images/badges/uses-git.svg)](https://GitHub.com/)
