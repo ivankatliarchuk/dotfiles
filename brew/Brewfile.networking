@@ -19,6 +19,13 @@ brew "tcptraceroute"
 brew "telnet"
 # Directory/file & DNS busting tool written in Go
 brew "gobuster"
+# https://github.com/sshuttle/sshuttle
+# https://sshuttle.readthedocs.io/en/stable/overview.html
+# where transparent proxy meets VPN meets ssh
+brew "sshuttle"
+# https://www.stevenrombauts.be/2018/01/use-dnsmasq-instead-of-etc-hosts/
+# https://passingcuriosity.com/2013/dnsmasq-dev-osx/
+brew "dnsmasq"
 # -- Casks
 # Charles is an HTTP proxy / HTTP monitor / Reverse Proxy that enables a developer to view all of the HTTP and SSL / HTTPS traffic between their machine and the Internet.
 cask "charles"

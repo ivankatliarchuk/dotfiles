@@ -1,7 +1,3 @@
-[submodule "vendor/dotbot-brew"]
-	path = vendor/dotbot-brew
-	url = https://github.com/d12frosted/dotbot-brew.git
-	ignore = dirty
 [submodule "vendor/bash-it"]
 	path = vendor/bash-it
 	url = https://github.com/Bash-it/bash-it.git

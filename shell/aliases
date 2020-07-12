@@ -12,6 +12,7 @@ alias grep='grep --color=auto '
 
 # Enable aliases to be sudo’ed
 alias sudo='sudo '
+alias fuck="sudo !!"
 
 # Stopwatch
 alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
@@ -62,9 +63,6 @@ alias prikey="more ~/.ssh/id_ed25519 | xclip -selection clipboard | echo '=> Pri
 
 alias cls='clear' # Good 'ol Clear Screen command
 
-# Docker
-alias drm='docker rmi $(docker images -a | grep "^<none>" | awk '{print $3}') -f'
-
 # Recursively delete `.DS_Store` files
 alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
 
@@ -92,6 +90,12 @@ alias ~="cd ~"
 alias -- -="cd -"
 alias tf="tail -f"
 alias dl="cd ~/Downloads"
+
+alias quit="exit"
+alias :q="exit"
+alias :qa="exit"
+alias :q!="exit"
+alias :qw="exit"
 
 # Shortcuts
 alias h="history"
@@ -181,6 +185,8 @@ alias ips="sudo ifconfig -a | grep -o 'inet6\\? \\(addr:\\)\\?\\s\\?\\(\\(\\([0-
 
 alias localip="sudo ifconfig | grep -Eo 'inet (addr:)?([0-9]*\\.){3}[0-9]*' | grep -Eo '([0-9]*\\.){3}[0-9]*' | grep -v '127.0.0.1'"
 alias ips="sudo ifconfig -a | grep -o 'inet6\\? \\(addr:\\)\\?\\s\\?\\(\\(\\([0-9]\\+\\.\\)\\{3\\}[0-9]\\+\\)\\|[a-fA-F0-9:]\\+\\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
+
+command -v shuttle > /dev/null || alias shuttle='sshuttle --dns -r uberspace 0/0'
 
 # Show active network interfaces
 alias ifactive="ifconfig | pcregrep -M -o '^[^\t:]+:([^\n]|\n\t)*status: active'"

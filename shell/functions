@@ -315,3 +315,9 @@ iam() {
     : # this is not a git repository
   fi
 }
+
+# Generate a new random password
+pwdgen() {
+  local length=${1:-15}
+  keepassxc-cli generate -L ${length} -q
+}
