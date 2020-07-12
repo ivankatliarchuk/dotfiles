@@ -18,7 +18,11 @@ cat << EndOfMessage
 'chown -R \$(id -u):\$(id -g) <folder>' >>> Change the ownership in folder
 'tail -f <file> | grep <what looking>' >>> Selectively monitor the file
 
-### ###
+### Networking ###
+'tcpdump <expression>'  >>> Prints  out a description of the contents of packets on a network
+'traceroute <host|IP>'  >>> Tracking the route one's packets follow
+'netstat -ant(-ntpl) | grep :<port>' >>> Check if port is listening
+'nmap -p 80 -sT <IP>' >>> Ping port
 
 ### SSH ###
 'ssh -T <user>@<address>' >>> Test SSH connection

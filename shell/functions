@@ -321,3 +321,38 @@ pwdgen() {
   local length=${1:-15}
   keepassxc-cli generate -L ${length} -q
 }
+
+grep-logs() {
+  local file="${1}"
+  local pattern="${1:-(error|warning|failure)}"
+  tail -f "${file}" | grep -i -P "${pattern}"
+}
+
+not-grep-logs() {
+  local file="${1}"
+  local pattern="${1:-info}"
+  tail -f "${file}" | grep -v -i "${pattern}"
+}
+
+# shellcheck disable=SC2046,SC2091,SC2051,SC2034
+loop-cmd() {
+  set -x
+  local count="${1}"
+  local cmd="${2}"
+  for srv in server{1..${count}}; do $("${cmd}");done
+}
+
+port-listen() {
+  local port="${1:-80}"
+  netstat -ant | grep :${port}
+}
+
+ping-port() {
+  local port="${1:-80}"
+  local ip="${1:-127.0.0.1}"
+  nmap -p "${port}" -sT "${ip}"
+}
+
+lookup-dns() {
+  nslookup "${1}"
+}
