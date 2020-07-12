@@ -106,6 +106,8 @@ alias pr="cd ~/projects"
 alias wr="cd ~/workspaces"
 alias sf="cd ~/self"
 alias work="cd ~/work"
+alias commands='find $(echo $PATH | tr ":" "\n") | awk -F / "{print \$NF}" | sort -u'
+alias cmds='commands'
 # cd to git root directory
 alias groot='cd "$(git rev-parse --show-toplevel)"'
 
@@ -125,6 +127,7 @@ alias totalfolderusage="du -sh"
 alias mountpoints="df -h"
 alias mountpoints="df -h"
 alias lt='du -sh * | sort -h'
+alias sort-by-size="du -hsc * | sort -hk1"
 alias foldersort='du -ksh * | sort -h -r'
 alias foldertotal='du -cksh * | sort -hr | head -n 15'
 alias mounted='mount'
@@ -230,3 +233,5 @@ alias python=$(command -v python3)
 alias pip=$(command -v pip3)
 alias python-v=$(pyenv versions)
 alias pip-v=$(pyenv which pip)
+
+#END alias-definitions
