@@ -4,18 +4,6 @@
       create: true
       relink: true
 
-# - brewfile:
-#   - brew/Brewfile
-#   - brew/Brewfile.git
-#   - brew/Brewfile.secure
-#   - brew/Brewfile.aws
-#   - brew/Brewfile.k8s
-#   - brew/Brewfile.networking
-#   - brew/Brewfile.fonts
-#   - brew/Brewfile.development
-  # - brew/Brewfile.mas
-  # - brew/Brewfile.vms
-
 - clean:
     ~/:
       force: true
@@ -60,17 +48,18 @@
     ~/.tmuxp/configs: tmux/configs/
     ~/.tmuxp/aliases: tmux/aliases
     ~/.config/mc/ini: tools/mc.ini
+    ~/.config/scripts: scripts
     ~/.curlrc: tools/curlrc
     ~/.wgetrc: tools/wgetrc
     ~/.config/manage/python: shell/manage-python
 
 - shell:
-  -
-    command: brew cu -y && brew update && brew upgrade && brew cleanup
-    stdin: true
-    stdout: true
-    description: Brew cleanup
-    quiet: true
+  # -
+  #   command: brew cu -y && brew update && brew upgrade && brew cleanup
+  #   stdin: true
+  #   stdout: true
+  #   description: Brew cleanup
+  #   quiet: true
   -
     command: make install-deps
     stdin: true
@@ -83,6 +72,10 @@
     stdout: true
     description: Installing dependencies & Rebuild shim files
     quiet: true
-
   # - [sudo chsh -s $(which zsh), Making zsh the default shell]
-  - echo "My current shell is $SHELL ($0)"
+  -
+    command: echo "My current shell is $SHELL ($0)"
+    stdin: true
+    stdout: true
+    description: Check current shell
+    quiet: true

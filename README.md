@@ -110,13 +110,14 @@ These scripts are meant to run only on OS X
 - [iTerm](https://sourabhbajaj.com/mac-setup/iTerm/)
 - [Starship](https://starship.rs/)
 - [Hyper](https://github.com/vercel/hyper)
+- [Hyper Blog](https://www.robertcooper.me/elegant-development-experience-with-zsh-and-hyper-terminal)
 
 - [Fasd](https://github.com/clvv/fasd)
 - [Z](https://github.com/rupa/z)
 
 - [Prezto](https://github.com/sorin-ionescu/prezto)
 
-- [Hyper Blog](https://www.robertcooper.me/elegant-development-experience-with-zsh-and-hyper-terminal)
+- [Ybikey Guide](https://github.com/drduh/YubiKey-Guide)
 
 ## MacOS
 
@@ -159,7 +160,7 @@ These scripts are meant to run only on OS X
 
 <!-- START makefile-doc -->
 ```
-$ make help
+$ make help 
 Usage: make [target] [VARIABLE=value]
 Targets:
 hooks                          Setup pre commit.
@@ -170,6 +171,7 @@ install-local                  Install locally
 ignore-dirty                   Ignore dirty commits
 install-deps                   Install dependencies
 git-module-remove              Remove submodule MODULE=something
+brew-install                   Install Brew 
 ```
 <!-- END makefile-doc -->
 

@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+cat << EndOfMessage
+
+### Processes & System monitors ###
+'htop' >>> Interactive process viewer
+'top' >>> Periodically displays a sorted list of system processes
+'free -h' >>> Displays the total amount of free and used physical memory
+'vmstat' or 'vm_stat' >>> Displays Mach virtual memory statistics
+'watch -n <interval> docker ps' >>> Monitor execution of a coommand
+
+### File Manipulations ###
+'df <DIRECTORY>' #Display the amount of free space, mounting poind and etc for directory.
+'du -ah <folder> | sort -n -r | head -n 10' >>> File sizes In human readable format
+'lsblk' >>> View available disk devices and their mount points. Retrieve information related to volumes.
+'stat -s <file>' >>> displays information about the file pointed to by file
+'find <directory> -name "*.yaml"' >>> Find all the yaml files in the directory
+'chown -R \$(id -u):\$(id -g) <folder>' >>> Change the ownership in folder
+'tail -f <file> | grep <what looking>' >>> Selectively monitor the file
+
+### ###
+
+### SSH ###
+'ssh -T <user>@<address>' >>> Test SSH connection
+'scp <ssh user and server>:<location-where-to> <location-on-local-machine>' >>> Copy file from server
+'scp <file> <ssh-user-and-server>:<location-where-to>' >>> File to be copied to, from, or between different host
+
+EndOfMessage

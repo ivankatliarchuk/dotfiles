@@ -38,4 +38,5 @@ path=(
   ~/dotfiles/bin
   /usr/local/{bin,sbin}
   $path
+  ~/.config/scripts
 )

@@ -27,8 +27,6 @@ install-local: ## Install locally
 
 ignore-dirty: ## Ignore dirty commits
 	@git config --file .gitmodules --get-regexp path | awk '{ print $2 }'
-	@git config -f .gitmodules submodule.vendor/dotbot-pip.ignore dirty
-	@git config -f .gitmodules submodule.vendor/dotbot-brew.ignore dirty
 	@git config -f .gitmodules submodule.vendor/bash-it.ignore dirty
 	@git config -f .gitmodules submodule.vendor/prezto.ignore dirty
 	@git config -f .gitmodules submodule.vendor/powerline-fonts.ignore dirty
@@ -47,4 +45,14 @@ git-module-remove: ## Remove submodule MODULE=something
 	@git submodule deinit -f vendor/$(MODULE)
 	@git rm --cached vendor/$(MODULE)
 
-.PHONY: vm-up vm-dowm validate hooks
+brew-install: ## Install Brew
+	@brew bundle --file=brew/Brewfile.secure -v --describe --no-lock
+	@brew bundle --file=brew/Brewfile.secure -v --describe --no-lock
+	@brew bundle --file=brew/Brewfile.networking -v --describe --no-lock
+	@brew bundle --file=brew/Brewfile.git -v --describe --no-lock
+	@brew bundle --file=brew/Brewfile.aws -v --describe --no-lock
+	@brew bundle --file=brew/Brewfile.fonts -v --describe --no-lock
+	@brew bundle --file=brew/Brewfile.development -v --describe --no-lock
+	@brew bundle --file=brew/Brewfile.k8s -v --describe --no-lock
+
+.PHONY: vm-up vm-dowm validate hooks brew-install
