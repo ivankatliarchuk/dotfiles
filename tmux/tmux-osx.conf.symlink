@@ -1,6 +1,0 @@
-#
-# Set OS X-specific preferences for tmux.
-#
-
-# Fix problems with OS X's pasteboard and tmux
-set-option -g default-command "reattach-to-user-namespace -l $SHELL"

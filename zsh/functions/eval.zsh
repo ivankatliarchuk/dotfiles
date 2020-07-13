@@ -18,6 +18,10 @@ if [ $commands[nvm] ]; then
 	source $(brew --prefix nvm)/nvm.sh
 fi
 
+if [ $commands[kubectx] ]; then
+  kubectx --unset >/dev/null 2>&1
+fi
+
 if [ -f $HOME/.nvm ] ;then
 export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm

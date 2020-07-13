@@ -30,28 +30,28 @@
     ~/.exports: shell/exports
     ~/.functions: shell/functions
     ~/.profile: shell/profile
+    ~/.config/manage/python: shell/manage-python
     ~/.locals: locals
     ~/.zshrc: zsh/zshrc
     ~/.zshenv: zsh/settings/zshenv
     ~/.zprofile: zsh/settings/zprofile
     ~/.zsh/functions: zsh/functions
     ~/.zsh/settings: zsh/settings
-    ~/.zprezto: vendor/prezto
     ~/.zpreztorc: zsh/settings/zpreztorc
     ~/.gnupg/gpg.conf: tools/gnupg/gpg.conf
     ~/.gnupg/gpg-agent.conf: tools/gnupg/gpg-agent.conf
-    /usr/local/etc/tor/torrc: browser/tor/torrc
-    ~/.bash-it: vendor/bash-it
-    ~/Library/ApplicationSupport/iTerm2/DynamicProfiles/custom-profiles.json:
-      path: iTerm/profiles.json
-    ~/.config/starship/starship.toml: zsh/settings/starship.toml
-    ~/.tmuxp/configs: tmux/configs/
-    ~/.tmuxp/aliases: tmux/aliases
     ~/.config/mc/ini: tools/mc.ini
+    /usr/local/etc/tor/torrc: tools/browser/tor/torrc
+    ~/Library/ApplicationSupport/iTerm2/DynamicProfiles/custom-profiles.json:
+      path: terminal/iTerm/profiles.json
+    ~/.config/starship/starship.toml: terminal/starship/starship.toml
+    ~/.tmuxp/configs: terminal/tmux/configs/
+    ~/.tmuxp/aliases: terminal/tmux/aliases
     ~/.config/scripts: scripts
     ~/.curlrc: tools/curlrc
     ~/.wgetrc: tools/wgetrc
-    ~/.config/manage/python: shell/manage-python
+    ~/.zprezto: vendor/prezto
+    ~/.bash-it: vendor/bash-it
 
 - shell:
   # -
