@@ -1,0 +1,10 @@
+session_name: blank-pane
+windows:
+  - window_name: logging for ${USER}
+    options:
+      automatic-rename: true
+    layout: main-vertical
+    panes:
+      - focus: true
+      - pane
+      - pane

@@ -9,5 +9,8 @@ if [ -x "$(command -v pyenv)" ]; then
     pyenv install --skip-existing "${PYTHON_VERSION}"
     pyenv global "${PYTHON_VERSION}"
   fi
-  eval "$(pyenv init -)"
+fi
+# shellcheck disable=SC2154,SC2154
+if (( $+commands[pyenv] )); then
+  eval "$(pyenv init - --no-rehash zsh)"
 fi

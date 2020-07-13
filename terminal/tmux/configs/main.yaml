@@ -1,0 +1,13 @@
+session_name: blank-pane
+start_directory: .
+windows:
+  - window_name: logging for ${USER}
+    start_directory: .
+    options:
+      automatic-rename: true
+    layout: main-vertical
+    panes:
+      - focus: true
+        start_directory: .
+      - start_directory: '~'
+      - start_directory: '~'
