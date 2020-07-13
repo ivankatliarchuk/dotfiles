@@ -8,6 +8,9 @@ cat << EndOfMessage
 'free -h' >>> Displays the total amount of free and used physical memory
 'vmstat' or 'vm_stat' >>> Displays Mach virtual memory statistics
 'watch -n <interval> docker ps' >>> Monitor execution of a coommand
+'lsof -i -P -n(-euf)' >>> Information about files opened by processes
+'ps -afe | grep <service>' >>> Information about all of your processes
+'kill -9 <pid>' >>> Terminate process
 
 ### File Manipulations ###
 'df <DIRECTORY>' #Display the amount of free space, mounting poind and etc for directory.
@@ -20,13 +23,19 @@ cat << EndOfMessage
 
 ### Networking ###
 'tcpdump <expression>'  >>> Prints  out a description of the contents of packets on a network
-'traceroute <host|IP>'  >>> Tracking the route one's packets follow
-'netstat -ant(-ntpl) | grep :<port>' >>> Check if port is listening
+'traceroute -P TCP -p <IP> <host>'  >>> Tracking the route one's packets follow
+'netstat -ant(ntpl|nputw|tpln) | grep :<port|name>' >>> Check if port is listening
 'nmap -p 80 -sT <IP>' >>> Ping port
+
+### Services ###
+'service --status-all' >>> Status of all services.
+'systemctl restart|status|enable <service>' >>> Introspect and control the state of the "systemd" system.
+'journalctl --no-page -u <service>' >>> Used to query the contents of the systemd
 
 ### SSH ###
 'ssh -T <user>@<address>' >>> Test SSH connection
 'scp <ssh user and server>:<location-where-to> <location-on-local-machine>' >>> Copy file from server
 'scp <file> <ssh-user-and-server>:<location-where-to>' >>> File to be copied to, from, or between different host
+'ssh -i <key> -fN -L 9000:<ip>:<port> user@<pub-ip> -4 -g -N' >>> Proxy jump
 
 EndOfMessage

@@ -194,6 +194,7 @@ command -v shuttle > /dev/null || alias shuttle='sshuttle --dns -r uberspace 0/0
 # Show active network interfaces
 alias ifactive="ifconfig | pcregrep -M -o '^[^\t:]+:([^\n]|\n\t)*status: active'"
 alias netinterface="$(/sbin/ifconfig | head -n1 | awk -F: '{print $1}')"
+alias processes='lsof -i -P -n'
 # Flush Directory Service cache
 alias flush="dscacheutil -flushcache && killall -HUP mDNSResponder"
 

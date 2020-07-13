@@ -119,6 +119,10 @@ These scripts are meant to run only on OS X
 
 - [Ybikey Guide](https://github.com/drduh/YubiKey-Guide)
 
+### Evaluate Tools
+
+- [Cyberduck](https://cyberduck.io/)
+
 ## MacOS
 
 - https://github.com/mathiasbynens/dotfiles/blob/main/.macos
@@ -160,7 +164,7 @@ These scripts are meant to run only on OS X
 
 <!-- START makefile-doc -->
 ```
-$ make help 
+$ make help
 Usage: make [target] [VARIABLE=value]
 Targets:
 hooks                          Setup pre commit.
@@ -171,7 +175,7 @@ install-local                  Install locally
 ignore-dirty                   Ignore dirty commits
 install-deps                   Install dependencies
 git-module-remove              Remove submodule MODULE=something
-brew-install                   Install Brew 
+brew-install                   Install Brew
 ```
 <!-- END makefile-doc -->
 
