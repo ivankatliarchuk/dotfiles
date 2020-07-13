@@ -47,6 +47,7 @@
     ~/.config/starship: terminal/starship
     ~/.tmuxp/configs: terminal/tmux/configs
     ~/.tmuxp/aliases: terminal/tmux/aliases
+    ~/.tmux: terminal/tmux/config
     ~/.config/scripts: scripts
     ~/.curlrc: tools/curlrc
     ~/.wgetrc: tools/wgetrc
