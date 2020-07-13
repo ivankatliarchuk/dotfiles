@@ -38,8 +38,6 @@ brew "archey"
 # https://starship.rs/
 brew "starship"
 # --- Casks
-# Easily organize windows without using a mouse.
-cask "spectacle"
 # LibreOffice is free and open source software, originally based on OpenOffice.org
 cask "libreoffice"
 # https://www.mozilla.org/en-GB/firefox/

@@ -37,9 +37,8 @@ if [[ ( "$SHLVL" -eq 1 && ! -o LOGIN ) && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; t
 fi
 
 if [[ -n "$TMUX" ]] ;then
-PS1="%{$fg[red]%}%h %{$fg[yellow]%}%~ %{$reset_color%}% "
-SPROMPT="$fg[red]%R$reset_color did you mean $fg[green]%r?$reset_color "
-# TODO: set correct prompt in tmux
+export STARSHIP_CONFIG=~/.config/starship/starship.tmux.toml
+eval "$(starship init zsh)"
 else
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
 eval "$(starship init zsh)"

@@ -63,6 +63,9 @@ load-nvmrc() {
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
 
+if [[ -n "$TMUX" ]] ;then
+: # do nothhing
+else
 # Execute code that does not affect the current session in the background.
 {
   # Compile the completion dump to increase startup speed.
@@ -71,6 +74,7 @@ load-nvmrc
     zcompile "$zcompdump"
   fi
 } &!
+fi
 
 # Cache completion if nothing changed - faster startup time
 typeset -i updated_at=$(date +'%j' -r ~/.zcompdump 2>/dev/null || stat -f '%Sm' -t '%j' ~/.zcompdump 2>/dev/null)

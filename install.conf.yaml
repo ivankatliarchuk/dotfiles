@@ -44,8 +44,8 @@
     /usr/local/etc/tor/torrc: tools/browser/tor/torrc
     ~/Library/ApplicationSupport/iTerm2/DynamicProfiles/custom-profiles.json:
       path: terminal/iTerm/profiles.json
-    ~/.config/starship/starship.toml: terminal/starship/starship.toml
-    ~/.tmuxp/configs: terminal/tmux/configs/
+    ~/.config/starship: terminal/starship
+    ~/.tmuxp/configs: terminal/tmux/configs
     ~/.tmuxp/aliases: terminal/tmux/aliases
     ~/.config/scripts: scripts
     ~/.curlrc: tools/curlrc
