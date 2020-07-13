@@ -35,7 +35,6 @@ ignore-dirty: ## Ignore dirty commits
 install-deps: ## Install dependencies
 	@bin/install-deps.sh
 
-.PHONY: git-submodule
 git-submodule:
 	@git submodule sync --recursive
 	@git submodule foreach git pull origin master
@@ -46,7 +45,7 @@ git-module-remove: ## Remove submodule MODULE=something
 	@git rm --cached vendor/$(MODULE)
 
 brew-install: ## Install Brew
-	@brew bundle --file=brew/Brewfile.secure -v --describe --no-lock
+	@brew bundle --file=brew/Brewfile -v --describe --no-lock
 	@brew bundle --file=brew/Brewfile.secure -v --describe --no-lock
 	@brew bundle --file=brew/Brewfile.networking -v --describe --no-lock
 	@brew bundle --file=brew/Brewfile.git -v --describe --no-lock
@@ -55,4 +54,4 @@ brew-install: ## Install Brew
 	@brew bundle --file=brew/Brewfile.development -v --describe --no-lock
 	@brew bundle --file=brew/Brewfile.k8s -v --describe --no-lock
 
-.PHONY: vm-up vm-dowm validate hooks brew-install
+.PHONY: vm-up vm-dowm validate hooks brew-install git-submodule

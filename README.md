@@ -85,9 +85,6 @@ These scripts are meant to run only on OS X
 
 ## Dotbot Plugins
 
-- [Brew](https://github.com/d12frosted/dotbot-brew)
-- [Pip](https://github.com/sobolevn/dotbot-pip)
-
 ## Brew
 
 - [Bundle](https://github.com/Homebrew/homebrew-bundle)
@@ -164,7 +161,7 @@ These scripts are meant to run only on OS X
 
 <!-- START makefile-doc -->
 ```
-$ make help
+$ make help 
 Usage: make [target] [VARIABLE=value]
 Targets:
 hooks                          Setup pre commit.
@@ -175,7 +172,7 @@ install-local                  Install locally
 ignore-dirty                   Ignore dirty commits
 install-deps                   Install dependencies
 git-module-remove              Remove submodule MODULE=something
-brew-install                   Install Brew
+brew-install                   Install Brew 
 ```
 <!-- END makefile-doc -->
 
@@ -198,6 +195,6 @@ Submit a pull request
 
 # Authors
 
-Currently maintained by [Ivan Katliarchuk](https://github.com/ivankatliarchuk) and these [awesome contributors](https://github.com/terraform-module/terraform-module-blueprint/graphs/contributors).
+Currently maintained by [Ivan Katliarchuk](https://github.com/ivankatliarchuk) and these [awesome contributors](https://github.com/ivankatliarchuk/dotfiles/graphs/contributors).
 
 [![ForTheBadge uses-git](http://ForTheBadge.com/images/badges/uses-git.svg)](https://GitHub.com/)

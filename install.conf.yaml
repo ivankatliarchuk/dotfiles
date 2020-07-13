@@ -38,8 +38,8 @@
     ~/.zsh/settings: zsh/settings
     ~/.zprezto: vendor/prezto
     ~/.zpreztorc: zsh/settings/zpreztorc
-    ~/.gnupg/gpg.conf: gnupg/gpg.conf
-    ~/.gnupg/gpg-agent.conf: gnupg/gpg-agent.conf
+    ~/.gnupg/gpg.conf: tools/gnupg/gpg.conf
+    ~/.gnupg/gpg-agent.conf: tools/gnupg/gpg-agent.conf
     /usr/local/etc/tor/torrc: browser/tor/torrc
     ~/.bash-it: vendor/bash-it
     ~/Library/ApplicationSupport/iTerm2/DynamicProfiles/custom-profiles.json:

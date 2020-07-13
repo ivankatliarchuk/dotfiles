@@ -356,3 +356,16 @@ ping-port() {
 lookup-dns() {
   nslookup "${1}"
 }
+
+pid() {
+  lsof -i :"${1}"
+}
+
+tunnel() {
+  # todo: opt args
+  local user="${1}"
+  local bastionip="${2}"
+  local privatip="${3}"
+  local port="${4}"
+  ssh -nfNJ "${user}@${bastionip}" "${user}@${privatip}"  "-L127.0.0.1:${port}:127.0.0.1:${port}"
+}
