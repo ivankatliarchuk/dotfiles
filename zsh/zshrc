@@ -37,6 +37,7 @@ if [[ ( "$SHLVL" -eq 1 && ! -o LOGIN ) && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; t
 fi
 
 if [[ -n "$TMUX" ]] ;then
+export CURRENTPWD=$PWD
 export STARSHIP_CONFIG=~/.config/starship/starship.tmux.toml
 eval "$(starship init zsh)"
 else

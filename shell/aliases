@@ -227,6 +227,13 @@ alias chromekill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v exten
 
 alias untar='tar xvf' # untar
 
+# Tmux
+alias tmuxkey='tmux -f /dev/null list-keys -T copy-mode-vi' # show current keys
+alias tmuxg='tmux show-options -g'   # show options set
+alias tmuxs='tmux source .tmux.conf' # reload config
+alias tmuxses='tmux list-sessions'   # list sessions in tmux
+alias tmuxkill='tmux kill-server'    # kill sessions in tmux
+
 # editors
 
 # languages

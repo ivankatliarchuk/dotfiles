@@ -46,6 +46,8 @@ cask "firefox"
 cask "google-chrome"
 # https://github.com/gnachman/iTerm2
 cask "iterm2"
+# 
+brew "reattach-to-user-namespace"
 # CCleaner is the number-one tool for fixing a slow Mac
 # https://www.ccleaner.com/ccleaner-mac
 cask "ccleaner"

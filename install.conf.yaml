@@ -48,6 +48,7 @@
     ~/.tmuxp/configs: terminal/tmux/configs
     ~/.tmuxp/aliases: terminal/tmux/aliases
     ~/.tmux: terminal/tmux/config
+    ~/.tmux.conf: terminal/tmux/config/.tmux.conf
     ~/.config/scripts: scripts
     ~/.curlrc: tools/curlrc
     ~/.wgetrc: tools/wgetrc

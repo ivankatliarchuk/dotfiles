@@ -144,6 +144,8 @@ These scripts are meant to run only on OS X
 - [X] Move configs to own folders
 - [X] Install powerline fonts
 - [X] wgetrc & curlrc
+- [ ] Move shell to same dir
+- [ ] Document Tmux
 - [ ] Mac setu pfrom here https://github.com/bitwolfe/dotbot#activity-monitor
 - [ ] Correctly isntall nerd fonts
 - [ ] Tmux with Hyper
@@ -161,7 +163,7 @@ These scripts are meant to run only on OS X
 
 <!-- START makefile-doc -->
 ```
-$ make help 
+$ make help
 Usage: make [target] [VARIABLE=value]
 Targets:
 hooks                          Setup pre commit.
@@ -172,7 +174,7 @@ install-local                  Install locally
 ignore-dirty                   Ignore dirty commits
 install-deps                   Install dependencies
 git-module-remove              Remove submodule MODULE=something
-brew-install                   Install Brew 
+brew-install                   Install Brew
 ```
 <!-- END makefile-doc -->
 
