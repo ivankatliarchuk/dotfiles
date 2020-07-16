@@ -6,18 +6,18 @@ ROOT="$(command -v sudo)"
 
 # Update dotfiles
 dfu() {
-    (
-        cd ~/dotfiles && git pull --ff-only
-    )
+  (
+      cd ~/dotfiles && git pull --ff-only
+  )
 }
 
 # Create a directory and cd into it
 mcd() {
-    mkdir "${1}" && cd "${1}"
+  mkdir "${1}" && cd "${1}"
 }
 
 # Create a new directory and enter it
-function mkcd() { mkdir -p "$@" && cd "$_"; }
+mkcd() { mkdir -p "$@" && cd "$_"; }
 
 # Execute a command in a specific directory
 xin() {
@@ -59,7 +59,7 @@ function extract() {
 }
 
 # to ascii
-function decode() {
+function _decode() {
   case $1 in
     base64) shift 1; echo -n "$@" | base64 --decode            ;;
     binary) shift 1; echo -n "$@" | perl -lpe '$_=pack"B*",$_' ;;
@@ -68,7 +68,7 @@ function decode() {
 }
 
 # from ascii
-function encode() {
+function _encode() {
   case $1 in
     base64) shift 1; echo -n "$@" | openssl base64            ;;
     binary) shift 1; echo -n "$@" | perl -lpe '$_=unpack"B*"' ;;
@@ -79,7 +79,7 @@ function encode() {
 }
 
 # Determine size of a file or total size of a directory
-function fs() {
+function _size() {
 	if du -b /dev/null > /dev/null 2>&1; then
 		local arg=-sbh;
 	else
@@ -93,7 +93,7 @@ function fs() {
 }
 
 # Run `dig` and display the most useful info
-function digga() {
+function _digga() {
 	dig +nocmd "$1" any +multiline +noall +answer;
 }
 

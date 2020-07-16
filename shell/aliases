@@ -118,7 +118,7 @@ alias kd=kubedecode  # https://github.com/mveritym/kubedecode
 alias kx=kubectx     # https://github.com/ahmetb/kubectx
 
 # Brewfile
-alias brewup='brew cu --all --cleanup -y && brew update && brew upgrade && brew cleanup'
+alias brewup='brew cu --cleanup -y && brew update && brew upgrade && brew cask upgrade && brew cleanup'
 
 # Directory,File Folder Usage
 alias diskusage="df -h"
@@ -241,5 +241,10 @@ alias python=$(command -v python3)
 alias pip=$(command -v pip3)
 alias python-v=$(pyenv versions)
 alias pip-v=$(pyenv which pip)
+
+# Emoji
+alias shrug="printf '¯\_(ツ)_/¯' | pbcopy"
+alias flipt="printf '(╯°□°)╯︵ ┻━┻' | pbcopy"
+alias fight="printf '(ง'̀-'́)ง' | pbcopy"
 
 #END alias-definitions

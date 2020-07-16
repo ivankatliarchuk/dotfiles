@@ -4,6 +4,9 @@
     co = checkout
     ci = commit
 
+    wip= "add .;git commit -m 'wip'"
+    nah= 'git reset --hard;git clean -df'
+
     type = cat-file -t
     dump = cat-file -p
     commend = commit --amend --no-edit
@@ -61,7 +64,6 @@
     plog = log --graph --pretty=format:'%h -%d %s %n' --abbrev-commit --date=relative --branches
 
     #### DIFF ####
-
     # `git di $number` shows the diff between the state `$number` revisions ago and the current state
     di = !"d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD -- || clear; d"
     # Show the diff between the latest commit and the current state
