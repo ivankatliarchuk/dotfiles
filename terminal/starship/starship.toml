@@ -18,9 +18,9 @@ truncation_length = 8
 symbol = "🐋 "
 
 [env_var]
-variable = "SHELL"
-default = "unknown shell"
-style = "dimmed bold red"
+variable = "ENVIRONMENT"
+style = "dimmed bold purple"
+
 [git_status]
 conflicted = "🏳"
 ahead = "🏎💨"
@@ -63,5 +63,6 @@ style = "bold blue"
 symbol = "🅰 "
 displayed_items = "region"
 [aws.region_aliases]
-ap-southeast-2 = "au"
-us-east-1 = "va"
+ap-southeast-2 = "ap-southeast"
+us-east-1 = "us-east"
+us-west-2 = "us-west"

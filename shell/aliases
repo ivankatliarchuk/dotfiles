@@ -118,7 +118,7 @@ alias kd=kubedecode  # https://github.com/mveritym/kubedecode
 alias kx=kubectx     # https://github.com/ahmetb/kubectx
 
 # Brewfile
-alias brewup='brew cu -y && brew update && brew upgrade && brew cleanup'
+alias brewup='brew cu --all --cleanup -y && brew update && brew upgrade && brew cleanup'
 
 # Directory,File Folder Usage
 alias diskusage="df -h"

@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+while getopts l:m:b: option; do
+  case "${option}" in
+    l)
+      LABELS=${OPTARG};;
+    m)
+      PR_MESSAGE=${OPTARG};;
+    b)
+      PR_BODY=${OPTARG};;
+    *)
+      echo "value: ${OPTARG} not recognised"
+  esac
+done
+
+set -e
+
+: "${LABELS:-hub}"
+: "${PR_MESSAGE}"
+: "${PR_BODY:-not-provided}"
+
+hub pull-request -p --labels "${LABELS}" --message "${PR_MESSAGE}" --message "${PR_BODY}"
