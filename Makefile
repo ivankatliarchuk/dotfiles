@@ -45,6 +45,7 @@ git-module-remove: ## Remove submodule MODULE=something
 	@git rm --cached vendor/$(MODULE)
 
 brew-install: ## Install Brew
+	@brew analytics off
 	@brew bundle --file=brew/Brewfile -v --describe --no-lock
 	@brew bundle --file=brew/Brewfile.secure -v --describe --no-lock
 	@brew bundle --file=brew/Brewfile.networking -v --describe --no-lock

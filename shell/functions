@@ -264,11 +264,11 @@ function dump-ssl {
 
 # Docker
 docker-rmi() {
-  docker container prune -f
+  docker container prune -f # remove all stopped containers
   docker rmi "$(docker images -a | grep "^<none>" | awk '{print $3}')" -f
   docker rmi "$(docker images -f "dangling=true" -q)" -f
-  docker image prune --force --filter "repository=none"
-  docker image prune --force --filter "repository=<none>"
+  docker image prune --force --filter="dangling=true" # clean dangling images if any
+  docker images | grep none | awk '{ print $3; }' | xargs docker rmi --force
   # keep last 2 builds for each image from the repository
   for diru in $(docker images --format "{{.Repository}}" | sort | uniq); do
       for dimr in $(docker images --format "{{.ID}};{{.Repository}}:{{.Tag}};'{{.CreatedAt}}'" --filter reference="$diru" | sed "s/\s+/~/g" | tail -n+3); do
@@ -276,8 +276,6 @@ docker-rmi() {
           docker rmi "$img_tag";
       done;
   done
-  # clean dangling images if any
-  docker image prune -f
 }
 
 pip-install() {
@@ -302,6 +300,10 @@ versions() {
   [[ -f ~/.python-version ]] && cat .python-version
   echo "go version: $(go version)"
   echo "ruby version: $(ruby --version)"
+
+  echo ""
+  hub version
+
   echo ""
   echo "macOS: $(archey -c)"
 }

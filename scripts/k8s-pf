@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+
+# kubernetes port forward
+for _ in "$@"; do
+    case $1 in
+        -p|--port) PORT="$2"; shift ;;
+        -n|--namespace) NAMESPACE="$2"; shift ;;
+        -s|--service) SERVICE="$2"; shift ;;
+    esac
+    shift
+done
+
+echo "port: $PORT"
+echo "ns: $NAMESPACE"
+
+set -e
+
+: "${PORT}"
+: "${NAMESPACE}"
+: "${SERVICE}"
+: "${KUBECONFIG}"
+
+set -x
+
+echo -e "forward >> http(s)://localhost:${PORT}"
+kubectl port-forward -n "${NAMESPACE}" "svc/${SERVICE}" "${PORT}" &
+echo -e "\n"
+PROCESS=$!
+
+echo -e "\npress ctrl-c to stop\n"
+echo -e "\n"
+
+lsof -i :"${PORT}"
+
+wait "${PROCESS}"
