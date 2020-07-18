@@ -13,10 +13,10 @@ while getopts l:m:b: option; do
   esac
 done
 
-set -e
+set -ex
 
 : "${LABELS:-hub}"
 : "${PR_MESSAGE}"
 : "${PR_BODY:-not-provided}"
 
-hub pull-request -p --labels "${LABELS}" --message "${PR_MESSAGE}" --message "${PR_BODY}"
+$(command -v hub) pull-request -p --labels "${LABELS}" --message "${PR_MESSAGE}" --message "${PR_BODY}"

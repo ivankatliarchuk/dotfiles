@@ -147,8 +147,7 @@ These scripts are meant to run only on OS X
 - [ ] Move shell to same dir
 - [ ] Document Tmux
 - [ ] Mac setu pfrom here https://github.com/bitwolfe/dotbot#activity-monitor
-- [ ] Correctly isntall nerd fonts
-- [ ] Tmux with Hyper
+
 - [ ] Tmux configs setup
 - [ ] Chezmoi integration
 - [ ] Support Linux/Debian
@@ -163,7 +162,7 @@ These scripts are meant to run only on OS X
 
 <!-- START makefile-doc -->
 ```
-$ make help
+$ make help 
 Usage: make [target] [VARIABLE=value]
 Targets:
 hooks                          Setup pre commit.
@@ -174,7 +173,7 @@ install-local                  Install locally
 ignore-dirty                   Ignore dirty commits
 install-deps                   Install dependencies
 git-module-remove              Remove submodule MODULE=something
-brew-install                   Install Brew
+brew-install                   Install Brew 
 ```
 <!-- END makefile-doc -->
 
@@ -200,3 +199,7 @@ Submit a pull request
 Currently maintained by [Ivan Katliarchuk](https://github.com/ivankatliarchuk) and these [awesome contributors](https://github.com/ivankatliarchuk/dotfiles/graphs/contributors).
 
 [![ForTheBadge uses-git](http://ForTheBadge.com/images/badges/uses-git.svg)](https://GitHub.com/)
+
+
+To-Remove:
+- https://hackernoon.com/personal-macos-workspace-setup-adf61869cd79
