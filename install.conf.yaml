@@ -56,12 +56,12 @@
     ~/.bash-it: vendor/bash-it
 
 - shell:
-  # -
-  #   command: brew cu -y && brew update && brew upgrade && brew cleanup
-  #   stdin: true
-  #   stdout: true
-  #   description: Brew cleanup
-  #   quiet: true
+  -
+    command: brew cu -y && brew update && brew upgrade && brew cleanup
+    stdin: true
+    stdout: true
+    description: Brew cleanup
+    quiet: true
   -
     command: make install-deps
     stdin: true

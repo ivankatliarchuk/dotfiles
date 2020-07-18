@@ -14,6 +14,7 @@ cask "font-consolas-for-powerline"
 cask "font-inconsolata-for-powerline"
 cask "font-inconsolata-for-powerline-bold"
 # starship
+cask "font-hack"
 cask "font-noto-nerd-font"
 cask "font-mplus-nerd-font"
 cask "font-overpass-nerd-font"

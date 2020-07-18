@@ -37,5 +37,6 @@ cat << EndOfMessage
 'scp <ssh user and server>:<location-where-to> <location-on-local-machine>' >>> Copy file from server
 'scp <file> <ssh-user-and-server>:<location-where-to>' >>> File to be copied to, from, or between different host
 'ssh -i <key> -fN -L 9000:<ip>:<port> user@<pub-ip> -4 -g -N' >>> Proxy jump
+'ssh -J user-0@ip-jump user-1@ip-target' >> Connect to the 'target host' over 'jump host'
 
 EndOfMessage
