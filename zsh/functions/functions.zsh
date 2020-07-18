@@ -2,8 +2,6 @@
 # https://raw.githubusercontent.com/ivankatliarchuk/dotfiles/master/zsh/functions/functions.zsh
 # -*- mode: sh -*-
 # shellcheck source=/dev/null
-# shellcheck source=/dev/null
-# shellcheck source=/dev/null
 #
 # Helper functions that don't belong elsewhere.
 #
