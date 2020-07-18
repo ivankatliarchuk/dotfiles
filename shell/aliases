@@ -112,19 +112,18 @@ alias cmds='commands'
 alias groot='cd "$(git rev-parse --show-toplevel)"'
 
 # Kubernetes
-alias k=kubectl      # https://kubernetes.io/docs/reference/kubectl/overview/
-alias ks=kubens      # https://github.com/ahmetb/kubectx
-alias kd=kubedecode  # https://github.com/mveritym/kubedecode
-alias kx=kubectx     # https://github.com/ahmetb/kubectx
+command -v kubectl > /dev/null && alias k=kubectl         # https://kubernetes.io/docs/reference/kubectl/overview/
+command -v kubens > /dev/null && alias ks=kubens          # https://github.com/ahmetb/kubectx
+command -v kubedecode > /dev/null && alias kd=kubedecode  # https://github.com/mveritym/kubedecode
+command -v kubectx > /dev/null && alias kx=kubectx        # https://github.com/ahmetb/kubectx
 
 # Brewfile
 alias brewup='brew cu --cleanup -y && brew update && brew upgrade && brew cask upgrade && brew cleanup'
 
 # Directory,File Folder Usage
-alias diskusage="df -h"
-alias folderusage="du -ch"
-alias totalfolderusage="du -sh"
-alias mountpoints="df -h"
+alias d-usage="df -h"
+alias f-usage="du -ch"
+alias t-usage="du -sh"
 alias mountpoints="df -h"
 alias lt='du -sh * | sort -h'
 alias sort-by-size="du -hsc * | sort -hk1"
@@ -189,7 +188,7 @@ alias ips="sudo ifconfig -a | grep -o 'inet6\\? \\(addr:\\)\\?\\s\\?\\(\\(\\([0-
 alias localip="sudo ifconfig | grep -Eo 'inet (addr:)?([0-9]*\\.){3}[0-9]*' | grep -Eo '([0-9]*\\.){3}[0-9]*' | grep -v '127.0.0.1'"
 alias ips="sudo ifconfig -a | grep -o 'inet6\\? \\(addr:\\)\\?\\s\\?\\(\\(\\([0-9]\\+\\.\\)\\{3\\}[0-9]\\+\\)\\|[a-fA-F0-9:]\\+\\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
 
-command -v shuttle > /dev/null || alias shuttle='sshuttle --dns -r uberspace 0/0'
+command -v shuttle > /dev/null && alias shuttle='sshuttle --dns -r uberspace 0/0'
 
 # Show active network interfaces
 alias ifactive="ifconfig | pcregrep -M -o '^[^\t:]+:([^\n]|\n\t)*status: active'"
@@ -207,7 +206,7 @@ alias hgrep='history|grep'         # Find a command in grep history
 alias tcn='mv --force -t ~/Trash ' # Protect yourself from file removal accidents. Move to trash first
 alias curl-hdr='curl -Ss -D - -o /dev/null' # Run curl command 'curl-hdr google.com'
 
-command -v uuidgen > /dev/null || alias ugen='uuidgen | tr "[:upper:]" "[:upper:]"'
+command -v uuidgen > /dev/null && alias ugen='uuidgen | tr "[:upper:]" "[:upper:]"'
 command -v md5sum > /dev/null || alias md5sum="md5" # OS X has no `md5sum`, so use `md5` as a fallback
 command -v sha1sum > /dev/null || alias sha1sum="shasum" # OS X has no `sha1sum`, so use `shasum` as a fallback
 

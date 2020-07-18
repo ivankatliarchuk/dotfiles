@@ -18,7 +18,6 @@
     - ~/.tmuxp
     - ~/.config/mc
     - ~/.config/gitcfg.local
-    - ~/.config/hub
 
 - link:
     ~/.vimrc: vim/vimrc
