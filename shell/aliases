@@ -72,6 +72,9 @@ alias sshl="ssh-add -l -E md5"
 
 # GPG
 alias gpglist="gpg --list-keys"                   # list keys
+alias gpglist="gpg --list-secret-keys"            # list secret keys
+alias gpgtest="echo 'test' | gpg --clearsign"     # test if working
+alias gpgk="gpg -K --with-keygrip"                # find the keygrip
 alias gpggen="gpg --full-generate-key"            # full featured key pair generation
 alias gpgkill="gpgconf --kill gpg-agent"          # kill a given component
 alias gpgstart="gpg-agent --daemon"               # run in daemon mode (background)
@@ -107,6 +110,8 @@ alias wr="cd ~/workspaces"
 alias sf="cd ~/self"
 alias work="cd ~/work"
 alias commands='find $(echo $PATH | tr ":" "\n") | awk -F / "{print \$NF}" | sort -u'
+alias gitloc='cd ~/.config/gitcfg.local'
+alias gpgloc='cd ~/.gnupg'
 alias cmds='commands'
 # cd to git root directory
 alias groot='cd "$(git rev-parse --show-toplevel)"'
@@ -233,6 +238,7 @@ alias tmuxs='tmux source .tmux.conf' # reload config
 alias tmuxses='tmux list-sessions'   # list sessions in tmux
 alias tmuxkill='tmux kill-server'    # kill sessions in tmux
 
+alias mk='make'
 # editors
 
 # languages

@@ -17,3 +17,9 @@
 ## Curl
 
 - [Configuration Options](https://ec.haxx.se/cmdline/cmdline-configfile)
+
+## GPG Setup
+
+- [GnuPG auth](https://incenp.org/notes/2015/gnupg-for-ssh-authentication.html)
+- [GpG Debian](https://gregrs-uk.github.io/2018-08-06/gpg-key-ssh-mac-debian/)
+- [GpG Flow](https://gist.github.com/bcomnes/647477a3a143774069755d672cb395ca)

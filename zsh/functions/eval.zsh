@@ -4,7 +4,7 @@
 
 eval "$(direnv hook zsh)"
 eval "$(aws-vault --completion-script-zsh)"
-eval "$(hub alias -s)"
+# eval "$(hub alias -s)"
 
 source <(navi widget zsh)
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
