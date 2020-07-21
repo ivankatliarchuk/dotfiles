@@ -32,7 +32,10 @@ zstyle ':prezto:load' pmodule \
   'gpg' \
   'autosuggestions' \
   'ssh' \
-  'syntax-highlighting'
+  'syntax-highlighting' \
+  'node' \
+  'python' \
+  'tmux'
 
 # Set syntax highlighters.
 # By default, only the main highlighter is enabled.
@@ -41,7 +44,8 @@ zstyle ':prezto:module:syntax-highlighting' highlighters \
   'brackets' \
   'pattern' \
   'cursor' \
-  'root'
+  'root' \
+  'line'
 
 # Set syntax highlighting styles.
 zstyle ':prezto:module:syntax-highlighting' styles \
@@ -49,12 +53,17 @@ zstyle ':prezto:module:syntax-highlighting' styles \
   'command' 'bg=cyam' \
   'function' 'bg=purple'
 
+# https://github.com/sorin-ionescu/prezto/tree/master/modules/node
+zstyle ':prezto:module:node:info:version' format 'version:%v'
+
 #
 # Tmux
 #
 
 # Auto start a session when Zsh is launched in a local terminal.
-zstyle ':prezto:module:tmux:auto-start' local 'yes'
+# https://github.com/sorin-ionescu/prezto/tree/master/modules/tmux
+zstyle ':prezto:module:tmux:auto-start' local 'no'
+zstyle ':prezto:module:tmux:iterm' integrate 'yes'
 
 # Auto start a session when Zsh is launched in a SSH connection.
 # zstyle ':prezto:module:tmux:auto-start' remote 'yes'
@@ -68,15 +77,33 @@ zstyle ':prezto:module:tmux:auto-start' local 'yes'
 #
 
 # Auto set the tab and window titles.
-# zstyle ':prezto:module:terminal' auto-title 'yes'
+zstyle ':prezto:module:terminal' auto-title 'yes'
 
 # Set the window title format.
-# zstyle ':prezto:module:terminal:window-title' format '%n@%m: %s'
+zstyle ':prezto:module:terminal:window-title' format '%n: %s'
 
 # Set the tab title format.
-# zstyle ':prezto:module:terminal:tab-title' format '%m: %s'
+zstyle ':prezto:module:terminal:tab-title' format '%n: %s'
 
 # Git
 # Override styles for "git log --oneline"
 # Do it before installing Antigen bundles
 zstyle ':prezto:module:git:log:oneline' format '%C(green)%h%C(reset) %C(red)%d%C(reset) %s %C(cyan)<%an>%C(reset) %C(blue)(%cD)%C(reset)'
+# Ignore submodules when they are 'dirty', 'untracked', 'all', or 'none'.
+zstyle ':prezto:module:git:status:ignore' submodules 'all'
+
+#
+# History
+#
+
+# To enable case-sensitivity for this module only, add the following line to zpreztorc
+zstyle ':prezto:module:history-substring-search' case-sensitive 'yes'
+
+#
+# Python
+#
+zstyle ':prezto:module:python:virtualenv' initialize 'no'
+# %v - virtualenv name.
+zstyle ':prezto:module:python:info:virtualenv' format 'virtualenv:%v'
+# enable auto-switching to virtualenvs when switching into a directory where the root of the project matches a virtualenv name
+zstyle ':prezto:module:python:virtualenv' auto-switch 'yes'

@@ -1,0 +1,4 @@
+#!/bin/bash
+# https://raw.githubusercontent.com/ivankatliarchuk/dotfiles/master/shell/manage-nvm
+
+export NODE_VERSION=14.3.0

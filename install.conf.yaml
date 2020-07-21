@@ -30,6 +30,7 @@
     ~/.functions: shell/functions
     ~/.profile: shell/profile
     ~/.config/manage/python: shell/manage-python
+    ~/.config/manage/node: shell/manage-node
     ~/.locals: locals
     ~/.zshrc: zsh/zshrc
     ~/.zshenv: zsh/settings/zshenv
