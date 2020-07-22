@@ -174,11 +174,13 @@ alias fasdz='fasd_cd -d'     # cd, same functionality as j in autojump
 alias fasdzz='fasd_cd -d -i' # cd with interactive selection
 
 # Dates
-alias now='date +%F-%H:%M:%S' # time now 2020-07-11-08:40:28
-alias today='date +%F'        # todays date 2020-07-11
-alias ts='date +%s'           # timestamp
-alias week='date +%V'         # day of a week
-alias month='date +%m'        # month number
+alias now="date '+%F %H:%M:%S'" # time now 2020-07-11-08:40:28
+alias today='date +%F'          # todays date 2020-07-11
+alias ts='date +%s'             # timestamp
+alias week='date +%V'           # day of a week
+alias month='date +%m;ncal'     # month number
+alias monthc="cal"              # year calendar
+alias yearc="cal $(date +%Y)"   # year calendar
 
 alias pathp='echo $PATH | tr -s ":" "\n"' # Print each PATH entry on a separate line
 
@@ -192,8 +194,6 @@ alias ips="sudo ifconfig -a | grep -o 'inet6\\? \\(addr:\\)\\?\\s\\?\\(\\(\\([0-
 
 alias localip="sudo ifconfig | grep -Eo 'inet (addr:)?([0-9]*\\.){3}[0-9]*' | grep -Eo '([0-9]*\\.){3}[0-9]*' | grep -v '127.0.0.1'"
 alias ips="sudo ifconfig -a | grep -o 'inet6\\? \\(addr:\\)\\?\\s\\?\\(\\(\\([0-9]\\+\\.\\)\\{3\\}[0-9]\\+\\)\\|[a-fA-F0-9:]\\+\\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
-
-command -v shuttle > /dev/null && alias shuttle='sshuttle --dns -r uberspace 0/0'
 
 # Show active network interfaces
 alias ifactive="ifconfig | pcregrep -M -o '^[^\t:]+:([^\n]|\n\t)*status: active'"
@@ -228,6 +228,7 @@ command -v i3lock > /dev/null || alias afk="i3lock -c 000000" # Lock the screen 
 # Kill all the tabs in Chrome to free up memory
 # [C] explained: http://www.commandlinefu.com/commands/view/402/exclude-grep-from-your-grepped-output-of-ps-alias-included-in-description
 alias chromekill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v extension-process | tr -s ' ' | cut -d ' ' -f2 | xargs kill"
+command -v shuttle > /dev/null && alias shuttle='sshuttle --dns -r uberspace 0/0'
 
 alias untar='tar xvf' # untar
 
