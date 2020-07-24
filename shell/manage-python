@@ -1,7 +1,18 @@
 #!/bin/bash
 # https://raw.githubusercontent.com/ivankatliarchuk/dotfiles/master/shell/manage-python
-export PYTHON_VERSION=3.8.3
+export PYTHON_VERSION=3.8.5
 export PYENV_VERSION=${PYTHON_VERSION}
+
+# Return if requirements are not found.
+# shellcheck disable=SC2154,SC2154
+if (( ! $+commands[python] && ! $+commands[pyenv] )); then
+  return 1
+fi
+
+# shellcheck disable=SC2154,SC2154
+if (( $+commands[pyenv] )); then
+  eval "$(pyenv init - --no-rehash zsh)"
+fi
 
 if [ -x "$(command -v pyenv)" ]; then
   if [[ ! "$(pyenv install --list | grep -v - | grep -v b | tail -1)" =~ ${PYTHON_VERSION} ]]; then
@@ -9,8 +20,4 @@ if [ -x "$(command -v pyenv)" ]; then
     pyenv install --skip-existing "${PYTHON_VERSION}"
     pyenv global "${PYTHON_VERSION}"
   fi
-fi
-# shellcheck disable=SC2154,SC2154
-if (( $+commands[pyenv] )); then
-  eval "$(pyenv init - --no-rehash zsh)"
 fi

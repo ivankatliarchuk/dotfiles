@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+set -e
+
+rotate() {
+	aws-vault rotate -n "$@"
+}
+
+rotate "$@"
