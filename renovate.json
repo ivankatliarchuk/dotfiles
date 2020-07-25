@@ -1,0 +1,16 @@
+{
+  "extends": [
+    "config:base"
+  ],
+  "baseBranches": [
+    "master"
+  ],
+  "packageRules": [
+    {
+      "automerge": false,
+      "paths": [
+        "py/requirements.txt"
+      ]
+    }
+  ]
+}

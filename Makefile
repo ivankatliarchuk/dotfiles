@@ -8,6 +8,21 @@ help:
 	@printf "Usage: make [target] [VARIABLE=value]\nTargets:\n"
 	@grep -E '^[a-zA-Z0-9_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
+install-local: ## Install locally
+	@bin/install.sh -t local
+
+brew-install: ## Install apps with Brew
+	-@brew analytics off
+	-@brew bundle --file=brew/Brewfile -v --describe --no-lock
+	-@brew bundle --file=brew/Brewfile.secure -v --describe --no-lock
+	-@brew bundle --file=brew/Brewfile.networking -v --describe --no-lock
+	-@brew bundle --file=brew/Brewfile.git -v --describe --no-lock
+	-@brew bundle --file=brew/Brewfile.aws -v --describe --no-lock
+	-@brew bundle --file=brew/Brewfile.fonts -v --describe --no-lock
+	-@brew bundle --file=brew/Brewfile.development -v --describe --no-lock
+	-@brew bundle --file=brew/Brewfile.k8s -v --describe --no-lock
+	-@brew cu -y && brew update && brew upgrade && brew cleanup
+
 hooks: ## Setup pre commit.
 	@pre-commit install
 	@pre-commit gc
@@ -21,9 +36,6 @@ vm-up: ## Run on Mac. Up
 
 vm-dowm: ## Run on Mac. Down
 	@vagrant down
-
-install-local: ## Install locally
-	@bin/install.sh -t local
 
 ignore-dirty: ## Ignore dirty commits
 	@git config --file .gitmodules --get-regexp path | awk '{ print $2 }'
@@ -43,16 +55,5 @@ git-submodule:
 git-module-remove: ## Remove submodule MODULE=something
 	@git submodule deinit -f vendor/$(MODULE)
 	@git rm --cached vendor/$(MODULE)
-
-brew-install: ## Install Brew
-	@brew analytics off
-	@brew bundle --file=brew/Brewfile -v --describe --no-lock
-	@brew bundle --file=brew/Brewfile.secure -v --describe --no-lock
-	@brew bundle --file=brew/Brewfile.networking -v --describe --no-lock
-	@brew bundle --file=brew/Brewfile.git -v --describe --no-lock
-	@brew bundle --file=brew/Brewfile.aws -v --describe --no-lock
-	@brew bundle --file=brew/Brewfile.fonts -v --describe --no-lock
-	@brew bundle --file=brew/Brewfile.development -v --describe --no-lock
-	@brew bundle --file=brew/Brewfile.k8s -v --describe --no-lock
 
 .PHONY: vm-up vm-dowm validate hooks brew-install git-submodule

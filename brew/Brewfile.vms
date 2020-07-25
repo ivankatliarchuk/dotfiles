@@ -1,6 +1,8 @@
 # https://github.com/hashicorp/vagrant
 cask "vagrant"
+# virtualbox.org
 cask "virtualbox"
+cask "virtualbox-extension-pack"
 # Toolkit for embedding hypervisor capabilities in your application
 brew "hyperkit", link: false
 # Run a Kubernetes cluster locally

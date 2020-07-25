@@ -4,6 +4,7 @@
 
 eval "$(direnv hook zsh)"
 eval "$(aws-vault --completion-script-zsh)"
+[[ -d "$PYENV_ROOT" ]] && eval "$(pyenv init -)"
 # eval "$(hub alias -s)"
 
 source <(navi widget zsh)

@@ -7,3 +7,5 @@ if [[ -r "${HOME}/.bashrc" ]]; then
 fi
 # shellcheck source=/dev/null
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi

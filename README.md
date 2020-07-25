@@ -144,11 +144,12 @@ These scripts are meant to run only on OS X
 - [X] Move configs to own folders
 - [X] Install powerline fonts
 - [X] wgetrc & curlrc
-- [ ] Move shell to same dir
-- [ ] Document Tmux
-- [ ] Mac setu pfrom here https://github.com/bitwolfe/dotbot#activity-monitor
+- [X] Pyenv correct setup
 
-- [ ] Tmux configs setup
+- [ ] Move shell to same dir
+- [ ] Tmux configs Setup/Document
+- [ ] Mac setu pfrom here https://github.com/bitwolfe/dotbot#activity-monitor
+- [ ] Hammersppoon config opensource
 - [ ] Chezmoi integration
 - [ ] Support Linux/Debian
 - [ ] DNS Crypt (https://github.com/drduh/config/blob/master/dnscrypt-proxy.toml)
@@ -162,18 +163,18 @@ These scripts are meant to run only on OS X
 
 <!-- START makefile-doc -->
 ```
-$ make help
+$ make help 
 Usage: make [target] [VARIABLE=value]
 Targets:
+install-local                  Install locally
+brew-install                   Install apps with Brew
 hooks                          Setup pre commit.
 validate                       Validate files with pre-commit hooks
 vm-up                          Run on Mac. Up
 vm-dowm                        Run on Mac. Down
-install-local                  Install locally
 ignore-dirty                   Ignore dirty commits
 install-deps                   Install dependencies
-git-module-remove              Remove submodule MODULE=something
-brew-install                   Install Brew
+git-module-remove              Remove submodule MODULE=something 
 ```
 <!-- END makefile-doc -->
 
