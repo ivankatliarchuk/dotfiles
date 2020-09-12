@@ -3,17 +3,9 @@ umask 077
 # Created by dotfiles
 [[ "$TERM" == "screen" ]] && export TERM=screen-256color
 
+
 [[ -f ~/.zsh/functions/eval.zsh ]] && source ~/.zsh/functions/eval.zsh # source values
-
 for f in $(compaudit);do sudo chmod -R 755 $f;done;
-
-#
-# Zprezto
-#
-# Load zprezto if it's installed
-if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
-  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
-fi
 
 # load custom executable functions
 for function in ~/.zsh/functions/*; do

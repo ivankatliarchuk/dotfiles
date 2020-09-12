@@ -3,6 +3,12 @@
 # -*- mode: sh -*-
 
 eval "$(direnv hook zsh)"
+
+# Load zprezto if it's installed
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
+
 eval "$(aws-vault --completion-script-zsh)"
 [[ -d "$PYENV_ROOT" ]] && eval "$(pyenv init -)"
 # eval "$(hub alias -s)"
