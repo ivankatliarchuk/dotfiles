@@ -145,7 +145,7 @@ These scripts are meant to run only on OS X
 - [X] Install powerline fonts
 - [X] wgetrc & curlrc
 - [X] Pyenv correct setup
-
+- [ ] Move from NVM to NODENV
 - [ ] Move shell to same dir
 - [ ] Tmux configs Setup/Document
 - [ ] Mac setu pfrom here https://github.com/bitwolfe/dotbot#activity-monitor
@@ -163,7 +163,7 @@ These scripts are meant to run only on OS X
 
 <!-- START makefile-doc -->
 ```
-$ make help 
+$ make help
 Usage: make [target] [VARIABLE=value]
 Targets:
 install-local                  Install locally
@@ -174,7 +174,7 @@ vm-up                          Run on Mac. Up
 vm-dowm                        Run on Mac. Down
 ignore-dirty                   Ignore dirty commits
 install-deps                   Install dependencies
-git-module-remove              Remove submodule MODULE=something 
+git-module-remove              Remove submodule MODULE=something
 ```
 <!-- END makefile-doc -->
 

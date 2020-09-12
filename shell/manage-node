@@ -2,3 +2,6 @@
 # https://raw.githubusercontent.com/ivankatliarchuk/dotfiles/master/shell/manage-nvm
 
 export NODE_VERSION=14.3.0
+
+# https://github.com/denysdovhan/spaceship-prompt/issues/753
+# https://github.com/nodenv/nodenv

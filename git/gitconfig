@@ -1,8 +1,8 @@
-[user]
-  name = no-name
-  initals = legend
-	username = not-set
-  email = __redacted_to_stop_spam_scrapers__@gmail.org
+# [user]
+#   name = no-name
+#   initals = legend
+# 	username = not-set
+#   email = __redacted_to_stop_spam_scrapers__@gmail.org
 
 [apply]
 	# Detect whitespace errors when applying a patch
