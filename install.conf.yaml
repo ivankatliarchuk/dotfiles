@@ -75,9 +75,9 @@
     description: Installing dependencies & Rebuild shim files
     quiet: true
   # - [sudo chsh -s $(which zsh), Making zsh the default shell]
-  -
-    command: echo "My current shell is $SHELL ($0)"
-    stdin: true
-    stdout: true
-    description: Check current shell
-    quiet: true
+  # -
+  #   command: echo "My current shell is $SHELL ($0)"
+  #   stdin: true
+  #   stdout: true
+  #   description: Check current shell
+  #   quiet: true

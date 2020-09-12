@@ -1,6 +1,6 @@
 repos:
 - repo: https://github.com/pre-commit/pre-commit-hooks
-  rev: v3.1.0
+  rev: v3.2.0
   hooks:
   - id: check-added-large-files
     args: ['--maxkb=700']
@@ -22,6 +22,6 @@ repos:
   hooks:
   - id: check-useless-excludes
 - repo: https://github.com/gruntwork-io/pre-commit
-  rev: v0.1.9 # Get the latest from: https://github.com/gruntwork-io/pre-commit/releases
+  rev: v0.1.10 # Get the latest from: https://github.com/gruntwork-io/pre-commit/releases
   hooks:
   - id: shellcheck

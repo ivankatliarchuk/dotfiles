@@ -47,7 +47,7 @@ ignore-dirty: ## Ignore dirty commits
 install-deps: ## Install dependencies
 	@bin/install-deps.sh
 
-git-submodule:
+git-submodule: ## Git submodules update
 	@git submodule sync --recursive
 	@git submodule foreach git pull origin master
 	@git submodule update --init --recursive --progress
