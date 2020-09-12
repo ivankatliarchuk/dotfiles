@@ -11,11 +11,11 @@ exists() {
 }
 
 prompt_dir() {
-	prompt_segment blue $CURRENT_FG '%2~'
+  prompt_segment blue $CURRENT_FG '%2~'
 }
 
 get_cluster_short() {
-	echo "$1" | cut -d / -f2 | cut -d . -f1
+  echo "$1" | cut -d / -f2 | cut -d . -f1
 }
 
 get_namespace_upper() {
@@ -23,19 +23,19 @@ get_namespace_upper() {
 }
 
 load-tfswitch() {
-	local tfswitchrc_path=".tfswitchrc"
+  local tfswitchrc_path=".tfswitchrc"
 
-	if [ -f "$tfswitchrc_path" ]; then
-		tfswitch
-	fi
+  if [ -f "$tfswitchrc_path" ]; then
+    tfswitch
+  fi
 }
 
 load-tgswitch() {
-	local tgswitchrc_path=".tgswitchrc"
+  local tgswitchrc_path=".tgswitchrc"
 
-	if [ -f "$tgswitchrc_path" ]; then
-	tgswitch
-	fi
+  if [ -f "$tgswitchrc_path" ]; then
+    tgswitch
+  fi
 }
 
 add-zsh-hook chpwd load-tfswitch
@@ -60,6 +60,23 @@ load-nvmrc() {
 # Run load-nvmrc on initial shell load
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
+
+# Automatically switch and load golang versions when a directory has an `.gvmrc` file
+load-gvmrc() {
+  if exists gvm; then
+    if [ -f .gvmrc  ]; then
+      gvm use $(cat .gvmrc) >/dev/null 2>&1
+      if [ $? -eq 1 ]
+      then
+        gvm install $(cat .gvmrc)
+        gvm use $(cat .gvmrc) >/dev/null 2>&1
+      fi
+      echo "Switched golang to version \"$(go version)\""
+    fi
+  fi
+}
+add-zsh-hook chpwd load-gvmrc
+load-gvmrc
 
 if [[ -n "$TMUX" ]] ;then
 : # do nothhing
