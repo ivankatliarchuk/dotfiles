@@ -308,6 +308,25 @@ versions() {
   echo "macOS: $(archey -c)"
 }
 
+# Remove remote branches
+gitrmb() {
+  branch=""
+  pattern=""
+  while :; do
+    case $1 in
+        -b|--branch) branch="$2"; shift ;;
+        -p|--pattern) pattern="$2"; shift ;;
+        *) echo "Usage: $0 [-b <mastere|develop>] [-p <fix/*|feat/*>]" 1>&2; break ;;
+    esac
+    shift
+  done
+  if [ -n "$branch" ] && [ -n "$pattern" ]; then
+      git branch -r --format "%(refname:short)" --merged "origin/${branch}" |  cut -d/ -f2- | grep "${pattern}" | xargs -n 1 git push --delete origin
+    else
+      echo "No branches removed."
+  fi
+}
+
 # Provide information about currect user
 iam() {
   echo -e "$(whoami) < whoami"
@@ -370,4 +389,8 @@ tunnel() {
   local privatip="${3}"
   local port="${4}"
   ssh -nfNJ "${user}@${bastionip}" "${user}@${privatip}"  "-L127.0.0.1:${port}:127.0.0.1:${port}"
+}
+
+big-folders() {
+  du -k * | awk '$1 > 500000' | sort -nr
 }
