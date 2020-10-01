@@ -61,6 +61,3 @@ cask "slack"
 # MacoOS calendar
 # https://www.mowglii.com/itsycal/
 cask "itsycal"
-# An open source note taking and to-do application
-# https://github.com/laurent22/joplin
-cask "joplin"
