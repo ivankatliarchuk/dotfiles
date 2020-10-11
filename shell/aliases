@@ -123,7 +123,7 @@ command -v kubedecode > /dev/null && alias kd=kubedecode  # https://github.com/m
 command -v kubectx > /dev/null && alias kx=kubectx        # https://github.com/ahmetb/kubectx
 
 # Brewfile
-alias brewup='brew cu --cleanup -y && brew update && brew upgrade && brew cask upgrade && brew cleanup'
+alias brewup='brew cu --cleanup -y && brew update && brew upgrade && brew upgrade --casks && brew cleanup'
 
 # Directory,File Folder Usage
 alias d-usage="df -h"
