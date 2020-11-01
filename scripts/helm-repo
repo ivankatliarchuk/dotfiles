@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+# Add helm repositories
+
+helm repo add traefik https://helm.traefik.io/traefik
+helm repo add codecentric https://codecentric.github.io/helm-charts
+helm repo add incubator https://charts.helm.sh/incubator
+helm repo add stable https://charts.helm.sh/stable
+helm repo add loghouse https://flant.github.io/loghouse/charts/
+helm repo add uswitch https://uswitch.github.io/kiam-helm-charts/charts/
+helm repo add kubernetes-dashboard https://kubernetes.github.io/dashboard
+helm repo add soluto https://charts.soluto.io
+helm repo add stakater https://stakater.github.io/stakater-charts
+helm repo add vmware-tanzu https://vmware-tanzu.github.io/helm-charts
+helm repo add jenkinsci https://charts.jenkins.io
+helm repo add traefik https://helm.traefik.io/traefik
