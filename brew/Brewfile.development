@@ -83,9 +83,6 @@ cask "jetbrains-toolbox"
 # Visual Studio Code combines the simplicity of a code editor with what developers need for their core edit-build-debug cycle.
 # https://github.com/microsoft/vscode
 cask "visual-studio-code"
-# The Teensy is a complete USB-based microcontroller development system, in a very small footprint.
-# https://www.pjrc.com/teensy/loader_mac.html
-cask "teensy"
 cask "the-unarchiver"
 # https://macdown.uranusjr.com/
 cask "macdown"
