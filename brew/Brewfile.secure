@@ -20,3 +20,5 @@ brew "tor"
 cask "keepassxc"
 # Put passwords in their place https://www.dashlane.com/
 cask "dashlane"
+# Cryptomator encrypts your data quickly and easily.
+brew "cryptomator"
