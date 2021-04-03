@@ -1,15 +1,68 @@
 {
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
+    "github>renovatebot/.github",
+    "docker:enableMajor",
     "config:base"
   ],
   "baseBranches": [
-    "master"
+    "main"
   ],
+  "minor": {
+    "automerge": true
+  },
+  "patch": {
+    "automerge": true
+  },
   "packageRules": [
     {
-      "automerge": false,
-      "paths": [
-        "py/requirements.txt"
+      "updateTypes": [
+        "major"
+      ],
+      "addLabels": [
+        "SemVer Major"
+      ]
+    },
+    {
+      "updateTypes": [
+        "minor"
+      ],
+      "addLabels": [
+        "SemVer Minor"
+      ]
+    },
+    {
+      "updateTypes": [
+        "patch",
+        "digest",
+        "bump"
+      ],
+      "addLabels": [
+        "SemVer Patch"
+      ]
+    },
+    {
+      "languages": [
+        "php"
+      ],
+      "addLabels": [
+        "Lang PHP"
+      ]
+    },
+    {
+      "languages": [
+        "js"
+      ],
+      "addLabels": [
+        "Lang JS"
+      ]
+    },
+    {
+      "languages": [
+        "python"
+      ],
+      "addLabels": [
+        "Lang Python"
       ]
     }
   ]
