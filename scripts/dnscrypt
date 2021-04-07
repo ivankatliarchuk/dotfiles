@@ -10,7 +10,7 @@ pkill -9 dnscrypt-wrapper
 
 dnscrypt-wrapper --gen-provider-keypair --provider-name="$name" \
   --ext-address="$(curl -s https://icanhazip.com/)" 2>/dev/null | grep sdns
-  
+
 dnscrypt-wrapper --gen-crypt-keypair --crypt-secretkey-file=0.key >/dev/null
 
 dnscrypt-wrapper --gen-cert-file \

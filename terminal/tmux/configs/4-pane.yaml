@@ -10,4 +10,4 @@ windows:
         - ls -al | grep \.log
     - echo second pane         # pane no. 2
     - echo third pane          # pane no. 3
-    - echo forth pane    
+    - echo forth pane

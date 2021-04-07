@@ -1,0 +1,25 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:base"
+  ],
+  "reviewersFromCodeOwners": true,
+  "semanticCommits": true,
+  "labels": [
+    "dependencies"
+  ],
+  "baseBranches": [
+    "main"
+  ],
+  "major": { "automerge": false, "labels": [ "dependencies", "minor" ] },
+  "minor": { "automerge": true, "labels": [ "dependencies", "minor" ] },
+  "patch": { "automerge": true },
+  "packageRules": [
+    { "updateTypes": ["major"], "addLabels": ["SemVer Major"] },
+    { "updateTypes": ["minor"], "addLabels": ["SemVer Minor"] },
+    { "updateTypes": ["patch", "digest", "bump"], "addLabels": ["SemVer Patch"] },
+    { "languages": ["php"], "addLabels": ["Lang PHP"] },
+    { "languages": ["js"], "addLabels": ["Lang JS"] },
+    { "languages": ["python"], "addLabels": ["Lang Python"] }
+  ]
+}

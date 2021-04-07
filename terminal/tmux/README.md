@@ -11,7 +11,7 @@
 ## How to
 
 - tmuxp load <config-file>
-- tmux 
+- tmux
 
 ## Config examples
 

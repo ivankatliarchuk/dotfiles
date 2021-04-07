@@ -1,12 +1,71 @@
-# Update dependencies
-
+# https://dependabot.com/docs/config-file/
+# @todo: should be synced
 version: 2
 updates:
-# Update the git submodules
-- package-ecosystem: "gitsubmodule"
-  directory: "/"
-  schedule:
-    interval: "daily"
-  labels:
-  - "dependencies"
-  - "automerge"
+  - package-ecosystem: pip
+    directory: "/"
+    schedule:
+      interval: daily
+      time: '6:00'
+      timezone: "Europe/Paris"
+    labels:
+      - ":game_die: dependencies"
+      - ":robot: bot"
+    commit-message:
+      prefix: deps
+    default_reviewers:
+      - ivankatliarchuk
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "daily"
+      time: '6:00'
+      timezone: "Europe/Paris"
+    commit-message:
+      prefix: ci
+    labels:
+      - ":game_die: dependencies"
+      - ":robot: bot"
+    default_reviewers:
+      - ivankatliarchuk
+
+  - package-ecosystem: "gitsubmodule"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    labels:
+      - "dependencies"
+      - "automerge"
+    default_reviewers:
+      - ivankatliarchuk
+
+  - package-ecosystem: "gomod"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    labels:
+      - ":game_die: dependencies"
+      - ":robot: bot"
+    default_reviewers:
+      - ivankatliarchuk
+
+  - package-ecosystem: "docker"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    labels:
+      - ":game_die: dependencies"
+      - ":robot: bot"
+    default_reviewers:
+      - ivankatliarchuk
+
+  - package-ecosystem: "npm" # See documentation for possible values
+    directory: "/" # Location of package manifests
+    schedule:
+      interval: "daily"
+    labels:
+      - ":game_die: dependencies"
+      - ":robot: bot"
+    default_reviewers:
+      - ivankatliarchuk

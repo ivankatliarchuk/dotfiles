@@ -47,11 +47,27 @@ repos:
 -   repo: https://github.com/asottile/reorder_python_imports
     rev: v2.4.0
     hooks:
-    -   id: reorder-python-imports
+      - id: reorder-python-imports
         language_version: python3
 -   repo: git@github.com:Yelp/detect-secrets
     rev: v1.0.3
     hooks:
-    -   id: detect-secrets
+      - id: detect-secrets
         args: ['--baseline', '.secrets.baseline']
         exclude: .pre-commit-config.yaml
+- repo: https://github.com/markdownlint/markdownlint
+  rev: v0.11.0
+  hooks:
+    - id: markdownlint
+      name: Markdownlint
+      description: Run markdownlint on your Markdown files
+      entry: mdl
+      language: ruby
+      files: \.(md|mdown|markdown)$
+- repo: https://github.com/adrienverge/yamllint.git
+  rev: v1.24.2
+  hooks:
+    - id: yamllint
+      files: \.(yaml|yml)$
+      types: [file, yaml]
+      entry: 'yamllint --strict -d "{extends: relaxed, rules: {line-length: {max: 200}}}"'
