@@ -34,6 +34,12 @@ Dotfiles setup
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
+## Debug
+
+```
+zsh -x
+```
+
 ## Project Structure
 
 ```
@@ -167,7 +173,7 @@ These scripts are meant to run only on OS X
 
 <!-- START makefile-doc -->
 ```
-$ make help 
+$ make help
 Usage: make [target] [VARIABLE=value]
 Targets:
 install-local                  Install locally
@@ -179,7 +185,7 @@ vm-dowm                        Run on Mac. Down
 ignore-dirty                   Ignore dirty commits
 install-deps                   Install dependencies
 git-submodule                  Git submodules update
-git-module-remove              Remove submodule MODULE=something 
+git-module-remove              Remove submodule MODULE=something
 ```
 <!-- END makefile-doc -->
 

@@ -18,6 +18,7 @@ zstyle ':prezto:load' pmodule \
   'terminal' \
   'editor' \
   'history' \
+  'history-substring-search' \
   'directory' \
   'spectrum' \
   'utility' \
@@ -27,7 +28,6 @@ zstyle ':prezto:load' pmodule \
   'archive' \
   'git' \
   'osx' \
-  'history-substring-search' \
   'prompt' \
   'gpg' \
   'autosuggestions' \

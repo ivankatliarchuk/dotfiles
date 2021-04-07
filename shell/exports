@@ -1,8 +1,8 @@
 #!/bin/bash
 # https://raw.githubusercontent.com/ivankatliarchuk/dotfiles/master/shell/exports
 # Larger bash history (allow 32³ entries; default is 500)
-export HISTSIZE='1048576';
-export HISTFILESIZE=$HISTSIZE;
+export HISTSIZE='99999';
+export HISTFILESIZE=${HISTSIZE}0;
 export HISTCONTROL=ignoredups;
 # Make some commands not show up in history
 export HISTIGNORE=" *:ls:cd:cd -:pwd:exit:ls:l:ll:lll:clear:date:* --help:* -h:pony:pony add *:pony update *:pony save *:pony ls:pony ls *";
@@ -26,4 +26,8 @@ exists() {
 if exists aws-vault; then
 export AWS_VAULT_PROMPT=osascript
 export AWS_VAULT_KEYCHAIN_NAME=aws-vault
+fi
+
+if exists code; then
+export EDITOR="code --wait"
 fi

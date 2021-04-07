@@ -101,7 +101,8 @@ alias :q!="exit"
 alias :qw="exit"
 
 # Shortcuts
-alias h="history"
+alias h="history -50"
+alias hist="history 1"
 alias d="cd ~/Documents/Dropbox"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
