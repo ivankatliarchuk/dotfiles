@@ -22,3 +22,5 @@ cask "keepassxc"
 cask "dashlane"
 # Cryptomator encrypts your data quickly and easily.
 cask "cryptomator"
+# multifunction utility
+cask "onyx"
