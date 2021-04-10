@@ -1,7 +1,7 @@
 #!/bin/bash
 
 CONFIG=dotbot.conf.yaml
-dbot=$(which dotbot)
+dbot=vendor/dotbot/bin/dotbot
 
 usage() { echo "Usage: $0 [-t <local|remote>]" 1>&2; exit 1; }
 
