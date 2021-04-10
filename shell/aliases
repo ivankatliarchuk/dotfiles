@@ -114,8 +114,6 @@ alias commands='find $(echo $PATH | tr ":" "\n") | awk -F / "{print \$NF}" | sor
 alias gitloc='cd ~/.config/gitcfg.local'
 alias gpgloc='cd ~/.gnupg'
 alias cmds='commands'
-# cd to git root directory
-alias groot='cd "$(git rev-parse --show-toplevel)"'
 
 # Kubernetes
 command -v kubectl > /dev/null && alias k=kubectl         # https://kubernetes.io/docs/reference/kubectl/overview/
@@ -253,5 +251,24 @@ alias pip-v=$(pyenv which pip)
 alias shrug="printf '¯\_(ツ)_/¯' | pbcopy"
 alias flipt="printf '(╯°□°)╯︵ ┻━┻' | pbcopy"
 alias fight="printf '(ง'̀-'́)ง' | pbcopy"
+
+# Git
+# cd to git root directory
+alias groot='cd "$(git rev-parse --show-toplevel)"'
+# -< gac "My commit message"
+alias gac= "add .;git commit -m 'wip'" # + commit message
+alias gp="git push" # + remote & branch names
+alias gl="git pull" # + remote & branch names
+alias gb="git branch" # + branch name
+alias gc="git checkout" # + branch name
+alias gcb="git checkout -b" # + branch name
+# switch to master
+alias gmaster="git checkout master"
+alias pmaster=master
+# switch to main
+alias gmain="git checkout main"
+# list all branches
+alias blist="git blist"
+alias repos="find . -type d -exec sh -c 'cd "{}"; git rev-parse --git-dir 2> /dev/null 1>&2;' \; -prune -print"
 
 #END alias-definitions

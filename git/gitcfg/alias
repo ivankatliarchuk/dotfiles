@@ -4,8 +4,10 @@
     co = checkout
     ci = commit
 
-    wip= "add .;git commit -m 'wip'"
+    wip= "git commit -m 'wip'" # + commit message
+    gac= "add .;git commit -m 'wip'" # + commit message
     nah= 'git reset --hard;git clean -df'
+    res = !git reset --hard
 
     type = cat-file -t
     dump = cat-file -p
@@ -63,12 +65,16 @@
     l = log --pretty=oneline -n 20 --graph --abbrev-commit
     plog = log --graph --pretty=format:'%h -%d %s %n' --abbrev-commit --date=relative --branches
 
+    #### LIST ####
+    blist = branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate
+
     #### DIFF ####
     # `git di $number` shows the diff between the state `$number` revisions ago and the current state
     di = !"d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD -- || clear; d"
     # Show the diff between the latest commit and the current state
     d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
     dc = diff --cached
+    ds = diff --name-status -w
     changes = show --color --pretty=format:%b
     dp = diff --patience
     dc = diff --cached
@@ -76,6 +82,7 @@
     dck = diff --cached --check
     dt = difftool
     dct = difftool --cached
+
 
     #### STATUS ####
     st = status
@@ -128,6 +135,7 @@
     o = checkout
     om = checkout master
     ob = checkout -b
+    cob = checkout -b
     opr = !sh -c 'git fo pull/$1/head:pr-$1 && git o pr-$1'
 
     #### PUSH ####
@@ -201,7 +209,6 @@
 
     #### BRANCH ####
 
-    br = branch
     ba = branch -a
     bd = branch -d
     bdd = branch -D
@@ -209,6 +216,9 @@
     bc = rev-parse --abbrev-ref HEAD
     bu = !git rev-parse --abbrev-ref --symbolic-full-name "@{u}"
     bs = !git-branch-status
+
+    master = checkout master
+    main = checkout main
 
     #### PULL ####
 
@@ -223,11 +233,15 @@
 
     #### COMMANDS ####
     bump = !sh -c 'git commit -am \"Version bump v$1\" && git psuoc && git release $1' -
+    done = !git push origin HEAD
     release = !sh -c 'git tag v$1 && git pst' -
     unrelease = !sh -c 'git tag -d v$1 && git pso :v$1' -
     merged = !sh -c 'git o master && git plom && git bd $1 && git rpo' -
     aliases = !git config -l | grep alias | cut -c 7-
+    a = aliases
+    als = aliases
     snap = !git stash save 'snapshot: $(date)' && git stash apply 'stash@{0}'
+    save = !git add -A && git commit -m 'chore: commit save point
     bare = !sh -c 'git symbolic-ref HEAD refs/heads/$1 && git rm --cached -r . && git clean -xfd' -
     whois = !sh -c 'git log -i -1 --author=\"$1\" --pretty=\"format:%an <%ae>\"' -
     serve = daemon --reuseaddr --verbose --base-path=. --export-all ./.git
@@ -235,6 +249,11 @@
     theirs = "!f() { git checkout --theirs $@ && git add $@; }; f"
     subrepo = !sh -c 'git filter-branch --prune-empty --subdirectory-filter $1 master' -
     human = name-rev --name-only --refs=refs/heads/*
+    find-branch = !sh -c \"git branch -a | grep -v remotes | grep $1 | head -n 1 | xargs git checkout\"
+
     #### PLACEHOLDER ####
+
+    #### UNDO ####
+    undo = reset HEAD~1 --mixed
 
 ### END ####

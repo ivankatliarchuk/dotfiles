@@ -391,6 +391,15 @@ tunnel() {
   ssh -nfNJ "${user}@${bastionip}" "${user}@${privatip}"  "-L127.0.0.1:${port}:127.0.0.1:${port}"
 }
 
-big-folders() {
-  du -k * | awk '$1 > 500000' | sort -nr
+# https://github.com/koalaman/shellcheck/wiki/SC2035
+size-folders() {
+  du -k ./* | awk '$1 > 500000' | sort -nr
+}
+
+master() {
+  if git rev-parse --git-dir > /dev/null 2>&1; then
+    git checkout master && git pull master
+  else
+    echo "# NOT a git repo!"
+  fi
 }
