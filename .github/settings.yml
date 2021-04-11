@@ -1,0 +1,11 @@
+# These settings are synced to GitHub by https://probot.github.io/apps/settings/
+_extends: .github
+
+repository:
+  name: dotfiles
+  description: Sensible hacker defaults for macOS
+  topics: dotfile,macos,bash,ivank
+  private: false
+
+branches:
+  - name: master
