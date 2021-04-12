@@ -2,6 +2,7 @@
 
 set -e
 
+: "${INSTALL_BREW:=false}"
 
 [[ -n "${DEBUG:-}" ]] && set -x
 
@@ -53,7 +54,11 @@ brew_fix() {
   git --git-dir "$(brew --repository)/.git" clean -fd
 }
 
-show_help
-brew_install
-brew_lifecycle
-brew_cleanup
+if [[ -z "${INSTALL_BREW}" ]]; then
+  show_help
+  brew_install
+  brew_lifecycle
+  brew_cleanup
+else
+  echo "Not installing brew dependencies, set 'INSTALL_BREW=true'"
+fi

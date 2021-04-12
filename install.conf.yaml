@@ -67,6 +67,8 @@
     ~/.wgetrc: tools/wgetrc
     ~/.gemrc: tools/gemrc
     ~/.rvmrc: tools/rvmrc
+    ~/.gvmrc: tools/gvmrc
+    ~/.nvmrc: tools/nvmrc
     ~/.pyenvrc: tools/pyenvrc
     ~/.zprezto: vendor/prezto
     ~/.bash-it: vendor/bash-it
@@ -74,8 +76,6 @@
 - shell:
     - command: git submodule update --init --recursive
       description: Installing submodules
-    - command: rm -rf ~/.gvm
-      description: Remove GVM as build fails sometimes
     -
       command: make install-deps
       description: Installing dependencies

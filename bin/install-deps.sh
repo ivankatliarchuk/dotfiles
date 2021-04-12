@@ -15,6 +15,7 @@ cat << EOF
 Usage: $(basename "$0") :do:
     install powerline fonts
     install gvm (Go Version Manager)
+    install node with NVM (Node Version Manage https://github.com/nvm-sh/nvm)
     install helm charts
 EOF
 }
@@ -27,8 +28,18 @@ install_fonts() {
 }
 
 install_gvm() {
+  # rm -rf ~/.gvm
   if ! exists gvm; then
     $SHELL < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer) || echo "installed"
+    # gvm install go1.16
+    # gvm use
+  fi
+}
+
+install_node() {
+  if exists nvm; then
+  # install default from ~/.nvmrc
+    nvm use
   fi
 }
 
@@ -39,4 +50,5 @@ install_helm() {
 show_help
 install_fonts
 install_gvm
+install_node
 install_helm

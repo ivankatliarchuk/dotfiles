@@ -3,6 +3,8 @@
 CONFIG=dotbot.conf.yaml
 dbot=vendor/dotbot/bin/dotbot
 
+[[ -n "${DEBUG:-}" ]] && set -x
+
 usage() { echo "Usage: $0 [-t <local|remote>]" 1>&2; exit 1; }
 
 while getopts ":t:" option; do
