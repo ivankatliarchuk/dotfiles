@@ -24,8 +24,8 @@ style = "dimmed bold purple"
 [git_status]
 conflicted = "🏳"
 ahead = "🏎💨"
-behind = "😰"
-diverged = "😵"
+behind = "🚜"
+diverged = "🚥"
 # untracked = "🤷‍"
 stashed = "📦"
 # modified = "📝"
@@ -34,7 +34,7 @@ staged.style = "green"
 staged_count.enabled = true
 staged_count.style = "green"
 renamed = "👅"
-deleted = "🗑"
+deleted = "💢"
 
 [hostname]
 ssh_only = true
@@ -43,7 +43,8 @@ trim_at = ".companyname.com"
 disabled = false
 
 [kubernetes]
-symbol = "☸ "
+symbol = "☸⛵"
+format = 'on [⛵ $context \($namespace\)](dimmed green) '
 style = "green"
 disabled = false
 [kubernetes.context_aliases]
@@ -65,3 +66,11 @@ displayed_items = "region"
 ap-southeast-2 = "apsoutheast"
 us-east-1 = "useast"
 us-west-2 = "uswest"
+
+[git_commit]
+commit_hash_length = 4
+style = "bold green"
+tag_symbol = "🏷 "
+
+[nodejs]
+format = "via [🤖 $version](bold green) "

@@ -47,13 +47,14 @@ load-tgswitch
 # Automatically switch and load node versions when a directory has a `.nvmrc` file
 load-nvmrc() {
   if exists nvm; then
-    if [[ -a "$nvmrc_path" ]]; then
-    local nvmrc_node_version=$(cat "${nvmrc_path}")
-      if [ "$nvmrc_node_version" = "N/A" ]; then
-        n latest
-      elif [ "$nvmrc_node_version" != "$current_node_version" ]; then
-        n $nvmrc_node_version
+    if [ -f .nvmrc  ]; then
+      nvm use $(cat .nvmrc) >/dev/null 2>&1
+      if [ $? -eq 1 ]
+      then
+        nvm install $(cat .nvmrc)
+        nvm use $(cat .nvmrc) >/dev/null 2>&1
       fi
+      echo "Switched node to version \"$(node -v)\""
     fi
   fi
 }
