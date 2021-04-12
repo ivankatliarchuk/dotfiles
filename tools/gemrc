@@ -1,0 +1,32 @@
+---
+
+# SEE 'gem help environment'
+# for configuring RubyGems
+# https://guides.rubygems.org/command-reference/#gem-environment
+
+:sources:
+- https://rubygems.org
+:backtrace: false
+:bulk_threshold: 1000
+:benchmark: false
+:update_sources: true
+:verbose: false
+:concurrent_downloads: 8
+
+# WARNING: Found --user-install in ~/.gemrc, please remove it, as it will break rubygems in RVM.
+# gem: --user-install
+gem: --document ri
+
+# run gem [command] against local|remote|both
+search: --remote
+install: --remote --env-shebang --no-wrappers --no-document
+uninstall: --remote --no-wrappers --no-document
+
+# show the gem's path, description, and other meta when doing gem list
+list: --details
+
+# when (only) installing or updating, skip documentation
+# NOTE: applying this setting to all gem commands may break things
+
+# HTTP Proxy options
+# http-proxy: http://example.com:80

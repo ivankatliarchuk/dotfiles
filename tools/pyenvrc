@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+#To enable shims and autocompletion add to your profile:
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+
+#To use Homebrew's directories rather than ~/.pyenv add to your profile:
+# export PYENV_ROOT=/usr/local/opt/pyenv
