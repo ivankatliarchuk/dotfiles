@@ -110,6 +110,7 @@ alias pr="cd ~/projects"
 alias wr="cd ~/workspaces"
 alias sf="cd ~/self"
 alias work="cd ~/work"
+alias ccode='code ~/Library/Application\ Support/Code/User'
 alias commands='find $(echo $PATH | tr ":" "\n") | awk -F / "{print \$NF}" | sort -u'
 alias gitloc='cd ~/.config/gitcfg.local'
 alias gpgloc='cd ~/.gnupg'
@@ -219,6 +220,7 @@ command -v sha1sum > /dev/null || alias sha1sum="shasum" # OS X has no `sha1sum`
 alias update="source ~/.zshrc"
 alias update-ps="source ~/.profile"
 alias reload!='. ~/.zshrc'
+alias reload='. ~/.zshrc'
 
 # MacOS
 alias macv='archey -c'
