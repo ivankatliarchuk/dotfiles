@@ -44,30 +44,30 @@ repos:
   rev: v0.1.12 # Get the latest from: https://github.com/gruntwork-io/pre-commit/releases
   hooks:
   - id: shellcheck
--   repo: https://github.com/asottile/reorder_python_imports
-    rev: v2.4.0
-    hooks:
-      - id: reorder-python-imports
-        language_version: python3
--   repo: git@github.com:Yelp/detect-secrets
-    rev: v1.0.3
-    hooks:
-      - id: detect-secrets
-        args: ['--baseline', '.secrets.baseline']
-        exclude: .pre-commit-config.yaml
-- repo: https://github.com/markdownlint/markdownlint
-  rev: v0.11.0
+- repo: https://github.com/asottile/reorder_python_imports
+  rev: v2.4.0
   hooks:
-    - id: markdownlint
-      name: Markdownlint
-      description: Run markdownlint on your Markdown files
-      entry: mdl
-      language: ruby
-      files: \.(md|mdown|markdown)$
+  - id: reorder-python-imports
+    language_version: python3
+- repo: git@github.com:Yelp/detect-secrets
+  rev: v1.0.3
+  hooks:
+  - id: detect-secrets
+    args: ['--baseline', '.secrets.baseline']
+    exclude: .pre-commit-config.yaml
+# - repo: https://github.com/markdownlint/markdownlint
+#   rev: v0.11.0
+#   hooks:
+#     - id: markdownlint
+#       name: Markdownlint
+#       description: Run markdownlint on your Markdown files
+#       entry: mdl
+#       language: ruby
+#       files: \.(md|mdown|markdown)$
 - repo: https://github.com/adrienverge/yamllint.git
   rev: v1.24.2
   hooks:
-    - id: yamllint
-      files: \.(yaml|yml)$
-      types: [file, yaml]
-      entry: 'yamllint --strict -d "{extends: relaxed, rules: {line-length: {max: 200}}}"'
+  - id: yamllint
+    files: \.(yaml|yml)$
+    types: [file, yaml]
+    entry: 'yamllint --strict -d "{extends: relaxed, rules: {line-length: {max: 200}}}"'

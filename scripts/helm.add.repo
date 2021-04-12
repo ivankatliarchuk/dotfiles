@@ -1,16 +1,36 @@
 #!/usr/bin/env bash
 
-# Add helm repositories
+set -e
 
-helm repo add traefik https://helm.traefik.io/traefik
-helm repo add codecentric https://codecentric.github.io/helm-charts
-helm repo add incubator https://charts.helm.sh/incubator
-helm repo add stable https://charts.helm.sh/stable
-helm repo add loghouse https://flant.github.io/loghouse/charts/
-helm repo add uswitch https://uswitch.github.io/kiam-helm-charts/charts/
-helm repo add kubernetes-dashboard https://kubernetes.github.io/dashboard
-helm repo add soluto https://charts.soluto.io
-helm repo add stakater https://stakater.github.io/stakater-charts
-helm repo add vmware-tanzu https://vmware-tanzu.github.io/helm-charts
-helm repo add jenkinsci https://charts.jenkins.io
-helm repo add traefik https://helm.traefik.io/traefik
+# Add/update helm repositories
+# ./helm.add.repo
+
+[[ -n "${DEBUG:-}" ]] && set -x
+
+CHARTS=(
+  "incubator:charts.helm.sh/incubator"
+  "stable:charts.helm.sh/stable"
+  "traefik:helm.traefik.io/traefik"
+  "codecentric:codecentric.github.io/helm-charts"
+  "loghouse:flant.github.io/loghouse/charts"
+  "uswitch:uswitch.github.io/kiam-helm-charts/charts"
+  "kubernetes-dashboard:kubernetes.github.io/dashboard"
+  "soluto:charts.soluto.io"
+  "stakater:stakater.github.io/stakater-charts"
+  "vmware-tanzu:vmware-tanzu.github.io/helm-charts"
+  "jenkinsci:charts.jenkins.io"
+  "traefik:helm.traefik.io/traefik"
+  "mintel:mintel.github.io/helm-charts"
+)
+
+for el in "${CHARTS[@]}" ; do
+    KEY="${el%%:*}"
+    VALUE="${el##*:}"
+    printf "chart > %s. repo: https://%s.\n" "$KEY" "$VALUE"
+    helm repo add "${KEY}" "https://${VALUE}" || true
+done
+
+echo "list repositories"
+helm repo list
+echo "update repositories"
+helm repo update
