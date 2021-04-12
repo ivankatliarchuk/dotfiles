@@ -27,7 +27,3 @@ if exists aws-vault; then
 export AWS_VAULT_PROMPT=osascript
 export AWS_VAULT_KEYCHAIN_NAME=aws-vault
 fi
-
-if exists code; then
-export EDITOR="code --wait"
-fi

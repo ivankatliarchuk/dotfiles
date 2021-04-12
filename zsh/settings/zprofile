@@ -14,7 +14,12 @@ fi
 # Editors
 #
 
+if command -v code; then
+export EDITOR="code --wait"
+else
 export EDITOR='vim'
+fi
+
 export VISUAL='code'
 export PAGER=''
 
