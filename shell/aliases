@@ -103,7 +103,7 @@ alias :qw="exit"
 # Shortcuts
 alias h="history -50"
 alias hist="history 1"
-alias d="cd ~/Documents/Dropbox"
+alias cdd="cd ~/Documents/Dropbox"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias pr="cd ~/projects"
@@ -195,6 +195,7 @@ alias ips="sudo ifconfig -a | grep -o 'inet6\\? \\(addr:\\)\\?\\s\\?\\(\\(\\([0-
 
 alias localip="sudo ifconfig | grep -Eo 'inet (addr:)?([0-9]*\\.){3}[0-9]*' | grep -Eo '([0-9]*\\.){3}[0-9]*' | grep -v '127.0.0.1'"
 alias ips="sudo ifconfig -a | grep -o 'inet6\\? \\(addr:\\)\\?\\s\\?\\(\\(\\([0-9]\\+\\.\\)\\{3\\}[0-9]\\+\\)\\|[a-fA-F0-9:]\\+\\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
+alias ping='ping -c 5'
 
 # Show active network interfaces
 alias ifactive="ifconfig | pcregrep -M -o '^[^\t:]+:([^\n]|\n\t)*status: active'"
@@ -257,6 +258,7 @@ alias fight="printf '(ง'̀-'́)ง' | pbcopy"
 
 # Git
 # cd to git root directory
+alias g=git
 alias groot='cd "$(git rev-parse --show-toplevel)"'
 # -< gac "My commit message"
 alias gac= "add .;git commit -m 'wip'" # + commit message
@@ -274,6 +276,9 @@ alias gmain="git checkout main"
 alias blist="git blist"
 alias repos="find . -type d -exec sh -c 'cd "{}"; git rev-parse --git-dir 2> /dev/null 1>&2;' \; -prune -print"
 
+## Docker
+alias d=docker
+
 ## Ruby
 
 # Show list of available rubies
@@ -283,5 +288,18 @@ alias rupdate="gem update --system"
 alias rgemrc="gem help env"
 alias ppath="gem environment"
 alias rpath="gem env"
+
+## Proceses
+# options for top
+#	c = Show command-line for the processes
+#	-d1 = Sleep for 1 second between every update
+case $OSTYPE in
+darwin*)
+	alias top="top -s1 -o cpu -R -F"
+	;;
+*)
+	alias top="top -c -d 1"
+	;;
+esac
 
 #END alias-definitions

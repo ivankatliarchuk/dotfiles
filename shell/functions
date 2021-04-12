@@ -403,3 +403,20 @@ master() {
     echo "# NOT a git repo!"
   fi
 }
+
+# TOP 10 COMMANDS
+top10() { history | awk '{a[$2]++ } END{for(i in a){print a[i] " " i}}' | sort -rn | head; }
+
+# Goes up many dirs as the number passed as argument, if none goes up by 1 by default
+up() {
+  local d=""
+  limit=$1
+  for ((i=1 ; i <= limit ; i++)); do
+    d=$d/..
+  done
+  d=$(echo $d | sed 's/^\///')
+  if [[ -z "$d" ]]; then
+    d=..
+  fi
+  cd $d
+}
