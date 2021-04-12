@@ -12,16 +12,7 @@ install-local: ## Install locally
 	-@bin/install.sh -t local
 
 brew-install: ## Install apps with Brew
-	-@brew analytics off
-	-@brew bundle --file=brew/Brewfile -v --describe --no-lock
-	-@brew bundle --file=brew/Brewfile.secure -v --describe --no-lock
-	-@brew bundle --file=brew/Brewfile.networking -v --describe --no-lock
-	-@brew bundle --file=brew/Brewfile.git -v --describe --no-lock
-	-@brew bundle --file=brew/Brewfile.aws -v --describe --no-lock
-	-@brew bundle --file=brew/Brewfile.fonts -v --describe --no-lock
-	-@brew bundle --file=brew/Brewfile.development -v --describe --no-lock
-	-@brew bundle --file=brew/Brewfile.k8s -v --describe --no-lock
-	-@brew cu -y && brew update && brew upgrade && brew cleanup
+	-@./bin/brew.sh
 
 hooks: ## Setup pre commit.
 	@pre-commit install

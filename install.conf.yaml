@@ -3,6 +3,11 @@
     link:
       create: true
       relink: true
+    shell:
+      quiet: true
+      stdin: true
+      stdout: true
+      stderr: true
 
 - clean:
     ~/:
@@ -70,33 +75,18 @@
     - command: git submodule update --init --recursive
       description: Installing submodules
     - command: rm -rf ~/.gvm
-      stdin: true
-      stdout: true
       description: Remove GVM as build fails sometimes
-      quiet: true
-    -
-      command: brew cu -y && brew update && brew upgrade && brew cleanup
-      stdin: true
-      stdout: true
-      description: Brew cleanup
-      quiet: true
     -
       command: make install-deps
-      stdin: true
-      stdout: true
       description: Installing dependencies
-      quiet: true
+    -
+      command: make brew-install
+      description: Manage Brew
     -
       command: pyenv global && python -m pip install -U -r py/requirements.txt && pyenv rehash
-      stdin: true
-      stdout: true
       description: Installing dependencies & Rebuild shim files
-      quiet: true
     # - chsh -s $(which zsh)
     # - [chsh -s $(which zsh), Making zsh the default shell]
     -
       command: echo "My current 'shell' is '$SHELL'"
-      stdin: true
-      stdout: true
       description: Check current shell
-      quiet: false
