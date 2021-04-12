@@ -25,7 +25,6 @@
     - ~/.config/gitcfg.local
 
 - link:
-    ~/.vimrc: vim/vimrc
     ~/.gitconfig: git/gitconfig
     ~/.gitattributes: git/gitattributes
     ~/.config/gitcfg: git/gitcfg
@@ -63,6 +62,7 @@
     ~/.tmux.conf: terminal/tmux/config/.tmux.conf
     ~/.config/scripts: scripts
     # @todo: group rc files
+    ~/.vimrc: tools/vimrc
     ~/.curlrc: tools/curlrc
     ~/.wgetrc: tools/wgetrc
     ~/.gemrc: tools/gemrc
