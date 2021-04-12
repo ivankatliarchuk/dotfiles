@@ -47,6 +47,12 @@ brew_cleanup() {
   brew autoremove && brew cleanup
 }
 
+brew_fix() {
+  cd "$(brew --repository)"
+  git --git-dir "$(brew --repository)/.git" reset origin/master --hard
+  git --git-dir "$(brew --repository)/.git" clean -fd
+}
+
 show_help
 brew_install
 brew_lifecycle
