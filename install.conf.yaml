@@ -66,7 +66,9 @@
     ~/.curlrc: tools/curlrc
     ~/.wgetrc: tools/wgetrc
     ~/.gemrc: tools/gemrc
-    ~/.rvmrc: tools/rvmrc
+    ~/.rvmrc:
+      path: tools/rvmrc
+      force: true
     ~/.gvmrc: tools/gvmrc
     ~/.nvmrc: tools/nvmrc
     ~/.pyenvrc: tools/pyenvrc

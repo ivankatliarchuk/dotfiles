@@ -272,4 +272,14 @@ alias gmain="git checkout main"
 alias blist="git blist"
 alias repos="find . -type d -exec sh -c 'cd "{}"; git rev-parse --git-dir 2> /dev/null 1>&2;' \; -prune -print"
 
+## Ruby
+
+# Show list of available rubies
+alias rlist="rvm list gemsets"
+# update all the games
+alias rupdate="gem update --system"
+alias rgemrc="gem help env"
+alias ppath="gem environment"
+alias rpath="gem env"
+
 #END alias-definitions

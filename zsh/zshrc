@@ -37,4 +37,10 @@ export STARSHIP_CONFIG=~/.config/starship/starship.toml
 eval "$(starship init zsh)"
 fi
 
+# @todo move it out
 [[ -s "~/.gvm/scripts/gvm" ]] && source "~/.gvm/scripts/gvm"
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+[[ -s "/Users/ivankatliarchuk/.gvm/scripts/gvm" ]] && source "/Users/ivankatliarchuk/.gvm/scripts/gvm"

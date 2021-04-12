@@ -37,9 +37,25 @@ install_gvm() {
 }
 
 install_node() {
-  if exists nvm; then
+  if ! exists nvm; then
   # install default from ~/.nvmrc
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
     nvm use
+  else
+    nvm use
+  fi
+}
+
+install_rvm() {
+  if ! exists rvm; then
+  # install default from ~/.nvmrc
+    command curl -sSL https://rvm.io/mpapis.asc | gpg --import - ||
+      command curl -sSL https://rvm.io/pkuczynski.asc | gpg --import -
+    curl -sSL https://get.rvm.io | bash -s stable
+  else
+    rvm get stable --auto-dotfiles
+    rvm list gemsets
+    gem update --system || echo "Failed update :gem: gems"
   fi
 }
 
@@ -51,4 +67,5 @@ show_help
 install_fonts
 install_gvm
 install_node
+install_rvm
 install_helm

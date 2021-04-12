@@ -121,6 +121,7 @@ These scripts are meant to run only on OS X
 - [Prezto](https://github.com/sorin-ionescu/prezto)
 
 - [Ybikey Guide](https://github.com/drduh/YubiKey-Guide)
+- [NVMRC](https://github.com/nvm-sh/nvm#nvmrc)
 
 ### Evaluate Tools
 
@@ -151,7 +152,6 @@ These scripts are meant to run only on OS X
 - [X] Install powerline fonts
 - [X] wgetrc & curlrc
 - [X] Pyenv correct setup
-- [ ] Move from NVM to NODENV
 - [ ] Move shell to same dir
 - [ ] Tmux configs Setup/Document
 - [ ] Mac setu pfrom here https://github.com/bitwolfe/dotbot#activity-monitor
@@ -213,5 +213,5 @@ Currently maintained by [Ivan Katliarchuk](https://github.com/ivankatliarchuk) a
 [![ForTheBadge uses-git](http://ForTheBadge.com/images/badges/uses-git.svg)](https://GitHub.com/)
 
 
-To-Remove:
-- https://hackernoon.com/personal-macos-workspace-setup-adf61869cd79
+firefox auto config https://support.mozilla.org/en-US/kb/customizing-firefox-using-autoconfig
+
