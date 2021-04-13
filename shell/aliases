@@ -124,6 +124,7 @@ command -v kubectx > /dev/null && alias kx=kubectx        # https://github.com/a
 
 # Brewfile
 alias brewup='brew cu --cleanup -f -y && brew update && brew upgrade && brew upgrade --casks && brew cleanup'
+alias brewrepo='cd $(brew --repository)'
 
 # Directory,File Folder Usage
 alias d-usage="df -h"
