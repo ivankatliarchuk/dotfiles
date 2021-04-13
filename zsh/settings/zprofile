@@ -14,7 +14,7 @@ fi
 # Editors
 #
 
-if [ ! -x "$(command -v code)" ]; then
+if which code > /dev/null; then
   export EDITOR="code --wait"
 else
   export EDITOR='vim'
