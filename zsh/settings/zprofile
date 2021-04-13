@@ -14,10 +14,10 @@ fi
 # Editors
 #
 
-if command -v code; then
-export EDITOR="code --wait"
+if [ ! -x "$(command -v code)" ]; then
+  export EDITOR="code --wait"
 else
-export EDITOR='vim'
+  export EDITOR='vim'
 fi
 
 export VISUAL='code'
@@ -32,8 +32,6 @@ typeset -gU cdpath fpath mailpath path
 
 [[ -f ~/.config/manage/python ]] && source ~/.config/manage/python
 
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
 # export PYTHON_PATH="$(python3 -m site --user-base)/bin:$(python -m site --user-site)/bin:$PYTHONPATH"
 # export PATH="$(pyenv root)/shims:$(command -v python3):$(command -v python):$PYTHON_PATH:$PATH"
 
