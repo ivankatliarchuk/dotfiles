@@ -277,13 +277,13 @@ alias gmain="git checkout main"
 alias blist="git blist"
 alias repos="find . -type d -exec sh -c 'cd "{}"; git rev-parse --git-dir 2> /dev/null 1>&2;' \; -prune -print"
 
-alias _gt=_gt
-alias _gdif=_gdif
-alias _gbranch=_gbranch
-alias _gtag=_gtag
-alias _glog=_glog
-alias _gstash=_gstash
-alias _gremote=_gremote
+alias agt=_gt
+alias agdif=_gdif
+alias agbranch=_gbranch
+alias agtag=_gtag
+alias aglog=_glog
+alias agstash=_gstash
+alias agremote=_gremote
 
 ## Docker
 alias d=docker
