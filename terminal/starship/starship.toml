@@ -46,12 +46,12 @@ disabled = false
 
 [kubernetes]
 symbol = "☸⛵"
-format = '☸[⛵ $context \($namespace\)](#2596BE)'
+format = '☸[⛵$context\($namespace\)](#2596BE) '
 style = "green"
 disabled = false
 
 [python]
-symbol = "👾 "
+symbol = "👹"
 pyenv_version_name = true
 pyenv_prefix = "ik "
 
