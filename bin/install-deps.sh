@@ -70,6 +70,7 @@ fi
 }
 
 install_rvm() {
+  set +e
   if ! exists rvm; then
   # install default from ~/.nvmrc
     command curl -sSL https://rvm.io/mpapis.asc | gpg --import - ||
@@ -80,6 +81,7 @@ install_rvm() {
     rvm list gemsets
     gem update --system || echo "Failed update :gem: gems"
   fi
+  set -e
 }
 
 install_helm() {
