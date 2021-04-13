@@ -1,4 +1,6 @@
 # https://raw.githubusercontent.com/ivankatliarchuk/dotfiles/master/zsh/settings/starship.toml
+# https://github.com/denysdovhan/spaceship-prompt/wiki/Presets
+
 add_newline = false
 [line_break]
 disabled = false
@@ -44,11 +46,9 @@ disabled = false
 
 [kubernetes]
 symbol = "☸⛵"
-format = 'on [⛵ $context \($namespace\)](dimmed green) '
+format = '☸[⛵ $context \($namespace\)](#2596BE)'
 style = "green"
 disabled = false
-[kubernetes.context_aliases]
-"dev.local.cluster.k8s" = "dev"
 
 [python]
 symbol = "👾 "
@@ -61,11 +61,8 @@ symbol = "🏎💨 "
 [aws]
 style = "bold blue"
 symbol = "🅰 "
-displayed_items = "region"
-[aws.region_aliases]
-ap-southeast-2 = "apsoutheast"
-us-east-1 = "useast"
-us-west-2 = "uswest"
+displayed_items = ""
+disabled = true
 
 [git_commit]
 commit_hash_length = 4
@@ -73,4 +70,7 @@ style = "bold green"
 tag_symbol = "🏷 "
 
 [nodejs]
-format = "via [🤖 $version](bold green) "
+format = "via [🤖 $version](#abdbe3) "
+
+[vagrant]
+disabled = true

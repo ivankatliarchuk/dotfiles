@@ -28,4 +28,9 @@ if OS.mac?
   cask "font-3270-nerd-font"
   cask "font-anonymice-nerd-font"
   cask "font-bigblue-terminal-nerd-font"
+# emoji
+  # https://github.com/Homebrew/homebrew-cask-fonts/blob/master/Casks/font-noto-color-emoji.rb
+  cask "font-noto-color-emoji"
+  cask "font-noto-emoji"
+  cask "font-twitter-color-emoji"
 end
