@@ -51,9 +51,9 @@ style = "green"
 disabled = false
 
 [python]
-symbol = "👹"
+symbol = "👹 "
 pyenv_version_name = true
-pyenv_prefix = "ik "
+pyenv_prefix = "p.env "
 
 [terraform]
 symbol = "🏎💨 "
