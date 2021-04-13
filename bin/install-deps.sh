@@ -1,8 +1,10 @@
 #!/bin/bash
+# shellcheck disable=SC2155
 
 set -e
 
 : "${GVM_NO_UPDATE_PROFILE:=1}"
+: "${PYENV_VERSION:=3.9.1}"
 
 [[ -n "${DEBUG:-}" ]] && set -x
 
@@ -16,6 +18,7 @@ Usage: $(basename "$0") :do:
     install powerline fonts
     install gvm (Go Version Manager)
     install node with NVM (Node Version Manage https://github.com/nvm-sh/nvm)
+    install python with Pyenv (https://realpython.com/intro-to-pyenv/)
     install helm charts
 EOF
 }
@@ -38,12 +41,32 @@ install_gvm() {
 
 install_node() {
   if ! exists nvm; then
-  # install default from ~/.nvmrc
-    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
-    nvm use
+    # installed with brwe
+    # curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+    # install default from ~/.nvmrc
+    echo "install nvm with brew"
   else
     nvm use
   fi
+}
+
+install_python() {
+  local python_versions="$(pyenv versions | tr -d '[:space:]')"
+  local pyenv_latest_version="$(pyenv install --list | grep -v - | grep -v b | tail -1 | tr -d '[:space:]')"
+  if [ ! -x "$(command -v pyenv)" ]; then
+    pyenv install --skip-existing "${PYENV_VERSION}"
+    pyenv global "${PYENV_VERSION}"
+    echo "pip location: $(pyenv which pip)"
+  else
+    echo "pyenv not installed"
+  fi
+
+  if [ ! -x "$(command -v pyenv)" ]; then
+
+  if [[ ! ${python_versions} =~ ${pyenv_latest_version} ]]; then
+    echo "new pyethon version is awailable ${pyenv_latest_version}"
+  fi
+fi
 }
 
 install_rvm() {
@@ -68,4 +91,5 @@ install_fonts
 install_gvm
 install_node
 install_rvm
+install_python
 install_helm

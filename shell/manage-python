@@ -1,31 +1,20 @@
 #!/bin/bash
 # https://raw.githubusercontent.com/ivankatliarchuk/dotfiles/master/shell/manage-python
+# shellcheck disable=SC2034,SC2155,SC1090,SC2154,SC2154
 #
 # Set python latest version with pyenv
 #
 
 PYTHON_VERSIONS="$(pyenv versions | tr -d '[:space:]')"
 PYENV_LATEST_VERSION="$(pyenv install --list | grep -v - | grep -v b | tail -1 | tr -d '[:space:]')"
-PYENV_GLOBAL_VERSION=
+export PYENV_GLOBAL_VERSION="$(pyenv version-name)"
+export PYENV_VERSION="$(pyenv version-name)"
 
 # Return if requirements are not found.
-# shellcheck disable=SC2154,SC2154
 if (( ! $+commands[python] && ! $+commands[pyenv] )); then
   return 1
 fi
 
-# shellcheck disable=SC2154,SC2154
 if (( $+commands[pyenv] )); then
   eval "$(pyenv init - --no-rehash zsh)"
 fi
-
-if [ ! -x "$(command -v pyenv)" ]; then
-  if [[ ! ${PYTHON_VERSIONS} =~ ${PYENV_LATEST_VERSION} ]]; then
-    echo "install python version ${PYENV_LATEST_VERSION}"
-    pyenv install --skip-existing "${PYENV_LATEST_VERSION}"
-    pyenv global "${PYENV_LATEST_VERSION}"
-  fi
-fi
-
-pyenv rehash
-export PYENV_GLOBAL_VERSION="${PYENV_LATEST_VERSION}"

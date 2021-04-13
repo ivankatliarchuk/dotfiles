@@ -38,7 +38,6 @@
       path: shell/profile
       force: true
     ~/.config/manage/python: shell/manage-python
-    ~/.config/manage/node: shell/manage-node
     ~/.locals: locals
     ~/.zshrc:
       path: zsh/zshrc
