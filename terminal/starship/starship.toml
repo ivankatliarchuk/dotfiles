@@ -54,7 +54,8 @@ disabled = false
 symbol = " "
 pyenv_version_name = true
 pyenv_prefix = "python "
-format = '[${pyenv_prefix}${symbol} (${version} )(\($virtualenv\))]($style)'
+format = '[${symbol} (${version} )(\($virtualenv\))]($style)'
+# format = '[${pyenv_prefix}${symbol} (${version} )(\($virtualenv\))]($style)'
 
 [terraform]
 symbol = "🏎💨 "
@@ -75,7 +76,7 @@ tag_symbol = "🏷 "
 
 [nodejs]
 symbol = " "
-format = "node [$symbol$version]($style) "
+format = "[$symbol$version]($style) "
 style = "#abdbe3"
 detect_files = ["package.json", ".node-version", ".nvrc"]
 
