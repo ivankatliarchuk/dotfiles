@@ -3,7 +3,8 @@ tap "homebrew/cask-fonts"
 # XML-based font configuration API for X Windows
 # https://wiki.freedesktop.org/www/Software/fontconfig/
 brew "fontconfig"
-# brew search font-
+# brew search "/font-/"
+# brew search font- | grep NAME
 if OS.mac?
 # https://github.com/Homebrew/homebrew-cask-fonts
   cask "font-inconsolata"
@@ -29,6 +30,7 @@ if OS.mac?
   cask "font-3270-nerd-font"
   cask "font-anonymice-nerd-font"
   cask "font-bigblue-terminal-nerd-font"
+  cask "font-hack-nerd-font"
 # emoji
   # https://github.com/Homebrew/homebrew-cask-fonts/blob/master/Casks/font-noto-color-emoji.rb
   cask "font-noto-color-emoji"

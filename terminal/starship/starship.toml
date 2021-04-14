@@ -51,10 +51,10 @@ style = "green"
 disabled = false
 
 [python]
-symbol = "👹 "
+symbol = " "
 pyenv_version_name = true
 pyenv_prefix = "python "
-format = '[${pyenv_prefix}${symbol}(${version} )(\($virtualenv\))]($style)'
+format = '[${pyenv_prefix}${symbol} (${version} )(\($virtualenv\))]($style)'
 
 [terraform]
 symbol = "🏎💨 "
@@ -64,6 +64,9 @@ style = "bold blue"
 symbol = "🅰 "
 displayed_items = ""
 disabled = true
+
+[git_branch]
+symbol = " "
 
 [git_commit]
 commit_hash_length = 4
