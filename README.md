@@ -11,6 +11,10 @@ Dotfiles setup
 ![](https://img.shields.io/github/contributors/ivankatliarchuk/dotfiles)
 [![GitHub forks](https://img.shields.io/github/forks/ivankatliarchuk/dotfiles.svg?style=social&label=Fork)](https://github.com/ivankatliarchuk/dotfiles)
 
+```bash
+starship timings
+```
+
 ## Table of Contents
 
 - [CloudKat's dotfiles](#cloudkat-s-dotfiles)
@@ -173,10 +177,10 @@ These scripts are meant to run only on OS X
 
 <!-- START makefile-doc -->
 ```
-$ make help
+$ make help 
 Usage: make [target] [VARIABLE=value]
 Targets:
-install-local                  Install locally
+install                        Install locally
 brew-install                   Install apps with Brew
 hooks                          Setup pre commit.
 validate                       Validate files with pre-commit hooks
@@ -186,6 +190,7 @@ ignore-dirty                   Ignore dirty commits
 install-deps                   Install dependencies
 git-submodule                  Git submodules update
 git-module-remove              Remove submodule MODULE=something
+setup-python                   Python setup 
 ```
 <!-- END makefile-doc -->
 
@@ -214,4 +219,3 @@ Currently maintained by [Ivan Katliarchuk](https://github.com/ivankatliarchuk) a
 
 
 firefox auto config https://support.mozilla.org/en-US/kb/customizing-firefox-using-autoconfig
-

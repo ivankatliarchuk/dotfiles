@@ -84,7 +84,7 @@
       command: make brew-install
       description: Manage Brew
     -
-      command: pyenv global && python -m pip install -U -r py/requirements.txt && pyenv rehash
+      command: make setup-python
       description: Installing dependencies & Rebuild shim files
     # - chsh -s $(which zsh)
     # - [chsh -s $(which zsh), Making zsh the default shell]

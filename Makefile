@@ -5,6 +5,7 @@ MAKEFLAGS += --warn-undefined-variables
 MAKEFLAGS += --no-builtin-rules
 
 INSTALL_BREW ?= false
+export PYENV_LOCATION ?= $(shell which pyenv)
 
 help:
 	@printf "Usage: make [target] [VARIABLE=value]\nTargets:\n"
@@ -48,5 +49,11 @@ git-submodule: ## Git submodules update
 git-module-remove: ## Remove submodule MODULE=something
 	@git submodule deinit -f vendor/$(MODULE)
 	@git rm --cached vendor/$(MODULE)
+
+setup-python: ## Python setup
+ifdef PYENV_LOCATION
+		$(info pyenv location found: '${PYENV_LOCATION}')
+endif
+	pyenv local && python3 -m pip install -U -r py/requirements.txt
 
 .PHONY: vm-up vm-dowm validate hooks brew-install git-submodule
