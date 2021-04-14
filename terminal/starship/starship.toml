@@ -53,7 +53,8 @@ disabled = false
 [python]
 symbol = "👹 "
 pyenv_version_name = true
-pyenv_prefix = "p.env "
+pyenv_prefix = "python "
+format = '[${pyenv_prefix}${symbol}(${version} )(\($virtualenv\))]($style)'
 
 [terraform]
 symbol = "🏎💨 "
@@ -70,7 +71,10 @@ style = "bold green"
 tag_symbol = "🏷 "
 
 [nodejs]
-format = "via [🤖 $version](#abdbe3) "
+symbol = " "
+format = "node [$symbol$version]($style) "
+style = "#abdbe3"
+detect_files = ["package.json", ".node-version", ".nvrc"]
 
 [vagrant]
 disabled = true
