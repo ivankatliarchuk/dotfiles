@@ -3,6 +3,7 @@ tap "homebrew/cask-fonts"
 # XML-based font configuration API for X Windows
 # https://wiki.freedesktop.org/www/Software/fontconfig/
 brew "fontconfig"
+# brew search font-
 if OS.mac?
 # https://github.com/Homebrew/homebrew-cask-fonts
   cask "font-inconsolata"
