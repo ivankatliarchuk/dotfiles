@@ -426,9 +426,11 @@
         "Green Component": 0.683258056640625
       },
       "Ansi 1 Color": {
-        "Green Component": 0,
-        "Blue Component": 0,
-        "Red Component": 0.7333333492279053
+        "Red Component": 0.7302389144897461,
+        "Color Space": "sRGB",
+        "Blue Component": 0.564844998362787,
+        "Alpha Component": 1,
+        "Green Component": 0.587203716952984
       },
       "Name": "personal",
       "Blinking Cursor": true,
@@ -949,9 +951,11 @@
         "Red Component": 0.7333333492279053
       },
       "Ansi 1 Color": {
-        "Green Component": 0,
-        "Blue Component": 0,
-        "Red Component": 0.7333333492279053
+        "Red Component": 0.7302389144897461,
+        "Color Space": "sRGB",
+        "Blue Component": 0.564844998362787,
+        "Alpha Component": 1,
+        "Green Component": 0.587203716952984
       },
       "Name": "tired-eyes",
       "Blinking Cursor": true,

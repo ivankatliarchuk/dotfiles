@@ -51,9 +51,10 @@
     ~/.gnupg/gpg-agent.conf: tools/gnupg/gpg-agent.conf
     ~/.config/mc/ini: tools/mc.ini
     /usr/local/etc/tor/torrc: tools/browser/tor/torrc
-    ~/Library/ApplicationSupport/iTerm2/DynamicProfiles/custom-profiles.json:
+    ~/Library/ApplicationSupport/iTerm2/DynamicProfiles/profiles.json:
       if: '[ `uname` = Darwin ]'
       path: terminal/iTerm/profiles.json
+      force: true
     ~/.config/starship: terminal/starship
     ~/.tmuxp/configs: terminal/tmux/configs
     ~/.tmuxp/aliases: terminal/tmux/aliases
