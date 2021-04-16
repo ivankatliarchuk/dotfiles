@@ -33,10 +33,11 @@ variable = "ENVIRONMENT"
 style = "dimmed bold purple"
 
 [git_status]
+format = '([\[$all_status$ahead_behind \] ]($style) )'
 conflicted = "🔥"
 ahead = "☘️"
 behind = "☣️"
-diverged = "🚥"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
 # untracked = "🤷‍"
 stashed = "🚫"
 # modified = "📝"
