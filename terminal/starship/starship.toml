@@ -14,7 +14,7 @@ charging_symbol = "⚡️"
 discharging_symbol = "⚠️"
 
 [directory]
-truncation_symbol = "⛺.."
+truncation_symbol = "⬅️ ."
 truncation_length = 2
 truncate_to_repo = true
 format = "[$path]($style)( [$read_only]($read_only_style)) "
