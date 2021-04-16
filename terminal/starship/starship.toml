@@ -14,7 +14,11 @@ charging_symbol = "⚡️"
 discharging_symbol = "💀"
 
 [directory]
-truncation_length = 8
+truncation_symbol = "💦.."
+truncation_length = 2
+truncate_to_repo = true
+format = "[$path]($style)( [$read_only]($read_only_style)) "
+read_only = "🔒"
 
 [docker_context]
 symbol = "🐋 "
@@ -45,8 +49,8 @@ trim_at = ".companyname.com"
 disabled = false
 
 [kubernetes]
-symbol = "☸⛵"
-format = '☸[⛵$context\($namespace\)](#2596BE) '
+symbol = "⛵☸"
+format = '[⛵☸$context\($namespace\)](#2596BE) '
 style = "green"
 disabled = false
 
