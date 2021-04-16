@@ -33,8 +33,8 @@ variable = "ENVIRONMENT"
 style = "dimmed bold purple"
 
 [git_status]
-format = '([$all_status$ahead_behind ]($style))'
-conflicted = "🔥"
+format = '([$all_status$ahead_behind ]($style)) '
+conflicted = "❌"
 ahead = "☘️"
 behind = "☣️"
 diverged = "⇕⇡${ahead_count}⇣${behind_count}"
@@ -45,7 +45,7 @@ staged.value = "++"
 staged.style = "green"
 staged_count.enabled = true
 staged_count.style = "green"
-renamed = "👅"
+renamed = "☑️"
 deleted = "⛔"
 
 [hostname]
