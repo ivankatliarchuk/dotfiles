@@ -11,10 +11,10 @@ disabled = true
 [battery]
 full_symbol = "🔋"
 charging_symbol = "⚡️"
-discharging_symbol = "💀"
+discharging_symbol = "⚠️"
 
 [directory]
-truncation_symbol = "💦.."
+truncation_symbol = "⛺.."
 truncation_length = 2
 truncate_to_repo = true
 format = "[$path]($style)( [$read_only]($read_only_style)) "
@@ -30,17 +30,17 @@ style = "dimmed bold purple"
 [git_status]
 conflicted = "🏳"
 ahead = "🏎💨"
-behind = "🚜"
+behind = "☣️"
 diverged = "🚥"
 # untracked = "🤷‍"
-stashed = "📦"
+stashed = "🚫"
 # modified = "📝"
 staged.value = "++"
 staged.style = "green"
 staged_count.enabled = true
 staged_count.style = "green"
 renamed = "👅"
-deleted = "💢"
+deleted = "⛔"
 
 [hostname]
 ssh_only = true
