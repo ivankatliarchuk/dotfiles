@@ -2,8 +2,13 @@
 # https://github.com/denysdovhan/spaceship-prompt/wiki/Presets
 
 add_newline = false
+
 [line_break]
 disabled = false
+
+[character]
+success_symbol = "▶️(bold green)"
+error_symbol = "❌(bold red)"
 
 [username]
 disabled = true
@@ -14,7 +19,7 @@ charging_symbol = "⚡️"
 discharging_symbol = "⚠️"
 
 [directory]
-truncation_symbol = "⬅️ ."
+truncation_symbol = "⬅️ .."
 truncation_length = 2
 truncate_to_repo = true
 format = "[$path]($style)( [$read_only]($read_only_style)) "
