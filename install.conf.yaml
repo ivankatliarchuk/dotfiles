@@ -29,9 +29,6 @@
     ~/.gitattributes: git/gitattributes
     ~/.config/gitcfg: git/gitcfg
     ~/.aliases: shell/aliases
-    ~/.bashrc:
-      path: shell/bashrc
-      force: true
     ~/.exports: shell/exports
     ~/.functions: shell/functions
     ~/.profile:
@@ -39,14 +36,10 @@
       force: true
     ~/.config/manage/python: shell/manage-python
     ~/.locals: locals
-    ~/.zshrc:
-      path: zsh/zshrc
-      force: true
     ~/.zshenv: zsh/settings/zshenv
     ~/.zprofile: zsh/settings/zprofile
     ~/.zsh/functions: zsh/functions
     ~/.zsh/settings: zsh/settings
-    ~/.zpreztorc: zsh/settings/zpreztorc
     ~/.gnupg/gpg.conf: tools/gnupg/gpg.conf
     ~/.gnupg/gpg-agent.conf: tools/gnupg/gpg-agent.conf
     ~/.config/mc/ini: tools/mc.ini
@@ -62,6 +55,13 @@
     ~/.tmux.conf: terminal/tmux/config/.tmux.conf
     ~/.config/scripts: scripts
     # @todo: group rc files
+    ~/.zshrc:
+      path: zsh/zshrc
+      force: true
+    ~/.zpreztorc: zsh/settings/zpreztorc
+    ~/.bashrc:
+      path: shell/bashrc
+      force: true
     ~/.vimrc: tools/vimrc
     ~/.curlrc: tools/curlrc
     ~/.wgetrc: tools/wgetrc

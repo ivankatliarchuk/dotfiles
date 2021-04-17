@@ -64,3 +64,5 @@ zsdoc/data
 **/*.lock.json
 *.lock.json
 vendor/*
+
+tmp/**

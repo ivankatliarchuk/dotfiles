@@ -156,10 +156,12 @@ These scripts are meant to run only on OS X
 - [X] Install powerline fonts
 - [X] wgetrc & curlrc
 - [X] Pyenv correct setup
+- [ ] Firefox [auto config](https://support.mozilla.org/en-US/kb/customizing-firefox-using-autoconfig)
+- [ ] Brave [config file](https://google.com)
 - [ ] Move shell to same dir
 - [ ] Tmux configs Setup/Document
 - [ ] Mac setu pfrom here https://github.com/bitwolfe/dotbot#activity-monitor
-- [ ] Hammersppoon config opensource
+- [ ] Hammersppoon config opensource [example](https://github.com/rkalis/dotfiles/tree/master/hammerspoon) https://github.com/aleks/hammerspoon-dotfiles
 - [ ] Chezmoi integration
 - [ ] Support Linux/Debian
 - [ ] DNS Crypt (https://github.com/drduh/config/blob/master/dnscrypt-proxy.toml)
@@ -177,7 +179,7 @@ These scripts are meant to run only on OS X
 
 <!-- START makefile-doc -->
 ```
-$ make help 
+$ make help
 Usage: make [target] [VARIABLE=value]
 Targets:
 install                        Install locally
@@ -190,7 +192,7 @@ ignore-dirty                   Ignore dirty commits
 install-deps                   Install dependencies
 git-submodule                  Git submodules update
 git-module-remove              Remove submodule MODULE=something
-setup-python                   Python setup 
+setup-python                   Python setup
 ```
 <!-- END makefile-doc -->
 
@@ -216,6 +218,3 @@ Submit a pull request
 Currently maintained by [Ivan Katliarchuk](https://github.com/ivankatliarchuk) and these [awesome contributors](https://github.com/ivankatliarchuk/dotfiles/graphs/contributors).
 
 [![ForTheBadge uses-git](http://ForTheBadge.com/images/badges/uses-git.svg)](https://GitHub.com/)
-
-
-firefox auto config https://support.mozilla.org/en-US/kb/customizing-firefox-using-autoconfig
