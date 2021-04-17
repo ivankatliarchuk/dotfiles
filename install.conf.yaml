@@ -35,6 +35,9 @@
       path: shell/profile
       force: true
     ~/.config/manage/python: shell/manage-python
+    ~/.python-version:
+      path: .python-version
+      force: true
     ~/.locals: locals
     ~/.zshenv: zsh/settings/zshenv
     ~/.zprofile: zsh/settings/zprofile
