@@ -138,9 +138,10 @@ alias foldersort='du -ksh * | sort -hr'
 alias foldertotal='du -cksh * | sort -hr | head -n 15'
 alias mounted='mount'
 alias mnt='mount | grep -E ^/ | column -t'
+alias p='pwd'
 
 # Files
-alias pwdcfg="cat /etc/passwd"
+alias pwdcfg="cat /etc/passwd" # pragma: allowlist secret
 alias pwdcfgusers="cat /etc/passwd | cut -f 1 -d ':'"
 alias resolvcfg="cat /etc/resolv.conf"
 alias chosts='cat /etc/hosts'
