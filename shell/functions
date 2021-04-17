@@ -464,7 +464,7 @@ master() {
 }
 
 # TOP 10 COMMANDS
-top10() { history | awk '{a[$2]++ } END{for(i in a){print a[i] " " i}}' | sort -rn | head; }
+function last10() { history | awk '{a[$2]++ } END{for(i in a){print a[i] " " i}}' | sort -rn | head; }
 
 # Goes up many dirs as the number passed as argument, if none goes up by 1 by default
 up() {

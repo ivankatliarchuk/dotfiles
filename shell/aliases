@@ -311,4 +311,6 @@ darwin*)
 	;;
 esac
 
+alias last10=last10
+alias top10='history-stat -n 15'
 #END alias-definitions
