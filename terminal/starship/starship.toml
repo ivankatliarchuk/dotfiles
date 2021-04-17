@@ -8,7 +8,7 @@ disabled = false
 
 [character]
 success_symbol = "▶️ (bold green)"
-error_symbol = "❌(bold red)"
+error_symbol = "⚠️ (bold red)"
 
 [username]
 disabled = true
@@ -23,7 +23,7 @@ truncation_symbol = "⬅️ .."
 truncation_length = 2
 truncate_to_repo = true
 format = "[$path]($style)( [$read_only]($read_only_style)) "
-read_only = "🔒"
+read_only = "🚧"
 
 [docker_context]
 symbol = "🐋 "
