@@ -16,7 +16,6 @@ Dotfiles setup
 **Table of Contents**
 
   - [Project Structure](#project-structure)
-  - [Prerequisits](#prerequisits)
   - [Installation](#installation)
   - [Caveats](#caveats)
   - [Motivation](#motivation)
@@ -66,10 +65,6 @@ Dotfiles setup
 	├── Vagrantfile
 	└── README.md
 ```
-
-## Prerequisits
-
-- [DotBot](https://github.com/anishathalye/dotbot#configuration)
 
 ## Installation
 

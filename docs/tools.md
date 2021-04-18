@@ -1,5 +1,22 @@
 # Tools installed
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**
+
+- [Prerequisits](#prerequisits)
+- [Mixed](#mixed)
+- [DNS crypt](#dns-crypt)
+- [Brew](#brew)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+## Prerequisits
+
+- [DotBot](https://github.com/anishathalye/dotbot#configuration)
+
+## Mixed
+
 - [DotBot](https://github.com/anishathalye/dotbot/wiki)
 - [Chezmoi Quick Start](https://www.chezmoi.io/docs/quick-start/)
 
