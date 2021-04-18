@@ -25,10 +25,10 @@ Dotfiles setup
     - [®️ Emojies](#-emojies)
   - [💻 MacOS](#-macos)
   - [#️⃣ TODO](#%EF%B8%8F%E2%83%A3-todo)
-  - [QA](#qa)
+  - [? QA](#-qa)
   - [Awailable Commands](#awailable-commands)
     - [:memo: Guidelines](#memo-guidelines)
-  - [License](#license)
+  - [🔖 License](#-license)
   - [How to Contribute](#how-to-contribute)
 - [Authors](#authors)
 
@@ -128,9 +128,13 @@ These scripts are meant to run only on OS X
 - [ ] Dotbot templater plugin
 - [ ] Dotbot import private repos plugin
 
-## QA
+## ? QA
 
 > How to switch project specific versions and golang verions
+
+```bash
+gvm help
+```
 
 ## Awailable Commands
 
@@ -160,7 +164,7 @@ setup-python                   Python setup
  - :signal_strength: Support questions are better asked on [Stack Overflow](https://stackoverflow.com/)
  - :blush: Be nice, civil and polite ([as always](http://contributor-covenant.org/version/1/4/)).
 
-## License
+## 🔖 License
 
 Copyright 2019 Ivan Katliarhcuk
 
