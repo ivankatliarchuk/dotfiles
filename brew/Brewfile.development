@@ -76,6 +76,8 @@ brew "packer"
 brew "duck"
 # Docker Machine driver for hyperkit
 brew "docker-machine-driver-hyperkit"
+
+if OS.mac?
 # --- Casks
 # Manage your Jet Brains tools the easy way
 # https://www.jetbrains.com/toolbox-app/
@@ -88,4 +90,5 @@ cask "the-unarchiver"
 cask "macdown"
 # The Collaboration Platform for API Development.
 # https://github.com/postmanlabs
-cask "postman"
+cask "postman", greedy: true
+end

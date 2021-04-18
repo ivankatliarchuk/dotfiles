@@ -1,3 +1,4 @@
+# https://github.com/Homebrew/homebrew-bundle
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/cask-versions"
@@ -37,6 +38,9 @@ brew "archey"
 # The cross-shell prompt for astronauts
 # https://starship.rs/
 brew "starship"
+#
+brew "reattach-to-user-namespace"
+if OS.mac?
 # --- Casks
 # https://www.mozilla.org/en-GB/firefox/
 cask "firefox"
@@ -47,8 +51,6 @@ cask "iterm2"
 # This is a tool for powerful automation of OS X.
 # https://github.com/Hammerspoon/hammerspoon
 cask "hammerspoon"
-#
-brew "reattach-to-user-namespace"
 # CCleaner is the number-one tool for fixing a slow Mac
 # https://www.ccleaner.com/ccleaner-mac
 cask "ccleaner"
@@ -61,3 +63,4 @@ cask "slack"
 # MacoOS calendar
 # https://www.mowglii.com/itsycal/
 cask "itsycal"
+end

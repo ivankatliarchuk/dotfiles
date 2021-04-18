@@ -26,14 +26,16 @@ brew "sshuttle"
 # https://www.stevenrombauts.be/2018/01/use-dnsmasq-instead-of-etc-hosts/
 # https://passingcuriosity.com/2013/dnsmasq-dev-osx/
 brew "dnsmasq"
+if OS.mac?
 # -- Casks
 # Charles is an HTTP proxy / HTTP monitor / Reverse Proxy that enables a developer to view all of the HTTP and SSL / HTTPS traffic between their machine and the Internet.
 cask "charles"
-# https://obdev.at/products/littlesnitch/index.html
-cask "little-snitch"
 # Public URLs for exposing your local web server
 # https://ngrok.com/
 cask "ngrok"
 # Wireshark is a network traffic analyzer, or "sniffer"
 # https://github.com/wireshark/wireshark
 cask "wireshark"
+# https://obdev.at/products/littlesnitch/index.html
+cask "little-snitch"
+end
