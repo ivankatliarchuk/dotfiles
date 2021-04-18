@@ -291,13 +291,17 @@ alias d=docker
 
 ## Ruby
 
-# Show list of available rubies
-alias rlist="rvm list gemsets"
-# update all the games
-alias rupdate="gem update --system"
+alias rlist="rvm list gemsets" # Show list of available rubies
+alias rupdate="gem update --system;gem update;gem cleanup" # update all the games system and locals
 alias rgemrc="gem help env"
-alias ppath="gem environment"
-alias rpath="gem env"
+alias rubyenv="gem environment"
+alias gemout='gem outdated' # check if any installed gems are outdated
+alias gemenv="gem env"
+alias bundlefix="rm -rf ~/.bundle;echo 'run [bundle install]'"
+
+## Commands
+alias help='cmds-help'
+alias rubyhelp='rubyhelp'
 
 ## Proceses
 # options for top

@@ -1,0 +1,7 @@
+{
+  "files.autoSave": "afterDelay",
+  "files.associations": {
+    "*.cmd": "shellscript",
+    "**/*.cmd": "shellscript"
+  }
+}

@@ -12,6 +12,13 @@ for function in ~/.zsh/functions/*; do
   source $function
 done
 
+for cmd in ~/.config/.cmds/*; do
+	if [[ -r "$cmd" ]] && [[ -f "$cmd" ]]; then
+		source "$cmd"
+	fi
+done
+unset cmd
+
 [[ -f ~/.functions ]] && source ~/.functions     # Global Functions
 [[ -f ~/local/.zshrc ]] && source ~/local/.zshrc # Local config
 [[ -f ~/.exports ]] && source ~/.exports         # Exports

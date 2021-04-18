@@ -18,6 +18,10 @@ full_symbol = "🔋"
 charging_symbol = "⚡️"
 discharging_symbol = "⚠️"
 
+[[battery.display]]
+threshold = 10
+style = "bold red"
+
 [directory]
 truncation_symbol = "⬅️ .."
 truncation_length = 2
@@ -26,7 +30,7 @@ format = "[$path]($style)( [$read_only]($read_only_style)) "
 read_only = "🚧"
 
 [docker_context]
-symbol = "🐋 "
+symbol = "🐳 "
 
 [env_var]
 variable = "ENVIRONMENT"
@@ -92,3 +96,7 @@ detect_files = ["package.json", ".node-version", ".nvrc"]
 
 [vagrant]
 disabled = true
+
+[cmd_duration]
+min_time = 500
+format = "time [$duration](bold yellow)"

@@ -19,6 +19,14 @@ for file in ~/.{bash_prompt,aliases,aliases.local,functions,path,dockerfunc,extr
 done
 unset file
 
+for cmd in ~/.config/.cmds/*; do
+	if [[ -r "$cmd" ]] && [[ -f "$cmd" ]]; then
+		# shellcheck source=/dev/null
+		source "$cmd"
+	fi
+done
+unset cmd
+
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 
