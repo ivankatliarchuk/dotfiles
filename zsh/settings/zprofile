@@ -1,6 +1,7 @@
 #
 # Executes commands at login pre-zshrc.
 #
+# This file execets every time we open terminal or new tab in terminal
 ##############################################################################
 #Import the shell-agnostic (Bash or Zsh) environment config
 ##############################################################################
@@ -27,6 +28,30 @@ fi
 export VISUAL='code'
 export PAGER=''
 
+######################
+# History Configuration
+######################
+export HISTFILE="$HOME/.zsh_history"
+setopt appendhistory
+setopt incappendhistory
+setopt extendedhistory
+
+HISTDUP=erase               #Erase duplicates in the history file
+
+# setopt BANG_HIST                 # Treat the '!' character specially during expansion.
+# setopt EXTENDED_HISTORY          # Write the history file in the ":start:elapsed;command" format.
+setopt INC_APPEND_HISTORY        # Write to the history file immediately, not when the shell exits.
+setopt SHARE_HISTORY             # Share history between all sessions.
+# setopt HIST_EXPIRE_DUPS_FIRST    # Expire duplicate entries first when trimming history.
+setopt HIST_IGNORE_DUPS          # Don't record an entry that was just recorded again.
+setopt HIST_IGNORE_ALL_DUPS      # Delete old recorded entry if new entry is a duplicate.
+# setopt HIST_FIND_NO_DUPS         # Do not display a line previously found.
+setopt HIST_IGNORE_SPACE         # Don't record an entry starting with a space.
+# setopt HIST_SAVE_NO_DUPS         # Don't write duplicate entries in the history file.
+setopt HIST_REDUCE_BLANKS        # Remove superfluous blanks before recording entry.
+setopt HIST_VERIFY               # Don't execute immediately upon history expansion.
+# setopt HIST_BEEP                 # Beep when accessing nonexistent history.
+
 #
 # Paths
 #
@@ -35,8 +60,6 @@ export PAGER=''
 typeset -gU cdpath fpath mailpath path
 
 [[ -f ~/.config/manage/python ]] && source ~/.config/manage/python
-
-
 # export PYTHON_PATH="$(python3 -m site --user-base)/bin:$(python -m site --user-site)/bin:$PYTHONPATH"
 # export PATH="$(pyenv root)/shims:$(command -v python3):$(command -v python):$PYTHON_PATH:$PATH"
 
