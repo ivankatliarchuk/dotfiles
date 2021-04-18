@@ -22,13 +22,16 @@ unset cmd
 [[ -f ~/.functions ]] && source ~/.functions     # Global Functions
 [[ -f ~/local/.zshrc ]] && source ~/local/.zshrc # Local config
 [[ -f ~/.exports ]] && source ~/.exports         # Exports
-
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
 [[ -f ~/.aliases.local ]] && source ~/.aliases.local
 [[ -f ~/.tmuxp/aliases ]] && source ~/.tmuxp/aliases
-
 [[ -f ~/.zsh/settings.zsh ]] && source ~/.zsh/settings.zsh # Settings
+
+# run only on new shell creation
+if which utils > /dev/null; then
+  source utils
+fi
 
 # Ensure that a non-login, non-interactive shell has a defined environment.
 if [[ ( "$SHLVL" -eq 1 && ! -o LOGIN ) && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
@@ -49,5 +52,3 @@ fi
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
-
-[[ -s "/Users/ivankatliarchuk/.gvm/scripts/gvm" ]] && source "/Users/ivankatliarchuk/.gvm/scripts/gvm"
