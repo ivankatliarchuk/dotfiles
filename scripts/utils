@@ -58,6 +58,10 @@ function error() {
   printf "\t%s[error] ${BRed}$1${NC}\n" "${x_mark}"
 }
 
+exists() {
+  command -v "$1" >/dev/null 2>&1
+}
+
 ## Utility Colors
 NC='\033[0m' # No Color & Text Reset
 

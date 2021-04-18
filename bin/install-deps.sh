@@ -13,10 +13,6 @@ set -e
 # renovate: datasource=github-releases depName=nvm-sh/nvm versioning=loose
 NVM_VERSION=v0.36.0
 
-exists() {
-  command -v "$1" >/dev/null 2>&1
-}
-
 show_help() {
 cat << EOF
 Usage: $(basename "$0") :do:
