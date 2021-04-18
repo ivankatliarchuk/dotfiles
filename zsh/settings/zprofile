@@ -1,6 +1,10 @@
 #
 # Executes commands at login pre-zshrc.
 #
+##############################################################################
+#Import the shell-agnostic (Bash or Zsh) environment config
+##############################################################################
+# source ~/.profile
 
 #
 # Browser
@@ -31,6 +35,7 @@ export PAGER=''
 typeset -gU cdpath fpath mailpath path
 
 [[ -f ~/.config/manage/python ]] && source ~/.config/manage/python
+
 
 # export PYTHON_PATH="$(python3 -m site --user-base)/bin:$(python -m site --user-site)/bin:$PYTHONPATH"
 # export PATH="$(pyenv root)/shims:$(command -v python3):$(command -v python):$PYTHON_PATH:$PATH"

@@ -71,3 +71,9 @@ repos:
     files: \.(yaml|yml)$
     types: [file, yaml]
     entry: 'yamllint --strict -d "{extends: relaxed, rules: {line-length: {max: 200}}}"'
+- repo: https://github.com/thlorenz/doctoc
+  rev: v2.0.0
+  hooks:
+  - id: doctoc
+    args: ['--title=**Table of Contents**']
+    descripiton: 'Generates table of contents for markdown files inside local git repository'

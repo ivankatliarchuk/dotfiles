@@ -11,28 +11,29 @@ Dotfiles setup
 ![](https://img.shields.io/github/contributors/ivankatliarchuk/dotfiles)
 [![GitHub forks](https://img.shields.io/github/forks/ivankatliarchuk/dotfiles.svg?style=social&label=Fork)](https://github.com/ivankatliarchuk/dotfiles)
 
-## Table of Contents
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**
 
-- [CloudKat's dotfiles](#cloudkat-s-dotfiles)
-  * [Table of Contents](#table-of-contents)
-  * [Project Structure](#project-structure)
-  * [Prerequisits](#prerequisits)
-  * [Installation](#installation)
-  * [Caveats](#caveats)
-  * [Motivation](#motivation)
-  * [Dotbot Plugins](#dotbot-plugins)
-  * [Brew](#brew)
-  * [Tools](#tools)
-  * [Documentation](#documentation)
-  * [MacOS](#macos)
-  * [Speed UP ZSH](#speed-up-zsh)
-  * [Awailable Commands](#awailable-commands)
-    + [:memo: Guidelines](#-memo--guidelines)
-  * [License](#license)
-  * [How to Contribute](#how-to-contribute)
+  - [Project Structure](#project-structure)
+  - [Prerequisits](#prerequisits)
+  - [Installation](#installation)
+  - [Caveats](#caveats)
+  - [Motivation](#motivation)
+  - [Dotbot Plugins](#dotbot-plugins)
+  - [🔖 Documentation](#-documentation)
+    - [Evaluate Tools](#evaluate-tools)
+    - [®️ Emojies](#-emojies)
+  - [💻 MacOS](#-macos)
+  - [#️⃣ TODO](#%EF%B8%8F%E2%83%A3-todo)
+  - [QA](#qa)
+  - [Awailable Commands](#awailable-commands)
+    - [:memo: Guidelines](#memo-guidelines)
+  - [License](#license)
+  - [How to Contribute](#how-to-contribute)
 - [Authors](#authors)
 
-<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Project Structure
 
@@ -140,7 +141,7 @@ These scripts are meant to run only on OS X
 
 <!-- START makefile-doc -->
 ```
-$ make help 
+$ make help
 Usage: make [target] [VARIABLE=value]
 Targets:
 install                        Install locally
@@ -153,7 +154,7 @@ ignore-dirty                   Ignore dirty commits
 install-deps                   Install dependencies
 git-submodule                  Git submodules update
 git-module-remove              Remove submodule MODULE=something
-setup-python                   Python setup 
+setup-python                   Python setup
 ```
 <!-- END makefile-doc -->
 
