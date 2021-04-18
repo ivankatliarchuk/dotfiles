@@ -33,10 +33,12 @@ brew_install() {
   )
   arraylength=${#files[@]}
   set +e
-  for (( i=1; i<arraylength+1; i++ ));
+  for (( i=0; i<arraylength+1; i++ ));
   do
-    echo "${i} ${files[$i-1]}"
-    $(which brew) bundle --file="brew/${files[$i-1]}" --describe --no-lock -q
+    if [[ $i -gt 0 ]]; then
+      echo "${i} ${files[$i]}"
+      $(which brew) bundle --file="brew/${files[$i]}" --describe --no-lock -q
+    fi
   done
   set -e
 }

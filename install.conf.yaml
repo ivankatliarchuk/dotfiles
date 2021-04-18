@@ -5,8 +5,8 @@
       relink: true
     shell:
       quiet: true
-      stdin: true
-      stdout: true
+      stdin: false
+      stdout: false
       stderr: true
 
 - clean:
@@ -17,8 +17,6 @@
       recursive: true
 
 - create:
-    - ~/undo-history
-    - ~/locals
     - ~/Library/ApplicationSupport/iTerm2/DynamicProfiles
     - ~/.tmuxp
     - ~/.config/mc
@@ -57,6 +55,7 @@
     ~/.tmux: terminal/tmux/config
     ~/.tmux.conf: terminal/tmux/config/.tmux.conf
     ~/.config/scripts: scripts
+    ~/.config/.cmds: shell/cmds
     # @todo: group rc files
     ~/.zshrc:
       path: zsh/zshrc

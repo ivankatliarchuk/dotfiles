@@ -10,13 +10,14 @@ Usage: $(basename "$0") <options>
     -h, --help          Display help
     -a, --aliases       Display awailable aliases
     -v, --versions      Display ruby versions
-    -d, --docs          Open documentaions
+    -d, --docs          View awailable documentaion
+        --docsopen      Open debug documentaions
     -u, --update        Update to the latest version of bundler
     -t, --troubleshoot  You can try these troubleshooting steps
 EOF
 }
 
-function rubyhelp() {
+function ruby-help() {
 
   while :; do
         case "${1:-}" in
@@ -37,7 +38,11 @@ function rubyhelp() {
               break
               ;;
             -d|--docs)
-              open https://bundler.io/doc/troubleshooting.html
+              ruby_docs
+              break
+              ;;
+            --docsopen)
+              ruby_docs -o
               break
               ;;
             -t|--troubleshoot)
@@ -45,7 +50,6 @@ function rubyhelp() {
               break
               ;;
             *)
-              echo "not implemented command."
               ruby_show_help
               break
               ;;
@@ -85,4 +89,18 @@ function ruby_troubleshoot() {
 function ruby_aliases() {
   alias | grep 'gem'
   alias | grep 'rvm'
+}
+
+function ruby_docs() {
+  local toOpen="$1"
+  declare -a docs=(
+    "https://bundler.io/doc/troubleshooting.html"
+  )
+  for el in "${docs[@]}" ; do
+    KEY="${el%%}"
+    printf "doc > %s.\n" "${KEY}"
+    if [[ ${toOpen} ]]; then
+      open "${KEY}"
+    fi
+  done
 }

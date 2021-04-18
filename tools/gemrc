@@ -15,7 +15,7 @@
 
 # WARNING: Found --user-install in ~/.gemrc, please remove it, as it will break rubygems in RVM.
 # gem: --user-install
-gem: --document ri
+gem: --no-document
 
 # run gem [command] against local|remote|both
 search: --remote
