@@ -56,10 +56,9 @@ alias cp='cp -i'
 alias mv='mv -i'
 
 # Pipe my public key to my clipboard.
-alias pubkey="more ~/.ssh/id_ed25519.pub | xclip -selection clipboard | echo '=> Public key copied to pasteboard.'"
-
+alias pubkey="more ~/.ssh/id_$1.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
 # Pipe my private key to my clipboard.
-alias prikey="more ~/.ssh/id_ed25519 | xclip -selection clipboard | echo '=> Private key copied to pasteboard.'"
+alias prikey="more ~/.ssh/id_$1 | pbcopy | echo '=> Private key copied to pasteboard.'"
 
 alias cls='clear' # Good 'ol Clear Screen command
 
@@ -81,6 +80,7 @@ alias gpgstart="gpg-agent --daemon"               # run in daemon mode (backgrou
 alias gpgfing="gpg --fingerprint"                   # list keys and fingerprints
 alias gpgcfg="gpg-connect-agent reloadagent /bye" # reload gpg configuration
 alias gpg!="gpgcfg"                               # reload gpg configuration
+alias gpgloc='cd ~/.gnupg'
 
 # Easier navigation Utilities
 alias ..="cd .."
@@ -92,7 +92,6 @@ alias home="cd ~"
 alias ~="cd ~"
 alias -- -="cd -"
 alias tf="tail -f"
-alias dl="cd ~/Downloads"
 
 alias quit="exit"
 alias :q="exit"
@@ -103,18 +102,17 @@ alias :qw="exit"
 # Shortcuts
 alias h="history -50"
 alias hist="history 1"
-alias cdd="cd ~/Documents/Dropbox"
-alias dl="cd ~/Downloads"
-alias dt="cd ~/Desktop"
-alias pr="cd ~/projects"
-alias wr="cd ~/workspaces"
-alias sf="cd ~/self"
-alias work="cd ~/work"
-alias ccode='code ~/Library/Application\ Support/Code/User'
-alias commands='find $(echo $PATH | tr ":" "\n") | awk -F / "{print \$NF}" | sort -u'
-alias gitloc='cd ~/.config/gitcfg.local'
-alias gpgloc='cd ~/.gnupg'
-alias cmds='commands'
+# Navigation
+alias to.dropbox="cd ~/Documents/Dropbox"
+alias to.downloads="cd ~/Downloads"
+alias to.desc="cd ~/Desktop"
+[[ -d "${HOME}/projects" ]] && alias to.projects="cd ~/projects"
+[[ -d "${HOME}/workspaces" ]] && alias to.workspaces="cd ~/workspaces"
+[[ -d "${HOME}/source" ]] && alias to.source="cd ~/source"
+[[ -d "${HOME}/self" ]] && alias to.self="cd ~/self"
+[[ -d "${HOME}/work" ]] && alias to.work="cd ~/work"
+alias to.code='code ~/Library/Application\ Support/Code/User'
+alias to.folders=folders
 
 # Kubernetes
 command -v kubectl > /dev/null && alias k=kubectl         # https://kubernetes.io/docs/reference/kubectl/overview/
@@ -261,33 +259,35 @@ alias fight="printf '(ง'̀-'́)ง' | pbcopy"
 # Git
 # cd to git root directory
 alias g=git
-alias groot='cd "$(git rev-parse --show-toplevel)"'
+alias git.root='cd "$(git rev-parse --show-toplevel)"'
 # -< gac "My commit message"
 alias gac= "add .;git commit -m 'wip'" # + commit message
-alias gp="git push" # + remote & branch names
-alias gl="git pull" # + remote & branch names
+alias gpush="git push" # + remote & branch names
+alias gpull="git pull" # + remote & branch names
 alias gb="git branch" # + branch name
 alias gc="git checkout" # + branch name
 alias gcb="git checkout -b" # + branch name
 # switch to master
-alias gmaster="git checkout master"
-alias pmaster=master
+alias git.master="git checkout master"
+alias gmaster=master
 # switch to main
-alias gmain="git checkout main"
+alias git.main="git checkout main"
 # list all branches
-alias blist="git blist"
-alias repos="find . -type d -exec sh -c 'cd "{}"; git rev-parse --git-dir 2> /dev/null 1>&2;' \; -prune -print"
+alias git.list="git blist"
+alias blist='git.list'
+alias git.repos="find . -type d -exec sh -c 'cd "{}"; git rev-parse --git-dir 2> /dev/null 1>&2;' \; -prune -print"
 
-alias agt=_gt
-alias agdif=_gdif
-alias agbranch=_gbranch
-alias agtag=_gtag
-alias aglog=_glog
-alias agstash=_gstash
-alias agremote=_gremote
+alias fgit=_gt
+alias fgitdif=_gdif
+alias fgitbranch=_gbranch
+alias fgittag=_gtag
+alias fgitlog=_glog
+alias fgitstash=_gstash
+alias fgitremote=_gremote
 
 ## Docker
 alias d=docker
+alias d.rmi=docker-rmi
 
 ## Ruby
 
@@ -299,10 +299,11 @@ alias gemout='gem outdated' # check if any installed gems are outdated
 alias gemenv="gem env"
 alias bundlefix="rm -rf ~/.bundle;echo 'run [bundle install]'"
 
-## Commands
+## Helper Commands
 alias help='cmds-help'
 alias rubyhelp='ruby-help'
 alias termhelp='terminal-help'
+alias githelp='git-help'
 
 ## Proceses
 # options for top
@@ -319,4 +320,6 @@ esac
 
 alias last10=last10
 alias top10='history-stat -n 15'
+alias commands='find $(echo $PATH | tr ":" "\n") | awk -F / "{print \$NF}" | sort -u'
+alias cmds='commands'
 #END alias-definitions
