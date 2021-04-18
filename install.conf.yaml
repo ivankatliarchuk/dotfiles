@@ -83,6 +83,9 @@
     -
       command: make install-deps
       description: Installing dependencies
+      stdin: true
+      stdout: true
+      stderr: true
     -
       command: make brew-install
       description: Manage Brew
