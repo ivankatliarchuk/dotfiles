@@ -15,7 +15,7 @@ install: ## Install locally
 	-@bin/install.sh -t local
 
 brew-install: ## Install apps with Brew
-	-@./bin/brew.sh
+	-@./brew/setup.sh
 
 hooks: ## Setup pre commit.
 	@pre-commit install

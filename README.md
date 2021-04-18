@@ -34,12 +34,6 @@ Dotfiles setup
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
-## Debug
-
-```
-zsh -x
-```
-
 ## Project Structure
 
 ```
@@ -91,48 +85,38 @@ These scripts are meant to run only on OS X
 
 ## Dotbot Plugins
 
-## Brew
-
-- [Bundle](https://github.com/Homebrew/homebrew-bundle)
-- [WhaleBrew](https://github.com/whalebrew/whalebrew)
-- [MackUP](https://github.com/lra/mackup)
-
-## Tools
-
-- https://github.com/drduh/config/blob/master/dnscrypt-proxy.toml
-
-## Documentation
+## 🔖 Documentation
 
 - [Bash Hacks](docs/bash-hints.md)
 - [Tools and guides](docs/tools.md)
-
 
 ### Evaluate Tools
 
 - [Cyberduck](https://cyberduck.io/)
 
-### Emojies
+### ®️ Emojies
 
 - [Emoji: github](https://github.com/ikatyang/emoji-cheat-sheet)
 
-## MacOS
+## 💻 MacOS
 
 - https://github.com/mathiasbynens/dotfiles/blob/main/.macos
 - https://github.com/BarryMode/macos-prime/blob/master/dotfiles/.macos
 - https://github.com/powerline/fonts
 - https://github.com/drduh/macOS-Security-and-Privacy-Guide
 
-> TODO
+## #️⃣ TODO
 
-- [X] ZSH (zsh-config)
-- [X] Tmuxp configuration (tmux-config) path = vendor/tmux-config
-- [X] Docker RMI alias
-- [X] Badges
-- [X] Github Hooks
-- [X] Move configs to own folders
-- [X] Install powerline fonts
-- [X] wgetrc & curlrc
-- [X] Pyenv correct setup
+- ✅ ZSH (zsh-config)
+- ✅ Tmuxp configuration (tmux-config) path = vendor/tmux-config
+- ✅ Docker RMI alias
+- ✅ Badges
+- ✅ Github Hooks
+- ✅ Move configs to own folders
+- ✅ Install powerline fonts
+- ✅ wgetrc & curlrc
+- ✅ Pyenv correct setup
+- [ ] Automate table of contens
 - [ ] Firefox [auto config](https://support.mozilla.org/en-US/kb/customizing-firefox-using-autoconfig)
 - [ ] Brave [config file](https://google.com)
 - [ ] Move shell to same dir
@@ -156,7 +140,7 @@ These scripts are meant to run only on OS X
 
 <!-- START makefile-doc -->
 ```
-$ make help
+$ make help 
 Usage: make [target] [VARIABLE=value]
 Targets:
 install                        Install locally
@@ -169,7 +153,7 @@ ignore-dirty                   Ignore dirty commits
 install-deps                   Install dependencies
 git-submodule                  Git submodules update
 git-module-remove              Remove submodule MODULE=something
-setup-python                   Python setup
+setup-python                   Python setup 
 ```
 <!-- END makefile-doc -->
 

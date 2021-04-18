@@ -19,3 +19,13 @@
 
 - [Ybikey Guide](https://github.com/drduh/YubiKey-Guide)
 - [NVMRC](https://github.com/nvm-sh/nvm#nvmrc)
+
+## DNS crypt
+
+- https://github.com/drduh/config/blob/master/dnscrypt-proxy.toml
+
+## Brew
+
+- [Bundle](https://github.com/Homebrew/homebrew-bundle)
+- [WhaleBrew](https://github.com/whalebrew/whalebrew)
+- [MackUP](https://github.com/lra/mackup)
