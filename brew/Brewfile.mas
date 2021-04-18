@@ -2,7 +2,7 @@ if OS.mac?
 # Mac App Store command-line interface
 brew "mas"
 # packages
-mas "1Password 7", id: 1333542190
+# mas "1Password 7", id: 1333542190
 mas "Alfred", id: 405843582
 mas "app.seashore", id: 1448648921
 mas "Dropover", id: 1355679052

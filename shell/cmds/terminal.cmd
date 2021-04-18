@@ -76,7 +76,7 @@ function terminal_docs() {
   )
   for el in "${docs[@]}" ; do
     KEY="${el%%}"
-    printf "doc > %s.\n" "${KEY}"
+    printf "doc > %s\n" "${KEY}"
     if [[ ${toOpen} ]]; then
       open "${KEY}"
     fi

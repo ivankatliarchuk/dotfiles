@@ -6,6 +6,7 @@
 
 - [Prerequisits](#prerequisits)
 - [Mixed](#mixed)
+- [Git](#git)
 - [DNS crypt](#dns-crypt)
 - [Brew](#brew)
 
@@ -36,6 +37,10 @@
 
 - [Ybikey Guide](https://github.com/drduh/YubiKey-Guide)
 - [NVMRC](https://github.com/nvm-sh/nvm#nvmrc)
+
+## Git
+
+- [GitUp](https://github.com/git-up/GitUp)
 
 ## DNS crypt
 

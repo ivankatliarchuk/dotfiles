@@ -112,7 +112,6 @@ These scripts are meant to run only on OS X
 - ✅ Install powerline fonts
 - ✅ wgetrc & curlrc
 - ✅ Pyenv correct setup
-- [ ] Automate table of contens
 - [ ] Firefox [auto config](https://support.mozilla.org/en-US/kb/customizing-firefox-using-autoconfig)
 - [ ] Brave [config file](https://google.com)
 - [ ] Move shell to same dir

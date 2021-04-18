@@ -106,11 +106,11 @@ alias hist="history 1"
 alias to.dropbox="cd ~/Documents/Dropbox"
 alias to.downloads="cd ~/Downloads"
 alias to.desc="cd ~/Desktop"
-[[ -d "${HOME}/projects" ]] && alias to.projects="cd ~/projects"
-[[ -d "${HOME}/workspaces" ]] && alias to.workspaces="cd ~/workspaces"
-[[ -d "${HOME}/source" ]] && alias to.source="cd ~/source"
-[[ -d "${HOME}/self" ]] && alias to.self="cd ~/self"
-[[ -d "${HOME}/work" ]] && alias to.work="cd ~/work"
+test -d "${HOME}/projects" && alias to.projects="cd ~/projects"
+test -d "${HOME}/workspaces" && alias to.workspaces="cd ~/workspaces"
+test -d "${HOME}/source" && alias to.source="cd ~/source"
+test -d "${HOME}/self" && alias to.self="cd ~/self"
+test -d "${HOME}/work" && alias to.work="cd ${HOME}/work" || alias to='1'
 alias to.code='code ~/Library/Application\ Support/Code/User'
 alias to.folders=folders
 
@@ -202,7 +202,7 @@ alias ifactive="ifconfig | pcregrep -M -o '^[^\t:]+:([^\n]|\n\t)*status: active'
 alias netinterface="$(/sbin/ifconfig | head -n1 | awk -F: '{print $1}')"
 alias processes='lsof -i -P -n'
 # Flush Directory Service cache
-alias flush="dscacheutil -flushcache && killall -HUP mDNSResponder"
+alias dns.flush="dscacheutil -flushcache && killall -HUP mDNSResponder"
 
 # View HTTP traffic
 alias sniff="sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'"
