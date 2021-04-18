@@ -86,6 +86,10 @@
     -
       command: make brew-install
       description: Manage Brew
+      quiet: false
+      stdin: true
+      stdout: true
+      stderr: true
     -
       command: make setup-python
       description: Installing dependencies & Rebuild shim files

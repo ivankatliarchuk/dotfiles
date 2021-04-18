@@ -11,10 +11,6 @@ Dotfiles setup
 ![](https://img.shields.io/github/contributors/ivankatliarchuk/dotfiles)
 [![GitHub forks](https://img.shields.io/github/forks/ivankatliarchuk/dotfiles.svg?style=social&label=Fork)](https://github.com/ivankatliarchuk/dotfiles)
 
-```bash
-starship timings
-```
-
 ## Table of Contents
 
 - [CloudKat's dotfiles](#cloudkat-s-dotfiles)
@@ -107,29 +103,17 @@ These scripts are meant to run only on OS X
 
 ## Documentation
 
-- [DotBot](https://github.com/anishathalye/dotbot/wiki)
-- [Chezmoi Quick Start](https://www.chezmoi.io/docs/quick-start/)
+- [Bash Hacks](docs/bash-hints.md)
+- [Tools and guides](docs/tools.md)
 
-- [Github Hub](https://hub.github.com/)
-
-- [PyEnv](https://realpython.com/intro-to-pyenv)
-
-- [iTerm](https://sourabhbajaj.com/mac-setup/iTerm/)
-- [Starship](https://starship.rs/)
-- [Hyper](https://github.com/vercel/hyper)
-- [Hyper Blog](https://www.robertcooper.me/elegant-development-experience-with-zsh-and-hyper-terminal)
-
-- [Fasd](https://github.com/clvv/fasd)
-- [Z](https://github.com/rupa/z)
-
-- [Prezto](https://github.com/sorin-ionescu/prezto)
-
-- [Ybikey Guide](https://github.com/drduh/YubiKey-Guide)
-- [NVMRC](https://github.com/nvm-sh/nvm#nvmrc)
 
 ### Evaluate Tools
 
 - [Cyberduck](https://cyberduck.io/)
+
+### Emojies
+
+- [Emoji: github](https://github.com/ikatyang/emoji-cheat-sheet)
 
 ## MacOS
 
@@ -137,13 +121,6 @@ These scripts are meant to run only on OS X
 - https://github.com/BarryMode/macos-prime/blob/master/dotfiles/.macos
 - https://github.com/powerline/fonts
 - https://github.com/drduh/macOS-Security-and-Privacy-Guide
-
-## Speed UP ZSH
-
-- https://carlosbecker.com/posts/speeding-up-zsh/
-- https://gist.github.com/ctechols/ca1035271ad134841284
-- https://blog.askesis.pl/post/2017/04/how-to-debug-zsh-startup-time.html
-- https://memo.ecp.plus/optimize_zshrc/
 
 > TODO
 
