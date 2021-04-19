@@ -12,6 +12,7 @@ set -e
 # @todo: renovate should support that
 # renovate: datasource=github-releases depName=nvm-sh/nvm versioning=loose
 NVM_VERSION=v0.36.0
+RUBY_VERSION=2.7.0
 
 show_help() {
 cat << EOF
@@ -69,6 +70,7 @@ install_rvm() {
       command curl -sSL https://rvm.io/pkuczynski.asc | gpg --import -
     curl -sSL https://get.rvm.io | bash -s stable
   else
+    rvm --default use ${RUBY_VERSION}
     rvm get stable --auto-dotfiles
     rvm list gemsets
     gem update --system || echo "Failed update :gem: gems"

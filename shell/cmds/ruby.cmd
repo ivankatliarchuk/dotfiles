@@ -95,6 +95,7 @@ function ruby_docs() {
   local toOpen="$1"
   declare -a docs=(
     "https://bundler.io/doc/troubleshooting.html"
+    "https://rvm.io/workflow/projects"
   )
   for el in "${docs[@]}" ; do
     KEY="${el%%}"
