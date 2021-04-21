@@ -209,13 +209,12 @@
 
     #### BRANCH ####
 
-    ba = branch -a
+    ba = "!git for-each-ref --sort='-authordate' --format='%(authordate)%09%(objectname:short)%09%(refname)' refs/heads | sed -e 's-refs/heads/--'"
     bd = branch -d
     bdd = branch -D
     br = branch -r
     bc = rev-parse --abbrev-ref HEAD
     bu = !git rev-parse --abbrev-ref --symbolic-full-name "@{u}"
-    bs = !git-branch-status
 
     master = checkout master
     main = checkout main
