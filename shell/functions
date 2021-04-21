@@ -309,7 +309,7 @@ versions() {
 }
 
 # Remove remote branches
-gitrmb() {
+git-remove-remote() {
   branch=""
   pattern=""
   while :; do

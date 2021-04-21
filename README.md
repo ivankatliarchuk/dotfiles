@@ -78,6 +78,7 @@ These scripts are meant to run only on OS X
 
 - [ThoughBot](https://github.com/thoughtbot/dotfiles)
 - [Dotfiles](https://dotfiles.github.io/)
+- [Dotfiles: awesome](https://project-awesome.org/webpro/awesome-dotfiles)
 
 ## Dotbot Plugins
 
@@ -112,17 +113,15 @@ These scripts are meant to run only on OS X
 - ✅ Install powerline fonts
 - ✅ wgetrc & curlrc
 - ✅ Pyenv correct setup
-- [ ] Firefox [auto config](https://support.mozilla.org/en-US/kb/customizing-firefox-using-autoconfig)
-- [ ] Brave [config file](https://google.com)
+- [ ] Firefox [auto config docs](tools/browser/firefox/readme.md)
+- [ ] macOS setup [docs](tools/os/README.md)
+- [ ] Hammersppoon config opensource [docs](tools/hammerspoon/readme.md)
 - [ ] Move shell to same dir
 - [ ] Tmux configs Setup/Document
-- [ ] Mac setu pfrom here https://github.com/bitwolfe/dotbot#activity-monitor
-- [ ] Hammersppoon config opensource [example](https://github.com/rkalis/dotfiles/tree/master/hammerspoon) https://github.com/aleks/hammerspoon-dotfiles
 - [ ] Chezmoi integration
 - [ ] Support Linux/Debian
 - [ ] DNS Crypt (https://github.com/drduh/config/blob/master/dnscrypt-proxy.toml)
 - [ ] Proper configre macup
-- [ ] Script to load in bash and zsh
 - [ ] Document github setup, blog it as well
 - [ ] Dotbot templater plugin
 - [ ] Dotbot import private repos plugin

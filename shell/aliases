@@ -6,7 +6,7 @@
 # Pretty print the path
 command -v aws-vault > /dev/null || alias creds="aws-vault exec $AWS_PROFILE"
 alias clearhist='echo "" > ~/.zsh_history & exec $SHELL -l'
-
+alias c=clear
 # Always enable colored `grep` output
 alias grep='grep --color=auto '
 
@@ -28,7 +28,7 @@ alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\\: .*|GE
 command -v hd > /dev/null || alias hd="hexdump -C"
 
 # Trim new lines and copy to clipboard
-alias c="tr -d '\\n' | xclip -selection clipboard"
+alias cpt="tr -d '\\n' | xclip -selection clipboard"
 
 # URL-encode strings
 alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"'
@@ -262,20 +262,29 @@ alias g=git
 alias git.root='cd "$(git rev-parse --show-toplevel)"'
 # -< gac "My commit message"
 alias gac= "add .;git commit -m 'wip'" # + commit message
+alias g.ci='git ci -m ' # + commit message
 alias gpush="git push" # + remote & branch names
 alias gpull="git pull" # + remote & branch names
 alias gb="git branch" # + branch name
 alias gc="git checkout" # + branch name
 alias gcb="git checkout -b" # + branch name
+alias g.cb="git checkout -b" # + branch name
+alias g.d='git branch -D' # + branch name
+alias g.t=_gtag
+alias g.dff=_gdif
+alias g.diff=_gdif
 # switch to master
-alias git.master="git checkout master"
+alias g.master="git checkout master"
 alias gmaster=master
-# switch to main
-alias git.main="git checkout main"
+alias g.main="git checkout main" # switch to main
+alias g.s='git status'
 # list all branches
-alias git.list="git blist"
+alias g.list="git blist"
+alias g.l="git blist"
 alias blist='git.list'
-alias git.repos="find . -type d -exec sh -c 'cd "{}"; git rev-parse --git-dir 2> /dev/null 1>&2;' \; -prune -print"
+alias g.repos="find . -type d -exec sh -c 'cd "{}"; git rev-parse --git-dir 2> /dev/null 1>&2;' \; -prune -print"
+alias g.rmb=git-remove-remote
+alias g.who=iam
 
 alias fgit=_gt
 alias fgitdif=_gdif
@@ -288,6 +297,9 @@ alias fgitremote=_gremote
 ## Docker
 alias d=docker
 alias d.rmi=docker-rmi
+alias d.rm='docker image prune'
+alias d.rms='docker system prune'
+alias d.i='docker images'
 
 ## Ruby
 
