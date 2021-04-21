@@ -211,6 +211,8 @@ alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\\: .*|GE
 ## Utils
 alias hgrep='history|grep'         # Find a command in grep history
 alias tcn='mv --force -t ~/Trash ' # Protect yourself from file removal accidents. Move to trash first
+alias emptytrash="rm -rfv ~/.Trash;rm -rfv /private/var/log/asl/.asl"
+
 alias curl-hdr='curl -Ss -D - -o /dev/null' # Run curl command 'curl-hdr google.com'
 
 command -v uuidgen > /dev/null && alias ugen='uuidgen | tr "[:upper:]" "[:upper:]"'
