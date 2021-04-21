@@ -39,6 +39,7 @@ cat << EndOfMessage
 'traceroute -P TCP -p <IP> <host>'  >>> Tracking the route one's packets follow
 'netstat -ant(ntpl|nputw|tpln) | grep :<port|name>' >>> Check if port is listening
 'nmap -p 80 -sT <IP>' >>> Ping port
+'whois -h whois.godaddy.com <DNS>' >>> whois lookup on a specific registrar's server
 
 EndOfMessage
 
