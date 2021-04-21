@@ -263,16 +263,17 @@ alias git.root='cd "$(git rev-parse --show-toplevel)"'
 # -< gac "My commit message"
 alias gac= "add .;git commit -m 'wip'" # + commit message
 alias g.ci='git ci -m ' # + commit message
-alias gpush="git push" # + remote & branch names
-alias gpull="git pull" # + remote & branch names
+alias g.t=_gtag
+alias g.dff=_gdif
+alias g.diff=_gdif
+# branch
 alias gb="git branch" # + branch name
+alias g.b="git branch" # + branch name
 alias gc="git checkout" # + branch name
 alias gcb="git checkout -b" # + branch name
 alias g.cb="git checkout -b" # + branch name
 alias g.d='git branch -D' # + branch name
-alias g.t=_gtag
-alias g.dff=_gdif
-alias g.diff=_gdif
+
 # switch to master
 alias g.master="git checkout master"
 alias gmaster=master
@@ -285,6 +286,14 @@ alias blist='git.list'
 alias g.repos="find . -type d -exec sh -c 'cd "{}"; git rev-parse --git-dir 2> /dev/null 1>&2;' \; -prune -print"
 alias g.rmb=git-remove-remote
 alias g.who=iam
+# push
+alias gpush="git push" # + remote & branch names
+alias g.push='git push'
+alias g.p='git push'
+alias g.psf='git psf'
+# pull
+alias gpull="git pull" # + remote & branch names
+alias g.p=gpull
 
 alias fgit=_gt
 alias fgitdif=_gdif
