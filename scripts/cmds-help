@@ -1,8 +1,11 @@
 #!/usr/bin/env bash
+# shellcheck source=/dev/null
+source utils
+
+information "### Processes & System monitors ###"
 
 cat << EndOfMessage
 
-### Processes & System monitors ###
 'htop' >>> Interactive process viewer
 'top' >>> Periodically displays a sorted list of system processes
 'free -h' >>> Displays the total amount of free and used physical memory
@@ -12,7 +15,12 @@ cat << EndOfMessage
 'ps -afe | grep <service>' >>> Information about all of your processes
 'kill -9 <pid>' >>> Terminate process
 
-### File Manipulations ###
+EndOfMessage
+
+information "### File Manipulations ###"
+
+cat << EndOfMessage
+
 'df <DIRECTORY>' #Display the amount of free space, mounting poind and etc for directory.
 'du -ah <folder> | sort -n -r | head -n 10' >>> File sizes In human readable format
 'lsblk' >>> View available disk devices and their mount points. Retrieve information related to volumes.
@@ -21,18 +29,33 @@ cat << EndOfMessage
 'chown -R \$(id -u):\$(id -g) <folder>' >>> Change the ownership in folder
 'tail -f <file> | grep <what looking>' >>> Selectively monitor the file
 
-### Networking ###
+EndOfMessage
+
+information "### Networking ###"
+
+cat << EndOfMessage
+
 'tcpdump <expression>'  >>> Prints  out a description of the contents of packets on a network
 'traceroute -P TCP -p <IP> <host>'  >>> Tracking the route one's packets follow
 'netstat -ant(ntpl|nputw|tpln) | grep :<port|name>' >>> Check if port is listening
 'nmap -p 80 -sT <IP>' >>> Ping port
 
-### Services ###
+EndOfMessage
+
+information "### Services ###"
+
+cat << EndOfMessage
+
 'service --status-all' >>> Status of all services.
 'systemctl restart|status|enable <service>' >>> Introspect and control the state of the "systemd" system.
 'journalctl --no-page -u <service>' >>> Used to query the contents of the systemd
 
-### SSH ###
+EndOfMessage
+
+information "### SSH ###"
+
+cat << EndOfMessage
+
 'ssh -T <user>@<address>' >>> Test SSH connection
 'scp <ssh user and server>:<location-where-to> <location-on-local-machine>' >>> Copy file from server
 'scp <file> <ssh-user-and-server>:<location-where-to>' >>> File to be copied to, from, or between different host

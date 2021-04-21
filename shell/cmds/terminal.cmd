@@ -7,6 +7,7 @@ Commands to troubleshot Terminal performance
 Usage: $(basename "$0") <options>
     -h, --help          Display help
     -a, --aliases       Display awailable aliases
+    -c, --commands      Display commands and tips
     -v, --versions      Display versions
     -d, --docs          Show awailable debug documentaions
         --docsopen      Open debug documentaions
@@ -25,6 +26,10 @@ function terminal-help() {
               ;;
             -a|--aliases)
               terminal_aliases
+              break
+              ;;
+            -c|--commands)
+              cmds-help
               break
               ;;
             -v|--versions)

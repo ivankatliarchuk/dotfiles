@@ -38,7 +38,7 @@ function git-help() {
               break
               ;;
             *)
-              terminal_show_help
+              _git_show_help
               break
               ;;
         esac
@@ -60,6 +60,7 @@ function _git_docs() {
   local toOpen="$1"
   declare -a docs=(
     "https://docs.github.com/en"
+    "https://hub.github.com"
   )
   for el in "${docs[@]}" ; do
     KEY="${el%%}"

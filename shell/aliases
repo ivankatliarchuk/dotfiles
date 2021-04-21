@@ -327,8 +327,11 @@ alias bundlefix="rm -rf ~/.bundle;echo 'run [bundle install]'"
 ## Helper Commands
 alias help='cmds-help'
 alias rubyhelp='ruby-help'
+alias help.r='ruby-help'
 alias termhelp='terminal-help'
+alias help.t='terminal-help'
 alias githelp='git-help'
+alias help.g='git-help'
 
 ## Proceses
 # options for top
