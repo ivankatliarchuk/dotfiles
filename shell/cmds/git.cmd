@@ -52,6 +52,8 @@ function _git_aliases() {
   alias | grep 'git'
   information "git: fgit"
   alias | grep 'fgit'
+  information " branch"
+  alias | grep 'git branch'
   information "git: configuration"
   git aliases | grep config
 }
