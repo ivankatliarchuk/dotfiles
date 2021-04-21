@@ -267,13 +267,17 @@ alias g.t=_gtag
 alias g.dff=_gdif
 alias g.diff=_gdif
 # branch
-alias gb="git branch" # + branch name
-alias g.b="git branch" # + branch name
+alias gbn="git branch" # + branch name
+alias gb='gbn'
+alias g.b='git branch --sort=-committerdate | fzf | xargs git checkout'
+# https://dev.to/chilcutt/smarter-git-checkout-with-fzf-2k5n
+alias g.bf="git for-each-ref --format='%(refname:short)' refs/heads | fzf | xargs git checkout"
+alias g.bl='git branch --sort=-committerdate'
+alias g.bf='fzf-git-checkout'
 alias gc="git checkout" # + branch name
 alias gcb="git checkout -b" # + branch name
 alias g.cb="git checkout -b" # + branch name
 alias g.d='git branch -D' # + branch name
-
 # switch to master
 alias g.master="git checkout master"
 alias gmaster=master
