@@ -289,11 +289,11 @@ alias g.who=iam
 # push
 alias gpush="git push" # + remote & branch names
 alias g.push='git push'
-alias g.p='git push'
+alias g.ps='git push'
 alias g.psf='git psf'
 # pull
 alias gpull="git pull" # + remote & branch names
-alias g.p=gpull
+alias g.pl=gpull
 
 alias fgit=_gt
 alias fgitdif=_gdif
