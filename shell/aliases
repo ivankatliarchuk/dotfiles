@@ -280,6 +280,7 @@ alias g.bf='fzf-git-checkout'
 alias gc="git checkout" # + branch name
 alias gcb="git checkout -b" # + branch name
 alias g.cb="git checkout -b" # + branch name
+alias g.ch='g.cb'
 alias g.d='git branch -D' # + branch name
 # switch to master
 alias g.master="git checkout master"
@@ -289,8 +290,8 @@ alias g.s='git status'
 # list all branches
 alias g.list="git blist"
 alias g.l="git blist"
-alias blist='git.list'
-alias g.repos="find . -type d -exec sh -c 'cd "{}"; git rev-parse --git-dir 2> /dev/null 1>&2;' \; -prune -print"
+alias blist='g.list'
+alias g.rep="find . -type d -exec sh -c 'cd "{}"; git rev-parse --git-dir 2> /dev/null 1>&2;' \; -prune -print"
 alias g.rmb=git-remove-remote
 alias g.who=iam
 # push
