@@ -19,8 +19,8 @@ jobs:
       - name: read python version
         id: python-version
         run: |
-          echo "$(cat .python-version) >> $PYTHON_VERSION
+          echo "python_version=$(cat .python-version)" >> $GITHUB_ENV
 
       - uses: actions/setup-python@v2
         with:
-          python-version: ${{ env.PYTHON_VERSION }}
+          python-version: ${{ env.python_version }}
