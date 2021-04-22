@@ -12,6 +12,7 @@
   - [Tools](#tools)
 - [Python](#python)
 - [OS](#os)
+- [Dotfiles](#dotfiles)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -66,3 +67,7 @@
 ## OS
 
 - [MacUp: application settings](https://github.com/lra/mackup)
+
+## Dotfiles
+
+- [Dotbot examples](https://github.com/anishathalye/dotbot/wiki/Users)
