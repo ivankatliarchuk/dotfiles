@@ -19,8 +19,7 @@ jobs:
       - name: read python version
         id: python-version
         run: |
-          echo "::set-env name=PYTHON_VERSION::$(cat .python-version)"
-          echo "$PYTHON_VERSION"
+          echo "$(cat .python-version) >> $PYTHON_VERSION
 
       - uses: actions/setup-python@v2
         with:
