@@ -112,6 +112,7 @@ These scripts are meant to run only on OS X
 - ✅ Install powerline fonts
 - ✅ wgetrc & curlrc
 - ✅ Pyenv correct setup
+- ✅  Proper configre macup
 - [ ] Firefox [auto config docs](tools/browser/firefox/readme.md)
 - [ ] macOS setup [docs](tools/os/README.md)
 - [ ] Hammersppoon config opensource [docs](tools/hammerspoon/readme.md)
@@ -120,10 +121,10 @@ These scripts are meant to run only on OS X
 - [ ] Chezmoi integration
 - [ ] Support Linux/Debian
 - [ ] DNS Crypt (https://github.com/drduh/config/blob/master/dnscrypt-proxy.toml)
-- [ ] Proper configre macup
 - [ ] Document github setup, blog it as well
 - [ ] Dotbot templater plugin
-- [ ] Dotbot import private repos plugin
+- [ ] Cron to remove dangling docker images
+- [ ] Cron to run backups
 
 ## ? QA
 

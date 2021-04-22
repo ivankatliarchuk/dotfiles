@@ -1,0 +1,26 @@
+---
+name: build-ios
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: '1'
+          submodules: 'recursive'
+
+      - name: read python version
+        id: python-version
+        run: |
+          echo "::set-env name=PYTHON_VERSION::$(cat .python-version)"
+          echo "$PYTHON_VERSION"
+
+      - uses: actions/setup-python@v2
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
