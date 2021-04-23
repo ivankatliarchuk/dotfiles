@@ -40,18 +40,16 @@ style = "dimmed bold purple"
 [git_status]
 format = '([$all_status$ahead_behind ]($style)) '
 conflicted = "❌"
-ahead = "☘️"
-behind = "☣️"
+# ahead = "☘️"
+# behind = "☣️"
 diverged = "⇕⇡${ahead_count}⇣${behind_count}"
 # untracked = "🤷‍"
 stashed = "🚫"
 # modified = "📝"
-staged.value = "++"
-staged.style = "green"
-staged_count.enabled = true
-staged_count.style = "green"
 renamed = "☑️"
 deleted = "⛔"
+ahead = "⇡${count}"
+behind = "⇣${count}"
 
 [hostname]
 ssh_only = true
