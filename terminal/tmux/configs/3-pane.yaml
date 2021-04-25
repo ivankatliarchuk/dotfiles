@@ -3,10 +3,10 @@ windows:
 - window_name: dev window
   layout: main-vertical
   shell_command_before:
-    - cd ~/
+  - cd ~/
   panes:
-    - shell_command:
-        - cd /var/log
-        - ls -al | grep \.log
-    - echo hello
-    - echo hello
+  - shell_command:
+    - cd /var/log
+    - ls -al | grep \.log
+  - echo hello
+  - echo hello

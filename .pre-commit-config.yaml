@@ -41,7 +41,8 @@ repos:
   hooks:
   - id: check-useless-excludes
 - repo: https://github.com/gruntwork-io/pre-commit
-  rev: v0.1.12 # Get the latest from: https://github.com/gruntwork-io/pre-commit/releases
+# Get the latest from: https://github.com/gruntwork-io/pre-commit/releases
+  rev: v0.1.12
   hooks:
   - id: shellcheck
 - repo: https://github.com/asottile/reorder_python_imports
@@ -58,12 +59,12 @@ repos:
 - repo: https://github.com/markdownlint/markdownlint
   rev: v0.11.0
   hooks:
-    - id: markdownlint
-      name: Markdownlint
-      description: Run markdownlint on your Markdown files
-      entry: mdl
-      language: ruby
-      files: \.(md|mdown|markdown)$
+  - id: markdownlint
+    name: Markdownlint
+    description: Run markdownlint on your Markdown files
+    entry: mdl
+    language: ruby
+    files: \.(md|mdown|markdown)$
 - repo: https://github.com/adrienverge/yamllint.git
   rev: v1.26.1
   hooks:
@@ -76,4 +77,4 @@ repos:
   hooks:
   - id: doctoc
     args: ['--title=**Table of Contents**']
-    descripiton: 'Generates table of contents for markdown files inside local git repository'
+    descripiton: 'Generates table of contents for markdown files'

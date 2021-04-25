@@ -3,6 +3,7 @@
   "files.associations": {
     "*.cmd": "shellscript",
     "**/*.cmd": "shellscript",
-    "**/alias": "shellscript"
+    "**/alias": "shellscript",
+    ".yamllint": "yaml"
   }
 }

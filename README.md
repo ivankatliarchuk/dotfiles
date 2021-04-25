@@ -138,7 +138,7 @@ gvm help
 
 <!-- START makefile-doc -->
 ```
-$ make help
+$ make help 
 Usage: make [target] [VARIABLE=value]
 Targets:
 install                        Install locally
@@ -151,7 +151,7 @@ ignore-dirty                   Ignore dirty commits
 install-deps                   Install dependencies
 git-submodule                  Git submodules update
 git-module-remove              Remove submodule MODULE=something
-setup-python                   Python setup
+setup-python                   Python setup 
 ```
 <!-- END makefile-doc -->
 
