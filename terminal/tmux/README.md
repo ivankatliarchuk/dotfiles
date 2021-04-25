@@ -16,13 +16,17 @@
 
 ## TmuxP configs
 
-- http://tmuxp.git-pull.com/en/latest/examples.html#short-hand-inline
-- https://github.com/tony/tmuxp-config
+- [Config: example](http://tmuxp.git-pull.com/en/latest/examples.html#short-hand-inline)
+- [Config: example](https://github.com/tony/tmuxp-config)
 
 ## How to
 
-- tmuxp load <config-file>
-- tmux
+```bash
+
+tmuxp load <config-file>
+tmux
+
+```
 
 ## Config examples
 

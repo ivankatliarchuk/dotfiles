@@ -18,7 +18,7 @@ commonName_max			= 64
 #emailAddress			  = Email Address
 #emailAddress_max		= 64
 [ req_attributes ]
-challengePassword		    = A challenge password
+challengePassword		    = A challenge password #pragma: allowlist secret
 challengePassword_min		= 10
 challengePassword_max		= 40
 [ ca ]

@@ -42,7 +42,7 @@
 
 ## DNS crypt
 
-- https://github.com/drduh/config/blob/master/dnscrypt-proxy.toml
+- [Dns crypt proxy](https://github.com/drduh/config/blob/master/dnscrypt-proxy.toml)
 
 ## Brew
 
@@ -52,7 +52,7 @@
 
 ## Security
 
-- https://github.com/drduh/macOS-Security-and-Privacy-Guide
+- [MacOs security guide](https://github.com/drduh/macOS-Security-and-Privacy-Guide)
 
 ### Tools
 

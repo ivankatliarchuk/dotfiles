@@ -27,7 +27,7 @@ Dotfiles setup
   - [#️⃣ TODO](#%EF%B8%8F%E2%83%A3-todo)
   - [? QA](#-qa)
   - [Awailable Commands](#awailable-commands)
-    - [:memo: Guidelines](#memo-guidelines)
+    - [📝 Guidelines](#-guidelines)
   - [🔖 License](#-license)
   - [How to Contribute](#how-to-contribute)
 - [Authors](#authors)
@@ -137,8 +137,9 @@ gvm help
 ## Awailable Commands
 
 <!-- START makefile-doc -->
-```
-$ make help 
+```bash
+$ make help
+
 Usage: make [target] [VARIABLE=value]
 Targets:
 install                        Install locally
@@ -151,16 +152,16 @@ ignore-dirty                   Ignore dirty commits
 install-deps                   Install dependencies
 git-submodule                  Git submodules update
 git-module-remove              Remove submodule MODULE=something
-setup-python                   Python setup 
+setup-python                   Python setup
 ```
 <!-- END makefile-doc -->
 
-### :memo: Guidelines
+### 📝 Guidelines
 
- - :memo: Use a succinct title and description.
- - :bug: Bugs & feature requests can be be opened
- - :signal_strength: Support questions are better asked on [Stack Overflow](https://stackoverflow.com/)
- - :blush: Be nice, civil and polite ([as always](http://contributor-covenant.org/version/1/4/)).
+- 📝 Use a succinct title and description.
+- 🦠 Bugs & feature requests can be be opened
+- 📶 Support questions are better asked on [Stack Overflow](https://stackoverflow.com/)
+- 😊 Be nice, civil and polite ([as always](http://contributor-covenant.org/version/1/4/)).
 
 ## 🔖 License
 
