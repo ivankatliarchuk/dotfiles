@@ -106,11 +106,10 @@ These scripts are meant to run only on OS X
 - ✅ wgetrc & curlrc
 - ✅ Pyenv correct setup
 - ✅  Proper configre macup
+- ✅ Tmux configs Setup/Document
 - [ ] Firefox [auto config docs](tools/browser/firefox/readme.md)
 - [ ] macOS setup [docs](tools/os/README.md)
 - [ ] Hammersppoon config opensource [docs](tools/hammerspoon/readme.md)
-- [ ] Move shell to same dir
-- [ ] Tmux configs Setup/Document
 - [ ] Chezmoi integration
 - [ ] Support Linux/Debian
 - [ ] [DNS Crypt](https://github.com/drduh/config/blob/master/dnscrypt-proxy.toml)
