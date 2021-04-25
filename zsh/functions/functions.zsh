@@ -48,13 +48,17 @@ load-tgswitch
 load-nvmrc() {
   if exists nvm; then
     if [ -f .nvmrc  ]; then
-      nvm use $(cat .nvmrc) >/dev/null 2>&1
+      if [[ "$(node -v)" != "$(cat .nvmrc)" ]]; then
+        nvm use $(cat .nvmrc) >/dev/null 2>&1
+        echo "Switched node to version \"$(node -v)\""
+      fi
       if [ $? -eq 1 ]
       then
+        echo "Im here 1"
         nvm install $(cat .nvmrc)
         nvm use $(cat .nvmrc) >/dev/null 2>&1
+        echo "Switched node to version \"$(node -v)\""
       fi
-      echo "Switched node to version \"$(node -v)\""
     fi
   fi
 }
@@ -66,13 +70,16 @@ load-nvmrc
 load-gvmrc() {
   if exists gvm; then
     if [ -f .gvmrc  ]; then
-      gvm use $(cat .gvmrc) >/dev/null 2>&1
+        if ! go version | grep "$(cat .gvmrc)" >/dev/null 2>&1; then
+          gvm use $(cat .gvmrc) >/dev/null 2>&1
+          echo "Switched golang to version \"$(go version)\""
+        fi
       if [ $? -eq 1 ]
       then
         gvm install $(cat .gvmrc)
         gvm use $(cat .gvmrc) >/dev/null 2>&1
+        echo "Switched golang to version \"$(go version)\""
       fi
-      echo "Switched golang to version \"$(go version)\""
     fi
   fi
 }
