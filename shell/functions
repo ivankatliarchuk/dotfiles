@@ -366,15 +366,23 @@ function _gbranch() {
   sed 's#^remotes/##'
 }
 
-
+# function to search public repository and clone it
 function fzf-git-search-clone() {
   local repo=$1
   local base_url="https://github.com"
-  repositories=$(curl https://api.github.com/users/$repo/repos)
-  repo_name=$(echo $repositories | jq -r '.[].full_name')
+  repositories=$(curl -Ns https://api.github.com/users/$repo/repos?per_page=100)
+  repo_name=$(echo $repositories | jq --stream -r 'select(.[0][1] == "full_name") | .[1]')
+  repository=$(echo $repo_name | fzf-down --multi --preview-window right:65% )
 
-  repository=$(echo $repo_name | fzf-down --multi --preview-window right:65%)
-  is_in_git_repo && return
+  if [ "$(git rev-parse --is-inside-work-tree 2>/dev/null)" ]; then
+      echo "Please do no clone into a repo."
+      return
+  fi
+  if [[ "$repository" == "" ]]; then
+      echo "Please select a repository."
+      return
+  fi
+
   git clone "$base_url/$repository"
 }
 
