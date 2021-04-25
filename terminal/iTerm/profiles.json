@@ -3,7 +3,7 @@
     {
       "Badge Text": ".",
       "Working Directory": "~",
-      "Prompt Before Closing 2": 1,
+      "Prompt Before Closing 2": false,
       "Selected Text Color": {
         "Green Component": 0,
         "Blue Component": 0,
@@ -199,7 +199,7 @@
       },
       "Use Non-ASCII Font": false,
       "Shortcut": "A",
-      "Background Image Location": "",
+      "Background Image Location": "~/.config/iterm2/xsfce-v2.png",
       "Bold Color": {
         "Red Component": 0.7229773211292922,
         "Color Space": "sRGB",
@@ -435,7 +435,7 @@
         "Blue Component": 1,
         "Red Component": 0.3333333432674408
       },
-      "Window Type": 15,
+      "Window Type": 1,
       "Use Bright Bold": true,
       "Has Hotkey": false,
       "HotKey Modifier Activation": 0,
@@ -542,7 +542,7 @@
         "Green Component": 0.08373069344088435
       },
       "Minimum Contrast": 0.16102183948863635,
-      "Screen": -1,
+      "Screen": -2,
       "AWDS Window Option": "Recycle",
       "HotKey Characters Ignoring Modifiers": "",
       "Bound Hosts": [],
@@ -758,7 +758,7 @@
       "Icon": 1,
       "Use Non-ASCII Font": false,
       "Shortcut": "S",
-      "Background Image Location": "",
+      "Background Image Location": "~/.config/iTerm2/xsfce-v2.png",
       "Bold Color": {
         "Green Component": 1,
         "Blue Component": 1,
@@ -992,7 +992,7 @@
         "Blue Component": 1,
         "Red Component": 0.3333333432674408
       },
-      "Window Type": 15,
+      "Window Type": 1,
       "Use Bright Bold": true,
       "Has Hotkey": false,
       "HotKey Modifier Activation": 0,
@@ -1092,7 +1092,7 @@
       },
       "Badge Top Margin": 32,
       "Minimum Contrast": 0.03093927556818182,
-      "Screen": -1,
+      "Screen": -2,
       "AWDS Window Option": "Recycle",
       "HotKey Characters Ignoring Modifiers": "",
       "Bound Hosts": [],

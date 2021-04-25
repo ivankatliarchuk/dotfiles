@@ -48,6 +48,10 @@
       if: '[ `uname` = Darwin ]'
       path: terminal/iTerm/profiles.json
       force: true
+    ~/.config/iTerm2/xsfce-v2.png:
+      if: '[ `uname` = Darwin ]'
+      path: terminal/iTerm/xsfce-v2.png
+      force: true
     ~/.config/starship: terminal/starship
     ~/.config/tmuxp:
       path: terminal/tmux/configs
@@ -82,24 +86,24 @@
     ~/.zprezto: vendor/prezto
     ~/.bash-it: vendor/bash-it
 
-- shell:
-    - command: git submodule update --init --recursive
-      description: Installing submodules
-    -
-      command: make install-deps
-      description: Installing dependencies
-    -
-      command: make brew-install
-      description: Manage Brew
-    -
-      command: make python-install
-      description: Installing dependencies & Rebuild shim files
-    -
-      command: make osx-install
-      description: Configure macOS
-    -
-      command: echo "My current 'shell' is '$SHELL'"
-      description: Check current shell
+# - shell:
+#     - command: git submodule update --init --recursive
+#       description: Installing submodules
+#     -
+#       command: make install-deps
+#       description: Installing dependencies
+#     -
+#       command: make brew-install
+#       description: Manage Brew
+#     -
+#       command: make python-install
+#       description: Installing dependencies & Rebuild shim files
+#     -
+#       command: make osx-install
+#       description: Configure macOS
+#     -
+#       command: echo "My current 'shell' is '$SHELL'"
+#       description: Check current shell
 
     # - chsh -s $(which zsh)
     # - [chsh -s $(which zsh), Making zsh the default shell]

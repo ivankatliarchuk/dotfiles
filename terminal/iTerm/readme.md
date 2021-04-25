@@ -5,6 +5,7 @@
 - [iTerm Setup](#iterm-setup)
   - [iTerm2 and tmux integration](#iterm2-and-tmux-integration)
     - [Key bindings overrides](#key-bindings-overrides)
+  - [Screen](#screen)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -152,3 +153,15 @@
 }
 
 ```
+
+Full Screen
+```json
+
+"Window Type": 15,
+
+```
+
+## Screen
+
+- With Cursor `"Screen": -2
+- No preference `"Screen": -1`
