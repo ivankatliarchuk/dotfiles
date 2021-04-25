@@ -71,3 +71,6 @@
 ## Dotfiles
 
 - [Dotbot examples](https://github.com/anishathalye/dotbot/wiki/Users)
+- [Macos dotfiles](https://github.com/mathiasbynens/dotfiles/blob/main/.macos)
+- [Macos dotfiles](https://github.com/BarryMode/macos-prime/blob/master/dotfiles/.macos)
+- [Macos dotfiles](https://github.com/powerline/fonts)

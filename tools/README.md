@@ -21,7 +21,6 @@
 
 <!-- brew install dnsmasq -->
 
-
 ## Wget
 
 - [Configuration Options](https://www.gnu.org/software/wget/manual/html_node/Sample-Wgetrc.html)

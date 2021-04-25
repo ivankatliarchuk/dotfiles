@@ -15,21 +15,20 @@ Dotfiles setup
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**
 
-  - [Project Structure](#project-structure)
-  - [Installation](#installation)
-  - [Caveats](#caveats)
-  - [Motivation](#motivation)
-  - [Dotbot Plugins](#dotbot-plugins)
-  - [🔖 Documentation](#-documentation)
-    - [Evaluate Tools](#evaluate-tools)
-    - [®️ Emojies](#-emojies)
-  - [💻 MacOS](#-macos)
-  - [#️⃣ TODO](#%EF%B8%8F%E2%83%A3-todo)
-  - [? QA](#-qa)
-  - [Awailable Commands](#awailable-commands)
-    - [📝 Guidelines](#-guidelines)
-  - [🔖 License](#-license)
-  - [How to Contribute](#how-to-contribute)
+- [Project Structure](#project-structure)
+- [Installation](#installation)
+- [Caveats](#caveats)
+- [Motivation](#motivation)
+- [Dotbot Plugins](#dotbot-plugins)
+- [🔖 Documentation](#-documentation)
+  - [Evaluate Tools](#evaluate-tools)
+  - [®️ Emojies](#-emojies)
+- [#️⃣ TODO](#%EF%B8%8F%E2%83%A3-todo)
+- [? QA](#-qa)
+- [Awailable Commands](#awailable-commands)
+  - [📝 Guidelines](#-guidelines)
+- [🔖 License](#-license)
+- [How to Contribute](#how-to-contribute)
 - [Authors](#authors)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -37,33 +36,33 @@ Dotfiles setup
 ## Project Structure
 
 ```
-	.
-	├── bin
-	├── brew
-	├── browser
-	│   ├── firefox
-	│   └── tor
-	├── git
-	│   ├── gitattributes
-	│   ├── gitcfg
-	│   ├── gitconfig
-	│   └── gitconfig.include
-	├── gnupg
-	├── iTerm
-	├── install.conf.yaml
-	├── locals
-	├── py
-	├── scripts
-	├── shell
-	├── tmux
-	├── tools
-	├── vendor
-	├── vim
-	└── zsh
-	├── LICENSE
-	├── Makefile
-	├── Vagrantfile
-	└── README.md
+  .
+  ├── bin
+  ├── brew
+  ├── browser
+  │   ├── firefox
+  │   └── tor
+  ├── git
+  │   ├── gitattributes
+  │   ├── gitcfg
+  │   ├── gitconfig
+  │   └── gitconfig.include
+  ├── gnupg
+  ├── iTerm
+  ├── install.conf.yaml
+  ├── locals
+  ├── py
+  ├── scripts
+  ├── shell
+  ├── tmux
+  ├── tools
+  ├── vendor
+  ├── vim
+  └── zsh
+  ├── LICENSE
+  ├── Makefile
+  ├── Vagrantfile
+  └── README.md
 ```
 
 ## Installation
@@ -95,12 +94,6 @@ These scripts are meant to run only on OS X
 
 - [Emoji: github](https://github.com/ikatyang/emoji-cheat-sheet)
 
-## 💻 MacOS
-
-- https://github.com/mathiasbynens/dotfiles/blob/main/.macos
-- https://github.com/BarryMode/macos-prime/blob/master/dotfiles/.macos
-- https://github.com/powerline/fonts
-
 ## #️⃣ TODO
 
 - ✅ ZSH (zsh-config)
@@ -120,7 +113,7 @@ These scripts are meant to run only on OS X
 - [ ] Tmux configs Setup/Document
 - [ ] Chezmoi integration
 - [ ] Support Linux/Debian
-- [ ] DNS Crypt (https://github.com/drduh/config/blob/master/dnscrypt-proxy.toml)
+- [ ] [DNS Crypt](https://github.com/drduh/config/blob/master/dnscrypt-proxy.toml)
 - [ ] Document github setup, blog it as well
 - [ ] Dotbot templater plugin
 - [ ] Cron to remove dangling docker images
@@ -173,7 +166,7 @@ MIT Licensed. See [LICENSE](./LICENSE) for full details.
 
 Submit a pull request
 
-# Authors
+## Authors
 
 Currently maintained by [Ivan Katliarchuk](https://github.com/ivankatliarchuk) and these [awesome contributors](https://github.com/ivankatliarchuk/dotfiles/graphs/contributors).
 
