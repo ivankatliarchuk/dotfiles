@@ -19,7 +19,7 @@ gem: --no-document
 
 # run gem [command] against local|remote|both
 search: --remote
-install: --remote --env-shebang --no-wrappers --no-document
+# install: --remote --env-shebang --no-wrappers --no-document
 uninstall: --remote --no-wrappers --no-document
 
 # show the gem's path, description, and other meta when doing gem list

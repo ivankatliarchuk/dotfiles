@@ -55,22 +55,22 @@ repos:
   - id: detect-secrets
     args: ['--baseline', '.secrets.baseline']
     exclude: .pre-commit-config.yaml
-# - repo: https://github.com/markdownlint/markdownlint
-#   rev: v0.11.0
-#   hooks:
-#     - id: markdownlint
-#       name: Markdownlint
-#       description: Run markdownlint on your Markdown files
-#       entry: mdl
-#       language: ruby
-#       files: \.(md|mdown|markdown)$
+- repo: https://github.com/markdownlint/markdownlint
+  rev: v0.11.0
+  hooks:
+    - id: markdownlint
+      name: Markdownlint
+      description: Run markdownlint on your Markdown files
+      entry: mdl
+      language: ruby
+      files: \.(md|mdown|markdown)$
 - repo: https://github.com/adrienverge/yamllint.git
   rev: v1.26.1
   hooks:
   - id: yamllint
     files: \.(yaml|yml)$
     types: [file, yaml]
-    entry: 'yamllint --strict -d "{extends: relaxed, rules: {line-length: {max: 200}}}"'
+    entry: 'yamllint --strict'
 - repo: https://github.com/thlorenz/doctoc
   rev: v2.0.0
   hooks:

@@ -1,3 +1,14 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**
+
+- [Tmux Configuration Files](#tmux-configuration-files)
+  - [TmuxP configs](#tmuxp-configs)
+  - [How to](#how-to)
+  - [Config examples](#config-examples)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Tmux Configuration Files
 
 - [TmuxP](https://github.com/tmux-python/tmuxp)
