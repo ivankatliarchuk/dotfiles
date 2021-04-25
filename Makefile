@@ -17,6 +17,15 @@ install: ## Install locally
 brew-install: ## Install apps with Brew
 	-@./brew/setup.sh
 
+osx-install: ## Install macOSx
+	@tools/os/setup.sh
+
+python-install: ## Python setup
+ifdef PYENV_LOCATION
+		$(info pyenv location found: '${PYENV_LOCATION}')
+endif
+	pyenv local && python3 -m pip install -U -r py/requirements.txt && python3 -m pip install --upgrade pip
+
 hooks: ## Setup pre commit.
 	@pre-commit install
 	@pre-commit gc
@@ -49,11 +58,5 @@ git-submodule: ## Git submodules update
 git-module-remove: ## Remove submodule MODULE=something
 	@git submodule deinit -f vendor/$(MODULE)
 	@git rm --cached vendor/$(MODULE)
-
-setup-python: ## Python setup
-ifdef PYENV_LOCATION
-		$(info pyenv location found: '${PYENV_LOCATION}')
-endif
-	pyenv local && python3 -m pip install -U -r py/requirements.txt
 
 .PHONY: vm-up vm-dowm validate hooks brew-install git-submodule

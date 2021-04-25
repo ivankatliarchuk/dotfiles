@@ -105,10 +105,10 @@ These scripts are meant to run only on OS X
 - ✅ Install powerline fonts
 - ✅ wgetrc & curlrc
 - ✅ Pyenv correct setup
-- ✅  Proper configre macup
+- ✅ Proper configre macup
 - ✅ Tmux configs Setup/Document
+- ✅ macOS setup [docs](tools/os/README.md)
 - [ ] Firefox [auto config docs](tools/browser/firefox/readme.md)
-- [ ] macOS setup [docs](tools/os/README.md)
 - [ ] Hammersppoon config opensource [docs](tools/hammerspoon/readme.md)
 - [ ] Chezmoi integration
 - [ ] Support Linux/Debian
@@ -130,11 +130,13 @@ gvm help
 
 <!-- START makefile-doc -->
 ```
-$ make help
+$ make help 
 Usage: make [target] [VARIABLE=value]
 Targets:
 install                        Install locally
 brew-install                   Install apps with Brew
+osx-install                    Install macOSx
+python-install                 Python setup
 hooks                          Setup pre commit.
 validate                       Validate files with pre-commit hooks
 vm-up                          Run on Mac. Up
@@ -142,8 +144,7 @@ vm-dowm                        Run on Mac. Down
 ignore-dirty                   Ignore dirty commits
 install-deps                   Install dependencies
 git-submodule                  Git submodules update
-git-module-remove              Remove submodule MODULE=something
-setup-python                   Python setup
+git-module-remove              Remove submodule MODULE=something 
 ```
 <!-- END makefile-doc -->
 

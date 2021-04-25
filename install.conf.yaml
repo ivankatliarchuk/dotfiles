@@ -5,8 +5,8 @@
       relink: true
     shell:
       quiet: true
-      stdin: false
-      stdout: false
+      stdin: true
+      stdout: true
       stderr: true
 
 - clean:
@@ -88,19 +88,15 @@
     -
       command: make install-deps
       description: Installing dependencies
-      stdin: true
-      stdout: true
-      stderr: true
     -
       command: make brew-install
       description: Manage Brew
-      quiet: false
-      stdin: true
-      stdout: true
-      stderr: true
     -
-      command: make setup-python
+      command: make python-install
       description: Installing dependencies & Rebuild shim files
+    -
+      command: make osx-install
+      description: Configure macOS
     -
       command: echo "My current 'shell' is '$SHELL'"
       description: Check current shell
