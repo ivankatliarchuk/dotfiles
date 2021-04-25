@@ -291,10 +291,12 @@ alias g.s='git status'
 alias g.list="git blist"
 alias g.l="git blist"
 alias blist='g.list'
-alias g.rep="find . -type d -exec sh -c 'cd "{}"; git rev-parse --git-dir 2> /dev/null 1>&2;' \; -prune -print"
+alias g.repolist="find . -type d -exec sh -c 'cd {}; git rev-parse --git-dir 2> /dev/null 1>&2;' \; -prune -print"
 alias repos='g.rep'
+alias g.rep='_grepo'
 alias g.rmb=git-remove-remote
 alias g.who=iam
+alias g.search='fzf-git-search-clone' # + user name e.g. ivankatliarchuk
 # push
 alias gpush="git push" # + remote & branch names
 alias g.push='git push'

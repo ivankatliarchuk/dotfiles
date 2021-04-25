@@ -366,6 +366,18 @@ function _gbranch() {
   sed 's#^remotes/##'
 }
 
+
+function fzf-git-search-clone() {
+  local repo=$1
+  local base_url="https://github.com"
+  repositories=$(curl https://api.github.com/users/$repo/repos)
+  repo_name=$(echo $repositories | jq -r '.[].full_name')
+
+  repository=$(echo $repo_name | fzf-down --multi --preview-window right:65%)
+  is_in_git_repo && return
+  git clone "$base_url/$repository"
+}
+
 # https://polothy.github.io/post/2019-08-19-fzf-git-checkout
 fzf-git-branch() {
   is_in_git_repo || return
@@ -403,6 +415,14 @@ function _gtag() {
   git tag --sort -version:refname |
   fzf-down --multi --preview-window right:70% \
     --preview 'git show --color=always {}'
+}
+
+# shellcheck disable=SC2156
+function _grepo() {
+  folder=$(find . -type d -exec sh -c 'cd "{}"; git rev-parse --git-dir 2> /dev/null 1>&2;' \; -prune -print |
+    fzf-down --multi --preview-window right:70% --height 40% \
+    --preview "find . -exec sh -c 'ls -lahF {};' \;")
+  cd $folder
 }
 
 function _glog() {

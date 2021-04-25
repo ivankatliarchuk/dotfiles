@@ -14,6 +14,8 @@ Usage: $(basename "$0") <options>
     -s, --starshipdebug You can try these 'starhip' troubleshooting steps
     -z, --zshdebug      You can try these 'zsh' troubleshooting steps
 EOF
+
+archey -c
 }
 
 function terminal-help() {
