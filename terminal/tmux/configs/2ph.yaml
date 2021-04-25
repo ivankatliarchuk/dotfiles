@@ -1,0 +1,10 @@
+---
+session_name: 2pv
+windows:
+  - window_name: vertical-panes
+    layout: even-vertical
+    options:
+      automatic-rename: true
+    panes:
+      - focus: true
+      - pane

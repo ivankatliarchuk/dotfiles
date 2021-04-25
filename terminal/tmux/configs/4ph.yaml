@@ -1,0 +1,12 @@
+---
+session_name: 4ph
+windows:
+  - window_name: horizontal-panes
+    layout: even-horizontal
+    options:
+      automatic-rename: true
+    panes:
+      - focus: true
+      - pane
+      - pane
+      - start_directory: '~'

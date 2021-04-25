@@ -1,0 +1,12 @@
+---
+session_name: 4p
+windows:
+  - window_name: 4-panes
+    layout: tiled
+    options:
+      automatic-rename: true
+    panes:
+      - focus: true
+      - pane
+      - blank
+      - start_directory: '~'

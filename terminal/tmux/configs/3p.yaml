@@ -1,11 +1,12 @@
 ---
-session_name: main
+session_name: 3p
 windows:
   - window_name: logging for ${USER}
+    layout: main-horizontal
     options:
+      main-pane-height: 300
       automatic-rename: true
-    layout: 4591,157x35,0,0{116x35,0,0,1,40x35,117,0[40x14,117,0,2,40x20,117,15,3]}
     panes:
       - focus: true
-      - start_directory: '~'
+      - pane
       - start_directory: '~'

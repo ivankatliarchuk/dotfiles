@@ -1,0 +1,9 @@
+---
+session_name: 2p
+windows:
+  - window_name: 2x
+    options:
+      automatic-rename: true
+    panes:
+      - focus: true
+      - pane

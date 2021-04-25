@@ -1,0 +1,11 @@
+---
+session_name: 3pv
+windows:
+  - window_name: vertical-pane
+    layout: even-vertical
+    options:
+      automatic-rename: true
+    panes:
+      - focus: true
+      - pane
+      - start_directory: '~'
