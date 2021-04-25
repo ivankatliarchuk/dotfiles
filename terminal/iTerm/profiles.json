@@ -215,6 +215,36 @@
       "HotKey Key Code": 0,
       "Title Components": 34,
       "Keyboard Map": {
+        "0x5b-0x100000-0x21": {
+          "Label": "\u2318[",
+          "Action": 11,
+          "Text": "0x1 0x5b"
+        },
+        "0x5d-0x100000-0x1e": {
+          "Label": "\u2318]",
+          "Action": 11,
+          "Text": "0x1 0x5d"
+        },
+        "0xf701-0x300000-0x7d": {
+          "Label": "\u2318down",
+          "Action": 11,
+          "Text": "0x1 0x7d"
+        },
+        "0xf700-0x300000-0x7e": {
+          "Label": "\u2318up",
+          "Action": 11,
+          "Text": "0x1 0x7e"
+        },
+        "0xf702-0x300000-0x7b": {
+          "Label": "\u2318left",
+          "Action": 11,
+          "Text": "0x1 0x7b"
+        },
+        "0xf703-0x300000-0x7c": {
+          "Label": "\u2318right",
+          "Action": 11,
+          "Text": "0x1 0x7c"
+        },
         "0xf700-0x260000": {
           "Action": 10,
           "Text": "[1;6A"
@@ -405,7 +435,7 @@
         "Blue Component": 1,
         "Red Component": 0.3333333432674408
       },
-      "Window Type": 1,
+      "Window Type": 15,
       "Use Bright Bold": true,
       "Has Hotkey": false,
       "HotKey Modifier Activation": 0,
@@ -741,6 +771,36 @@
       "HotKey Key Code": 0,
       "Title Components": 34,
       "Keyboard Map": {
+        "0x5b-0x100000-0x21": {
+          "Label": "\u2318[",
+          "Action": 11,
+          "Text": "0x1 0x5b"
+        },
+        "0x5d-0x100000-0x1e": {
+          "Label": "\u2318]",
+          "Action": 11,
+          "Text": "0x1 0x5d"
+        },
+        "0xf701-0x300000-0x7d": {
+          "Label": "\u2318down",
+          "Action": 11,
+          "Text": "0x1 0x7d"
+        },
+        "0xf700-0x300000-0x7e": {
+          "Label": "\u2318up",
+          "Action": 11,
+          "Text": "0x1 0x7e"
+        },
+        "0xf702-0x300000-0x7b": {
+          "Label": "\u2318left",
+          "Action": 11,
+          "Text": "0x1 0x7b"
+        },
+        "0xf703-0x300000-0x7c": {
+          "Label": "\u2318right",
+          "Action": 11,
+          "Text": "0x1 0x7c"
+        },
         "0xf700-0x260000": {
           "Action": 10,
           "Text": "[1;6A"
@@ -932,7 +992,7 @@
         "Blue Component": 1,
         "Red Component": 0.3333333432674408
       },
-      "Window Type": 1,
+      "Window Type": 15,
       "Use Bright Bold": true,
       "Has Hotkey": false,
       "HotKey Modifier Activation": 0,
@@ -985,7 +1045,7 @@
       },
       "AWDS Pane Directory": "",
       "Blur": true,
-      "Normal Font": "SourceCodeProForPowerline-MediumIt 24",
+      "Normal Font": "agaveNerdFontComplete-r 24",
       "Vertical Spacing": 1,
       "Use Underline Color": true,
       "Ansi 7 Color": {
