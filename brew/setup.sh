@@ -45,6 +45,40 @@ brew_install() {
   done
   set -e
 }
+
+brew_uninstall() {
+  set +e
+  information "uninstall brew formula"
+  declare -a formula=(
+    "ruby"
+    "ruby@2.7"
+    "git-chglog"
+  )
+
+  for el in "${formula[@]}" ; do
+    key="${el%%}"
+    if brew list --formula | grep "${key}"; then
+      information "uninstall formula: ${key}"
+      brew uninstall "$key" -fq
+    fi
+  done
+
+  # uninstall taps
+  information "untap brew taps"
+  declare -a taps=(
+    "shopify/shopify"
+    "git-chglog/git-chglog"
+  )
+  for el in "${taps[@]}" ; do
+    key="${el%%}"
+    if brew tap | grep "${key}"; then
+      information "uninstall tap: ${key}"
+      brew untap "$key" -fq
+    fi
+  done
+  set -e
+}
+
 brew_lifecycle() {
   brew cu -y && brew update && brew upgrade
 }
@@ -63,6 +97,7 @@ brew_setup_all() {
   brew_install
   brew_lifecycle
   brew_cleanup
+  brew_uninstall
 }
 
 if [[ -z "${INSTALL_BREW}" ]]; then

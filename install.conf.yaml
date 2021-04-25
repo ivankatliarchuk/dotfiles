@@ -50,10 +50,16 @@
       path: terminal/iTerm/profiles.json
       force: true
     ~/.config/starship: terminal/starship
-    ~/.tmuxp/configs: terminal/tmux/configs
-    ~/.tmuxp/aliases: terminal/tmux/aliases
+    ~/.tmuxp/configs:
+      path: terminal/tmux/configs
+      force: true
+    ~/.tmuxp/aliases:
+      path: terminal/tmux/aliases
+      force: true
     ~/.tmux: terminal/tmux/config
-    ~/.tmux.conf: terminal/tmux/config/.tmux.conf
+    ~/.tmux.conf:
+      path: terminal/tmux/config/.tmux.conf
+      force: true
     ~/.config/scripts: scripts
     ~/.config/.cmds: shell/cmds
     # @todo: group rc files
@@ -96,8 +102,9 @@
     -
       command: make setup-python
       description: Installing dependencies & Rebuild shim files
-    # - chsh -s $(which zsh)
-    # - [chsh -s $(which zsh), Making zsh the default shell]
     -
       command: echo "My current 'shell' is '$SHELL'"
       description: Check current shell
+
+    # - chsh -s $(which zsh)
+    # - [chsh -s $(which zsh), Making zsh the default shell]

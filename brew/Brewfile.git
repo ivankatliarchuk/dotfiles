@@ -1,4 +1,3 @@
-tap "git-chglog/git-chglog"
 # Framework for managing multi-language pre-commit hooks
 # https://github.com/pre-commit/pre-commit
 brew "pre-commit"
@@ -7,4 +6,3 @@ brew "pre-commit"
 brew "hub"
 # Distributed revision control system
 brew "git"
-brew "git-chglog/git-chglog/git-chglog"

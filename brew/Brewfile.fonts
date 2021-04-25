@@ -11,7 +11,6 @@ if OS.mac?
   cask "font-awesome-terminal-fonts"
   cask "font-courier-new"
   cask "font-fontawesome"
-  cask "font-source-code-pro"
   cask "font-consolas-for-powerline"
   cask "font-inconsolata-for-powerline"
   cask "font-inconsolata-for-powerline-bold"

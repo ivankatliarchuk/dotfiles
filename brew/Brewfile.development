@@ -22,9 +22,7 @@ brew "nvm"
 brew "pyenv"
 # Python dependency management tool
 # https://pipenv.pypa.io/en/latest/
-brew "pipenv", link: false
-# Powerful, clean, object-oriented scripting language
-brew "ruby"
+brew "pipenv" , overwrite: true # , link: false
 # ---start--- GO
 # Open source programming language to build simple/reliable/efficient software
 brew "go"

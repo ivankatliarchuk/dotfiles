@@ -1,0 +1,8 @@
+# Powerful, clean, object-oriented scripting language
+brew "ruby"
+
+# brew tap
+# brew untap git-chglog/git-chglog
+tap "git-chglog/git-chglog"
+brew "git-chglog/git-chglog/git-chglog"
+cask "font-source-code-pro"
