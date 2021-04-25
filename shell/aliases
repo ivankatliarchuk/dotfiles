@@ -292,6 +292,7 @@ alias g.list="git blist"
 alias g.l="git blist"
 alias blist='g.list'
 alias g.rep="find . -type d -exec sh -c 'cd "{}"; git rev-parse --git-dir 2> /dev/null 1>&2;' \; -prune -print"
+alias repos='g.rep'
 alias g.rmb=git-remove-remote
 alias g.who=iam
 # push
@@ -339,6 +340,7 @@ alias termhelp='terminal-help'
 alias help.t='terminal-help'
 alias githelp='git-help'
 alias help.g='git-help'
+alias help.tmux='tmux-help'
 
 ## Proceses
 # options for top

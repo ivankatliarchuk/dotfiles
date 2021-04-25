@@ -1,10 +1,10 @@
-prompt_order=[
-  "directory", "line_break",
-  "username", "line_break",
-  "hostname", "line_break",
-  "git_branch", "line_break",
-  "character"
-]
+format="""
+$directory\
+$username\
+$hostname\
+$git_branch\
+$character
+"""
 
 add_newline = false
 

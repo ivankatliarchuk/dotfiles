@@ -78,6 +78,7 @@ function terminal_docs() {
     "https://carlosbecker.com/posts/speeding-up-zsh"
     "https://blog.askesis.pl/post/2017/04/how-to-debug-zsh-startup-time.html"
     "https://memo.ecp.plus/optimize_zshrc"
+    "https://iterm2.com/features.html"
   )
   for el in "${docs[@]}" ; do
     KEY="${el%%}"

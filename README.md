@@ -130,9 +130,8 @@ gvm help
 ## Awailable Commands
 
 <!-- START makefile-doc -->
-```bash
+```
 $ make help
-
 Usage: make [target] [VARIABLE=value]
 Targets:
 install                        Install locally

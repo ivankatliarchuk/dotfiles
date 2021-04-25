@@ -74,7 +74,6 @@ brew "packer"
 brew "duck"
 # Docker Machine driver for hyperkit
 brew "docker-machine-driver-hyperkit"
-
 if OS.mac?
 # --- Casks
 # Manage your Jet Brains tools the easy way

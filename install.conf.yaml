@@ -18,7 +18,6 @@
 
 - create:
     - ~/Library/ApplicationSupport/iTerm2/DynamicProfiles
-    - ~/.tmuxp
     - ~/.config/mc
     - ~/.config/gitcfg.local
 
@@ -50,7 +49,7 @@
       path: terminal/iTerm/profiles.json
       force: true
     ~/.config/starship: terminal/starship
-    ~/.tmuxp/configs:
+    ~/.config/tmuxp:
       path: terminal/tmux/configs
       force: true
     ~/.tmuxp/aliases:

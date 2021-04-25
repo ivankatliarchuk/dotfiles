@@ -9,7 +9,7 @@
         "Blue Component": 0,
         "Red Component": 0
       },
-      "Rows": 25,
+      "Rows": 35,
       "Ansi 11 Color": {
         "Green Component": 1,
         "Blue Component": 0.3333333432674408,
@@ -405,7 +405,7 @@
         "Blue Component": 1,
         "Red Component": 0.3333333432674408
       },
-      "Window Type": 0,
+      "Window Type": 1,
       "Use Bright Bold": true,
       "Has Hotkey": false,
       "HotKey Modifier Activation": 0,
@@ -522,7 +522,7 @@
         "Blue Component": 1,
         "Red Component": 1
       },
-      "Columns": 120,
+      "Columns": 140,
       "HotKey Alternate Shortcuts": [],
       "Use Tab Color": true,
       "Visual Bell": true,
@@ -932,7 +932,7 @@
         "Blue Component": 1,
         "Red Component": 0.3333333432674408
       },
-      "Window Type": 0,
+      "Window Type": 1,
       "Use Bright Bold": true,
       "Has Hotkey": false,
       "HotKey Modifier Activation": 0,
