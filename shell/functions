@@ -456,6 +456,20 @@ function _gstash() {
   cut -d: -f1
 }
 
+# open github repository in browser
+function _gopen(){
+  is_in_git_repo || return
+  url=$(git config --get remote.origin.url)
+  sub='git@'
+  if [[ "$url" == *"$sub"* ]]; then
+    url="${url//git@/https://}"
+    user=$(echo $url | sed -Ene's#.*https://github.com:(.*)/(.*).git#\1#p')
+    repo=$(echo $url | sed -Ene's#.*https://github.com:(.*)/(.*).git#\2#p')
+    url="https://github.com/${user}/${repo}"
+  fi
+  open "$url"
+}
+
 # Generate a new random password
 pwdgen() {
   local length=${1:-15}

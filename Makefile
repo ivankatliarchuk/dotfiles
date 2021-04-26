@@ -59,4 +59,7 @@ git-module-remove: ## Remove submodule MODULE=something
 	@git submodule deinit -f vendor/$(MODULE)
 	@git rm --cached vendor/$(MODULE)
 
+open: ## Open repository
+	@open $(shell git config --get remote.origin.url)
+
 .PHONY: vm-up vm-dowm validate hooks brew-install git-submodule

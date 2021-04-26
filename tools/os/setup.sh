@@ -131,6 +131,7 @@ write com.apple.finder FXDefaultSearchScope -string "SCcf"
 # Setup default keychain                                                      #
 ###############################################################################
 run "Setup default keychain"
+# security login-keychain
 security default-keychain -s login.keychain-db;ok
 security default-keychain
 

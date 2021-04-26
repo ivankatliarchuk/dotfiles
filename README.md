@@ -144,7 +144,8 @@ vm-dowm                        Run on Mac. Down
 ignore-dirty                   Ignore dirty commits
 install-deps                   Install dependencies
 git-submodule                  Git submodules update
-git-module-remove              Remove submodule MODULE=something 
+git-module-remove              Remove submodule MODULE=something
+open                           Open repository 
 ```
 <!-- END makefile-doc -->
 
