@@ -199,7 +199,7 @@
       },
       "Use Non-ASCII Font": false,
       "Shortcut": "A",
-      "Background Image Location": "~/.config/iterm2/xsfce-v2.png",
+      "Background Image Location": "~\/.config\/iterm2\/xsfce-v2.png",
       "Bold Color": {
         "Red Component": 0.7229773211292922,
         "Color Space": "sRGB",
@@ -758,7 +758,7 @@
       "Icon": 1,
       "Use Non-ASCII Font": false,
       "Shortcut": "S",
-      "Background Image Location": "~/.config/iTerm2/xsfce-v2.png",
+      "Background Image Location": "~\/.config\/iTerm2\/xsfce-v2.png",
       "Bold Color": {
         "Green Component": 1,
         "Blue Component": 1,
