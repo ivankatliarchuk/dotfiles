@@ -4,8 +4,13 @@ _extends: .github
 repository:
   name: dotfiles
   description: "☘️ Sensible hacker defaults for macOS"
-  # topics: 'gitconfig,dotfiles,macos,bash,ivank,starship,dotbot,brew,iterm2,zsh,prezto'
+  topics: gitconfig, dotfiles, macos, bash, ivank, starship, dotbot, brew, iterm2, zsh, prezto
+  homepage: https://github.com/ivankatliarchuk/dotfiles
   private: false
+  has_projects: false
+  has_wiki: false
+  is_template: false
+  has_downloads: false
 
 branches:
   - name: master

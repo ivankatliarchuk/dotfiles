@@ -6,6 +6,7 @@
   - [iTerm2 and tmux integration](#iterm2-and-tmux-integration)
     - [Key bindings overrides](#key-bindings-overrides)
   - [Screen](#screen)
+  - [Color Schemes](#color-schemes)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -165,3 +166,7 @@ Full Screen
 
 - With Cursor `"Screen": -2
 - No preference `"Screen": -1`
+
+## Color Schemes
+
+- [iTerm2 color schemes](https://iterm2colorschemes.com/)
