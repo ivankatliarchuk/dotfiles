@@ -128,9 +128,16 @@ run "When performing a search, search the current folder by default"
 write com.apple.finder FXDefaultSearchScope -string "SCcf"
 
 ###############################################################################
+# Setup default keychain                                                      #
+###############################################################################
+run "Setup default keychain"
+security default-keychain -s login.keychain-db;ok
+security default-keychain
+
+###############################################################################
 # Kill affected applications                                                  #
 ###############################################################################
-for app in "Activity Monitor" "Dock" "Finder"; do
+for app in "Activity Monitor" "Dock" "Finder" "Keychain Access"; do
   set +e
   killall "${app}" > /dev/null 2>&1
   set -e
