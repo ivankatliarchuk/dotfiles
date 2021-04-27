@@ -132,8 +132,8 @@ write com.apple.finder FXDefaultSearchScope -string "SCcf"
 ###############################################################################
 run "Setup default keychain"
 # security login-keychain
-security default-keychain -s login.keychain-db;ok
-security default-keychain
+# security default-keychain -s login.keychain-db;ok
+# security default-keychain
 
 ###############################################################################
 # Kill affected applications                                                  #

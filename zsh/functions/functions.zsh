@@ -98,7 +98,7 @@ load-pyenv() {
           version=$(cat .pyrc)
         fi
         if [ -f Pipfile  ];then
-          echo "Found pipfile,run \$pipenv install --skip-lock"
+          information "Found pipfile. \$pipenv install --skip-lock"
         fi
         if [[ "$version" != "$PYENV_VERSION" ]]; then
           if ! pyenv versions | grep $version >/dev/null 2>&1; then
