@@ -86,6 +86,35 @@ load-gvmrc() {
 add-zsh-hook chpwd load-gvmrc
 load-gvmrc
 
+# Automatically switch and load python versions when a directory has an `.python-version` or `.pyrc` file
+load-pyenv() {
+  if exists pyenv; then
+    if [ -f .python-version  ] || [ -f .pyrc  ] || [ -f Pipfile  ]; then
+        local version=''
+        if [ -f .python-version  ];then
+          version=$(cat .python-version)
+        fi
+        if [ -f .pyrc  ];then
+          version=$(cat .pyrc)
+        fi
+        if [ -f Pipfile  ];then
+          echo "Found pipfile,run \$pipenv install --skip-lock"
+        fi
+        if [[ "$version" != "$PYENV_VERSION" ]]; then
+          if ! pyenv versions | grep $version >/dev/null 2>&1; then
+            pyenv install $version --skip-existing
+            pyenv rehash # if version do not match
+          fi
+        fi
+        PYENV_VERSION=$version
+    else
+      PYENV_VERSION=$PYENV_GLOBAL_VERSION
+    fi
+  fi
+}
+add-zsh-hook chpwd load-pyenv
+load-pyenv
+
 if [[ -n "$TMUX" ]] ;then
 : # do nothhing
 else

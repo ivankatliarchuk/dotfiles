@@ -18,7 +18,11 @@ if [ ! -x "$(command -v pyenv)" ]; then
   PYTHON_VERSIONS="$(pyenv versions | tr -d '[:space:]')"
   PYENV_LATEST_VERSION="$(pyenv install --list | grep -v - | grep -v b | tail -1 | tr -d '[:space:]')"
   export PYENV_GLOBAL_VERSION="$(pyenv version-name)"
-  export PYENV_VERSION="$(pyenv version-name)"
+  if [ -f .python-version  ]; then
+    export PYENV_VERSION="$(cat .python-version)"
+  else
+    export PYENV_VERSION="$(pyenv version-name)"
+  fi
   export PYENV_ROOT="$HOME/.pyenv"
   export PATH="$PYENV_ROOT/bin:$PATH"
 fi

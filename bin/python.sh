@@ -4,9 +4,12 @@
 
 set -ex
 
-: "${PYENV_VERSION:=$(cat .python-version)}"
 : "${PYENV_USE_GLOBAL:=false}"
 : "${PYENV_LOCATION}"
+
+if [[ -f .python-version  ]]; then
+  export PYENV_VERSION=$(cat .python-version)
+fi
 
 [[ -n "${DEBUG:-}" ]] && set -x
 
