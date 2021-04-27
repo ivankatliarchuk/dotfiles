@@ -342,13 +342,6 @@ is_in_git_repo() {
 }
 
 # Git with FZF
-function _gt {
-  # is_in_git_repo || return
-  git tag --sort -version:refname |
-  fzf-down --multi --preview-window right:70% \
-    --preview 'git show --color=always {}'
-}
-
 function _gdif() {
   is_in_git_repo || return
   git -c color.status=always status --short |
@@ -418,13 +411,6 @@ fzf-git-checkout() {
     fi
 }
 
-function _gtag() {
-  is_in_git_repo || return
-  git tag --sort -version:refname |
-  fzf-down --multi --preview-window right:70% \
-    --preview 'git show --color=always {}'
-}
-
 # shellcheck disable=SC2156
 function _grepo() {
   folder=$(find . -type d -exec sh -c 'cd "{}"; git rev-parse --git-dir 2> /dev/null 1>&2;' \; -prune -print |
@@ -454,6 +440,26 @@ function _gstash() {
   is_in_git_repo || return
   git stash list | fzf-down --reverse -d: --preview 'git show --color=always {1}' |
   cut -d: -f1
+}
+
+# Work with tags
+function _gtag() {
+  is_in_git_repo || return
+  git tag --sort -version:refname |
+  fzf-down --multi --preview-window right:70% \
+    --preview 'git show --color=always {}'
+}
+
+function _gt {
+  # is_in_git_repo || return
+  git tag --sort -version:refname |
+  fzf-down --multi --preview-window right:70% \
+    --preview 'git show --color=always {}'
+}
+
+function git-remove-tag {
+  git tag -d $1
+  git push --delete origin $1
 }
 
 # open github repository in browser
