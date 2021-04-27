@@ -1,4 +1,6 @@
 # https://dependabot.com/docs/config-file/
+# https://docs.github.com/en/code-security/supply-chain-security/configuration-options-for-dependency-updates#about-the-dependabotyml-file
+# https://dependabot.com/docs/config-file/validator
 # @todo: should be synced
 version: 2
 updates:
@@ -6,28 +8,26 @@ updates:
     directory: "/"
     schedule:
       interval: daily
-      time: '6:00'
-      timezone: "Europe/Paris"
     labels:
       - ":game_die: dependencies"
       - ":robot: bot"
     commit-message:
       prefix: deps
-    default_reviewers:
+      include: "scope"
+    reviewers:
       - ivankatliarchuk
 
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
       interval: "daily"
-      time: '6:00'
-      timezone: "Europe/Paris"
     commit-message:
       prefix: ci
+      include: "scope"
     labels:
       - ":game_die: dependencies"
       - ":robot: bot"
-    default_reviewers:
+    reviewers:
       - ivankatliarchuk
 
   - package-ecosystem: "gitsubmodule"
@@ -35,37 +35,51 @@ updates:
     schedule:
       interval: "daily"
     labels:
-      - "dependencies"
-      - "automerge"
-    default_reviewers:
+      - ":game_die: dependencies"
+      - ":bell: automerge"
+    reviewers:
       - ivankatliarchuk
+    commit-message:
+      prefix: git
+      include: "scope"
 
   - package-ecosystem: "gomod"
     directory: "/"
     schedule:
       interval: "weekly"
+    commit-message:
+      prefix: go
+      include: "scope"
     labels:
       - ":game_die: dependencies"
       - ":robot: bot"
-    default_reviewers:
+      - "go"
+      - "misc"
+    reviewers:
       - ivankatliarchuk
 
   - package-ecosystem: "docker"
     directory: "/"
     schedule:
       interval: "weekly"
+    commit-message:
+      prefix: docker
+      include: "scope"
     labels:
       - ":game_die: dependencies"
       - ":robot: bot"
-    default_reviewers:
+    reviewers:
       - ivankatliarchuk
 
   - package-ecosystem: "npm" # See documentation for possible values
     directory: "/" # Location of package manifests
     schedule:
       interval: "daily"
+    commit-message:
+      prefix: node
+      include: "scope"
     labels:
       - ":game_die: dependencies"
       - ":robot: bot"
-    default_reviewers:
+    reviewers:
       - ivankatliarchuk
