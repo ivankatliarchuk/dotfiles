@@ -119,17 +119,17 @@ alias brewup='brew cu --cleanup -f -y && brew update && brew upgrade && brew upg
 alias brewrepo='cd $(brew --repository)'
 
 # Directory,File Folder Usage
-alias d-usage="df -h"
-alias f-usage="du -ch"
-alias t-usage="du -sh"
-alias mountpoints="df -h"
-alias lt='du -sh * | sort -h'
+alias s.usage="df -h" # display free disk space
+alias f.usage="du -ch" # display disk usage statistics
+alias size.full="du -sh" # display disk usage statistics
+alias size.dirs='du -cksh * | sort -hr | head -n 15' # display disk usage statistics for directories
 alias size=size-folders
-alias sort-by-size="du -hsc * | sort -hk1r"
-alias foldersort='du -ksh * | sort -hr'
-alias foldertotal='du -cksh * | sort -hr | head -n 15'
-alias mounted='mount'
-alias mnt='mount | grep -E ^/ | column -t'
+alias d.s="du -hsc * | sort -hk1r"
+alias d.srt='du -ksh * | sort -hr'
+alias d.lt='du -sh * | sort -h'
+alias m='mount'
+alias space="d.usage" # display free disk space
+alias m.dirs='mount | grep -E ^/ | column -t'
 alias p='pwd'
 
 # Files
@@ -138,6 +138,7 @@ alias pwdcfgusers="cat /etc/passwd | cut -f 1 -d ':'"
 alias resolvcfg="cat /etc/resolv.conf"
 alias chosts='cat /etc/hosts'
 alias vhosts='sudo vim /etc/hosts'
+alias nfsfolders='cat /etc/exports'
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`

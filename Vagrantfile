@@ -32,6 +32,12 @@ echo "dotbot -c dotfiles/dotbot.conf.yaml" > run.sh
 chmod +x run.sh
 SCRIPT
 
+# Make sure we have vagrant-vbguest installed
+if !Vagrant.has_plugin?('vagrant-vbguest')
+	puts 'vagrant-vbguest plugin required. Run `vagrant plugin install vagrant-vbguest` to install'
+	abort
+end
+
 Vagrant.configure("2") do |config|
   config.vm.box         = "cloudkats/macos"
   config.vm.box_version = "10.15.1-2020.06.28"
@@ -40,25 +46,27 @@ Vagrant.configure("2") do |config|
       config.vbguest.auto_update = false
   end
 
-  config.vm.network "private_network", ip: "10.0.0.100"
-  config.vm.synced_folder ".", "/vagrant", disabled: true
+  config.vm.network "private_network",  ip: "192.168.10.2"
+  config.vm.synced_folder ".", "/Users/vagrant/dotfiles", type: "nfs"
 
-  config.vm.provision "project_setup", type: "shell", inline: $project_setup,
-    privileged: false, name: "project_setup"
+  # config.vm.provision "project_setup", type: "shell", inline: $project_setup,
+  #   privileged: false, name: "project_setup"
 
   config.vm.provider :virtualbox do |v, override|
     v.name   = "macos.dotenv"
-    # Display the VirtualBox GUI when booting the machine. You might want to turn 3D accelerating to speed-up VM GUI.
     v.gui    = false
     v.memory = "#{RAM}"
     v.cpus   = "#{CPUCOUNT}"
 
     v.customize ["modifyvm", :id, "--clipboard", "bidirectional"]
     v.customize ["modifyvm", :id, "--draganddrop", "bidirectional"]
-    v.customize ["modifyvm", :id, "--accelerate3d", "on"]
-    v.customize ["modifyvm", :id, "--accelerate2dvideo", "on"]
+    v.customize ["modifyvm", :id, "--accelerate3d", "off"]
+    v.customize ["modifyvm", :id, "--accelerate2dvideo", "off"]
 
     # Some needed OSX configs
+    # v.customize ["modifyvm", :id, "--usb", "off"]
+    v.customize ["modifyvm", :id, "--usbxhci", "off"]   # USB 3.0
+    v.customize ["modifyvm", :id, "--audio", "none"]
     v.customize ["modifyvm", :id, "--cpuid-set", "00000001", "000106e5", "00100800", "0098e3fd", "bfebfbff"]
     v.customize ["setextradata", :id, "VBoxInternal/Devices/efi/0/Config/DmiSystemProduct", "MacBookPro11,3"]
     v.customize ["setextradata", :id, "VBoxInternal/Devices/efi/0/Config/DmiSystemVersion", "1.0"]
@@ -73,6 +81,6 @@ Vagrant.configure("2") do |config|
     v.customize ["setextradata", :id, "GUI/CustomVideoMode1", "1920x1080x32"]
   end
 
-  config.vm.post_up_message="Setup complete `vagrant ssh` to ssh into the box"
+  config.vm.post_up_message="Setup complete `vagrant ssh`"
 
 end

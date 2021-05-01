@@ -69,9 +69,14 @@ function terminal-help() {
 }
 
 function terminal_aliases() {
+  information "terminal: general"
   alias | grep 'zsh'
   alias | grep 'cmd'
   alias | grep 'help'
+  information "terminal: disk usage"
+  alias | grep 'du'
+  alias | grep 'df'
+  alias | grep 'mount'
 }
 
 function terminal_docs() {
