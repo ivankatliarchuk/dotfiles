@@ -74,8 +74,8 @@ function terminal_aliases() {
   alias | grep 'cmd'
   alias | grep 'help'
   information "terminal: disk usage"
-  alias | grep 'du'
-  alias | grep 'df'
+  alias | grep 'du' | grep -v 'git'
+  alias | grep 'df' | grep -v 'g.'
   alias | grep 'mount'
 }
 

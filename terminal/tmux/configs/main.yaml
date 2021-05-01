@@ -4,8 +4,8 @@ windows:
   - window_name: logging for ${USER}
     options:
       automatic-rename: true
-    layout: 4591,157x35,0,0{116x35,0,0,1,40x35,117,0[40x14,117,0,2,40x20,117,15,3]}
+    layout: fc1f,157x36,0,0{100x36,0,0,1,56x36,101,0[56x15,101,0,2,56x20,101,16,3]}
     panes:
       - focus: true
-      - start_directory: '~'
+      - pane
       - start_directory: '~'

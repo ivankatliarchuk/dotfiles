@@ -3,14 +3,14 @@ session_name: tmuxp
 windows:
 - window_name: tmuxp
   focus: True
-  layout: main-horizontal
+  layout: even-vertical
   options:
     main-pane-height: 35
   panes:
   - focus: true
   - pane
 - window_name: docs
-  layout: main-horizontal
+  layout: even-vertical
   options:
     main-pane-height: 35
   start_directory: ~/Documents/
