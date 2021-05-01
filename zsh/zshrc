@@ -24,7 +24,7 @@ unset cmd
 [[ -f ~/.exports ]] && source ~/.exports         # Exports
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
-[[ -f ~/.aliases.local ]] && source ~/.aliases.local
+[[ -f ~/.config/.aliases.kube ]] && source ~/.config/.aliases.kube
 [[ -f ~/.tmuxp/aliases ]] && source ~/.tmuxp/aliases
 [[ -f ${HOME}/.zsh/settings/settings.zsh ]] && source ${HOME}/.zsh/settings/settings.zsh # Settings
 

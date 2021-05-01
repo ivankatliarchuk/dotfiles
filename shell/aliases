@@ -114,12 +114,6 @@ test -d "${HOME}/work" && alias to.work="cd ${HOME}/work" || alias to='1'
 alias to.code='code ~/Library/Application\ Support/Code/User'
 alias to.folders=folders
 
-# Kubernetes
-command -v kubectl > /dev/null && alias k=kubectl         # https://kubernetes.io/docs/reference/kubectl/overview/
-command -v kubens > /dev/null && alias ks=kubens          # https://github.com/ahmetb/kubectx
-command -v kubedecode > /dev/null && alias kd=kubedecode  # https://github.com/mveritym/kubedecode
-command -v kubectx > /dev/null && alias kx=kubectx        # https://github.com/ahmetb/kubectx
-
 # Brewfile
 alias brewup='brew cu --cleanup -f -y && brew update && brew upgrade && brew upgrade --casks && brew cleanup'
 alias brewrepo='cd $(brew --repository)'
@@ -346,6 +340,7 @@ alias help.t='terminal-help'
 alias githelp='git-help'
 alias help.g='git-help'
 alias help.tmux='tmux-help'
+alias help.k8s='k8s-help'
 
 ## Proceses
 # options for top

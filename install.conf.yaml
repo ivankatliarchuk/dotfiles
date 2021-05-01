@@ -26,6 +26,7 @@
     ~/.gitattributes: git/gitattributes
     ~/.config/gitcfg: git/gitcfg
     ~/.aliases: shell/aliases
+    ~/.config/.aliases.kube: shell/aliases.kube
     ~/.exports: shell/exports
     ~/.functions: shell/functions
     ~/.profile:

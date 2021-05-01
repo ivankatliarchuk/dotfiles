@@ -4,6 +4,7 @@
     "*.cmd": "shellscript",
     "**/*.cmd": "shellscript",
     "**/alias": "shellscript",
+    "**/aliases.*": "shellscript",
     ".yamllint": "yaml"
   }
 }

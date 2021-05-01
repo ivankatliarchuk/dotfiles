@@ -74,6 +74,9 @@ brew "packer"
 brew "duck"
 # Docker Machine driver for hyperkit
 brew "docker-machine-driver-hyperkit"
+# terminal session recorder
+# https://asciinema.org/docs/how-it-works
+brew "asciinema"
 if OS.mac?
 # --- Casks
 # Manage your Jet Brains tools the easy way
