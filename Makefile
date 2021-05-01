@@ -11,8 +11,11 @@ help:
 	@printf "Usage: make [target] [VARIABLE=value]\nTargets:\n"
 	@grep -E '^[a-zA-Z0-9_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
-install: ## Install locally
-	-@bin/install.sh -t local
+install: ## Install dotfiles without running shell
+	-@bin/install.sh --no-shell
+
+install-all: ## Install all dotfiles
+	-@bin/install.sh --all
 
 brew-install: ## Install apps with Brew
 	-@./brew/setup.sh
