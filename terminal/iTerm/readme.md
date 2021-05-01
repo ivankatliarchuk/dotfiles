@@ -14,6 +14,11 @@
 
 ## iTerm2 and tmux integration
 
+- [Hidden Settings](https://iterm2.com/documentation-hidden-settings.html)
+- [iTomate](https://github.com/kamranahmedse/itomate)
+- [Scripts](https://iterm2.com/python-api/tutorial/running.html#auto-run-scripts)
+- [Examples](https://iterm2.com/python-api/examples/index.html#examples-index)
+
 ### Key bindings overrides
 
 <table>
@@ -122,36 +127,36 @@
 
 ```json
 
-"0x5b-0x100000-0x21": {
-  "Label": "⌘[",
-  "Action": 11,
-  "Text": "0x1 0x5b"
-},
-"0x5d-0x100000-0x1e": {
-  "Label": "⌘]",
-  "Action": 11,
-  "Text": "0x1 0x5d"
-},
-"0xf701-0x300000-0x7d": {
-  "Label": "⌘down",
-  "Action": 11,
-  "Text": "0x1 0x7d"
-},
-"0xf700-0x300000-0x7e": {
-  "Label": "⌘up",
-  "Action": 11,
-  "Text": "0x1 0x7e"
-},
-"0xf702-0x300000-0x7b": {
-  "Label": "⌘left",
-  "Action": 11,
-  "Text": "0x1 0x7b"
-},
-"0xf703-0x300000-0x7c": {
-  "Label": "⌘right",
-  "Action": 11,
-  "Text": "0x1 0x7c"
-}
+  "0x5b-0x100000-0x21": {
+    "Label": "⌘[",
+    "Action": 11,
+    "Text": "0x1 0x5b"
+  },
+  "0x5d-0x100000-0x1e": {
+    "Label": "⌘]",
+    "Action": 11,
+    "Text": "0x1 0x5d"
+  },
+  "0xf701-0x300000-0x7d": {
+    "Label": "⌘down",
+    "Action": 11,
+    "Text": "0x1 0x7d"
+  },
+  "0xf700-0x300000-0x7e": {
+    "Label": "⌘up",
+    "Action": 11,
+    "Text": "0x1 0x7e"
+  },
+  "0xf702-0x300000-0x7b": {
+    "Label": "⌘left",
+    "Action": 11,
+    "Text": "0x1 0x7b"
+  },
+  "0xf703-0x300000-0x7c": {
+    "Label": "⌘right",
+    "Action": 11,
+    "Text": "0x1 0x7c"
+  }
 
 ```
 
@@ -159,6 +164,17 @@ Full Screen
 ```json
 
 "Window Type": 15,
+
+```
+
+Iterm Scripts
+
+```yaml
+
+  ~/Library/"Application Support"/iTerm2/Scripts:
+    if: '[ `uname` = Darwin ]'
+    path: terminal/iTerm/scripts
+    force: true
 
 ```
 

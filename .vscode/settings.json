@@ -1,10 +1,10 @@
 {
-  "files.autoSave": "afterDelay",
   "files.associations": {
-    "*.cmd": "shellscript",
     "**/*.cmd": "shellscript",
     "**/alias": "shellscript",
     "**/aliases.*": "shellscript",
+    "*.cmd": "shellscript",
     ".yamllint": "yaml"
-  }
+  },
+  "files.autoSave": "afterDelay"
 }

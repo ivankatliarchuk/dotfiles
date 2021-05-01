@@ -29,7 +29,7 @@ repos:
     args: ['--fix=lf']
     description: Forces to replace line ending by the UNIX 'lf' character.
   - id: pretty-format-json
-    args: ['--autofix', '--no-sort-keys', '--indent=2']
+    args: ['--autofix', '--indent=2']
   - id: requirements-txt-fixer
   - id: sort-simple-yaml
   - id: trailing-whitespace

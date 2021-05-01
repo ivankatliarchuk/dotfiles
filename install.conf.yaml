@@ -49,6 +49,10 @@
       if: '[ `uname` = Darwin ]'
       path: terminal/iTerm/profiles.json
       force: true
+    ~/Library/ApplicationSupport/iTerm2/DynamicProfiles/personal-material.json:
+      if: '[ `uname` = Darwin ]'
+      path: terminal/iTerm/personal-material.json
+      force: true
     ~/.config/iTerm2/colors/material-design-colors.itermcolors:
       if: '[ `uname` = Darwin ]'
       path: vendor/iterm2-material-design/material-design-colors.itermcolors

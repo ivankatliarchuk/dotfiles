@@ -7,6 +7,7 @@
   - [How to](#how-to)
   - [Config examples](#config-examples)
   - [How to get layour string](#how-to-get-layour-string)
+  - [Read configs](#read-configs)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -41,4 +42,10 @@ tmux
 
 $ tmux display-message -p "#{window_layout}"
 > 4591,157x35,0,0{116x35,0,0,1,40x35,117,0[40x14,117,0,2,40x20,117,15,3]}
+```
+
+## Read configs
+
+```bash
+defaults read com.googlecode.iterm2.plist
 ```

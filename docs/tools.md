@@ -13,6 +13,7 @@
 - [Python](#python)
 - [OS](#os)
 - [Dotfiles](#dotfiles)
+- [ZSH](#zsh)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -74,3 +75,7 @@
 - [Macos dotfiles](https://github.com/mathiasbynens/dotfiles/blob/main/.macos)
 - [Macos dotfiles](https://github.com/BarryMode/macos-prime/blob/master/dotfiles/.macos)
 - [Macos dotfiles](https://github.com/powerline/fonts)
+
+## ZSH
+
+- [Multiple ZSH profiles](https://www.donielsmith.com/blog/2020-04-12-multiple-zsh-config-in-iterm)
