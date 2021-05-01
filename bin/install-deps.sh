@@ -12,6 +12,7 @@ set -e
 # @todo: renovate should support that
 # renovate: datasource=github-releases depName=nvm-sh/nvm versioning=loose
 NVM_VERSION=v0.36.0
+NVM_VERSION=$(curl -s https://api.github.com/repos/nvm-sh/nvm/releases/latest | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
 RUBY_VERSION=2.7.0
 
 show_help() {
@@ -23,6 +24,10 @@ Usage: $(basename "$0") :do:
     install python with Pyenv (https://realpython.com/intro-to-pyenv)
     install helm charts
 EOF
+}
+
+exists() {
+  command -v "$1" >/dev/null 2>&1
 }
 
 install_fonts() {
@@ -53,8 +58,7 @@ install_gvm() {
 
 install_node() {
   if ! exists nvm; then
-    # installed with brwe
-    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/$NVM_VERSION/install.sh | bash
+    curl -o- "https://raw.githubusercontent.com/nvm-sh/nvm/${NVM_VERSION}/install.sh" | bash
     # install default from ~/.nvmrc
     echo "install nvm with brew"
   else
@@ -84,36 +88,79 @@ install_helm() {
   ok "$1"
 }
 
-# show_help
-# install_node
-# install_rvm
-
 install_local() {
-local command=$1
-local arg=$2
-bot "${arg}"
-while true; do
-    response=''
-    read_input "${arg}? [y|N] " response
-    case $response in
-        [Yyes]* )
-          $command "$arg"
-          break;;
-        [Nn]* )
-          warn "skipped ${arg}"
-          break;
-          ;;
-        * ) warn "$no_input";;
-    esac
-done
+  local command=$1
+  local arg=$2
+  bot "${arg}"
+  while true; do
+      response=''
+      read_input "${arg}? [y|N] " response
+      case $response in
+          [Yyes]* )
+            $command "$arg"
+            break;;
+          [Nn]* )
+            warn "skipped ${arg}"
+            break;
+            ;;
+          * ) warn "$no_input";;
+      esac
+  done
 }
 
-no_input='Please answer yes or no.'
-msg='install/update and reset fonts cache'
-install_local "install_fonts" "$msg"
+core() {
+  no_input='Please answer yes or no.'
+  msg='install/update and reset fonts cache'
+  install_local "install_fonts" "$msg"
 
-msg='install gvm'
-install_local "install_gvm" "$msg"
+  msg='install gvm'
+  install_local "install_gvm" "$msg"
 
-msg='install & update helm repositories'
-install_local "install_helm" "$msg"
+  msg='install & update helm repositories'
+  install_local "install_helm" "$msg"
+}
+
+
+usage() {
+  echo "Usage: for $0"
+cat << EOF
+
+Documentation https://github.com/ivankatliarchuk/dotfiles
+
+Usage: $(basename "$0") <options>
+    -h, --help       Display help
+    -a, --all        Run all
+    -n, --node       Install Node
+    -g, --go         Install GVM for Go sdk
+EOF
+}
+
+cmds() {
+  while :; do
+    case "${1:-}" in
+        -a|--all)
+          core
+          break
+          ;;
+        -n|--node)
+          install_node
+          break
+          ;;
+        -g|--go)
+          install_gvm "$@"
+          break
+          ;;
+        -h|--help)
+          usage
+          break
+          ;;
+        *)
+          core
+          break
+          ;;
+    esac
+    shift
+  done
+}
+
+cmds "$@"
