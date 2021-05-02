@@ -535,7 +535,6 @@
         "personal",
         "material",
         "main",
-        "default",
         "parent"
       ],
       "Terminal Type": "xterm-256color",

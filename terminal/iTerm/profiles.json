@@ -533,7 +533,8 @@
       "Tags": [
         "personal",
         "main",
-        "parent"
+        "parent",
+        "default"
       ],
       "Terminal Type": "xterm-256color",
       "Title Components": 34,
