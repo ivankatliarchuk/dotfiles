@@ -6,6 +6,7 @@ $username\
 $hostname\
 $git_branch\
 $kubernetes\
+$cmd_duration\
 $character
 """
 
@@ -28,7 +29,7 @@ error_symbol = "⚠️ (bold red)"
 [git_branch]
 symbol = " "
 format= "[$symbol$branch]($style) "
-style = "#2be05e"
+style = "#d4d63e"
 
 [directory]
 truncation_symbol = ".."
@@ -42,3 +43,7 @@ symbol = "☸️"
 format = '[$symbol \($namespace\)]($style) '
 style = "bold purple"
 disabled = false
+
+[cmd_duration]
+min_time = 500
+format = "time [$duration](bold yellow)"

@@ -71,12 +71,15 @@ format = '[${symbol} (${version} )(\($virtualenv\))]($style)'
 # format = '[${pyenv_prefix}${symbol} (${version} )(\($virtualenv\))]($style)'
 
 [terraform]
-symbol = "🏎💨 "
+symbol = "🔧 "
 
 [aws]
 style = "bold blue"
 symbol = "🅰 "
 displayed_items = ""
+disabled = true
+
+[gcloud]
 disabled = true
 
 [git_branch]
