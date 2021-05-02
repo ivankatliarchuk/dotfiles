@@ -1,0 +1,16 @@
+# https://github.com/koj-co/dependabot-pr-action
+---
+name: auto-merge dependabot prs
+on:
+  schedule:
+    - cron: "0 * * * *"
+jobs:
+  auto_merge:
+    name: auto-merge dependabot prs
+    runs-on: ubuntu-latest
+    steps:
+      - uses: koj-co/dependabot-pr-action@master
+        with:
+          token: ${{ secrets.GITHUB_TOKEN  }}
+          merge-minor: true
+          merge-patch: true
