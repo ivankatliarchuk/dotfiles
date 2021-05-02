@@ -232,21 +232,14 @@ command -v shuttle > /dev/null && alias shuttle='sshuttle --dns -r uberspace 0/0
 
 alias untar='tar xvf' # untar
 
-# Tmux
-alias tmuxkey='tmux -f /dev/null list-keys -T copy-mode-vi' # show current keys
-alias tmuxg='tmux show-options -g'   # show options set
-alias tmuxs='tmux source .tmux.conf' # reload config
-alias tmuxses='tmux list-sessions'   # list sessions in tmux
-alias tmuxkill='tmux kill-server'    # kill sessions in tmux
-
 alias mk='make'
 # editors
 
 # languages
 alias python=$(command -v python3)
 alias pip=$(command -v pip3)
-alias python-v=$(pyenv versions)
-alias pip-v=$(pyenv which pip)
+alias py.v='pyenv versions'
+alias py.pip='pyenv which pip'
 
 # Emoji
 alias shrug="printf '¯\_(ツ)_/¯' | pbcopy"

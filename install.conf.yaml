@@ -3,6 +3,7 @@
     link:
       create: true
       relink: true
+      force: true
     shell:
       quiet: true
       stdin: true
@@ -26,16 +27,12 @@
     ~/.gitattributes: git/gitattributes
     ~/.config/gitcfg: git/gitcfg
     ~/.aliases: shell/aliases
-    ~/.config/.aliases.kube: shell/aliases.kube
+    ~/.config/aliases: shell/aliase
     ~/.exports: shell/exports
     ~/.functions: shell/functions
-    ~/.profile:
-      path: shell/profile
-      force: true
+    ~/.profile: shell/profile
     ~/.config/manage/python: shell/manage-python
-    ~/.python-version:
-      path: .python-version
-      force: true
+    ~/.python-version: .python-version
     ~/.locals: locals
     ~/.zshenv: zsh/settings/zshenv
     ~/.zprofile: zsh/settings/zprofile
@@ -45,13 +42,9 @@
     ~/.gnupg/gpg-agent.conf: tools/gnupg/gpg-agent.conf
     ~/.config/mc/ini: tools/mc.ini
     /usr/local/etc/tor/torrc: tools/browser/tor/torrc
-    ~/Library/ApplicationSupport/iTerm2/DynamicProfiles/profiles.json:
+    ~/Library/ApplicationSupport/iTerm2/DynamicProfiles:
       if: '[ `uname` = Darwin ]'
-      path: terminal/iTerm/profiles.json
-      force: true
-    ~/Library/ApplicationSupport/iTerm2/DynamicProfiles/personal-material.json:
-      if: '[ `uname` = Darwin ]'
-      path: terminal/iTerm/personal-material.json
+      path: terminal/iTerm/profiles
       force: true
     ~/.config/iTerm2/colors/material-design-colors.itermcolors:
       if: '[ `uname` = Darwin ]'
@@ -62,33 +55,21 @@
       path: terminal/iTerm/xsfce-v2.png
       force: true
     ~/.config/starship: terminal/starship
-    ~/.config/tmuxp:
-      path: terminal/tmux/configs
-      force: true
-    ~/.tmuxp/aliases:
-      path: terminal/tmux/aliases
-      force: true
+    ~/.config/tmuxp: terminal/tmux/configs
     ~/.tmux: terminal/tmux/config
-    ~/.tmux.conf:
-      path: terminal/tmux/config/.tmux.conf
-      force: true
+    ~/.tmux.conf: terminal/tmux/config/.tmux.conf
+    ~/.tmuxp/aliases: terminal/tmux/aliases
     ~/.config/scripts: scripts
     ~/.config/.cmds: shell/cmds
     # @todo: group rc files
-    ~/.zshrc:
-      path: zsh/zshrc
-      force: true
+    ~/.zshrc: zsh/zshrc
     ~/.zpreztorc: zsh/settings/zpreztorc
-    ~/.bashrc:
-      path: shell/bashrc
-      force: true
+    ~/.bashrc: shell/bashrc
     ~/.vimrc: tools/vimrc
     ~/.curlrc: tools/curlrc
     ~/.wgetrc: tools/wgetrc
     ~/.gemrc: tools/gemrc
-    ~/.rvmrc:
-      path: tools/rvmrc
-      force: true
+    ~/.rvmrc: tools/rvmrc
     ~/.gvmrc: tools/gvmrc
     ~/.nvmrc: tools/nvmrc
     ~/.pyenvrc: tools/pyenvrc

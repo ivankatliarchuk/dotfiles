@@ -1,0 +1,26 @@
+# https://raw.githubusercontent.com/ivankatliarchuk/dotfiles/master/shell/aliases
+#
+# Shell aliases.
+#
+
+# Tmux
+alias tm.key='tmux -f /dev/null list-keys -T copy-mode-vi' # show current keys
+alias tm.xg='tmux show-options -g'   # show options set
+alias tm.xs='tmux source .tmux.conf' # reload config
+alias tm.s='tmux list-sessions'   # list sessions in tmux
+alias tm.skill='tmux kill-server'    # kill sessions in tmux
+
+## Proceses
+# options for top
+#	c = Show command-line for the processes
+#	-d1 = Sleep for 1 second between every update
+case $OSTYPE in
+darwin*)
+	alias top="top -s1 -o cpu -R -F"
+	;;
+*)
+	alias top="top -c -d 1"
+	;;
+esac
+
+#END alias-definitions

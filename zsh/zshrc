@@ -24,9 +24,16 @@ unset cmd
 [[ -f ~/.exports ]] && source ~/.exports         # Exports
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
-[[ -f ~/.config/.aliases.kube ]] && source ~/.config/.aliases.kube
 [[ -f ~/.tmuxp/aliases ]] && source ~/.tmuxp/aliases
 [[ -f ${HOME}/.zsh/settings/settings.zsh ]] && source ${HOME}/.zsh/settings/settings.zsh # Settings
+
+for al in ~/.config/aliases/*; do
+	if [[ -r "$al" ]] && [[ -f "$al" ]]; then
+		# shellcheck source=/dev/null
+		source "$al"
+	fi
+done
+unset al
 
 # run only on new shell creation
 if which utils > /dev/null; then
@@ -40,12 +47,12 @@ fi
 
 if [[ -n "$TMUX" ]] ;then
   export CURRENTPWD=$PWD
-  export STARSHIP_CONFIG=~/.config/starship/starship.tmux.toml
-  eval "$(starship init zsh)"
+  export STARSHIP_CONFIG=~/.config/starship/tmux.toml
 else
-  export STARSHIP_CONFIG=~/.config/starship/starship.toml
-  eval "$(starship init zsh)"
+  export STARSHIP_CONFIG=~/.config/starship/main.toml
 fi
+
+eval "$(starship init zsh)"
 
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
 
