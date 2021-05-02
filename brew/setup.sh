@@ -31,6 +31,7 @@ brew_install() {
     "Brewfile.k8s"
     "Brewfile.fonts"
   )
+  # brew bundle --file=brew/Brewfile.vms --no-lock; as we not necessary should run vms on every setup
   arraylength=${#files[@]}
   set +e
   for (( i=0; i<arraylength+1; i++ ));

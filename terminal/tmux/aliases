@@ -10,5 +10,5 @@ config_files=(~/.config/tmuxp/*.yaml)
 for file in ${(M)config_files}; do
   filename=$(basename -- "$file")
   aliasname="${filename%.*}"
-  alias "${aliasname}=tmuxp load ${aliasname}"
+  alias "${aliasname}=tmuxp load ${aliasname} -a -y"
 done

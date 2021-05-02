@@ -5,6 +5,7 @@ $directory\
 $username\
 $hostname\
 $git_branch\
+$kubernetes\
 $character
 """
 
@@ -19,17 +20,25 @@ disabled = true
 [hostname]
 ssh_only = true
 disabled = false
+format =  "on [$hostname](bold red) "
 
 [character]
-success_symbol = "▶️ (bold green)"
 error_symbol = "⚠️ (bold red)"
 
 [git_branch]
 symbol = " "
+format= "[$symbol$branch]($style) "
+style = "#2be05e"
 
 [directory]
-truncation_symbol = "⬅️ .."
+truncation_symbol = ".."
 truncation_length = 2
 truncate_to_repo = true
 format = "[$path]($style)( [$read_only]($read_only_style)) "
 read_only = "🚧"
+
+[kubernetes]
+symbol = "☸️"
+format = '[$symbol \($namespace\)]($style) '
+style = "bold purple"
+disabled = false

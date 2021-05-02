@@ -59,10 +59,12 @@ function _k8s_aliases() {
 function _k8s_docs() {
   local toOpen="$1"
   declare -a docs=(
+    "https://minikube.sigs.k8s.io/docs/start"
     "https://kubernetes.io"
     "https://k8s.af"
     "https://cheatsheetseries.owasp.org/cheatsheets/Kubernetes_Security_Cheat_Sheet.html"
     "https://bcouetil.gitlab.io/academy/BP-kubernetes.html"
+    "https://kubernetes.io/docs/reference/kubectl/cheatsheet"
   )
   for el in "${docs[@]}" ; do
     KEY="${el%%}"
