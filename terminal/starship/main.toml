@@ -11,9 +11,6 @@ disabled = false
 success_symbol = "▶️ (bold green)"
 error_symbol = "⚠️ (bold red)"
 
-[username]
-disabled = true
-
 [battery]
 full_symbol = "🔋"
 charging_symbol = "⚡️"
@@ -73,15 +70,6 @@ format = '[${symbol}(${version} )(\($virtualenv\))]($style)'
 [terraform]
 symbol = "🔧 "
 
-[aws]
-style = "bold blue"
-symbol = "🅰 "
-displayed_items = ""
-disabled = true
-
-[gcloud]
-disabled = true
-
 [git_branch]
 symbol = " "
 format= "[$symbol$branch]($style) "
@@ -97,9 +85,25 @@ format = "[$symbol$version]($style) "
 style = "#abdbe3"
 detect_files = ["package.json", ".node-version", ".nvrc"]
 
-[vagrant]
-disabled = true
-
 [cmd_duration]
 min_time = 500
 format = "time [$duration](bold yellow)"
+
+# disabled
+[username]
+disabled = true
+
+[package]
+disabled = true
+
+[vagrant]
+disabled = true
+
+[aws]
+style = "bold blue"
+symbol = "🅰 "
+displayed_items = ""
+disabled = true
+
+[gcloud]
+disabled = true
