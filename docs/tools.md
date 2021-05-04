@@ -8,12 +8,14 @@
 - [Git](#git)
 - [DNS crypt](#dns-crypt)
 - [Brew](#brew)
+  - [Commands](#commands)
 - [Security](#security)
   - [Tools](#tools)
 - [Python](#python)
 - [OS](#os)
 - [Dotfiles](#dotfiles)
 - [ZSH](#zsh)
+  - [Debug ZSH](#debug-zsh)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -50,6 +52,15 @@
 - [Bundle](https://github.com/Homebrew/homebrew-bundle)
 - [WhaleBrew](https://github.com/whalebrew/whalebrew)
 - [MackUP](https://github.com/lra/mackup)
+- [Prezto Brew](https://github.com/sorin-ionescu/prezto/tree/master/modules/homebrew)
+
+### Commands
+
+```bash
+
+brew shellenv
+
+```
 
 ## Security
 
@@ -79,3 +90,13 @@
 ## ZSH
 
 - [Multiple ZSH profiles](https://www.donielsmith.com/blog/2020-04-12-multiple-zsh-config-in-iterm)
+- [What should go in .zshrc](https://unix.stackexchange.com/questions/71253/what-should-shouldnt-go-in-zshenv-zshrc-zlogin-zprofile-zlogout)
+
+### Debug ZSH
+
+```sh
+
+$ time zsh -i -c "print -n"
+zsh -i -c "print -n"  1.33s user 0.91s system 103% cpu 2.161 total
+
+```

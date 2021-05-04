@@ -117,6 +117,7 @@ These scripts are meant to run only on OS X
 - [ ] Dotbot templater plugin
 - [ ] Cron to remove dangling docker images
 - [ ] Cron to run backups
+- [ ] Speed up shell
 
 ## ? QA
 

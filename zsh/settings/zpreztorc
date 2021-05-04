@@ -1,6 +1,8 @@
 #
 # General
 #
+# Brew # https://github.com/sorin-ionescu/prezto/tree/master/modules/homebrew
+#
 
 # Set case-sensitivity for completion, history lookup, etc.
 zstyle ':prezto:*:*' case-sensitive 'no'
@@ -16,16 +18,13 @@ zstyle ':prezto:load' zfunction 'zargs' 'zmv'
 zstyle ':prezto:load' pmodule \
   'environment' \
   'terminal' \
-  'editor' \
   'history' \
   'history-substring-search' \
   'directory' \
-  'spectrum' \
   'utility' \
   'homebrew' \
   'completion' \
   'fasd' \
-  'archive' \
   'git' \
   'osx' \
   'prompt' \
