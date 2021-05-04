@@ -55,7 +55,7 @@ trim_at = ".companyname.com"
 disabled = false
 
 [kubernetes]
-symbol = "☸️"
+symbol = "☸️ "
 format = '[$symbol$context\($namespace\)](#2596BE) '
 style = "bold purple"
 disabled = false
