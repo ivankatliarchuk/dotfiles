@@ -5,6 +5,8 @@ windows:
     layout: 4544,157x36,0,0[157x23,0,0,1,157x12,0,24,2]
     options:
       automatic-rename: true
+      monitor-activity: false
+      remain-on-exit: true
     panes:
       - focus: true
       - pane

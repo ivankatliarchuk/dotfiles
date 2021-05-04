@@ -9,4 +9,6 @@ windows:
       - focus: true
       - pane
       - blank
-      - start_directory: '~'
+      - shell_command:
+        - clear
+        start_directory: '~'

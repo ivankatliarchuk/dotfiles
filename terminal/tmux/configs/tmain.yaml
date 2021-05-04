@@ -8,4 +8,6 @@ windows:
     panes:
       - focus: true
       - pane
-      - start_directory: '~'
+      - shell_command:
+        - clear
+        start_directory: '~'

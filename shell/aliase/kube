@@ -24,7 +24,7 @@ alias k.nsort='kubectl get node --sort-by={.status.nodeInfo.kubeletVersion}'
 alias k.master='kubectl get nodes --selector=node-role.kubernetes.io/master'
 alias k.masters='k.master'
 # list only workers
-alias k.workers="kubectl get node --selector='!node-role.kubernetes.io/master'"
+alias k.workers="kubectl get nodes --selector='!node-role.kubernetes.io/master'"
 alias k.worker="k.workers"
 # list nodes with taints
 alias k.taint='kubectl get node -o custom-columns=NAME:.metadata.name,TAINT:.spec.taints[*].effect'
@@ -59,6 +59,11 @@ alias k.cvu1="kubectl config view -o jsonpath='{.users[].name}'"   # display the
 alias k.cvu="kubectl config view -o jsonpath='{.users[*].name}'"   # get a list of users
 alias k.cs='kubectl config get-contexts'                           # display list of contexts
 alias k.cc='kubectl config current-context'                        # display the current-context
+
+## Images
+alias k.imagen="kubectl get pods -o jsonpath='{..image}' | tr -s '[[:space:]]' '\n' | sort | uniq -c | sort -r"
+alias k.imagea="kubectl get pods -o jsonpath='{..image}' -A | tr -s '[[:space:]]' '\n' | sort | uniq -c | sort -r"
+alias k.image='k.imagea'
 
 ## Rest
 alias k.sys='kubectl --namespace=kube-system'

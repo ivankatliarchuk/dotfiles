@@ -5,7 +5,11 @@ windows:
     layout: 459c,157x35,0,0{88x35,0,0,1,68x35,89,0[68x13,89,0,2,68x21,89,14,3]}
     options:
       automatic-rename: true
+    shell_command_before:
+      - clear
     panes:
       - focus: true
       - pane
-      - start_directory: '~'
+      - shell_command:
+        - clear
+        start_directory: '~'
