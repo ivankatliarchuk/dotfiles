@@ -63,9 +63,16 @@ alias k.cc='kubectl config current-context'                        # display the
 ## Images
 alias k.imgn="kubectl get pods -o jsonpath='{..image}' | tr -s '[[:space:]]' '\n' | sort | uniq -c | sort -r"
 alias k.imga="kubectl get pods -o jsonpath='{..image}' -A | tr -s '[[:space:]]' '\n' | sort | uniq -c | sort -r"
-alias k.img='k.imagea'
-alias k.imgns='kubectl get pods -o jsonpath="{..image}" --namespace ' # +namespace
+alias k.img='k.imgn'
+alias k.imgns='kubectl get pods -o=jsonpath='"'"'{range .items[*]}{"\n"}{.metadata.name}{":\t"}{range .spec.containers[*]}{.image}{", "}{end}{end}'"'"' --namespace ' # +namespace
 alias k.podimg='kubectl get pods --all-namespaces -o=jsonpath='"'"'{range .items[*]}{"\n"}{.metadata.name}{":\t"}{range .spec.containers[*]}{.image}{", "}{end}{end}'"'"' | sort'
+
+## Pods
+alias k.podn='kubectl get pod -o=custom-columns=NS:.metadata.namespace,NAME:.metadata.name --all-namespaces'
+alias k.podnod='kubectl get pod -o=custom-columns=NODE:.spec.nodeName,NAME:.metadata.name,NS:.metadata.namespace --all-namespaces'
+alias k.podnodn='kubectl get pod -o=custom-columns=NODE:.spec.nodeName,NAME:.metadata.name'
+alias k.podnodns='kubectl get pod -o=custom-columns=NODE:.spec.nodeName,NAME:.metadata.name --namespace ' # +namespace
+alias k.podstnod='kubectl get pod -o=custom-columns=NAME:.metadata.name,STATUS:.status.phase,NODE:.spec.nodeName --all-namespaces'
 
 ## Rest
 alias k.sys='kubectl --namespace=kube-system'
