@@ -61,9 +61,11 @@ alias k.cs='kubectl config get-contexts'                           # display lis
 alias k.cc='kubectl config current-context'                        # display the current-context
 
 ## Images
-alias k.imagen="kubectl get pods -o jsonpath='{..image}' | tr -s '[[:space:]]' '\n' | sort | uniq -c | sort -r"
-alias k.imagea="kubectl get pods -o jsonpath='{..image}' -A | tr -s '[[:space:]]' '\n' | sort | uniq -c | sort -r"
-alias k.image='k.imagea'
+alias k.imgn="kubectl get pods -o jsonpath='{..image}' | tr -s '[[:space:]]' '\n' | sort | uniq -c | sort -r"
+alias k.imga="kubectl get pods -o jsonpath='{..image}' -A | tr -s '[[:space:]]' '\n' | sort | uniq -c | sort -r"
+alias k.img='k.imagea'
+alias k.imgns='kubectl get pods -o jsonpath="{..image}" --namespace ' # +namespace
+alias k.podimg='kubectl get pods --all-namespaces -o=jsonpath='"'"'{range .items[*]}{"\n"}{.metadata.name}{":\t"}{range .spec.containers[*]}{.image}{", "}{end}{end}'"'"' | sort'
 
 ## Rest
 alias k.sys='kubectl --namespace=kube-system'
