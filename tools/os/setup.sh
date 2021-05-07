@@ -50,11 +50,26 @@ write com.apple.dock mineffect -string "scale"
 
 run "Automatically hide and show the Dock"
 write com.apple.dock autohide -bool true
+
+# Speed up Mission Control animations
+defaults write com.apple.dock expose-animation-duration -float 0.1
+
+# Don’t group windows by application in Mission Control
+# (i.e. use the old Exposé behavior instead)
+defaults write com.apple.dock expose-group-by-app -bool false
+
+
 ###############################################################################
 bot "Terminal & iTerm2"
 ###############################################################################
 run "hide tab title bars"
 write com.googlecode.iterm2 HideTab -bool true
+
+run "don’t display the annoying prompt when quitting iterm"
+defaults write com.googlecode.iterm2 PromptOnQuit -bool false
+
+run "only use utf-8 in terminal.app"
+defaults write com.apple.terminal StringEncodings -array 4
 
 ###############################################################################
 bot "Activity Monitor"
@@ -101,6 +116,10 @@ defaults write NSGlobalDomain AppleHighlightColor -string "0.764700 0.976500 0.5
 bot "Trackpad, mouse, keyboard, Bluetooth accessories, and input"
 ###############################################################################
 
+run "set a blazingly fast keyboard repeat rate"
+defaults write NSGlobalDomain KeyRepeat -int 1
+defaults write NSGlobalDomain InitialKeyRepeat -int 10
+
 ###############################################################################
 bot "Finder Configs"
 ###############################################################################
@@ -109,6 +128,9 @@ write com.apple.finder _FXSortFoldersFirst -bool true
 
 run "Show hidden files by default"
 write com.apple.finder AppleShowAllFiles -bool true
+
+run "finder: show all filename extensions"
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
 run "Show status bar"
 write com.apple.finder ShowStatusBar -bool true
@@ -126,6 +148,13 @@ write com.apple.finder ShowPathbar -bool true
 # defaults read com.apple.finder FXDefaultSearchScope
 run "When performing a search, search the current folder by default"
 write com.apple.finder FXDefaultSearchScope -string "SCcf"
+
+# Avoid creating .DS_Store files on network or USB volumes
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
+
+# Disable the warning before emptying the Trash
+defaults write com.apple.finder WarnOnEmptyTrash -bool false
 
 ###############################################################################
 # Setup default keychain                                                      #
