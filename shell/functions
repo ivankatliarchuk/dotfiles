@@ -4,13 +4,6 @@
 
 ROOT="$(command -v sudo)"
 
-# Update dotfiles
-dfu() {
-  (
-      cd ~/dotfiles && git pull --ff-only
-  )
-}
-
 # Create a directory and cd into it
 mcd() {
   mkdir "${1}" && cd "${1}"
