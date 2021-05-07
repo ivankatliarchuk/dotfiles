@@ -41,7 +41,7 @@ read_only = "🚧"
 [kubernetes]
 symbol = "☸️"
 format = '[$symbol \($namespace\)]($style) '
-style = "bold purple"
+style = "#c5f542"
 disabled = false
 
 [cmd_duration]

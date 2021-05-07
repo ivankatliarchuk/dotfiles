@@ -56,8 +56,8 @@ disabled = false
 
 [kubernetes]
 symbol = "☸️ "
-format = '[$symbol$context\($namespace\)](#2596BE) '
-style = "bold purple"
+format = '[$symbol$context\($namespace\)]($style) '
+style = "#c5f542"
 disabled = false
 
 [python]
