@@ -3,10 +3,6 @@ umask 077
 # Created by dotfiles
 [[ "$TERM" == "screen" ]] && export TERM=screen-256color
 
-
-[[ -f ~/.zsh/functions/eval.zsh ]] && source ~/.zsh/functions/eval.zsh # source values
-for f in $(compaudit);do sudo chmod -R 755 $f;done;
-
 # load custom executable functions
 for function in ~/.zsh/functions/*; do
   source $function
@@ -45,14 +41,18 @@ if [[ ( "$SHLVL" -eq 1 && ! -o LOGIN ) && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; t
   source "${ZDOTDIR:-$HOME}/.zprofile"
 fi
 
-if [[ -n "$TMUX" ]] ;then
+if [[ -n "$TMUX" ]];then
   export CURRENTPWD=$PWD
   export STARSHIP_CONFIG=~/.config/starship/tmux.toml
 else
   export STARSHIP_CONFIG=~/.config/starship/main.toml
 fi
 
-eval "$(starship init zsh)"
+if [[ -n "$STARSHIP_SHELL" ]];then
+: # do not initialize starship second time
+else
+  eval "$(starship init zsh)"
+fi
 
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
 

@@ -44,3 +44,5 @@ export BASH_IT="$HOME/.bash_it"
 if [ -f "$BASH_IT"/bash_it.sh ]; then
     source "$BASH_IT"/bash_it.sh
 fi
+
+for f in $(compaudit);do sudo chmod -R 755 $f;done;

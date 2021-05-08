@@ -5,7 +5,6 @@
 #
 # Helper functions that don't belong elsewhere.
 #
-
 exists() {
   command -v "$1" >/dev/null 2>&1
 }

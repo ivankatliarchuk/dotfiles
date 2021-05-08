@@ -4,7 +4,6 @@
 #
 # Set python latest version with pyenv
 #
-
 # Return if requirements are not found.
 if (( ! $+commands[python] && ! $+commands[pyenv] )); then
   return 1

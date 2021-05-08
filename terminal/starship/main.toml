@@ -3,6 +3,7 @@
 # https://github.com/denysdovhan/spaceship-prompt/wiki/Presets
 
 add_newline = false
+scan_timeout = 0
 
 [line_break]
 disabled = false

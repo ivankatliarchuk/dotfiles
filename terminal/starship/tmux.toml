@@ -11,6 +11,7 @@ $character
 """
 
 add_newline = false
+scan_timeout = 0
 
 [line_break]
 disabled = true

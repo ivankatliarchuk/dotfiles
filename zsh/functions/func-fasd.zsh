@@ -1,7 +1,6 @@
 #!/bin/env zsh
 # -*- mode: sh -*-
 # https://github.com/clvv/fasd
-
 #
 # fasd settings.
 #

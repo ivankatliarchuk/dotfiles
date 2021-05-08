@@ -2,7 +2,6 @@
 #
 # Shell aliases.
 #
-
 # Pretty print the path
 command -v aws-vault > /dev/null || alias creds="aws-vault exec $AWS_PROFILE"
 alias clearhist='echo "" > ~/.zsh_history & exec $SHELL -l'

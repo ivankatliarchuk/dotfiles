@@ -97,6 +97,25 @@ brew shellenv
 ```sh
 
 $ time zsh -i -c "print -n"
-zsh -i -c "print -n"  1.33s user 0.91s system 103% cpu 2.161 total
+> zsh -i -c "print -n"  1.33s user 0.91s system 103% cpu 2.161 total
+> zsh -i -c "print -n"  1.40s user 0.94s system 111% cpu 2.089 total
+> zsh -i -c "print -n"  0.92s user 0.69s system 109% cpu 1.476 total
+
+$ time starship prompt
+starship prompt  0.04s user 0.04s system 170% cpu 0.044 tota
+
+```
+
+```sh
+
+$ source ~/.bashrc
+
+$ echo ${precmd_functions[@]}
+> _direnv_hook _terminal-set-titles-with-path _zsh_autosuggest_start _zsh_highlight_main__precmd_hook _z_precmd starship_precmd
+> _direnv_hook _terminal-set-titles-with-path _zsh_autosuggest_start _zsh_highlight_main__precmd_hook _z_precmd starship_precmd
+
+$ echo ${preexec_functions[@]}
+> _terminal-set-titles-with-command _fasd_preexec _zsh_highlight_preexec_hook starship_preexec starship_preexec starship_preexec starship_preexec
+> _terminal-set-titles-with-command _fasd_preexec _zsh_highlight_preexec_hook starship_preexec
 
 ```
