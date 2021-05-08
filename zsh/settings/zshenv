@@ -1,3 +1,18 @@
-
 # Local config
 [[ -f ~/.zshenv.local ]] && source ~/.zshenv.local
+
+if [[ "$OSTYPE" == darwin* ]]; then
+  export BROWSER='open'
+fi
+
+#
+# Editors
+#
+if /usr/local/bin/code --version > /dev/null; then
+  export EDITOR="code --wait"
+else
+  export EDITOR='vim'
+fi
+
+export VISUAL='code'
+export PAGER=''

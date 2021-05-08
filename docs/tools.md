@@ -7,13 +7,17 @@
 - [Mixed](#mixed)
 - [Git](#git)
 - [DNS crypt](#dns-crypt)
+- [DNS Dnsmasq](#dns-dnsmasq)
 - [Brew](#brew)
   - [Commands](#commands)
+- [Wget](#wget)
+- [Curl](#curl)
 - [Security](#security)
   - [Tools](#tools)
 - [Python](#python)
 - [OS](#os)
 - [Dotfiles](#dotfiles)
+- [GPG Setup](#gpg-setup)
 - [ZSH](#zsh)
   - [Debug ZSH](#debug-zsh)
 
@@ -47,6 +51,13 @@
 
 - [Dns crypt proxy](https://github.com/drduh/config/blob/master/dnscrypt-proxy.toml)
 
+## DNS Dnsmasq
+
+- [Docs](http://www.thekelleys.org.uk/dnsmasq/docs/dnsmasq-man.html)
+- [Configure v1](https://passingcuriosity.com/2013/dnsmasq-dev-osx/)
+- [Configure v2](https://www.stevenrombauts.be/2018/01/use-dnsmasq-instead-of-etc-hosts/)
+- [Config Example](https://github.com/dnsmasq/dnsmasq/blob/master/dnsmasq.conf.example)
+
 ## Brew
 
 - [Bundle](https://github.com/Homebrew/homebrew-bundle)
@@ -61,6 +72,14 @@
 brew shellenv
 
 ```
+
+## Wget
+
+- [Configuration Options](https://www.gnu.org/software/wget/manual/html_node/Sample-Wgetrc.html)
+
+## Curl
+
+- [Configuration Options](https://ec.haxx.se/cmdline/cmdline-configfile)
 
 ## Security
 
@@ -86,6 +105,13 @@ brew shellenv
 - [Macos dotfiles](https://github.com/mathiasbynens/dotfiles/blob/main/.macos)
 - [Macos dotfiles](https://github.com/BarryMode/macos-prime/blob/master/dotfiles/.macos)
 - [Macos dotfiles](https://github.com/powerline/fonts)
+
+## GPG Setup
+
+- [GnuPG auth](https://incenp.org/notes/2015/gnupg-for-ssh-authentication.html)
+- [GpG Debian](https://gregrs-uk.github.io/2018-08-06/gpg-key-ssh-mac-debian/)
+- [GpG Flow](https://gist.github.com/bcomnes/647477a3a143774069755d672cb395ca)
+- [Gistst](https://gist.github.com/bmhatfield/cc21ec0a3a2df963bffa3c1f884b676b)
 
 ## ZSH
 

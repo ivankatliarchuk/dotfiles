@@ -10,23 +10,6 @@
 # Browser
 #
 
-if [[ "$OSTYPE" == darwin* ]]; then
-  export BROWSER='open'
-fi
-
-#
-# Editors
-#
-
-if which code > /dev/null; then
-  export EDITOR="code --wait"
-else
-  export EDITOR='vim'
-fi
-
-export VISUAL='code'
-export PAGER=''
-
 ######################
 # History Configuration
 ######################
@@ -54,13 +37,10 @@ setopt hist_verify               # Don't execute immediately upon history expans
 #
 # Paths
 #
-
 # Ensure path arrays do not contain duplicates.
 typeset -gU cdpath fpath mailpath path
 
 [[ -f ~/.config/manage/python ]] && source ~/.config/manage/python
-# export PYTHON_PATH="$(python3 -m site --user-base)/bin:$(python -m site --user-site)/bin:$PYTHONPATH"
-# export PATH="$(pyenv root)/shims:$(command -v python3):$(command -v python):$PYTHON_PATH:$PATH"
 
 path=(
   $path
