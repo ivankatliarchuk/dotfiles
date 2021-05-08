@@ -117,8 +117,8 @@ bot "Trackpad, mouse, keyboard, Bluetooth accessories, and input"
 ###############################################################################
 
 run "set a blazingly fast keyboard repeat rate"
-defaults write NSGlobalDomain KeyRepeat -int 1
-defaults write NSGlobalDomain InitialKeyRepeat -int 10
+defaults write NSGlobalDomain KeyRepeat -int 2 # normal minimum is 2 (30 ms)
+defaults write NSGlobalDomain InitialKeyRepeat -int 15 # normal minimum is 15 (225 ms)
 
 ###############################################################################
 bot "Finder Configs"
