@@ -44,14 +44,10 @@ fi
 if [[ -n "$TMUX" ]];then
   export CURRENTPWD=$PWD
   export STARSHIP_CONFIG=~/.config/starship/tmux.toml
+  eval "$(starship init zsh)"
 else
   export STARSHIP_CONFIG=~/.config/starship/main.toml
-fi
-
-if [[ -n "$STARSHIP_SHELL" ]];then
-: # do not initialize starship second time
-else
-  eval "$(starship init zsh)"
+  [[ -z "$STARSHIP_SHELL" ]] && eval "$(starship init zsh)"
 fi
 
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
