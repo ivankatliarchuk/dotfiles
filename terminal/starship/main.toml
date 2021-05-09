@@ -31,10 +31,6 @@ read_only = "🚧"
 [docker_context]
 symbol = "🐳 "
 
-[env_var]
-variable = "ENVIRONMENT"
-style = "dimmed bold purple"
-
 [git_status]
 format = '([$all_status$ahead_behind]($style)) '
 conflicted = "❌"
@@ -91,6 +87,11 @@ min_time = 500
 format = "time [$duration](bold yellow)"
 
 # disabled
+[env_var]
+variable = "ENVIRONMENT"
+style = "dimmed bold purple"
+disabled = true
+
 [username]
 disabled = true
 
