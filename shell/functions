@@ -527,11 +527,9 @@ size-folders() {
   du -k ./* | awk '$1 > 500000' | sort -nr
 }
 
-master() {
+_master() {
   if git rev-parse --git-dir > /dev/null 2>&1; then
     git checkout master && git pull master
-  else
-    echo "# NOT a git repo!"
   fi
 }
 
