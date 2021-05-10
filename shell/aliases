@@ -274,6 +274,8 @@ alias g.o='_gopen'
 # switch to master
 alias g.master="git checkout master"
 alias gmaster=master
+alias master=master
+alias main='git checkout main'
 alias g.main="git checkout main" # switch to main
 alias g.s='git status'
 # list all branches
