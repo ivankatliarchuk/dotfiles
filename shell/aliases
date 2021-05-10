@@ -270,6 +270,7 @@ alias g.cb="git checkout -b" # + branch name
 alias g.ch='g.cb'
 alias g.d='git branch -D' # + branch name
 alias g.open='_gopen'
+alias g.o='_gopen'
 # switch to master
 alias g.master="git checkout master"
 alias gmaster=master
