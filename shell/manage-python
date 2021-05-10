@@ -11,9 +11,7 @@ fi
 
 if (( $+commands[pyenv] )); then
   eval "$(pyenv init - --no-rehash zsh)"
-fi
 
-if [ ! -x "$(command -v pyenv)" ]; then
   PYTHON_VERSIONS="$(pyenv versions | tr -d '[:space:]')"
   PYENV_LATEST_VERSION="$(pyenv install --list | grep -v - | grep -v b | tail -1 | tr -d '[:space:]')"
   export PYENV_GLOBAL_VERSION="$(pyenv version-name)"

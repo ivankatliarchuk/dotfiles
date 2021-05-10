@@ -13,7 +13,7 @@ alias ext='tm.skill'
 if [[ -n "$TMUX" ]] ;then
 
 [[ -f ~/.tmux.conf ]] && alias tm.source='tmux source ~/.tmux.conf' # reload config
-[[ -f ~/.tmux.conf ]] && alias reload='. ~/.zshrc;tmux source ~/.tmux.conf' # reload config
+[[ -f ~/.tmux.conf ]] && alias reload='. ~/.zshrc;tmux source ~/.tmux.conf;clear' # reload config
 
 alias exit='tm.skill'
 
