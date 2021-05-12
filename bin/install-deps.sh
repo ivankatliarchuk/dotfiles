@@ -88,6 +88,18 @@ install_helm() {
   ok "$1"
 }
 
+install_python() {
+  action "$1"
+  pyenv local && python3 -m pip install -U -r py/requirements.txt && python3 -m pip install --upgrade pip
+  ok "$1"
+}
+
+install_osx() {
+  action "$1"
+  tools/os/setup.sh
+  ok "$1"
+}
+
 install_local() {
   local command=$1
   local arg=$2
@@ -118,6 +130,12 @@ core() {
 
   msg='install & update helm repositories'
   install_local "install_helm" "$msg"
+
+  msg='install & update python and pyenv'
+  install_local "install_python" "$msg"
+
+  msg='sync OSX settings'
+  install_local "sync_osx" "$msg"
 }
 
 
@@ -132,6 +150,8 @@ Usage: $(basename "$0") <options>
     -a, --all        Run all
     -n, --node       Install Node
     -g, --go         Install GVM for Go sdk
+    -p, --python     Install Python and Pyenv
+    -o, --osx        Sycn OSX settings
 EOF
 }
 
@@ -148,6 +168,14 @@ cmds() {
           ;;
         -g|--go)
           install_gvm "$@"
+          break
+          ;;
+        -p|--python)
+          install_python "$@"
+          break
+          ;;
+        -o|--osx)
+          install_osx "$@"
           break
           ;;
         -h|--help)
