@@ -23,12 +23,6 @@ brew-install: ## Install apps with Brew
 osx-install: ## Install macOSx
 	@tools/os/setup.sh
 
-python-install: ## Python setup
-ifdef PYENV_LOCATION
-		$(info pyenv location found: '${PYENV_LOCATION}')
-endif
-	pyenv local && python3 -m pip install -U -r py/requirements.txt && python3 -m pip install --upgrade pip
-
 hooks: ## Setup pre commit.
 	@pre-commit install
 	@pre-commit gc

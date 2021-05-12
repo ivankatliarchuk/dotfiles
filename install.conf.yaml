@@ -75,22 +75,20 @@
     ~/.pyenvrc: tools/pyenvrc
     ~/.zprezto: vendor/prezto
     ~/.bash-it: vendor/bash-it
+    # vscode
+    ~/Library/ApplicationSupport/Code/User/settings.json: tools/vscode/settings.json
+    ~/Library/ApplicationSupport/Code/User/keybindings.json: tools/vscode/keybindings.json
+
 
 - shell:
     - command: git submodule update --init --recursive
       description: Installing submodules
     -
       command: make install-deps
-      description: Installing dependencies
+      description: Installing dependencies, go, python, osx
     -
       command: make brew-install
       description: Manage Brew
-    -
-      command: make python-install
-      description: Installing dependencies & Rebuild shim files
-    -
-      command: make osx-install
-      description: Configure macOS
     -
       command: echo "My current 'shell' is '$SHELL'"
       description: Check current shell

@@ -1,0 +1,10 @@
+[
+  {
+    "command": "editor.action.transformToUppercase",
+    "key": "cmd+u"
+  },
+  {
+    "command": "editor.action.transformToLowercase",
+    "key": "cmd+l"
+  }
+]
