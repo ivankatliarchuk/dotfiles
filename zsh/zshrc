@@ -47,8 +47,9 @@ if [[ -n "$TMUX" ]];then
   eval "$(starship init zsh)"
 else
   export STARSHIP_CONFIG=~/.config/starship/main.toml
-  [[ -z "$STARSHIP_SHELL" ]] && eval "$(starship init zsh)"
+  eval "$(starship init zsh)"
 fi
+
 
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
 
