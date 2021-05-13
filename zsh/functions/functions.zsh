@@ -88,16 +88,13 @@ load-gvmrc
 # Automatically switch and load python versions when a directory has an `.python-version` or `.pyrc` file
 load-pyenv() {
   if exists pyenv; then
-    if [ -f .python-version  ] || [ -f .pyrc  ] || [ -f Pipfile  ]; then
+    if [ -f .python-version  ] || [ -f .pyrc  ]; then
         local version=''
         if [ -f .python-version  ];then
           version=$(cat .python-version)
         fi
         if [ -f .pyrc  ];then
           version=$(cat .pyrc)
-        fi
-        if [ -f Pipfile  ];then
-          information "Found pipfile. \$pipenv install --skip-lock"
         fi
         if [[ "$version" != "$PYENV_VERSION" ]]; then
           if ! pyenv versions | grep $version >/dev/null 2>&1; then
