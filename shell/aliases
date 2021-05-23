@@ -246,7 +246,7 @@ alias fight="printf '(ง'̀-'́)ง' | pbcopy"
 # Git
 # cd to git root directory
 alias g=git
-alias git.root='cd "$(git rev-parse --show-toplevel)"'
+alias g.root='cd "$(git rev-parse --show-toplevel)"'
 # -< gac "My commit message"
 alias gac= "add .;git commit -m 'wip'" # + commit message
 alias g.ci='git ci -m ' # + commit message
