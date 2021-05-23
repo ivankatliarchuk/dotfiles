@@ -41,9 +41,6 @@ alias mergepdf='/System/Library/Automator/Combine\ PDF\ Pages.action/Contents/Re
 # find . -name .gitattributes | map dirname
 alias map="xargs -n1"
 
-# Kill all the tabs in Chrome to free up memory
-# [C] explained: http://www.commandlinefu.com/commands/view/402/exclude-grep-from-your-grepped-output-of-ps-alias-included-in-description
-alias chromekill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v extension-process | tr -s ' ' | cut -d ' ' -f2 | xargs kill"
 
 # copy working directory
 alias cwd='pwd | tr -d "\r\n" | xclip -selection clipboard'
@@ -314,6 +311,7 @@ alias d.rmi=docker-rmi
 alias d.rm='docker image prune'
 alias d.rms='docker system prune'
 alias d.i='docker images'
+alias d.sp='docker system prune -a'
 
 ## Ruby
 
@@ -346,11 +344,17 @@ alias help.k8s='k8s-help'
 case $OSTYPE in
 darwin*)
 	alias top="top -s1 -o cpu -R -F"
-	;;
+  alias p.mem="ps -Ao user,uid,pid,pcpu=CPU,pmem=RAM,comm=Command -m | head -n 10"
+  alias p.cpu="ps -Ao user,uid,pid,pcpu=CPU,pmem=RAM,comm=Command | head -n 10"
+  ;;
 *)
 	alias top="top -c -d 1"
+  alias p.mem="ps -Ao user,uid,pid,pcpu=CPU,pmem=RAM,comm=Command --sort=-pmem | head -n 10"
+  alias p.cpu="ps -Ao user,uid,pid,pcpu=CPU,pmem=RAM,comm=Command --sort=-pcpu | head -n 10"
 	;;
 esac
+
+alias p.root="ps -f -U root -u root"
 
 alias last10=last10
 alias top10='history-stat -n 15'
