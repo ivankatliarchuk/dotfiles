@@ -23,6 +23,7 @@ CHARTS=(
   "jenkinsci:charts.jenkins.io"
   "traefik:helm.traefik.io/traefik"
   "mintel:mintel.github.io/helm-charts"
+  "k8s-at-home:k8s-at-home.com/charts"
 )
 
 for el in "${CHARTS[@]}" ; do

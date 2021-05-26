@@ -1,0 +1,11 @@
+# Default
+# https://github.com/RehanSaeed/Helm-Cheat-Sheet
+# https://cheatsheet.dennyzhang.com/cheatsheet-helm-a4
+# Kubernetes & Helm aliases.
+#
+
+## Helm
+alias h.du="helm dependency update" # sync chart dependencies
+alias h.ru="helm repo update"       # update information of available charts locally
+alias h.l="helm repo list"          # list chart repositories
+alias hlist="h.l"
