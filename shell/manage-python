@@ -10,7 +10,11 @@ if (( ! $+commands[python] && ! $+commands[pyenv] )); then
 fi
 
 if (( $+commands[pyenv] )); then
-  eval "$(pyenv init - --no-rehash zsh)"
+
+  export PYENV_ROOT="$HOME/.pyenv"
+  export PATH="$PYENV_ROOT/bin:$PATH"
+
+  eval "$(pyenv init --path)"
 
   PYTHON_VERSIONS="$(pyenv versions | tr -d '[:space:]')"
   PYENV_LATEST_VERSION="$(pyenv install --list | grep -v - | grep -v b | tail -1 | tr -d '[:space:]')"
@@ -20,6 +24,4 @@ if (( $+commands[pyenv] )); then
   else
     export PYENV_VERSION="$(pyenv version-name)"
   fi
-  export PYENV_ROOT="$HOME/.pyenv"
-  export PATH="$PYENV_ROOT/bin:$PATH"
 fi
