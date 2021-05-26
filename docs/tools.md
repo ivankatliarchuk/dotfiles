@@ -19,6 +19,7 @@
 - [Dotfiles](#dotfiles)
 - [GPG Setup](#gpg-setup)
 - [ZSH](#zsh)
+- [NVM](#nvm)
   - [Debug ZSH](#debug-zsh)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -118,6 +119,11 @@ brew shellenv
 - [Multiple ZSH profiles](https://www.donielsmith.com/blog/2020-04-12-multiple-zsh-config-in-iterm)
 - [What should go in .zshrc](https://unix.stackexchange.com/questions/71253/what-should-shouldnt-go-in-zshenv-zshrc-zlogin-zprofile-zlogout)
 
+## NVM
+
+- [NVM](https://github.com/nvm-sh/nvm)
+- [NVM: speed up](https://github.com/wzrdtales/nvm-ng)
+
 ### Debug ZSH
 
 ```sh
@@ -129,6 +135,18 @@ $ time zsh -i -c "print -n"
 
 $ time starship prompt
 starship prompt  0.04s user 0.04s system 170% cpu 0.044 tota
+
+$ time zsh -i -c exit
+> zsh -i -c exit  1.01s user 0.66s system 94% cpu 1.780 total
+
+$ zsh -xv
+
+$ time source ~/.nvm/nvm.sh --no-use
+
+$ do /usr/bin/time bash -i -c exit; done
+
+$ zsh -xv 2>&1 | ts -i "%.s" > zsh_startup.log
+$ sort --field-separator=' ' -r -k1 zsh_startup.log> sorted.log
 
 ```
 

@@ -22,6 +22,7 @@ brew "nvm"
 brew "pyenv"
 # Python dependency management tool
 # https://pipenv.pypa.io/en/latest/
+# https://github.com/Homebrew/homebrew-bundle/issues/932
 brew "pipenv" , link: true
 # ---start--- GO
 # Open source programming language to build simple/reliable/efficient software
@@ -77,6 +78,9 @@ brew "docker-machine-driver-hyperkit"
 # terminal session recorder
 # https://asciinema.org/docs/how-it-works
 brew "asciinema"
+# collection of unix tools
+# https://joeyh.name/code/moreutils/
+brew "moreutils"
 if OS.mac?
 # --- Casks
 # Manage your Jet Brains tools the easy way

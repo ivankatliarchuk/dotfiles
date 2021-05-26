@@ -31,7 +31,6 @@ zstyle ':prezto:load' pmodule \
   'autosuggestions' \
   'ssh' \
   'syntax-highlighting' \
-  'node' \
   'python' \
   'tmux'
 
@@ -52,7 +51,7 @@ zstyle ':prezto:module:syntax-highlighting' styles \
   'function' 'bg=purple'
 
 # https://github.com/sorin-ionescu/prezto/tree/master/modules/node
-zstyle ':prezto:module:node:info:version' format 'version:%v'
+# zstyle ':prezto:module:node:info:version' format 'version:%v'
 
 #
 # Tmux
