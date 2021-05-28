@@ -362,6 +362,7 @@ darwin*)
 	;;
 esac
 
+alias p.zombie='ps auxww | grep Z' ## zombie proceses
 alias p.root="ps -f -U root -u root"
 
 alias last10=last10

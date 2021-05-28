@@ -14,6 +14,7 @@ CHARTS=(
   "stable:charts.helm.sh/stable"
   "traefik:helm.traefik.io/traefik"
   "codecentric:codecentric.github.io/helm-charts"
+  "chaos-mesh:charts.chaos-mesh.org"
   "loghouse:flant.github.io/loghouse/charts"
   "uswitch:uswitch.github.io/kiam-helm-charts/charts"
   "kubernetes-dashboard:kubernetes.github.io/dashboard"
@@ -21,10 +22,8 @@ CHARTS=(
   "stakater:stakater.github.io/stakater-charts"
   "vmware-tanzu:vmware-tanzu.github.io/helm-charts"
   "jenkinsci:charts.jenkins.io"
-  "traefik:helm.traefik.io/traefik"
   "mintel:mintel.github.io/helm-charts"
   "k8s-at-home:k8s-at-home.com/charts"
-  "chaos-mesh:charts.chaos-mesh.org"
 )
 
 for el in "${CHARTS[@]}" ; do

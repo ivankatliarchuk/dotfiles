@@ -14,6 +14,7 @@ cat << EndOfMessage
 'watch -n <interval> docker ps' >>> Monitor execution of a coommand
 'lsof -i -P -n(-euf)' >>> Information about files opened by processes
 'ps -afe | grep <service>' >>> Information about all of your processes
+'ps auxww | grep Z' >>> List all zombie processes
 'kill -9 <pid>' >>> Terminate process
 
 EndOfMessage
@@ -30,6 +31,7 @@ cat << EndOfMessage
 'find <directory> -name "*.yaml"' >>> Find all the yaml files in the directory
 'chown -R \$(id -u):\$(id -g) <folder>' >>> Change the ownership in folder
 'tail -f <file> | grep <what looking>' >>> Selectively monitor the file
+'unique | wc -l' >>> Count number of unique occurences in file
 
 EndOfMessage
 
