@@ -15,6 +15,10 @@ else
 : # do nothing as we may switch to context an there is no need to realod
 fi
 
+## Health
+alias k.h='kubectl get cs'
+alias k.health="kubectl get --raw='/readyz?verbose"
+
 ## Nodes
 # sort nodes by timestamp
 alias k.nstamp='kubectl get nodes --sort-by=.metadata.creationTimestamp'

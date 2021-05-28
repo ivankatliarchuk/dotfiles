@@ -297,6 +297,14 @@ alias g.pl=gpull
 alias g.t='_gtag'
 alias g.tremove='git-remove-tag' # + tag id
 
+
+## Golang
+alias go.get='go get ./...; go get -t ./...'
+alias go.clean='go mod verify && go mod tidy -mod=mod'
+alias go.getall='go get -u -v -f all'
+
+## FZF
+
 alias fgit=_gt
 alias fgitdif=_gdif
 alias fgitbranch=_gbranch
