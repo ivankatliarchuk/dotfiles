@@ -243,75 +243,10 @@ alias shrug="printf '¯\_(ツ)_/¯' | pbcopy"
 alias flipt="printf '(╯°□°)╯︵ ┻━┻' | pbcopy"
 alias fight="printf '(ง'̀-'́)ง' | pbcopy"
 
-# Git
-# cd to git root directory
-alias g=git
-alias g.root='cd "$(git rev-parse --show-toplevel)"'
-# -< gac "My commit message"
-alias gac= "add .;git commit -m 'wip'" # + commit message
-alias g.ci='git ci -m ' # + commit message
-alias g.dff=_gdif
-alias g.diff=_gdif
-# branch
-alias gbn="git branch" # + branch name
-alias gb='gbn'
-alias gba='git ba' # list branches with author and commit date
-alias g.b='git branch --sort=-committerdate | fzf | xargs git checkout'
-# https://dev.to/chilcutt/smarter-git-checkout-with-fzf-2k5n
-alias g.bf="git for-each-ref --format='%(refname:short)' refs/heads | fzf | xargs git checkout"
-alias g.bl='git branch --sort=-committerdate'
-alias g.bf='fzf-git-checkout'
-alias gc="git checkout" # + branch name
-alias gcb="git checkout -b" # + branch name
-alias g.cb="git checkout -b" # + branch name
-alias g.ch='g.cb'
-alias g.d='git branch -D' # + branch name
-alias g.open='_gopen'
-alias g.o='_gopen'
-# switch to master
-alias g.master="git checkout master"
-alias gmaster=master
-alias master=master
-alias main='git checkout main'
-alias g.main="git checkout main" # switch to main
-alias g.s='git status'
-# list all branches
-alias g.list="git blist"
-alias g.l="git blist"
-alias blist='g.list'
-alias g.repolist="find . -type d -exec sh -c 'cd {}; git rev-parse --git-dir 2> /dev/null 1>&2;' \; -prune -print"
-alias repos='g.rep'
-alias g.rep='_grepo'
-alias g.rmb=git-remove-remote
-alias g.who=iam
-alias g.search='fzf-git-search-clone' # + user name e.g. ivankatliarchuk
-# push
-alias gpush="git push" # + remote & branch names
-alias g.push='git push'
-alias g.ps='git push'
-alias g.psf='git psf'
-# pull
-alias gpull="git pull" # + remote & branch names
-alias g.pl=gpull
-# Work with tags
-alias g.t='_gtag'
-alias g.tremove='git-remove-tag' # + tag id
-
-
 ## Golang
 alias go.get='go get ./...; go get -t ./...'
 alias go.clean='go mod verify && go mod tidy -mod=mod'
 alias go.getall='go get -u -v -f all'
-
-## FZF
-
-alias fgit=_gt
-alias fgitdif=_gdif
-alias fgitbranch=_gbranch
-alias fgittag=_gtag
-alias fgitlog=_glog
-alias fgitstash=_gstash
-alias fgitremote=_gremote
 
 ## Docker
 alias d=docker
