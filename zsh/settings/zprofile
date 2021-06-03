@@ -41,8 +41,11 @@ setopt hist_verify               # Don't execute immediately upon history expans
 typeset -gU cdpath fpath mailpath path
 
 export NVM_DIR="$HOME/.nvm"
+export NVM_LOCAL="/usr/local/opt/nvm"
 # shellcheck source=/dev/null
-[ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh" --fast-reuse  # This loads nvm
+[ -s "$NVM_LOCAL/nvm.sh" ] && source "$NVM_LOCAL/nvm.sh" --fast-reuse  # This loads nvm
+# shellcheck source=/dev/null
+[ -s "$NVM_LOCAL/etc/bash_completion.d/nvm" ] && \. "$NVM_LOCAL/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 [[ -f ~/.config/manage/python ]] && source ~/.config/manage/python
 
