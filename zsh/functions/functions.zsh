@@ -44,19 +44,44 @@ add-zsh-hook chpwd load-tgswitch
 load-tgswitch
 
 # Automatically switch and load node versions when a directory has a `.nvmrc` file
+# load-nvmrc() {
+#   if exists nvm; then
+#     if [ -f .nvmrc  ]; then
+#       if [[ "$(node -v)" != "$(cat .nvmrc)" ]]; then
+#         if nvm list | grep "$(cat .nvmrc)"; then
+#         fi
+#         nvm use $(cat .nvmrc) >/dev/null 2>&1
+#         echo "Switched node to version \"$(node -v)\""
+#       fi
+#       if [ $? -eq 1 ]
+#       then
+#         echo "Im here 1"
+#         nvm install $(cat .nvmrc)
+#         nvm use $(cat .nvmrc) >/dev/null 2>&1
+#         echo "Switched node to version \"$(node -v)\""
+#       fi
+#     fi
+#   fi
+# }
+# https://github.com/nvm-sh/nvm
 load-nvmrc() {
   if exists nvm; then
+    local node_version="$(nvm version)"
+    local nvmrc_path="$(nvm_find_nvmrc)"
     if [ -f .nvmrc  ]; then
-      if [[ "$(node -v)" != "$(cat .nvmrc)" ]]; then
-        nvm use $(cat .nvmrc) >/dev/null 2>&1
-        echo "Switched node to version \"$(node -v)\""
-      fi
-      if [ $? -eq 1 ]
-      then
-        echo "Im here 1"
-        nvm install $(cat .nvmrc)
-        nvm use $(cat .nvmrc) >/dev/null 2>&1
-        echo "Switched node to version \"$(node -v)\""
+
+      if [[ -n "$nvmrc_path" ]]; then
+        if [[ "$(node -v)" != "$(cat .nvmrc)" ]]; then
+          local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
+
+          if [ "$nvmrc_node_version" = "N/A" ]; then
+            nvm install
+          elif [ "$nvmrc_node_version" != "$node_version" ]; then
+            nvm use
+          fi
+        fi
+      elif [ "$node_version" != "$(nvm version default)" ]; then
+        nvm use default
       fi
     fi
   fi
