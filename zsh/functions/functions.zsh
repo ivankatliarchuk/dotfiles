@@ -71,7 +71,7 @@ load-nvmrc() {
     if [ -f .nvmrc  ]; then
 
       if [[ -n "$nvmrc_path" ]]; then
-        if [[ "$(node -v)" != "$(cat .nvmrc)" ]]; then
+        if [[ "${$(nvm current)#"v"}" != "$(cat .nvmrc)" ]]; then
           local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
 
           if [ "$nvmrc_node_version" = "N/A" ]; then
