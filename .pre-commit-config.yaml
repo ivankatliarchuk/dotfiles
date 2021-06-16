@@ -73,7 +73,7 @@ repos:
     types: [file, yaml]
     entry: 'yamllint --strict'
 - repo: https://github.com/thlorenz/doctoc
-  rev: v2.0.0
+  rev: v2.0.1
   hooks:
   - id: doctoc
     args: ['--title=**Table of Contents**']
