@@ -9,3 +9,5 @@ alias h.du="helm dependency update" # sync chart dependencies
 alias h.ru="helm repo update"       # update information of available charts locally
 alias h.l="helm repo list"          # list chart repositories
 alias hlist="h.l"
+alias h.se="helm search repo "     # + chart name search for a chart
+alias h.searc="h.se"               # + chart name search for a chart

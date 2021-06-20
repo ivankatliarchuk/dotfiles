@@ -296,11 +296,8 @@
   "gitlens.defaultDateFormat": "",
   "python.defaultInterpreterPath": "/usr/bin/python",
   "presentationMode.zoomLevel": 2,
-  "workbench.editorAssociations": [
-    {
-      "viewType": "jupyter.notebook.ipynb",
-      "filenamePattern": "*.ipynb"
-    }
-  ],
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter.notebook.ipynb"
+  },
   "window.zoomLevel": 0
 }
