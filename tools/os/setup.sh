@@ -165,6 +165,13 @@ run "Setup default keychain"
 # security default-keychain
 
 ###############################################################################
+# Setup default preview                                                     #
+###############################################################################
+run "Setup default preview"
+# continous scroll
+defaults read com.apple.Preview kPVPDFDefaultPageViewModeOption 0
+
+###############################################################################
 # Kill affected applications                                                  #
 ###############################################################################
 for app in "Activity Monitor" "Dock" "Finder" "Keychain Access"; do
