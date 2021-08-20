@@ -24,3 +24,7 @@ cask "dashlane"
 cask "cryptomator"
 # multifunction utility
 cask "onyx"
+# Password manager https://bitwarden.com
+# cask "bitwarden"
+# Bitwarden clit to work with vaults https://github.com/bitwarden/cli
+brew "bitwarden-cli"
