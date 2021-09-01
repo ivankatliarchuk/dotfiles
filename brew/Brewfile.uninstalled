@@ -5,6 +5,5 @@ brew "ruby"
 # brew untap git-chglog/git-chglog
 tap "git-chglog/git-chglog"
 brew "git-chglog/git-chglog/git-chglog"
-cask "font-source-code-pro"
 # https://github.com/nicolargo/glances
 brew "glances"

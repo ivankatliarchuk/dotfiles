@@ -42,7 +42,7 @@ brew "starship"
 #
 brew "reattach-to-user-namespace"
 # https://obsidian.md/
-brew "obsidian"
+cask "obsidian"
 if OS.mac?
 # --- Casks
 # https://www.mozilla.org/en-GB/firefox/
