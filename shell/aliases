@@ -58,9 +58,6 @@ alias prikey="more ~/.ssh/id_$1 | pbcopy | echo '=> Private key copied to pasteb
 
 alias cls='clear' # Good 'ol Clear Screen command
 
-# Recursively delete `.DS_Store` files
-alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
-
 # SSH
 alias sshmd5="ssh-keygen -E md5 -lf ~/.ssh/id_rsa.pub | awk '{print $2}'"
 alias sshl="ssh-add -l -E md5"
@@ -219,8 +216,10 @@ alias rel='reload'
 
 # MacOS
 alias macv='archey -c'
-alias nomore='find ./ -iname .DS_Store -delete'
 command -v i3lock > /dev/null || alias afk="i3lock -c 000000" # Lock the screen (when going AFK)
+# Recursively delete `.DS_Store` files
+alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
+alias nomore='find ./ -iname .DS_Store -delete & cleanup'
 
 # Kill all the tabs in Chrome to free up memory
 # [C] explained: http://www.commandlinefu.com/commands/view/402/exclude-grep-from-your-grepped-output-of-ps-alias-included-in-description
