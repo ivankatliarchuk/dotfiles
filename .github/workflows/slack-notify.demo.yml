@@ -1,0 +1,32 @@
+# https://github.com/marketplace/actions/slack-notify
+---
+name: slack-notification-demo
+
+on:
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: Branch from which to build the app
+        required: true
+        default: 'srpint-14'
+
+env:
+  SLACK_USERNAME: stamps-mobile
+  SLACK_ICON_EMOJI: ':bell:'
+
+jobs:
+  slackNotification:
+    name: Slack Notification
+    runs-on: ubuntu-latest
+    steps:
+
+    - uses: actions/checkout@v2
+
+    - name: success-slack-notification
+      uses: rtCamp/action-slack-notify@v2
+      env:
+        SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+        SLACK_TITLE: sucess
+        SLACK_MESSAGE: 'Post Content :rocket:'
+        SLACK_FOOTER: success-footer
+        SLACK_COLOR: ${{ job.status }}

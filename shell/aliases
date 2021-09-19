@@ -220,6 +220,7 @@ command -v i3lock > /dev/null || alias afk="i3lock -c 000000" # Lock the screen 
 # Recursively delete `.DS_Store` files
 alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
 alias nomore='find ./ -iname .DS_Store -delete & cleanup'
+alias tcleanup="find . -type d -name '.terragrunt-cache' -prune -exec rm -rf {} \; & find . -type f -name '.terraform.lock.hcl' -ls -delete"
 
 # Kill all the tabs in Chrome to free up memory
 # [C] explained: http://www.commandlinefu.com/commands/view/402/exclude-grep-from-your-grepped-output-of-ps-alias-included-in-description
