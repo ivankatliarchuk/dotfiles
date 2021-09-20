@@ -267,6 +267,8 @@
     "Brewfile.*": "ruby",
     "Vagrantfile*": "ruby",
     "*Vagrantfile": "ruby",
+    "Fastfile": "ruby",
+    "Fastfile*": "ruby",
     "**/*.cmd": "shellscript",
     "**/aliase/*": "shellscript",
     "**/aliases": "shellscript",
