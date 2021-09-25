@@ -16,3 +16,5 @@ fi
 
 export VISUAL='code'
 export PAGER=''
+# ruby environment variables
+export RUBYOPT="-W0"

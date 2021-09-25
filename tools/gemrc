@@ -30,3 +30,4 @@ list: --details
 
 # HTTP Proxy options
 # http-proxy: http://example.com:80
+# export RUBYOPT="-W0" turn off all the warning
