@@ -11,3 +11,4 @@ alias h.l="helm repo list"          # list chart repositories
 alias hlist="h.l"
 alias h.se="helm search repo "     # + chart name search for a chart
 alias h.searc="h.se"               # + chart name search for a chart
+alias h.test="helm template test . --output-dir result --values values.yaml" # create tes k8s manifest out of helm templates
