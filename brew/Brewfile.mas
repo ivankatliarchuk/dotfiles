@@ -4,7 +4,7 @@ brew "mas"
 # packages
 # mas "1Password 7", id: 1333542190
 mas "Alfred", id: 405843582
-mas "app.seashore", id: 1448648921
+# mas "app.seashore", id: 1448648921
 mas "Dropover", id: 1355679052
 mas "Evernote", id: 406056744
 mas "HP Smart", id: 1474276998
@@ -14,4 +14,5 @@ mas "Magnet", id: 441258766
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "Bitwarden", id: 1352778147
+mas "XMenu", id: 419332741
 end
