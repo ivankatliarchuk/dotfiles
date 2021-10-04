@@ -131,14 +131,13 @@ gvm help
 
 <!-- START makefile-doc -->
 ```
-$ make help
+$ make help 
 Usage: make [target] [VARIABLE=value]
 Targets:
 install                        Install dotfiles without running shell
 install-all                    Install all dotfiles
 brew-install                   Install apps with Brew
 osx-install                    Install macOSx
-python-install                 Python setup
 hooks                          Setup pre commit.
 validate                       Validate files with pre-commit hooks
 vm-up                          Run on Mac. Up
@@ -147,7 +146,7 @@ ignore-dirty                   Ignore dirty commits
 install-deps                   Install dependencies
 git-submodule                  Git submodules update
 git-module-remove              Remove submodule MODULE=something
-open                           Open repository
+open                           Open repository 
 ```
 <!-- END makefile-doc -->
 
