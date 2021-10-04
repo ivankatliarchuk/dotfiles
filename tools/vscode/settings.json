@@ -302,5 +302,6 @@
     "*.ipynb": "jupyter.notebook.ipynb"
   },
   "window.zoomLevel": 0,
-  "python.analysis.completeFunctionParens": true
+  "python.analysis.completeFunctionParens": true,
+  "redhat.telemetry.enabled": false
 }

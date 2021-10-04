@@ -41,7 +41,10 @@
     ~/.gnupg/gpg.conf: tools/gnupg/gpg.conf
     ~/.gnupg/gpg-agent.conf: tools/gnupg/gpg-agent.conf
     ~/.config/mc/ini: tools/mc.ini
-    /usr/local/etc/tor/torrc: tools/browser/tor/torrc
+    # /usr/local/etc/tor/torrc:
+    #   path: tools/browser/tor/torrc
+    #   force: true
+    #   create: true
     ~/Library/ApplicationSupport/iTerm2/DynamicProfiles:
       if: '[ `uname` = Darwin ]'
       path: terminal/iTerm/profiles
