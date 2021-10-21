@@ -43,8 +43,6 @@ brew "hadolint"
 brew "handbrake"
 # Static analysis and lint tool, for (ba)sh scripts
 brew "shellcheck"
-# Automate deployment, configuration, and upgrading
-brew "ansible"
 # Tool to generate documentation from Terraform modules
 brew "terraform-docs"
 # Linter for Terraform files

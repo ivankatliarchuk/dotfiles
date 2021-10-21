@@ -1,0 +1,9 @@
+
+if OS.mac?
+# With all of your communication and tools in one place
+# https://slack.com/intl/en-gb/
+cask "slack"
+
+# Automate deployment, configuration, and upgrading
+brew "ansible"
+end

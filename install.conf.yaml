@@ -81,6 +81,8 @@
     # vscode
     ~/Library/ApplicationSupport/Code/User/settings.json: tools/vscode/settings.json
     ~/Library/ApplicationSupport/Code/User/keybindings.json: tools/vscode/keybindings.json
+    ~/Library/Application Support/Code/User/settings.json: tools/vscode/settings.json
+    ~/Library/Application Support/Code/User/keybindings.json: tools/vscode/keybindings.json
 
 
 - shell:
