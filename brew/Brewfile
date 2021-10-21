@@ -64,7 +64,4 @@ cask "ccleaner"
 # Clipy is a Clipboard extension app for macOS.
 # https://github.com/Clipy/Clipy
 cask "clipy"
-# With all of your communication and tools in one place
-# https://slack.com/intl/en-gb/
-cask "slack"
 end
