@@ -4,6 +4,10 @@ if OS.mac?
 # https://slack.com/intl/en-gb/
 cask "slack"
 
+# https://keybase.io/
+# brew install --cask keybase
+cask "keybase"
+
 # Automate deployment, configuration, and upgrading
 brew "ansible"
 end
