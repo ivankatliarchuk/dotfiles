@@ -1,0 +1,11 @@
+# Default
+# https://keybase.io/
+# Keybase aliases
+# https://blog.scottlowe.org/2017/09/06/using-keybase-gpg-macos/
+# https://github.com/pstadler/keybase-gpg-github
+# https://book.keybase.io/git
+
+## Helm
+alias key='keybase'
+alias key.ls="keybase pgp list" # List the active PGP keys in your account
+alias key.gls='keybase git list' # List keybase repositories
