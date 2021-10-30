@@ -93,4 +93,8 @@ cask "macdown"
 # The Collaboration Platform for API Development.
 # https://github.com/postmanlabs
 cask "postman", greedy: true
+# A data templating language for app and tool developers
+# https://jsonnet.org/
+# https://formulae.brew.sh/formula/jsonnet
+brew "jsonnet"
 end
