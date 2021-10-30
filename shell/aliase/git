@@ -34,6 +34,8 @@ alias g.master="git checkout master"
 alias gmaster=master
 alias master=g.master
 alias main='git checkout main'
+alias develop='git checkout develop'
+alias checkout='git checkout ' # + branch name
 alias g.main="git checkout main" # switch to main
 alias g.s='git status'
 # list all branches

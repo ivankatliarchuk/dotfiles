@@ -218,6 +218,7 @@
 
     master = checkout master
     main = checkout main
+    develop = checkout develop
 
     #### PULL ####
 
