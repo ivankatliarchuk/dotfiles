@@ -135,7 +135,7 @@ core() {
   install_local "install_python" "$msg"
 
   msg='sync OSX settings'
-  install_local "sync_osx" "$msg"
+  install_local "install_osx" "$msg"
 }
 
 

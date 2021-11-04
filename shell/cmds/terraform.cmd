@@ -158,7 +158,10 @@ tfrun() {
     ;;
     apply)
       aws-vault exec "hbi-$ENV" -- terraform apply plan.out
-      rm plan.out
+      aws-vault exec "hbi-$ENV" -- terraform apply -var-file="$SELECTED"
+      if [[ -f plan.out  ]]; then
+        rm plan.out
+      fi
     ;;
   esac
 }
