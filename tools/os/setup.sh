@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #
 # This configures OSX specific features
-set -e
+set +e
 
 # shellcheck source=/dev/null
 source utils

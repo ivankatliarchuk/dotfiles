@@ -46,7 +46,7 @@ Vagrant.configure("2") do |config|
       config.vbguest.auto_update = false
   end
 
-  config.vm.network "private_network",  ip: "192.168.10.2"
+  config.vm.network "private_network",  ip: "192.168.56.12"
   config.vm.synced_folder ".", "/Users/vagrant/dotfiles", type: "nfs"
 
   # config.vm.provision "project_setup", type: "shell", inline: $project_setup,
