@@ -15,6 +15,7 @@ cat << EndOfMessage
 'lsof -i -P -n(-euf)' >>> Information about files opened by processes
 'ps -afe | grep <service>' >>> Information about all of your processes
 'ps auxww | grep Z' >>> List all zombie processes
+'ps | grep <string>' >>> filters the list of processes by matching against a string
 'kill -9 <pid>' >>> Terminate process
 
 EndOfMessage
@@ -43,6 +44,7 @@ cat << EndOfMessage
 'traceroute -P TCP -p <IP> <host>'  >>> Tracking the route one's packets follow
 'netstat -ant(ntpl|nputw|tpln) | grep :<port|name>' >>> Check if port is listening
 'nmap -p 80 -sT <IP>' >>> Ping port
+'nc -v <target_host> <target_port>' >>> reads and writes data across network connections
 'whois -h whois.godaddy.com <DNS>' >>> whois lookup on a specific registrar's server
 
 EndOfMessage
