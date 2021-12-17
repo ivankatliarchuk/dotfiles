@@ -111,6 +111,10 @@ alias to.folders=folders
 alias brewup='brew cu --cleanup -f -y && brew update && brew upgrade && brew upgrade --casks && brew cleanup'
 alias brewrepo='cd $(brew --repository)'
 
+# Record videos
+alias asci-start='asciinema rec'
+alias asci-stop='exit'
+
 # Directory,File Folder Usage
 alias s.usage="df -h" # display free disk space
 alias f.usage="du -ch" # display disk usage statistics
