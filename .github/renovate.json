@@ -4,5 +4,8 @@
     "config:base",
     ":disableRateLimiting",
     ":semanticCommits"
+  ],
+  "ignorePaths": [
+    ".python-version"
   ]
 }
