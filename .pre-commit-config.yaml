@@ -1,88 +1,88 @@
 repos:
-- repo: https://github.com/pre-commit/pre-commit-hooks
-  rev: v4.0.1
-  hooks:
-  - id: check-added-large-files
-    args: ['--maxkb=700']
-  - id: check-ast
-  - id: check-builtin-literals
-  - id: check-case-conflict
-  - id: check-docstring-first
-  - id: check-executables-have-shebangs
-  - id: check-json
-  - id: check-merge-conflict
-  - id: check-symlinks
-  - id: check-toml
-  - id: check-vcs-permalinks
-  - id: check-xml
-  - id: check-yaml
-  - id: debug-statements
-  - id: destroyed-symlinks
-  - id: detect-aws-credentials
-    args: ['--allow-missing-credentials']
-  - id: detect-private-key
-  - id: double-quote-string-fixer
-  - id: end-of-file-fixer
-  - id: fix-byte-order-marker
-  - id: fix-encoding-pragma
-  - id: mixed-line-ending
-    args: ['--fix=lf']
-    description: Forces to replace line ending by the UNIX 'lf' character.
-  - id: pretty-format-json
-    args: ['--autofix', '--indent=2']
-  - id: requirements-txt-fixer
-  - id: sort-simple-yaml
-  - id: trailing-whitespace
-  - id: no-commit-to-branch
-    args: [--branch, master, --branch, main]
-- repo: git://github.com/johncblandii/pre-commit-makefile
-  rev: 261f8fb4b31dfdc05d1a1d7fbde1f1462ecde66d
-  hooks:
-  - id: makefile-doc
-- repo: meta
-  hooks:
-  - id: check-useless-excludes
-- repo: https://github.com/gruntwork-io/pre-commit
-# Get the latest from: https://github.com/gruntwork-io/pre-commit/releases
-  rev: v0.1.12
-  hooks:
-  - id: shellcheck
-- repo: https://github.com/asottile/reorder_python_imports
-  rev: v2.6.0
-  hooks:
-  - id: reorder-python-imports
-    language_version: python3
-- repo: https://github.com/Yelp/detect-secrets
-  rev: v1.1.0
-  hooks:
-  - id: detect-secrets
-    args: ['--baseline', '.secrets.baseline']
-    exclude: .pre-commit-config.yaml
-- repo: https://github.com/markdownlint/markdownlint
-  rev: v0.11.0
-  hooks:
-  - id: markdownlint
-    name: Markdownlint
-    description: Run markdownlint on your Markdown files
-    entry: mdl
-    language: ruby
-    files: \.(md|mdown|markdown)$
-- repo: https://github.com/adrienverge/yamllint.git
-  rev: v1.26.3
-  hooks:
-  - id: yamllint
-    files: \.(yaml|yml)$
-    types: [file, yaml]
-    entry: 'yamllint --strict'
-- repo: https://github.com/thlorenz/doctoc
-  rev: v2.0.1
-  hooks:
-  - id: doctoc
-    args: ['--title=**Table of Contents**']
-    descripiton: 'Generates table of contents for markdown files'
-- repo: https://github.com/alessandrojcm/commitlint-pre-commit-hook
-  rev: v5.0.0
-  hooks:
-  - id: commitlint
-    stages: [commit-msg]
-    additional_dependencies: ["@commitlint/config-conventional"]
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.0.1
+    hooks:
+      - id: check-added-large-files
+        args: ["--maxkb=700"]
+      - id: check-ast
+      - id: check-builtin-literals
+      - id: check-case-conflict
+      - id: check-docstring-first
+      - id: check-executables-have-shebangs
+      - id: check-json
+      - id: check-merge-conflict
+      - id: check-symlinks
+      - id: check-toml
+      - id: check-vcs-permalinks
+      - id: check-xml
+      - id: check-yaml
+      - id: debug-statements
+      - id: destroyed-symlinks
+      - id: detect-aws-credentials
+        args: ["--allow-missing-credentials"]
+      - id: detect-private-key
+      - id: double-quote-string-fixer
+      - id: end-of-file-fixer
+      - id: fix-byte-order-marker
+      - id: fix-encoding-pragma
+      - id: mixed-line-ending
+        args: ["--fix=lf"]
+        description: Forces to replace line ending by the UNIX 'lf' character.
+      - id: pretty-format-json
+        args: ["--autofix", "--indent=2"]
+      - id: requirements-txt-fixer
+      - id: sort-simple-yaml
+      - id: trailing-whitespace
+      - id: no-commit-to-branch
+        args: [--branch, master, --branch, main]
+  - repo: git://github.com/johncblandii/pre-commit-makefile
+    rev: 261f8fb4b31dfdc05d1a1d7fbde1f1462ecde66d
+    hooks:
+      - id: makefile-doc
+  - repo: meta
+    hooks:
+      - id: check-useless-excludes
+  - repo: https://github.com/gruntwork-io/pre-commit
+    # Get the latest from: https://github.com/gruntwork-io/pre-commit/releases
+    rev: v0.1.12
+    hooks:
+      - id: shellcheck
+  - repo: https://github.com/asottile/reorder_python_imports
+    rev: v2.6.0
+    hooks:
+      - id: reorder-python-imports
+        language_version: python3
+  - repo: https://github.com/Yelp/detect-secrets
+    rev: v1.1.0
+    hooks:
+      - id: detect-secrets
+        args: ["--baseline", ".secrets.baseline"]
+        exclude: .pre-commit-config.yaml
+  - repo: https://github.com/markdownlint/markdownlint
+    rev: v0.11.0
+    hooks:
+      - id: markdownlint
+        name: Markdownlint
+        description: Run markdownlint on your Markdown files
+        entry: mdl
+        language: ruby
+        files: \.(md|mdown|markdown)$
+  - repo: https://github.com/adrienverge/yamllint.git
+    rev: v1.26.3
+    hooks:
+      - id: yamllint
+        files: \.(yaml|yml)$
+        types: [file, yaml]
+        entry: "yamllint --strict"
+  - repo: https://github.com/thlorenz/doctoc
+    rev: v2.0.1
+    hooks:
+      - id: doctoc
+        args: ["--title=**Table of Contents**"]
+        descripiton: "Generates table of contents for markdown files"
+  - repo: https://github.com/alessandrojcm/commitlint-pre-commit-hook
+    rev: v5.0.0
+    hooks:
+      - id: commitlint
+        stages: [commit-msg]
+        additional_dependencies: ["@commitlint/config-conventional"]
