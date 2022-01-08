@@ -57,3 +57,5 @@ fi
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin:$(go env GOPATH)/bin"
+# curl is keg-only, which means it was not symlinked into /usr/local
+[[ -s "/usr/local/opt/curl" ]] && export PATH="/usr/local/opt/curl/bin:$PATH"
