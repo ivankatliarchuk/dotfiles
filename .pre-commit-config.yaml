@@ -52,7 +52,7 @@ repos:
   hooks:
   - id: reorder-python-imports
     language_version: python3
-- repo: git@github.com:Yelp/detect-secrets
+- repo: https://github.com/Yelp/detect-secrets
   rev: v1.1.0
   hooks:
   - id: detect-secrets
