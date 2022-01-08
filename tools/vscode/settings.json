@@ -304,5 +304,6 @@
   },
   "window.zoomLevel": 0,
   "python.analysis.completeFunctionParens": true,
-  "redhat.telemetry.enabled": false
+  "redhat.telemetry.enabled": false,
+  "bracketPairColorizer.depreciation-notice": false
 }
