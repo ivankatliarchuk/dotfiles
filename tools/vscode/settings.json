@@ -1,6 +1,6 @@
 {
   "files.autoSave": "afterDelay",
-  "files.autoSaveDelay": 100,
+  "files.autoSaveDelay": 1000,
   "files.eol": "\n",
   "files.encoding": "utf8",
   "files.exclude": {
@@ -46,7 +46,8 @@
     "*.jsx": "javascriptreact",
     "*.js": "javascriptreact",
     "*.tpl": "json",
-    "*.tmpl": "json"
+    "*.tmpl": "json",
+    "*.js ": "javascriptreact"
   },
   "editor.fontWeight": "normal",
   "editor.lineHeight": 0,
