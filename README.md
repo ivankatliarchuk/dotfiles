@@ -108,6 +108,7 @@ These scripts are meant to run only on OS X
 - ✅ Proper configre macup
 - ✅ Tmux configs Setup/Document
 - ✅ macOS setup [docs](tools/os/README.md)
+- [ ] POV [Yadm: dotfiles manager](https://formulae.brew.sh/formula/yadm)
 - [ ] Firefox [auto config docs](tools/browser/firefox/readme.md)
 - [ ] Hammersppoon config opensource [docs](tools/hammerspoon/readme.md)
 - [ ] Chezmoi integration
@@ -131,7 +132,7 @@ gvm help
 
 <!-- START makefile-doc -->
 ```
-$ make help 
+$ make help
 Usage: make [target] [VARIABLE=value]
 Targets:
 install                        Install dotfiles without running shell
@@ -146,7 +147,7 @@ ignore-dirty                   Ignore dirty commits
 install-deps                   Install dependencies
 git-submodule                  Git submodules update
 git-module-remove              Remove submodule MODULE=something
-open                           Open repository 
+open                           Open repository
 ```
 <!-- END makefile-doc -->
 

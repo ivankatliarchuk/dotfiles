@@ -18,4 +18,6 @@ cask "onyx"
 cask "bitwarden"
 # Bitwarden clit to work with vaults https://github.com/bitwarden/cli
 brew "bitwarden-cli"
+
+cask "elgato-stream-deck"
 end
