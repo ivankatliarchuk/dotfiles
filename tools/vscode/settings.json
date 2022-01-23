@@ -47,7 +47,8 @@
     "*.js": "javascriptreact",
     "*.tpl": "json",
     "*.tmpl": "json",
-    "*.js ": "javascriptreact"
+    "*.js ": "javascriptreact",
+    "*.gradle.kts ": "gradle"
   },
   "editor.fontWeight": "normal",
   "editor.lineHeight": 0,
