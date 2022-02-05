@@ -24,6 +24,7 @@ CHARTS=(
   "jenkinsci:charts.jenkins.io"
   "mintel:mintel.github.io/helm-charts"
   "k8s-at-home:k8s-at-home.com/charts"
+  "charts.bitnami.com/bitnami"
 )
 
 for el in "${CHARTS[@]}" ; do
