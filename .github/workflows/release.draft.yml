@@ -28,7 +28,7 @@ jobs:
           fetch-depth: '0'
 
       - name: check next version
-        uses: anothrNick/github-tag-action@1.36.0
+        uses: anothrNick/github-tag-action@1.37.0
         id: tag
         env:
           DRY_RUN: true
