@@ -159,3 +159,6 @@
 
 [url "git://gist.github.com/"]
   insteadOf = "gist:"
+  
+[http]
+	postBuffer = 157286400
