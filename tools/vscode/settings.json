@@ -45,7 +45,7 @@
     ".yamllint": "yaml",
     "*.jsx": "javascriptreact",
     "*.js": "javascriptreact",
-    "*.tpl": "json",
+    "*.tpl": "html",
     "*.tmpl": "json",
     "*.js ": "javascriptreact",
     "*.gradle.kts ": "gradle",
