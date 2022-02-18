@@ -43,6 +43,7 @@
     "**/aliases.*": "shellscript",
     "*.cmd": "shellscript",
     ".yamllint": "yaml",
+    ".*/templates.*\\.yaml": "html",
     "*.jsx": "javascriptreact",
     "*.js": "javascriptreact",
     "*.tpl": "html",

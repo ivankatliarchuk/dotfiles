@@ -10,6 +10,11 @@ repos:
       - id: check-docstring-first
       - id: check-executables-have-shebangs
       - id: check-json
+        exclude: |
+          (?x)(
+              ^.vscode/|
+              ^tools/vscode/
+          )
       - id: check-merge-conflict
       - id: check-symlinks
       - id: check-toml
@@ -30,6 +35,11 @@ repos:
         description: Forces to replace line ending by the UNIX 'lf' character.
       - id: pretty-format-json
         args: ["--autofix", "--indent=2"]
+        exclude: |
+          (?x)(
+              ^.vscode/|
+              ^tools/vscode/
+          )
       - id: requirements-txt-fixer
       - id: sort-simple-yaml
       - id: trailing-whitespace
