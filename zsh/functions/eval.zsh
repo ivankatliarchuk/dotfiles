@@ -9,6 +9,11 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
+if [ -n "$ZSH_VERSION" ]; then
+  autoload -U bashcompinit
+  bashcompinit
+fi
+
 eval "$(aws-vault --completion-script-zsh)"
 [[ -d "$PYENV_ROOT" ]] && eval "$(pyenv init -)"
 # eval "$(hub alias -s)"
