@@ -64,4 +64,7 @@ cask "ccleaner"
 # Clipy is a Clipboard extension app for macOS.
 # https://github.com/Clipy/Clipy
 cask "clipy"
+# https://www.gnu.org/software/grep/
+# https://formulae.brew.sh/formula/grep
+brew "grep"
 end

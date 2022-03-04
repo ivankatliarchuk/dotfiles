@@ -59,3 +59,8 @@ if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 export PATH="$PATH:$HOME/.rvm/bin:$(go env GOPATH)/bin"
 # curl is keg-only, which means it was not symlinked into /usr/local
 [[ -s "/usr/local/opt/curl" ]] && export PATH="/usr/local/opt/curl/bin:$PATH"
+
+# Load Linux grep
+if [ -f "/usr/local/opt/grep/libexec/gnubin" ]; then
+  export PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
+fi
