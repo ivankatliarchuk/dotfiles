@@ -41,6 +41,7 @@
     "**/aliase/*": "shellscript",
     "**/aliases": "shellscript",
     "**/aliases.*": "shellscript",
+    "**/git/*": "toml",
     "*.cmd": "shellscript",
     ".yamllint": "yaml",
     ".*/templates.*\\.yaml": "html",
