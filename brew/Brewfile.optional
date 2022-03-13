@@ -20,4 +20,6 @@ cask "bitwarden"
 brew "bitwarden-cli"
 
 cask "elgato-stream-deck"
+# https://www.leapp.cloud/
+cask "leapp"
 end
