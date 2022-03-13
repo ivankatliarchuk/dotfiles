@@ -1,4 +1,5 @@
 tap "warrensbox/tap"
+tap "bats-core/bats-core"
 
 # Process YAML documents from the CLI
 # https://github.com/mikefarah/yq
@@ -8,6 +9,10 @@ brew "yq"
 brew "jq"
 # Bash Automated Testing System
 brew "bats-core"
+# https://github.com/bats-core/bats-assert
+brew "bats-assert"
+# https://github.com/bats-core/bats-detik
+brew "bats-detik"
 # CloudFlare's PKI toolkit
 # https://github.com/cloudflare/cfssl
 brew "cfssl"
