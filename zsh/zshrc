@@ -50,7 +50,9 @@ else
   eval "$(starship init zsh)"
 fi
 
-. /usr/local/opt/asdf/libexec/asdf.sh
+if [ -f "/usr/local/opt/asdf/libexec/asdf.sh" ]; then
+  . /usr/local/opt/asdf/libexec/asdf.sh
+fi
 
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
 
