@@ -18,7 +18,7 @@ brew "bats-detik"
 brew "cfssl"
 # Extendable version manager with support for Ruby, Node.js, Erlang & more
 # https://asdf-vm.com/#/
-brew "asdf"
+# brew "asdf"
 # Manage multiple Node.js versions
 # https://github.com/nvm-sh/nvm
 brew "nvm"

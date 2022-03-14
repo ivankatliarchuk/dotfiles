@@ -8,7 +8,13 @@
 
 # Brew commands
 
-```
+```sh
 brew tap
 brew untap <name>
+```
+
+```sh
+brew deps --tree --installed
+brew uninstall --force asdf
+brew deps --tree --installed
 ```
