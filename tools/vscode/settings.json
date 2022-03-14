@@ -41,6 +41,7 @@
     "**/aliase/*": "shellscript",
     "**/aliases": "shellscript",
     "**/aliases.*": "shellscript",
+    "**/bats": "shellscript",
     "**/git/*": "toml",
     "**/gitcfg.local/*": "toml",
     "**/.aws/*": "toml",
