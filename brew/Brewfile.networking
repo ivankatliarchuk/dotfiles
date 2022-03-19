@@ -8,7 +8,7 @@ brew "netcat"
 brew "nikto"
 # SSL/TLS VPN implementing OSI layer 2 or 3 secure network extension
 # https://openvpn.net/
-brew "openvpn"
+# brew "openvpn"
 # Port scanning utility for large networks
 # https://nmap.org/
 brew "nmap"
@@ -32,7 +32,7 @@ if OS.mac?
 cask "charles"
 # Public URLs for exposing your local web server
 # https://ngrok.com/
-cask "ngrok"
+# cask "ngrok"
 # Wireshark is a network traffic analyzer, or "sniffer"
 # https://github.com/wireshark/wireshark
 cask "wireshark"
