@@ -49,7 +49,7 @@
     ".yamllint": "yaml",
     "**/templates/*.yaml": "jinja-yaml",
     "**/templates/*.yml": "jinja-yaml",
-    "*.html": "jinja-html",
+    "**/templates/*.html": "jinja-html",
     "*.jsx": "javascriptreact",
     "*.js": "javascriptreact",
     "*.tpl": "html",
