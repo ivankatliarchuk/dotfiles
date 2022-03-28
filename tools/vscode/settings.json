@@ -57,7 +57,8 @@
     "*.js ": "javascriptreact",
     "*.gradle.kts ": "gradle",
     "*.properties": "properties",
-    "*.yaml": "jinja-yaml"
+    "*.yaml": "yaml",
+    "*.yml": "yaml"
   },
   "editor.fontWeight": "normal",
   "editor.lineHeight": 0,
