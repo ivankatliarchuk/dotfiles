@@ -53,9 +53,11 @@ disabled = false
 
 [kubernetes]
 symbol = "☸️ "
-format = '[$symbol$context\($namespace\)]($style) '
+format = '[$symbol$context\(ns:$namespace\)]($style) '
 style = "#c5f542"
 disabled = false
+[kubernetes.context_aliases]
+"arn:aws:eks:(?P<var_region>.*):(?P<var_account>.*):cluster/(?P<var_cluster>.*)"="[eks:$var_account]::$var_cluster"
 
 [python]
 symbol = " "
