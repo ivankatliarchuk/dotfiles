@@ -26,3 +26,6 @@ brew "kubectx"
 # Decode all parts of a kubernetes secret, no more copypasting!
 # https://github.com/mveritym/kubedecode
 brew "mveritym/mel/kubedecode"
+# https://formulae.brew.sh/formula/krew
+# https://github.com/kubernetes-sigs/krew/
+brew "krew"
