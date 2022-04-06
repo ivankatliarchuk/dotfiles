@@ -57,7 +57,6 @@ fi
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
 [[ -s "${HOME}/.krew/bin" ]] && export PATH="${PATH}:${HOME}/.krew/bin"
 
-if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin:$(go env GOPATH)/bin"
 # curl is keg-only, which means it was not symlinked into /usr/local
