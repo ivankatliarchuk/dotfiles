@@ -19,6 +19,9 @@ fi
 alias k.h='kubectl get cs'
 alias k.health="kubectl get --raw='/readyz?verbose"
 
+## Resources
+alias k.api='kubectl api-resources -o wide' # Print the supported API resources on the server.
+
 ## Nodes
 # sort nodes by timestamp
 alias k.nstamp='kubectl get nodes --sort-by=.metadata.creationTimestamp'
