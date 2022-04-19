@@ -1,0 +1,5 @@
+
+cask "font-awesome-terminal-fonts"
+cask "font-consolas-for-powerline"
+cask "font-noto-color-emoji"
+cask "font-inconsolata"

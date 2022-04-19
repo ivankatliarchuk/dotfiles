@@ -7,11 +7,8 @@ brew "fontconfig"
 # brew search font- | grep NAME
 if OS.mac?
 # https://github.com/Homebrew/homebrew-cask-fonts
-  cask "font-inconsolata"
-  cask "font-awesome-terminal-fonts"
   cask "font-courier-new"
   cask "font-fontawesome"
-  cask "font-consolas-for-powerline"
   cask "font-inconsolata-for-powerline"
   cask "font-inconsolata-for-powerline-bold"
 # starship
@@ -32,7 +29,6 @@ if OS.mac?
   cask "font-hack-nerd-font"
 # emoji
   # https://github.com/Homebrew/homebrew-cask-fonts/blob/master/Casks/font-noto-color-emoji.rb
-  cask "font-noto-color-emoji"
   cask "font-noto-emoji"
   cask "font-twitter-color-emoji"
 end
