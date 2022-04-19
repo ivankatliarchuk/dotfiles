@@ -1,0 +1,8 @@
+# Default
+# https://github.com/aws/aws-cli
+# Universal Command Line Interface for Amazon Web Services
+#
+
+alias a=aws
+alias a.id="aws sts get-caller-identity"
+alias a.whoami="a.id"

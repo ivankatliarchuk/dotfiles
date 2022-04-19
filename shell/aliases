@@ -281,6 +281,7 @@ alias githelp='git-help'
 alias help.g='git-help'
 alias help.tmux='tmux-help'
 alias help.k8s='k8s-help'
+alias help.aws='aws-help'
 
 ## Proceses
 # options for top
