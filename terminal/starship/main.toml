@@ -82,7 +82,7 @@ tag_symbol = "🏷 "
 symbol = " "
 format = "[$symbol$version]($style) "
 style = "#abdbe3"
-detect_files = ["package.json", ".node-version", ".nvrc"]
+detect_files = ["package.json", ".node-version", ".nvmrc"]
 
 [cmd_duration]
 min_time = 500
