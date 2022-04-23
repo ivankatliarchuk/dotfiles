@@ -79,7 +79,7 @@ style = "bold green"
 tag_symbol = "🏷 "
 
 [nodejs]
-symbol = "🤖 "
+symbol = " "
 format = "[$symbol$version]($style) "
 style = "#abdbe3"
 detect_files = ["package.json", ".node-version", ".nvmrc"]
