@@ -43,26 +43,6 @@ load-tfswitch
 add-zsh-hook chpwd load-tgswitch
 load-tgswitch
 
-# Automatically switch and load node versions when a directory has a `.nvmrc` file
-# load-nvmrc() {
-#   if exists nvm; then
-#     if [ -f .nvmrc  ]; then
-#       if [[ "$(node -v)" != "$(cat .nvmrc)" ]]; then
-#         if nvm list | grep "$(cat .nvmrc)"; then
-#         fi
-#         nvm use $(cat .nvmrc) >/dev/null 2>&1
-#         echo "Switched node to version \"$(node -v)\""
-#       fi
-#       if [ $? -eq 1 ]
-#       then
-#         echo "Im here 1"
-#         nvm install $(cat .nvmrc)
-#         nvm use $(cat .nvmrc) >/dev/null 2>&1
-#         echo "Switched node to version \"$(node -v)\""
-#       fi
-#     fi
-#   fi
-# }
 # https://github.com/nvm-sh/nvm
 load-nvmrc() {
   if exists nvm; then
