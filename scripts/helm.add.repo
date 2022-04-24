@@ -26,8 +26,8 @@ CHARTS=(
   "k8s-at-home:k8s-at-home.com/charts"
   "bitnami:charts.bitnami.com/bitnami"
   "eks-charts:aws.github.io/eks-charts"
-  "hashicorp:https://helm.releases.hashicorp.com"
-  "end"
+  "hashicorp:helm.releases.hashicorp.com"
+  "prometheus-community:prometheus-community.github.io/helm-charts"
 )
 
 for el in "${CHARTS[@]}" ; do
