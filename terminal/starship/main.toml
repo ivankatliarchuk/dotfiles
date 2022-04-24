@@ -83,6 +83,7 @@ symbol = " "
 format = "[$symbol$version]($style) "
 style = "#abdbe3"
 detect_files = ["package.json", ".node-version", ".nvmrc"]
+detect_extensions = []
 
 [cmd_duration]
 min_time = 500
@@ -111,3 +112,7 @@ disabled = true
 
 [gcloud]
 disabled = true
+
+[ruby]
+detect_files = ["Gemfile", ".ruby-version"]
+detect_variables = ["RBENV_VERSION"]
