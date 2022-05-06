@@ -29,6 +29,7 @@ CHARTS=(
   "hashicorp:helm.releases.hashicorp.com"
   "prometheus-community:prometheus-community.github.io/helm-charts"
   "external-dns:kubernetes-sigs.github.io/external-dns/"
+  "argocd:argoproj.github.io/argo-helm"
 )
 
 for el in "${CHARTS[@]}" ; do
