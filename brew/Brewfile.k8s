@@ -8,6 +8,8 @@ brew "aws-iam-authenticator"
 brew "helm"
 # Kubernetes command-line interface
 # https://github.com/kubernetes/kubectl
+# brew pin kubernetes-cli
+# https://github.com/aws/aws-cli/pull/6476
 brew "kubernetes-cli"
 # Kubernetes prompt info for bash and zsh
 # https://github.com/jonmosco/kube-ps1
