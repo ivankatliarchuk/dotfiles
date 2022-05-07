@@ -108,6 +108,7 @@ These scripts are meant to run only on OS X
 - ✅ Proper configre macup
 - ✅ Tmux configs Setup/Document
 - ✅ macOS setup [docs](tools/os/README.md)
+- [X] Speed up shell
 - [ ] POV [Yadm: dotfiles manager](https://formulae.brew.sh/formula/yadm)
 - [ ] Firefox [auto config docs](tools/browser/firefox/readme.md)
 - [ ] Hammersppoon config opensource [docs](tools/hammerspoon/readme.md)
@@ -116,17 +117,6 @@ These scripts are meant to run only on OS X
 - [ ] [DNS Crypt](https://github.com/drduh/config/blob/master/dnscrypt-proxy.toml)
 - [ ] Document github setup, blog it as well
 - [ ] Dotbot templater plugin
-- [ ] Cron to remove dangling docker images
-- [ ] Cron to run backups
-- [ ] Speed up shell
-
-## ? QA
-
-> How to switch project specific versions and golang verions
-
-```bash
-gvm help
-```
 
 ## Awailable Commands
 
