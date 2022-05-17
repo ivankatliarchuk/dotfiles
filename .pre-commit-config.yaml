@@ -45,10 +45,6 @@ repos:
       - id: trailing-whitespace
       - id: no-commit-to-branch
         args: [--branch, master, --branch, main]
-  - repo: git://github.com/johncblandii/pre-commit-makefile
-    rev: 261f8fb4b31dfdc05d1a1d7fbde1f1462ecde66d
-    hooks:
-      - id: makefile-doc
   - repo: meta
     hooks:
       - id: check-useless-excludes
