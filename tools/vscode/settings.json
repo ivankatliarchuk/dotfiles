@@ -60,7 +60,9 @@
     "*.yaml": "yaml",
     "*.yml": "yaml",
     "**/*.yaml": "yaml",
-    "**/*.yml": "yaml"
+    "**/*.yml": "yaml",
+    ".*.yaml": "yaml",
+    ".*.yml": "yaml"
   },
   "editor.fontWeight": "normal",
   "editor.lineHeight": 0,
