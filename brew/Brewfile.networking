@@ -29,7 +29,7 @@ brew "dnsmasq"
 if OS.mac?
 # -- Casks
 # Charles is an HTTP proxy / HTTP monitor / Reverse Proxy that enables a developer to view all of the HTTP and SSL / HTTPS traffic between their machine and the Internet.
-cask "charles"
+# cask "charles"
 # Public URLs for exposing your local web server
 # https://ngrok.com/
 # cask "ngrok"
