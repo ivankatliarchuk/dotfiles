@@ -50,7 +50,7 @@ cask "firefox"
 # https://addons.mozilla.org/en-GB/firefox/addon/profile-switcher/
 brew "firefox-profile-switcher-connector"
 # https://www.opera.com/
-cask "opera"
+# cask "opera"
 # https://www.google.com/intl/en_uk/chrome/
 cask "google-chrome"
 # https://github.com/gnachman/iTerm2
