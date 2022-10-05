@@ -59,7 +59,7 @@ repos:
       - id: reorder-python-imports
         language_version: python3
   - repo: https://github.com/Yelp/detect-secrets
-    rev: v1.3.0
+    rev: v1.4.0
     hooks:
       - id: detect-secrets
         args: ["--baseline", ".secrets.baseline"]
