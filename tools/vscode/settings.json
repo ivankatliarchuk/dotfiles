@@ -79,7 +79,10 @@
     "**/*.yaml": "yaml",
     "**/*.yml": "yaml",
     ".*.yaml": "yaml",
-    ".*.yml": "yaml"
+    ".*.yml": "yaml",
+    "*.libsonnet": "jsonnet",
+    "**/*.libsonnet": "jsonnet",
+    "*.jsonnet": "jsonnet"
   },
   "editor.fontWeight": "normal",
   "editor.lineHeight": 0,

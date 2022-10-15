@@ -2,6 +2,7 @@
   "recommendations": [
     "streetsidesoftware.code-spell-checke",
     "hashicorp.terraform",
-    "esbenp.prettier-vscode"
+    "esbenp.prettier-vscode",
+    "heptio.jsonnet"
   ]
 }
