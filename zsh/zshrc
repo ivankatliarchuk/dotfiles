@@ -66,3 +66,7 @@ export PATH="$PATH:$HOME/.rvm/bin:$(go env GOPATH)/bin"
 if [ -f "/usr/local/opt/grep/libexec/gnubin" ]; then
   export PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
 fi
+
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+export PATH="~/.rd/bin:$PATH"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)

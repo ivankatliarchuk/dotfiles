@@ -40,3 +40,7 @@ export NVM_DIR="$HOME/.nvm"
 if [ ! -t 0 ]; then
 	exec 1>&3 2>&4 3>&- 4>&-
 fi
+
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+export PATH="~/.rd/bin:$PATH"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)

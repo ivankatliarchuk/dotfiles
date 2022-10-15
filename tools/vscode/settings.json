@@ -315,12 +315,6 @@
   "[jsonc]": {
     "editor.defaultFormatter": "vscode.json-language-features"
   },
-  "terraform.languageServer": {
-    "external": false,
-    "args": [
-      "serve"
-    ]
-  },
   "diffEditor.ignoreTrimWhitespace": false,
   "telemetry.enableTelemetry": false,
   "workbench.settings.enableNaturalLanguageSearch": false,
@@ -333,5 +327,11 @@
     "*.ipynb": "jupyter.notebook.ipynb"
   },
   "python.analysis.completeFunctionParens": true,
-  "workbench.colorTheme": "Cobalt2"
+  "workbench.colorTheme": "Cobalt2",
+  "cSpell.userWords": [
+    "argocd",
+    "Banzaicloud",
+    "crossplane"
+  ],
+  "terraform.languageServer.enable": false
 }
