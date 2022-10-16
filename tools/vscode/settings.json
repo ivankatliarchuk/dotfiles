@@ -334,9 +334,12 @@
   "cSpell.userWords": [
     "argocd",
     "Banzaicloud",
+    "Coursera",
     "crossplane",
     "jsonnet",
-    "libsonnet"
+    "libsonnet",
+    "Pentest",
+    "Udemy"
   ],
   "terraform.languageServer.enable": false
 }
