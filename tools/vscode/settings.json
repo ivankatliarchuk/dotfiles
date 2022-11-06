@@ -4,7 +4,8 @@
   "files.eol": "\n",
   "files.encoding": "utf8",
   "files.exclude": {
-    "**/.DS_Store": false,
+    ".DS_Store": true,
+    "**/.DS_Store": true,
     "**/.git": true,
     "**/.hg": true,
     "**/.svn": true,
