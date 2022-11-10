@@ -344,8 +344,10 @@
     "Keycloak",
     "libsonnet",
     "Pentest",
+    "tolerations",
     "Traefik",
     "Udemy"
   ],
-  "terraform.languageServer.enable": false
+  "terraform.languageServer.enable": false,
+  "go.toolsManagement.autoUpdate": true
 }
