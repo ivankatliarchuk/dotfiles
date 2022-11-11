@@ -19,6 +19,12 @@ fi
 alias k.h='kubectl get cs'
 alias k.health="kubectl get --raw='/readyz?verbose"
 
+ns_show_label() {
+  # list all namespaces with labels
+  # k get ns -l 'team' -L team
+  kubectl get ns -l "${1}" -L "${1}"
+}
+
 ## Resources
 alias k.api='kubectl api-resources -o wide' # Print the supported API resources on the server.
 

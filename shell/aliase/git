@@ -11,6 +11,7 @@ alias g.root='cd "$(git rev-parse --show-toplevel)"'
 # -< gac "My commit message"
 alias gac= "add .;git commit -m 'wip'" # + commit message
 alias g.ci='git ci -m ' # + commit message
+alias g.cis='git ci -s -m ' # + commit message with signoff
 alias g.dff=_gdif
 alias g.diff=_gdif
 # branch
