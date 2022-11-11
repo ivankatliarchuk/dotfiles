@@ -58,6 +58,7 @@
     "**/*.cmd": "shellscript",
     "*.sh": "shellscript",
     "**/*.sh": "shellscript",
+    "**/git/*.sh": "shellscript",
     "**/aliases/*": "shellscript",
     "**/aliases": "shellscript",
     "**/aliases.*": "shellscript",
@@ -351,5 +352,9 @@
     "Udemy"
   ],
   "terraform.languageServer.enable": false,
-  "go.toolsManagement.autoUpdate": true
+  "go.toolsManagement.autoUpdate": true,
+  "[shellscript]": {
+
+    "files.eol": "\n"
+  }
 }
