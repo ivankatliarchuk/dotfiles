@@ -56,6 +56,8 @@
     "Fastfile": "ruby",
     "Fastfile*": "ruby",
     "**/*.cmd": "shellscript",
+    "*.sh": "shellscript",
+    "**/*.sh": "shellscript",
     "**/aliase/*": "shellscript",
     "**/aliases": "shellscript",
     "**/aliases.*": "shellscript",
