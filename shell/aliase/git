@@ -30,6 +30,8 @@ alias g.ch='g.cb'
 alias g.d='git branch -D' # + branch name
 alias g.open='_gopen'
 alias g.o='_gopen'
+# diff with branch
+alias g.diffany='git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative master..' # + branch name
 # switch to master
 alias g.master="git checkout master"
 alias gmaster=master

@@ -5,16 +5,16 @@
 #   email = __redacted_to_stop_spam_scrapers__@gmail.org
 
 [apply]
-	# Detect whitespace errors when applying a patch
-	whitespace = fix
+  # Detect whitespace errors when applying a patch
+  whitespace = fix
 
 [advice]
-	pushNonFastForward = false
-	statusHints = false
+  pushNonFastForward = false
+  statusHints = false
 
 [alias]
   alias=!git config -l | grep ^alias | cut -c 7- | sort
-	aliases = config --get-regexp alias # list aliases
+  aliases = config --get-regexp alias # list aliases
   cfg = config -l                     # git configuration
   # Output output of all queried config options with the origin type and a scope
   caug = config --list --show-origin --show-scope
@@ -23,10 +23,10 @@
   autosetuprebase = always
 
 [core]
-    # Use custom `.gitignore` and `.gitattributes`
-	excludesfile = ~/.gitignore
+  # Use custom `.gitignore` and `.gitattributes`
+  excludesfile = ~/.gitignore
   excludesfile = ~/.gitignore_global
-	attributesfile = ~/.gitattributes
+  attributesfile = ~/.gitattributes
 
   repositoryformatversion = 0
   filemode = false
@@ -40,22 +40,22 @@
   # Make `git rebase` safer on macOS
   # More info: <http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/>
   trustctime = false
-	pager =
+  pager =
   # Prevent showing files whose names contain non-ASCII symbols as unversioned.
-	# http://michael-kuehnel.de/git/2014/11/21/git-mac-osx-and-german-umlaute.html
-	precomposeunicode = false
+  # http://michael-kuehnel.de/git/2014/11/21/git-mac-osx-and-german-umlaute.html
+  precomposeunicode = false
   # Speed up commands involving untracked files such as `git status`.
-	# https://git-scm.com/docs/git-update-index#_untracked_cache
-	untrackedCache = true
+  # https://git-scm.com/docs/git-update-index#_untracked_cache
+  untrackedCache = true
 
 [commit]
   verbose = true
   template = ~/.config/gitcfg/message
 
 [color]
-	# Use colors in Git commands that are capable of colored output when
-	# outputting to the terminal. (This is the default setting in Git ≥ 1.8.4.)
-	ui = auto
+  # Use colors in Git commands that are capable of colored output when
+  # outputting to the terminal. (This is the default setting in Git ≥ 1.8.4.)
+  ui = auto
 
 [color "branch"]
 
@@ -71,44 +71,44 @@
   deleted = red
 
 [color "diff"]
-	meta = yellow bold
-	frag = magenta bold # line info
-	old = blue # deletions
-	new = green # additions
+  meta = yellow bold
+  frag = magenta bold # line info
+  old = blue # deletions
+  new = green # additions
   whitespace = cyan reverse
 
 [credential]
-	helper = osxkeychain
+  helper = osxkeychain
 
 [pager]
   status = true
 
 [pager]
-	branch = false
+  branch = false
   log = false
   status = false
 
 [push]
   default = current
   # Make `git push` push relevant annotated tags when pushing branches out.
-	followTags = true
+  followTags = true
 
 [github]
-	ssl = true
+  ssl = true
 
 [pull]
-	ff = only
+  ff = only
 
 [diff]
-	# Detect copies as well as renames
-	renames = copies
+  # Detect copies as well as renames
+  renames = copies
 
 [diff "sopsdiffer"]
-	textconv = sops -d
+  textconv = sops -d
 
 [diff "bin"]
-	# Use `hexdump` to diff binary files
-	textconv = hexdump -v -C
+  # Use `hexdump` to diff binary files
+  textconv = hexdump -v -C
 
 [init]
   defaultBranch = main
@@ -119,8 +119,8 @@
   log = true
 
 [help]
-	# Automatically correct and execute mistyped commands
-	autocorrect = 1
+  # Automatically correct and execute mistyped commands
+  autocorrect = 1
 
 [hub]
   protocol = https
@@ -129,8 +129,8 @@
   forceSignAnnotated = false
 
 [log]
-	abbrevCommit = true
-	decorate = true
+  abbrevCommit = true
+  decorate = true
 
 [include]
   # https://git-scm.com/docs/git-config#_includes
@@ -145,20 +145,20 @@
 
 # URL shorthands
 [url "git@github.com:"]
-	insteadOf = "gh:"
-	pushInsteadOf = "github:"
-	pushInsteadOf = "git://github.com/"
+  insteadOf = "gh:"
+  pushInsteadOf = "github:"
+  pushInsteadOf = "git://github.com/"
 
 [url "git://github.com/"]
-	insteadOf = "github:"
+  insteadOf = "github:"
 
 [url "git@gist.github.com:"]
-	insteadOf = "gst:"
-	pushInsteadOf = "gist:"
-	pushInsteadOf = "git://gist.github.com/"
+  insteadOf = "gst:"
+  pushInsteadOf = "gist:"
+  pushInsteadOf = "git://gist.github.com/"
 
 [url "git://gist.github.com/"]
   insteadOf = "gist:"
-  
+
 [http]
-	postBuffer = 157286400
+  postBuffer = 157286400
