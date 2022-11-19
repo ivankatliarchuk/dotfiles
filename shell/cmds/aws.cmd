@@ -58,6 +58,7 @@ function _aws_docs() {
   declare -a docs=(
     "https://github.com/aws/aws-cli"
     "https://github.com/awslabs/awscli-aliases"
+    "https://github.com/ik-scripting/scripts/tree/master/aws"
   )
   for el in "${docs[@]}" ; do
     KEY="${el%%}"
