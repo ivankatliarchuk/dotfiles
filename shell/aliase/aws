@@ -6,3 +6,23 @@
 alias a=aws
 alias a.id="aws sts get-caller-identity"
 alias a.whoami="a.id"
+
+# eks
+alias a.eks-kcg='aws eks update-kubeconfig --name' # aws eks cluster name
+
+_eks_oidc_id() {
+  # eks cluster oidc id
+  aws eks describe-cluster --name "$1" --query "cluster.identity.oidc.issuer" --output text | sed -e "s/^https:\/\///"
+}
+alias a.eks-oidc='_eks_oidc_id'
+alias aws.eks-oidc='a.eks-oidc'
+
+# s3
+alias a.s3-ls='aws s3 ls'
+alias aws.s3-ls='a.s3-ls'
+
+# iam
+alias a.sts='aws sts get-caller-identity --output json'
+alias a.sts-id='aws sts get-caller-identity --query "Account" --output text'
+alias a.sts-who='aws sts get-caller-identity --query "UserId" --output json'
+alias aws.sts-id='a.sts-id'
