@@ -62,6 +62,10 @@ alias k.gnowoyamll='kubectl get nodes --watch -o=yaml -l'
 alias k.gnowowidel='kubectl get nodes --watch -o=wide -l'
 alias k.gnowojsonl='kubectl get nodes --watch -o=json -l'
 
+# Services
+# service with specific columns
+alias k.svc-get='kubectl get svc -o=custom-columns=NAME:.metadata.name,IP:.spec.clusterIP,PORT:.spec.ports[*].targetPort'
+
 # Config view
 alias k.c='kubectl config view'
 # validate with dex folder structure
@@ -74,18 +78,26 @@ alias k.cs='kubectl config get-contexts'                           # display lis
 alias k.cc='kubectl config current-context'                        # display the current-context
 
 ## Images
-alias k.imgn="kubectl get pods -o jsonpath='{..image}' | tr -s '[[:space:]]' '\n' | sort | uniq -c | sort -r"
-alias k.imga="kubectl get pods -o jsonpath='{..image}' -A | tr -s '[[:space:]]' '\n' | sort | uniq -c | sort -r"
+alias k.img-n="kubectl get pods -o jsonpath='{..image}' | tr -s '[[:space:]]' '\n' | sort | uniq -c | sort -r"
+alias k.img-a="kubectl get pods -o jsonpath='{..image}' -A | tr -s '[[:space:]]' '\n' | sort | uniq -c | sort -r"
 alias k.img='k.imgn'
-alias k.imgns='kubectl get pods -o=jsonpath='"'"'{range .items[*]}{"\n"}{.metadata.name}{":\t"}{range .spec.containers[*]}{.image}{", "}{end}{end}'"'"' --namespace ' # +namespace
-alias k.podimg='kubectl get pods --all-namespaces -o=jsonpath='"'"'{range .items[*]}{"\n"}{.metadata.name}{":\t"}{range .spec.containers[*]}{.image}{", "}{end}{end}'"'"' | sort'
+alias k.img-ns='kubectl get pods -o=jsonpath='"'"'{range .items[*]}{"\n"}{.metadata.name}{":\t"}{range .spec.containers[*]}{.image}{", "}{end}{end}'"'"' --namespace ' # +namespace
+alias k.img-pod='kubectl get pods --all-namespaces -o=jsonpath='"'"'{range .items[*]}{"\n"}{.metadata.name}{":\t"}{range .spec.containers[*]}{.image}{", "}{end}{end}'"'"' | sort'
+
+## Labels
+alias k.labels-team-uniq="kubectl get pods -A -o jsonpath='{..labels.team}' | tr -s '[[:space:]]' '\n' | sort | uniq"
 
 ## Pods
-alias k.podn='kubectl get pod -o=custom-columns=NS:.metadata.namespace,NAME:.metadata.name --all-namespaces'
-alias k.podnod='kubectl get pod -o=custom-columns=NODE:.spec.nodeName,NAME:.metadata.name,NS:.metadata.namespace --all-namespaces'
-alias k.podnodn='kubectl get pod -o=custom-columns=NODE:.spec.nodeName,NAME:.metadata.name'
-alias k.podnodns='kubectl get pod -o=custom-columns=NODE:.spec.nodeName,NAME:.metadata.name --namespace ' # +namespace
-alias k.podstnod='kubectl get pod -o=custom-columns=NAME:.metadata.name,STATUS:.status.phase,NODE:.spec.nodeName --all-namespaces'
+alias k.pod-n='kubectl get pod -o=custom-columns=NS:.metadata.namespace,NAME:.metadata.name --all-namespaces'
+alias k.pod-nod='kubectl get pod -o=custom-columns=NODE:.spec.nodeName,NAME:.metadata.name,NS:.metadata.namespace --all-namespaces'
+alias k.pod-nodn='kubectl get pod -o=custom-columns=NODE:.spec.nodeName,NAME:.metadata.name'
+alias k.pod-nodns='kubectl get pod -o=custom-columns=NODE:.spec.nodeName,NAME:.metadata.name --namespace ' # +namespace
+alias k.pod-stnod='kubectl get pod -o=custom-columns=NAME:.metadata.name,STATUS:.status.phase,NODE:.spec.nodeName --all-namespaces'
+_kctl_pods_custom_columns() {
+  # kubectl get pods -o=custom-columns=NAME:.metadata.name,APP:.metadata.labels.app
+  kubectl get pods -o=custom-columns=NAME:.metadata.name,LABEL(${1}):.metadata.labels.${1}
+}
+alias k.pods-column="_kctl_pods_custom_columns" # + custom label name e.g. team
 
 ## Rest
 alias k.sys='kubectl --namespace=kube-system'
