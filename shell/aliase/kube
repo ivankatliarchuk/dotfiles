@@ -93,6 +93,8 @@ alias k.pod-nod='kubectl get pod -o=custom-columns=NODE:.spec.nodeName,NAME:.met
 alias k.pod-nodn='kubectl get pod -o=custom-columns=NODE:.spec.nodeName,NAME:.metadata.name'
 alias k.pod-nodns='kubectl get pod -o=custom-columns=NODE:.spec.nodeName,NAME:.metadata.name --namespace ' # +namespace
 alias k.pod-stnod='kubectl get pod -o=custom-columns=NAME:.metadata.name,STATUS:.status.phase,NODE:.spec.nodeName --all-namespaces'
+# get burstable pods in all namespaces
+alias k.burst='k get pods -A --output=custom-columns=NAME:.metadata.name,NAMESPACE:.metadata.namespace,QOS-CLASS:.status.qosClass | grep Burstable'
 _kctl_pods_custom_columns() {
   # kubectl get pods -o=custom-columns=NAME:.metadata.name,APP:.metadata.labels.app
   kubectl get pods -o=custom-columns=NAME:.metadata.name,LABEL(${1}):.metadata.labels.${1}
