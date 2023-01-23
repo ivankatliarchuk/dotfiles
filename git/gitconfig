@@ -161,4 +161,4 @@
   insteadOf = "gist:"
 
 [http]
-  postBuffer = 157286400
+	postBuffer = 157286400

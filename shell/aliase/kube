@@ -26,7 +26,8 @@ ns_show_label() {
 }
 
 ## Resources
-alias k.api='kubectl api-resources -o wide' # Print the supported API resources on the server.
+alias k.api='kubectl api-resources' # Print the supported API resources on the server.
+alias k.apiw='kubectl api-resources -o wide' # Print the supported API resources on the server.
 
 ## Nodes
 # sort nodes by timestamp
