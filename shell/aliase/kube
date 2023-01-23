@@ -1085,3 +1085,31 @@ alias k.gpowowidesln='kubectl get pods --watch -o=wide --show-labels --namespace
 alias k.gwslowiden='kubectl get --watch --show-labels -o=wide --namespace'
 alias k.gdepwslowiden='kubectl get deployment --watch --show-labels -o=wide --namespace'
 alias k.gpowslowiden='kubectl get pods --watch --show-labels -o=wide --namespace'
+
+# Usage: k.getall <namespace>
+function k.getall {
+  local resources=$(kubectl api-resources --verbs=list --namespaced -o name | grep -v "events.events.k8s.io" | grep -v "events" | sort | uniq)
+  for i in $resources; do
+    echo "Resource:" $i
+
+    if [ -z "$1" ]
+    then
+        kubectl get --ignore-not-found ${i}
+    else
+        kubectl -n ${1} get --ignore-not-found ${i}
+    fi
+  done
+}
+
+function k.getnames {
+# get all names and concatenate them with comma
+local NAMES="$(kubectl api-resources \
+                --namespaced \
+                --verbs list \
+                -o name \
+          | tr '\n' ,)"
+
+# ${NAMES:0:-1} -- because of `tr` command added trailing comma
+# --show-kind is optional
+kubectl get "${NAMES:0:-1}" --show-kind
+}
