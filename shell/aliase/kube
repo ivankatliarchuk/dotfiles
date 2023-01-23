@@ -1102,14 +1102,14 @@ function k.getall {
 }
 
 function k.getnames {
-# get all names and concatenate them with comma
-local NAMES="$(kubectl api-resources \
-                --namespaced \
-                --verbs list \
-                -o name \
-          | tr '\n' ,)"
+  # get all names and concatenate them with comma
+  local NAMES="$(kubectl api-resources \
+                  --namespaced \
+                  --verbs list \
+                  -o name \
+            | tr '\n' ,)"
 
-# ${NAMES:0:-1} -- because of `tr` command added trailing comma
-# --show-kind is optional
-kubectl get "${NAMES:0:-1}" --show-kind
+  # ${NAMES:0:-1} -- because of `tr` command added trailing comma
+  # --show-kind is optional
+  kubectl get "${NAMES:0:-1}" --show-kind
 }
