@@ -21,5 +21,6 @@ brew "bitwarden-cli"
 
 cask "elgato-stream-deck"
 # https://www.leapp.cloud/
+# https://github.com/Noovolari/leapp
 cask "leapp"
 end

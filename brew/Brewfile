@@ -17,7 +17,8 @@ brew "libtool"
 # https://github.com/MidnightCommander/mc
 brew "midnight-commander"
 # Keep your Mac's application settings in sync
-brew "mackup"
+# https://github.com/lra/mackup
+# brew "mackup"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
 # Display directories as trees (with optional color/HTML output)
