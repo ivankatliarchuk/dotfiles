@@ -101,6 +101,7 @@ _kctl_pods_custom_columns() {
   kubectl get pods -o=custom-columns=NAME:.metadata.name,LABEL(${1}):.metadata.labels.${1}
 }
 alias k.pods-column="_kctl_pods_custom_columns" # + custom label name e.g. team
+alias k.podips="kubectl get pod -o custom-columns=POD-NAME:.metadata.name,HOST-IP:.status.hostIP,POD-IP:.status.podIP,POD-IP(s):.status.podIPs[*].ip"
 
 ## Rest
 alias k.sys='kubectl --namespace=kube-system'
