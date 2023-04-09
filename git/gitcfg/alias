@@ -203,6 +203,7 @@
     #### SUB-MODULE ####
     subadd = !sh -c 'git submodule add git://github.com/$1 $2/$(basename $1)' -
     subrm = !sh -c 'git submodule deinit -f -- $1 && rm -rf .git/modules/$1 && git rm -f $1' -
+    subsync = submodule sync --recursive
     subup = submodule update --init --recursive
     subpull = !git submodule foreach git pull --tags origin master
 
