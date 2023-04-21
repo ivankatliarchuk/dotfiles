@@ -1087,6 +1087,10 @@ alias k.gwslowiden='kubectl get --watch --show-labels -o=wide --namespace'
 alias k.gdepwslowiden='kubectl get deployment --watch --show-labels -o=wide --namespace'
 alias k.gpowslowiden='kubectl get pods --watch --show-labels -o=wide --namespace'
 
+# Resource version
+alias k.apidep='kubectl get deployments.v1.apps -o yaml'
+alias k.apihpa='k get horizontalpodautoscaler.v2.autoscaling'
+
 # Usage: k.getall <namespace>
 function k.getall {
   local resources=$(kubectl api-resources --verbs=list --namespaced -o name | grep -v "events.events.k8s.io" | grep -v "events" | sort | uniq)
@@ -1100,6 +1104,10 @@ function k.getall {
         kubectl -n ${1} get --ignore-not-found ${i}
     fi
   done
+}
+
+function k.kinds {
+  for i in `kubectl api-resources | grep -v KIND | awk '{print $NF}'`;do kubectl explain ${i} | grep -e "KIND:" -e "VERSION:"; echo '----'; done
 }
 
 function k.getnames {
