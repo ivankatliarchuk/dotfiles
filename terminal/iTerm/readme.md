@@ -15,7 +15,7 @@
 
 ## Fonts
 
-- `agaveNerdFontComplete-r 23`
+- `AgaveNF-Regular 21`
 - `SourceCodeProForPowerline-Regular 23`
 - `AgaveNF-Regular 23`
 
