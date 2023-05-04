@@ -3,6 +3,7 @@
 **Table of Contents**
 
 - [iTerm Setup](#iterm-setup)
+  - [Fonts](#fonts)
   - [iTerm2 and tmux integration](#iterm2-and-tmux-integration)
     - [Key bindings overrides](#key-bindings-overrides)
   - [Screen](#screen)
