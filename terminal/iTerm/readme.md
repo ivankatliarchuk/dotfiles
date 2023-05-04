@@ -12,6 +12,12 @@
 
 # iTerm Setup
 
+## Fonts
+
+- `agaveNerdFontComplete-r 23`
+- `SourceCodeProForPowerline-Regular 23`
+- `AgaveNF-Regular 23`
+
 ## iTerm2 and tmux integration
 
 - [Hidden Settings](https://iterm2.com/documentation-hidden-settings.html)
