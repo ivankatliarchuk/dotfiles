@@ -31,3 +31,6 @@ brew "mveritym/mel/kubedecode"
 # https://formulae.brew.sh/formula/krew
 # https://github.com/kubernetes-sigs/krew/
 brew "krew"
+# Work with remote images registries - retrieving information, images, signing content
+# https://github.com/containers/skopeo
+brew "skopeo"

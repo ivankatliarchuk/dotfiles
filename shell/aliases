@@ -251,12 +251,17 @@ alias go.clean='go mod verify && go mod tidy -mod=mod'
 alias go.getall='go get -u -v -f all'
 
 ## Docker
+# https://www.docker.com/
 alias d=docker
 alias d.rmi=docker-rmi
 alias d.rm='docker image prune'
 alias d.rms='docker system prune'
 alias d.i='docker images'
 alias d.sp='docker system prune -a'
+
+# https://github.com/containers/skopeo
+alias d.inspect='skopeo inspect docker://' # + image path e.g. "d.inspect registry.fedoraproject.org/fedora:latest"
+alias d.list-tags='skopeo list-tags docker://' # + image path e.g. "d.list-tags registry.k8s.io/git-sync"
 
 ## Ruby
 
