@@ -26,6 +26,10 @@ brew "sshuttle"
 # https://www.stevenrombauts.be/2018/01/use-dnsmasq-instead-of-etc-hosts/
 # https://passingcuriosity.com/2013/dnsmasq-dev-osx/
 brew "dnsmasq"
+# https://github.com/rbsec/sslscan
+# https://formulae.brew.sh/formula/sslscan
+# https://repost.aws/knowledge-center/elb-fix-ssl-tls-negotiation-error
+brew "sslscan"
 if OS.mac?
 # -- Casks
 # Charles is an HTTP proxy / HTTP monitor / Reverse Proxy that enables a developer to view all of the HTTP and SSL / HTTPS traffic between their machine and the Internet.
