@@ -9,8 +9,8 @@ if OS.mac?
 # https://github.com/Homebrew/homebrew-cask-fonts
   # cask "font-courier-new"
   cask "font-fontawesome"
-  cask "font-inconsolata-for-powerline"
-  cask "font-inconsolata-for-powerline-bold"
+  # cask "font-inconsolata-for-powerline"
+  # cask "font-inconsolata-for-powerline-bold"
 # starship
   cask "font-hack"
   cask "font-noto-nerd-font"
