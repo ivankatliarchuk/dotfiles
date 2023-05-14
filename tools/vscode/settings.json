@@ -87,7 +87,8 @@
     ".*.yml": "yaml",
     "*.libsonnet": "jsonnet",
     "**/*.libsonnet": "jsonnet",
-    "*.jsonnet": "jsonnet"
+    "*.jsonnet": "jsonnet",
+    "*.json5": "jsonc"
   },
   "editor.fontWeight": "normal",
   "editor.lineHeight": 0,
