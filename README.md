@@ -24,7 +24,6 @@ Dotfiles setup
   - [Evaluate Tools](#evaluate-tools)
   - [®️ Emojies](#-emojies)
 - [#️⃣ TODO](#%EF%B8%8F%E2%83%A3-todo)
-- [? QA](#-qa)
 - [Awailable Commands](#awailable-commands)
   - [📝 Guidelines](#-guidelines)
 - [🔖 License](#-license)

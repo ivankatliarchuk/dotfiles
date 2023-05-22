@@ -7,5 +7,5 @@
 
 ## Helm
 alias key='keybase'
-alias key.ls="keybase pgp list" # List the active PGP keys in your account
+alias key.ls='keybase pgp list' # List the active PGP keys in your account
 alias key.gls='keybase git list' # List keybase repositories
