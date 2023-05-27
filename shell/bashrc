@@ -42,5 +42,5 @@ if [ ! -t 0 ]; then
 fi
 
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
-export PATH="/Users/ivankatliarchuk/.rd/bin:$PATH"
+export PATH="/Users/ik/.rd/bin:$PATH"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
