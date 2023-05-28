@@ -74,7 +74,7 @@ repos:
         language: ruby
         files: \.(md|mdown|markdown)$
   - repo: https://github.com/adrienverge/yamllint.git
-    rev: v1.31.0
+    rev: v1.32.0
     hooks:
       - id: yamllint
         files: \.(yaml|yml)$
