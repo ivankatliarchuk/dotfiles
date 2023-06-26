@@ -39,7 +39,7 @@ if OS.mac?
 # cask "ngrok"
 # Wireshark is a network traffic analyzer, or "sniffer"
 # https://github.com/wireshark/wireshark
-cask "wireshark"
+# cask "wireshark"
 # https://obdev.at/products/littlesnitch/index.html
 # cask "little-snitch"
 # cask "openvpn-connect"
