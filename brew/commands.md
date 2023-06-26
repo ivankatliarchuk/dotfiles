@@ -17,4 +17,5 @@ brew untap <name>
 brew deps --tree --installed
 brew uninstall --force asdf
 brew deps --tree --installed
+brew update-reset
 ```
