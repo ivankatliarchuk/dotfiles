@@ -44,7 +44,7 @@ alias k.worker="k.workers"
 alias k.taint='kubectl get node -o custom-columns=NAME:.metadata.name,TAINT:.spec.taints[*].effect'
 # list only node statuses
 alias k.nready='kubectl get nodes -o custom-columns=STATUS:status.conditions[-1].type'
-alias k.nruntime='kubectl get nodes -o custom-columns=NAME:metadata.name,VERSION:status.nodeInfo.kubeletVersion,RUNTIME:status.nodeInfo.containerRuntimeVersion'
+alias k.nruntime='kubectl get nodes -o custom-columns=NAME:metadata.name,VERSION:status.nodeInfo.kubeletVersion,RUNTIME:status.nodeInfo.containerRuntimeVersion' # + selectors and other jazz e.g. --selector='group-name=spot-worker-ns-group1-1.23'
 alias k.dnol='kubectl describe nodes -l'
 alias k.gnol='kubectl get nodes -l'
 alias k.dno='kubectl describe nodes'
