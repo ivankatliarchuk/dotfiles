@@ -357,5 +357,12 @@
   "go.toolsManagement.autoUpdate": true,
   "[shellscript]": {
     "files.eol": "\n"
-  }
+  },
+  "gitlens.views.repositories.showCommits": false,
+  "gitlens.views.repositories.showBranches": false,
+  "gitlens.views.repositories.showTags": false,
+  "gitlens.views.repositories.showContributors": false,
+  "gitlens.statusBar.enabled": false,
+  "gitlens.views.searchAndCompare.files.layout": "tree",
+  "gitlens.views.repositories.showUpstreamStatus": false
 }
