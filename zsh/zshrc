@@ -67,6 +67,10 @@ if [ -f "/usr/local/opt/grep/libexec/gnubin" ]; then
   export PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
 fi
 
+if [ -f "/usr/local/bin/aws" ]; then
+  alias aws="/usr/local/bin/aws"
+fi
+
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
 export PATH="/Users/ik/.rd/bin:$PATH"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
