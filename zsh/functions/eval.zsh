@@ -14,11 +14,12 @@ if [ -n "$ZSH_VERSION" ]; then
   bashcompinit
 fi
 
-eval "$(aws-vault --completion-script-zsh)"
-if [[ -d "$PYENV_ROOT" ]]; then
-  # TODO: validate if not set
-  export PATH="$(pyenv root)/shims:$PATH"
-fi
+# Uncomment when vault is in use
+# eval "$(aws-vault --completion-script-zsh)"
+# if [[ -d "$PYENV_ROOT" ]]; then
+#   # TODO: validate if not set
+#   export PATH="$(pyenv root)/shims:$PATH"
+# fi
 # eval "$(hub alias -s)"
 
 source <(navi widget zsh)
