@@ -5,5 +5,9 @@
 # https://dnsmichi.at/2022/01/10/macbook-pro-16-2019-heat-problem-with-external-display/
 # Go to Settings -> Battery => Check the Low power mode both for Battery and Power adapter
 
+#    go to [System Preferences] -> [Displays];
+#    go to [Displays Settings] if you are using both built-in monitor and external monitor, otherwise there is not [Displays Settings] and you will see the detail info of the current monitor instead.
+#    remember the Color Profile of the built-in monitor. set the external monitor's Color Profile to the same as the built-in one.
+
 # https://github.com/exelban/stats
 brew "stats"
