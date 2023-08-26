@@ -1,0 +1,7 @@
+# Related to mac operational
+
+# https://news.ycombinator.com/item?id=22265235
+# https://axu2.medium.com/solved-by-1440p-hidpi-macbook-pro-16-is-hot-noisy-with-an-external-monitor-f8af19c30f81
+
+# https://github.com/exelban/stats
+brew "stats"
