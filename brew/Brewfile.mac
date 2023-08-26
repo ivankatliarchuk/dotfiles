@@ -2,6 +2,8 @@
 
 # https://news.ycombinator.com/item?id=22265235
 # https://axu2.medium.com/solved-by-1440p-hidpi-macbook-pro-16-is-hot-noisy-with-an-external-monitor-f8af19c30f81
+# https://dnsmichi.at/2022/01/10/macbook-pro-16-2019-heat-problem-with-external-display/
+# Go to Settings -> Battery => Check the Low power mode both for Battery and Power adapter
 
 # https://github.com/exelban/stats
 brew "stats"
