@@ -9,11 +9,11 @@ command -v kubens > /dev/null && alias ks=kubens          # https://github.com/a
 command -v kubedecode > /dev/null && alias kd=kubedecode  # https://github.com/mveritym/kubedecode
 command -v kubectx > /dev/null && alias kx=kubectx        # https://github.com/ahmetb/kubectx
 
-if ! kubectl config current-context >/dev/null 2>&1; then
-: # do nothing as not inside context
-else
-: # do nothing as we may switch to context an there is no need to realod
-fi
+# if ! kubectl config current-context >/dev/null 2>&1; then
+# : # do nothing as not inside context
+# else
+# : # do nothing as we may switch to context an there is no need to realod
+# fi
 
 ## Health
 alias k.h='kubectl get cs'

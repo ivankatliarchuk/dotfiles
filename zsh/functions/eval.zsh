@@ -25,9 +25,9 @@ fi
 source <(navi widget zsh)
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-if [ $commands[kubectl] ]; then
-	source <(kubectl completion zsh)
-fi
+# if [ $commands[kubectl] ]; then
+# 	source <(kubectl completion zsh)
+# fi
 
 if [ $commands[kubectx] ]; then
   kubectx --unset >/dev/null 2>&1
