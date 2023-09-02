@@ -540,7 +540,7 @@ function gitrepo() { mkdir $1; cd $1; git init; touch README; git add README; gi
 function last10() { history | awk '{a[$2]++ } END{for(i in a){print a[i] " " i}}' | sort -rn | head; }
 
 # Goes up many dirs as the number passed as argument, if none goes up by 1 by default
-up() {
+updir() {
   local d=""
   limit=$1
   for ((i=1 ; i <= limit ; i++)); do
