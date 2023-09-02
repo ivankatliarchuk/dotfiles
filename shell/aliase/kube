@@ -1114,8 +1114,13 @@ function k.kinds {
 }
 
 function k.explain {
-  # Example: k.explain providerconfig aws.crossplane.io/v1beta1
-  kubectl explain $1 --api-version="$2"
+  # Example: k.explain aws.crossplane.io/v1beta1 providerconfig
+  kubectl explain $2 --api-version="$1"
+}
+
+function k.apig {
+  # Example: k.apig crossplane
+  kubectl api-resources | grep $1
 }
 
 function k.getnames {
