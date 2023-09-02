@@ -70,8 +70,8 @@ load-nvmrc() {
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
 
-# Automatically switch and load golang versions when a directory has an `.gvmrc` file
-load-gvmrc() {
+# Automatically switch and load golang versions when a directory has an `.gvmrc` or `go.mod` files
+load-go-version() {
   if exists gvm; then
     if [ -f .gvmrc  ] || [ -f go.mod  ]; then
         local GO_VERSION=$(go version | { read _ _ v _; echo ${v#go}; })
@@ -102,8 +102,8 @@ load-gvmrc() {
       fi
   fi
 }
-add-zsh-hook chpwd load-gvmrc
-load-gvmrc
+add-zsh-hook chpwd load-go-version
+load-go-version
 
 # Automatically switch and load python versions when a directory has an `.python-version` or `.pyrc` file
 load-pyenv() {
