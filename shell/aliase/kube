@@ -1113,6 +1113,11 @@ function k.kinds {
   for i in `kubectl api-resources | grep -v KIND | awk '{print $NF}'`;do kubectl explain ${i} | grep -e "KIND:" -e "VERSION:"; echo '----'; done
 }
 
+function k.explain {
+  # Example: k.explain providerconfig aws.crossplane.io/v1beta1
+  kubectl explain $1 --api-version="$2"
+}
+
 function k.getnames {
   # get all names and concatenate them with comma
   local NAMES="$(kubectl api-resources \
