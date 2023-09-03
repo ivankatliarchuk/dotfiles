@@ -45,7 +45,7 @@ load-tgswitch
 
 # https://github.com/nvm-sh/nvm
 load-nvmrc() {
-  if exists nvm; then
+  if exists nvm && [[ "$PWD" != "$HOME" ]]; then
     local node_version="$(nvm version)"
     local nvmrc_path="$(nvm_find_nvmrc)"
     if [ -f .nvmrc  ]; then
