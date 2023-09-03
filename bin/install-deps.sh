@@ -67,6 +67,8 @@ install_node() {
 }
 
 # https://github.com/rvm/rvm
+# rvm get stable --auto-dotfiles
+# rvm cleanup all
 # rvm list known
 # rvm install ruby@latest
 # rvm use ruby-X.X.X --default
