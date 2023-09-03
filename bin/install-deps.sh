@@ -66,6 +66,12 @@ install_node() {
   fi
 }
 
+# https://github.com/rvm/rvm
+# rvm list known
+# rvm install ruby@latest
+# rvm use ruby-X.X.X --default
+# rvm gemset use global
+# sudo gem update --system
 install_rvm() {
   set +e
   if ! exists rvm; then
