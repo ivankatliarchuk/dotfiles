@@ -48,8 +48,6 @@ install_gvm() {
       error "failed '$1' aborting..."
       noerr=false
     fi
-    # gvm install go1.16
-    # gvm use
   fi
   if [[ -z "${noerr}" ]]; then
     ok "$1"
