@@ -19,6 +19,9 @@
 
     untrack = ls-files --ignored --exclude-standard | xargs git rm --cached
 
+    # automatic prune all unreachable objects from the object database
+    pfetch = fetch --prune
+
     unreleased = "!f() { git fetch --tags && git diff $(git tag | tail -n 1); }; f"
     # List contributors with number of commits
     contributors = shortlog --summary --numbered

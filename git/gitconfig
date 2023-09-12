@@ -80,25 +80,6 @@
 [credential]
   helper = osxkeychain
 
-[pager]
-  status = true
-
-[pager]
-  branch = false
-  log = false
-  status = false
-
-[push]
-  default = current
-  # Make `git push` push relevant annotated tags when pushing branches out.
-  followTags = true
-
-[github]
-  ssl = true
-
-[pull]
-  ff = only
-
 [diff]
   # Detect copies as well as renames
   renames = copies
@@ -109,6 +90,22 @@
 [diff "bin"]
   # Use `hexdump` to diff binary files
   textconv = hexdump -v -C
+
+[github]
+  ssl = true
+
+[pager]
+  branch = false
+  log = false
+  status = false
+
+[pull]
+  ff = only
+
+[push]
+  default = current
+  # Make `git push` push relevant annotated tags when pushing branches out.
+  followTags = true
 
 [init]
   defaultBranch = main
@@ -162,3 +159,7 @@
 
 [http]
 	postBuffer = 157286400
+
+[fetch]
+    # If you want to have prune executed with every fetch operation, you can configure Git accordingly:
+    prune = true
