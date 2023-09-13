@@ -313,3 +313,6 @@ alias top10='history-stat -n 15'
 alias commands='find $(echo $PATH | tr ":" "\n") | awk -F / "{print \$NF}" | sort -u'
 alias cmds='commands'
 #END alias-definitions
+
+# https://apple.stackexchange.com/questions/217728/cant-delete-partition
+alias d.utilmerge="diskutil mergePartitions HFS+ mynew disk3s1 disk3s2
