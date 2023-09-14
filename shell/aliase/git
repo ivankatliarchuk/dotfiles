@@ -72,3 +72,9 @@ alias fgittag=_gtag
 alias fgitlog=_glog
 alias fgitstash=_gstash
 alias fgitremote=_gremote
+
+_git_tag_it() {
+  git tag -a $1 -m "$2"
+}
+
+alias g.tagit='_git_tag_it' # tag + message

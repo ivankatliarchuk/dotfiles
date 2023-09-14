@@ -315,4 +315,7 @@ alias cmds='commands'
 #END alias-definitions
 
 # https://apple.stackexchange.com/questions/217728/cant-delete-partition
-alias d.utilmerge="diskutil mergePartitions HFS+ mynew disk3s1 disk3s2
+# diskutil list
+# diskutil eraseDisk JHFS+ macosinstall disk5
+alias disk.l="diskutil list"
+alias disk.utilmerge="diskutil mergePartitions HFS+ mynew disk3s1 disk3s2"
