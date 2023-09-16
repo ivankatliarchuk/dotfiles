@@ -364,5 +364,6 @@
   "gitlens.views.repositories.showContributors": false,
   "gitlens.statusBar.enabled": false,
   "gitlens.views.searchAndCompare.files.layout": "tree",
-  "gitlens.views.repositories.showUpstreamStatus": false
+  "gitlens.views.repositories.showUpstreamStatus": false,
+  "window.commandCenter": false
 }
