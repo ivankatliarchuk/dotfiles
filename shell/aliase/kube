@@ -1135,3 +1135,14 @@ function k.getnames {
   # --show-kind is optional
   kubectl get "${NAMES:0:-1}" --show-kind
 }
+
+function k.can-i {
+  # kubectl auth can-i delete pods -n=apps-plm --as-group=hbi:team:composer-platform --as=team-composer
+  # VERB [TYPE | TYPE/NAME | NONRESOURCEURL] [options]
+  local verb=$1 # e.g. list/delete
+  local type=$2 # e.g. pods/logs
+  local namespace=$3
+  local group=$4
+  local user=$5
+  kubectl auth can-i $verb $type -n=$namespace --as-group=$group --as=$user
+}
