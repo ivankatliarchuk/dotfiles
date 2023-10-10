@@ -63,6 +63,7 @@ function _git_docs() {
   declare -a docs=(
     "https://docs.github.com/en"
     "https://hub.github.com"
+    "https://devconnected.com/how-to-delete-local-and-remote-tags-on-git/"
   )
   for el in "${docs[@]}" ; do
     KEY="${el%%}"
