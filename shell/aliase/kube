@@ -31,9 +31,9 @@ alias k.apiw='kubectl api-resources -o wide' # Print the supported API resources
 
 ## Nodes
 # sort nodes by timestamp
-alias k.nstamp='kubectl get nodes --sort-by=.metadata.creationTimestamp'
+alias k.node-sort-time=='kubectl get nodes --sort-by=.metadata.creationTimestamp'
 # sort nodes by kubelet
-alias k.nsort='kubectl get node --sort-by={.status.nodeInfo.kubeletVersion}'
+alias k.none-sort-version='kubectl get node --sort-by={.status.nodeInfo.kubeletVersion}'
 # list only masters
 alias k.master='kubectl get nodes --selector=node-role.kubernetes.io/master'
 alias k.masters='k.master'
