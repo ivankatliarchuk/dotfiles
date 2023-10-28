@@ -9,4 +9,4 @@ brew "hyperkit", link: false
 # minikube implements a local Kubernetes cluster on macOS, Linux, and Windows
 # https://github.com/kubernetes/minikube
 brew "minikube", link: true
-cask "docker-toolbox"
+# cask "docker-toolbox"
