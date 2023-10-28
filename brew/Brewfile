@@ -33,7 +33,7 @@ brew "fzf"
 # Tracks most-used directories to make cd smarter
 brew "z"
 # Interactive cheatsheet tool for the command-line.
-brew "denisidoro/tools/navi"
+# brew "denisidoro/tools/navi"
 # An archey script for OS X. archey -c
 # https://obihann.github.io/archey-osx/
 brew "archey"
