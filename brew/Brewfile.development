@@ -77,7 +77,7 @@ brew "packer"
 # https://duck.sh/
 brew "duck"
 # Docker Machine driver for hyperkit
-brew "docker-machine-driver-hyperkit"
+# brew "docker-machine-driver-hyperkit"
 # terminal session recorder
 # https://asciinema.org/docs/how-it-works
 brew "asciinema"
