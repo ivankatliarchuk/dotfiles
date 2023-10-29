@@ -22,7 +22,6 @@ fi
 # fi
 # eval "$(hub alias -s)"
 
-source <(navi widget zsh)
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # if [ $commands[kubectl] ]; then
