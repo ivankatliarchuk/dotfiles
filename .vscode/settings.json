@@ -7,5 +7,6 @@
     "*.cmd": "shellscript",
     ".yamllint": "yaml"
   },
-  "files.autoSave": "afterDelay"
+  "files.autoSave": "afterDelay",
+  "explorer.openEditors.visible": 1
 }

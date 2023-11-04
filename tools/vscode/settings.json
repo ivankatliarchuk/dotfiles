@@ -34,6 +34,7 @@
   "redhat.telemetry.enabled": false,
   "search.followSymlinks": false,
   "telemetry.telemetryLevel": "crash",
+  "timeline.pageSize": "0",
   "files.associations": {
     "Dockerfile*": "dockerfile",
     "*Dockerfile": "dockerfile",
@@ -157,7 +158,6 @@
   "window.openFoldersInNewWindow": "on",
   "window.restoreFullscreen": false,
   "window.restoreWindows": "all",
-  "workbench.activityBar.visible": true,
   "workbench.commandPalette.history": 50,
   "workbench.editor.closeOnFileDelete": true,
   "workbench.editor.labelFormat": "default",
@@ -291,6 +291,7 @@
   "[yaml]": {
     "editor.defaultFormatter": "redhat.vscode-yaml"
   },
+  "explorer.openEditors.minVisible": 0,
   "explorer.openEditors.visible": 0,
   "indentRainbow.colors": [
     "rgba(16,16,16,0.1)",

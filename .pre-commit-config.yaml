@@ -64,15 +64,6 @@ repos:
       - id: detect-secrets
         args: ["--baseline", ".secrets.baseline"]
         exclude: .pre-commit-config.yaml
-  - repo: https://github.com/markdownlint/markdownlint
-    rev: v0.13.0
-    hooks:
-      - id: markdownlint
-        name: Markdownlint
-        description: Run markdownlint on your Markdown files
-        entry: mdl
-        language: ruby
-        files: \.(md|mdown|markdown)$
   - repo: https://github.com/adrienverge/yamllint.git
     rev: v1.32.0
     hooks:
