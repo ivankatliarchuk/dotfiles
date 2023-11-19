@@ -65,7 +65,7 @@ repos:
         args: ["--baseline", ".secrets.baseline"]
         exclude: .pre-commit-config.yaml
   - repo: https://github.com/adrienverge/yamllint.git
-    rev: v1.32.0
+    rev: v1.33.0
     hooks:
       - id: yamllint
         files: \.(yaml|yml)$
