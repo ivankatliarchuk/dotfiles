@@ -1136,6 +1136,27 @@ function k.getnames {
   kubectl get "${NAMES:0:-1}" --show-kind
 }
 
+function k.exec {
+  # exec to pod. Example k.exec app=orgchart
+  kubectl exec -it \
+      $(kubectl get pod -l $1 -o jsonpath="{.items[0].metadata.name}") \
+      -- /bin/sh
+}
+
+function k.exec-env {
+  # output env variables for pod. Example k.exec app=orgchart
+  kubectl exec -it \
+      $(kubectl get pod -l $1 -o jsonpath="{.items[0].metadata.name}") \
+      -- env
+}
+
+function k.exec-ls {
+  # output specific folder for pod. Example k.exec app=orgchart /env/secrets
+  kubectl exec \
+      $(kubectl get pod -l $1 -o jsonpath="{.items[0].metadata.name}") \
+        -- ls $2
+}
+
 function k.can-i {
   # kubectl auth can-i delete pods -n=apps-plm --as-group=hbi:team:composer-platform --as=team-composer
   # VERB [TYPE | TYPE/NAME | NONRESOURCEURL] [options]
