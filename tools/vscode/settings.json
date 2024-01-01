@@ -207,6 +207,7 @@
     "editor.wrappingStrategy": "advanced"
   },
   "editor.tokenColorCustomizations": {
+    "comments": "#e45e91",
     "textMateRules": [
       {
         "scope": "punctuation",
@@ -215,10 +216,24 @@
         }
       },
       {
-        "scope": "comment",
+        "scope": [
+          "comment",
+          "comment.block.documentation",
+          "comment.block.documentation.js",
+          "comment.line.number-sign.js",
+          "comment.line.double-slash.js",
+          "comment.line.number-sign.hcl",
+          "comment.line.double-slash.hcl",
+          "storage.type.class.jsdoc",
+          "entity.name.type.instance.jsdoc",
+          "variable.other.jsdoc",
+          "punctuation.definition.comment",
+          "punctuation.definition.comment.begin.documentation",
+          "punctuation.definition.comment.end.documentation"
+        ],
         "settings": {
           "fontStyle": "italic",
-          "foreground": "#26e9c9",
+          "foreground": "#a4b224"
         }
       },
       {
@@ -248,7 +263,7 @@
       ]
     },
     "[One Dark Pro Vivid]": {
-      "comments": "#229977"
+      "comments": "#acc232"
     }
   },
   "workbench.colorCustomizations": {
