@@ -1092,6 +1092,8 @@ alias k.gpowslowiden='kubectl get pods --watch --show-labels -o=wide --namespace
 
 # Resource version
 alias k.apidep='kubectl get deployments.v1.apps -o yaml'
+# List deployments in JSON output format, in the "v1" version of the "apps" API group
+# kubectl get deployments.v1.apps
 alias k.apihpa='k get horizontalpodautoscaler.v2.autoscaling'
 
 # Usage: k.getall <namespace>
