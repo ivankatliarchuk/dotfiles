@@ -12,3 +12,12 @@ alias hlist="h.l"
 alias h.se="helm search repo --versions "  # + chart name search for a chart e.g. eks-charts/aws-vpc-cni
 alias h.searc="h.se"                # + chart name search for a chart
 alias h.test="helm template test . --output-dir result --values values.yaml" # create tes k8s manifest out of helm templates
+
+# This will render the NOTES.txt file.
+function h.notes {
+  local chart=$1
+  shift
+  local except_first=$@
+  helm install ${chart} --dry-run  --generate-name ${except_first}
+}
+
