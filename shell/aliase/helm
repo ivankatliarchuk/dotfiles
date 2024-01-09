@@ -10,9 +10,10 @@ alias h.ru="helm repo update"       # update information of available charts loc
 alias h.l="helm repo list"          # list chart repositories
 alias hlist="h.l"
 alias h.se="helm search repo --versions "  # + chart name search for a chart e.g. eks-charts/aws-vpc-cni
-alias h.searc="h.se"                # + chart name search for a chart
+alias h.search="h.se"                # + chart name search for a chart
 alias h.test="helm template test . --output-dir result --values values.yaml" # create tes k8s manifest out of helm templates
-alias h.filter="helm filter --list " #  + a regular expression. Any releases that match the expression will be included in the result
+alias h.filter="helm ls --all --filter " #  + a regular expression. Any releases that match the expression will be included in the result
+alias h.values="helm get values -o yaml " # + RELEASE_NAME [flags]. Get the values for helm chart
 
 # This will render the NOTES.txt file.
 function h.notes {
