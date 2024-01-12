@@ -1,6 +1,7 @@
 # https://github.com/ivankatliarchuk/dotfiles/blob/master/terminal/starship/starship.toml
 # https://raw.githubusercontent.com/ivankatliarchuk/dotfiles/master/zsh/settings/starship.toml
 # https://github.com/denysdovhan/spaceship-prompt/wiki/Presets
+# https://starship.rs/
 
 add_newline = false
 scan_timeout = 0
@@ -51,13 +52,20 @@ format = "[$hostname]($style) in "
 trim_at = ".companyname.com"
 disabled = false
 
+# https://starship.rs/config/#kubernetes
 [kubernetes]
 symbol = "☸️ "
 format = '[$symbol$context\(ns:$namespace\)]($style) '
 style = "#c5f542"
 disabled = false
-[kubernetes.context_aliases]
-"arn:aws:eks:(?P<var_region>.*):(?P<var_account>.*):cluster/(?P<var_cluster>.*)"="[eks:$var_account]::$var_cluster"
+[[kubernetes.contexts]]
+# Using capture groups
+# Contexts from GKE, AWS and other cloud providers usually carry additional information, like the region/zone.
+# The following entry matches on the GKE format (`gke_projectname_zone_cluster-name`)
+# and renames every matching kube context into a more readable format (`gke-cluster-name`):
+context_pattern = "arn:aws:eks:(?P<var_region>.*):(?P<var_account>.*):cluster/(?P<var_cluster>.*)"
+context_alias = "[eks:$var_account]::$var_cluster"
+symbol = "⛵ "
 
 [python]
 symbol = " "
