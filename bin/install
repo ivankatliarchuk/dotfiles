@@ -12,5 +12,6 @@ if ! [ -x "$(command -v dotbot)" ]; then
     (cd "${DOTBOT_DIR}" && git submodule update --init --recursive)
     "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}"
   else
+    # brew install dotbot
     dotbot -d "${BASEDIR}" -c "${CONFIG}" "${@}"
 fi
