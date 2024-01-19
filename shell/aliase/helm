@@ -8,9 +8,10 @@
 alias h.du="helm dependency update" # sync chart dependencies
 alias h.ru="helm repo update"       # update information of available charts locally
 alias h.l="helm repo list"          # list chart repositories
-alias hlist="h.l"
+alias h.list="h.l"
 alias h.se="helm search repo --versions "  # + chart name search for a chart e.g. eks-charts/aws-vpc-cni
 alias h.search="h.se"                # + chart name search for a chart
+alias h.sort="helm list --short | awk '{ print length, \$0 }' | sort -n -s -r" # sort helm releases descending
 alias h.test="helm template test . --output-dir result --values values.yaml" # create tes k8s manifest out of helm templates
 alias h.filter="helm ls --all --filter " #  + a regular expression. Any releases that match the expression will be included in the result
 alias h.values="helm get values -o yaml " # + RELEASE_NAME [flags]. Get the values for helm chart
