@@ -1182,8 +1182,8 @@ function k.dd-logs {
   local selector=$1 # k8s-app=kube-state-metrics
   local ns="${2:-datadog}" # namespace datadog
 
-  local selector_pod=$(kubectl get pods --selector="${selector}" -o custom-columns=POD:.metadata.name)
-  echo "selector pod: $selector_pod"
+  local selector_pod=$(kubectl get pods --selector="${selector}" --template '{{range .items}}{{.metadata.name}}{{"\n"}}{{end}}')
+  echo "found pod(s): ${selector_pod}"
   local node_name=$(kubectl get pods --selector="${selector}" -o custom-columns=NODE:.spec.nodeName --no-headers=true)
   echo "node name: $node_name"
   local pod_name=$(kubectl get pods --field-selector spec.nodeName=${node_name} -n ${ns} -o custom-columns=POD:.metadata.name --no-headers=true)
