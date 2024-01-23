@@ -102,9 +102,10 @@ _kctl_pods_custom_columns() {
   kubectl get pods -o=custom-columns=NAME:.metadata.name,LABEL(${1}):.metadata.labels.${1}
 }
 alias k.pods-column="_kctl_pods_custom_columns" # + custom label name e.g. team
-alias k.podips="kubectl get pod -o custom-columns=POD-NAME:.metadata.name,HOST-IP:.status.hostIP,POD-IP:.status.podIP,POD-IP(s):.status.podIPs[*].ip"
+alias k.pod-ips="kubectl get pod -o custom-columns=POD-NAME:.metadata.name,HOST-IP:.status.hostIP,POD-IP:.status.podIP,POD-IP(s):.status.podIPs[*].ip"
+# all pod names with IPs
+alias k.pod-ips-all='get pods -o custom-columns=NAME:.metadata.name,IP:.status.podIP'
 alias k.pods-on-nodes='kubectl get pods -o wide --sort-by="{.spec.nodeName}"'
-
 
 ## Rest
 alias k.sys='kubectl --namespace=kube-system'
@@ -1182,11 +1183,11 @@ function k.dd-logs {
   local selector=$1 # k8s-app=kube-state-metrics
   local ns="${2:-datadog}" # namespace datadog
 
-  local selector_pod=$(kubectl get pods --selector="${selector}" --template '{{range .items}}{{.metadata.name}}{{"\n"}}{{end}}')
+  local selector_pod=$(kubectl get pods --selector="${selector}" --template '{{range .items}}Name:{{.metadata.name}} IP:{{.status.podIP}}{{"\n"}}{{end}}')
   echo "found pod(s): ${selector_pod}"
   local node_name=$(kubectl get pods --selector="${selector}" -o custom-columns=NODE:.spec.nodeName --no-headers=true)
   echo "node name: $node_name"
-  local pod_name=$(kubectl get pods --field-selector spec.nodeName=${node_name} -n ${ns} -o custom-columns=POD:.metadata.name --no-headers=true)
+  local pod_name=$(kubectl get pods --field-selector spec.nodeName=${node_name} --selector="app=datadog-monitoring-apm" -n ${ns} -o custom-columns=POD:.metadata.name --no-headers=true)
   echo "datadog pod: $pod_name"
   kubectl logs ${pod_name} -n ${ns}
 }
