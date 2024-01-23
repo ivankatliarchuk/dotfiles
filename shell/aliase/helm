@@ -23,4 +23,3 @@ function h.notes {
   local except_first=$@
   helm install ${chart} --dry-run  --generate-name ${except_first}
 }
-

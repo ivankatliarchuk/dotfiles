@@ -1169,3 +1169,24 @@ function k.can-i {
   local user=$5
   kubectl auth can-i $verb $type -n=$namespace --as-group=$group --as=$user
 }
+
+function k.dd-logs {
+  # for a specific pod
+  # find a node where the pod is running
+  # find a datadog agent
+  # show logs for from the agent
+
+  # k.dd-logs k8s-app=kube-state-metrics
+
+  # show logs for a pod in another namespace
+  local selector=$1 # k8s-app=kube-state-metrics
+  local ns="${2:-datadog}" # namespace datadog
+
+  local selector_pod=$(kubectl get pods --selector="${selector}" -o custom-columns=POD:.metadata.name)
+  echo "selector pod: $selector_pod"
+  local node_name=$(kubectl get pods --selector="${selector}" -o custom-columns=NODE:.spec.nodeName --no-headers=true)
+  echo "node name: $node_name"
+  local pod_name=$(kubectl get pods --field-selector spec.nodeName=${node_name} -n ${ns} -o custom-columns=POD:.metadata.name --no-headers=true)
+  echo "datadog pod: $pod_name"
+  kubectl logs ${pod_name} -n ${ns}
+}
