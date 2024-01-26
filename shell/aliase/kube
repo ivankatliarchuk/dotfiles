@@ -1191,3 +1191,29 @@ function k.dd-logs {
   echo "datadog pod: $pod_name"
   kubectl logs ${pod_name} -n ${ns}
 }
+
+# # List deployments in JSON output format, in the "v1" version of the "apps" API group
+# kubectl get ingressroutes.v1alpha1.traefik.
+# k.get-list --kind  ingressroutes --api traefik.io --version v1alpha1'
+function k.get-list {
+  usage() { echo "k.get-list: [--kind <resource kind> --api <api> --version <api version>]" 1>&2; }
+
+  if [ "$#" -lt 6 ]; then
+      echo "Not enough arguments... Should be '6' provided '$#'"
+      usage
+  else
+
+      local kind api version
+      for _ in "$@"; do
+        case $1 in
+            -k|--kind) kind="$2"; ;;
+            -t|--api) api="$2"; ;;
+            -c|--version) version="$2"; ;;
+            --help) usage ;;
+        esac
+        shift
+      done
+      set -x
+      kubectl get ${kind}.${version}.${api}
+  fi
+}
