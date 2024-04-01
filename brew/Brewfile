@@ -25,6 +25,10 @@ brew "neovim"
 brew "tree"
 # Terminal multiplexer
 brew "tmux"
+# Terminal multiplexer
+# https://github.com/zellij-org/zellij
+# https://zellij.dev/documentation/
+brew "zellij"
 # UNIX shell (command interpreter)
 # https://github.com/ohmyzsh/ohmyzsh
 brew "zsh"
@@ -36,6 +40,7 @@ brew "z"
 # brew "denisidoro/tools/navi"
 # An archey script for OS X. archey -c
 # https://obihann.github.io/archey-osx/
+
 brew "archey"
 # The cross-shell prompt for astronauts
 # https://starship.rs/
