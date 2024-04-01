@@ -1,6 +1,7 @@
 tap "warrensbox/tap"
 tap "bats-core/bats-core"
-
+# https://developer.hashicorp.com/packer/tutorials/docker-get-started/get-started-install-cli
+tap "hashicorp/tap"
 # Process YAML documents from the CLI
 # https://github.com/mikefarah/yq
 brew "yq"
@@ -72,7 +73,8 @@ brew "wget"
 brew "curl"
 # Tool for creating identical machine images for multiple platforms
 # https://github.com/hashicorp/packer
-brew "packer"
+# brew install hashicorp/tap/packer
+brew "hashicorp/tap/packer"
 # The universal file transfer tool duck which runs in your shell on Linux and OS X
 # https://duck.sh/
 brew "duck"
