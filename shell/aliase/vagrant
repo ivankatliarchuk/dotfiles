@@ -1,0 +1,25 @@
+# Vagrant
+# https://kubernetes.io/docs/reference/kubectl/cheatsheet/
+# https://www.vagrantup.com/
+# https://developer.hashicorp.com/vagrant/docs/cli
+# https://gist.github.com/wpscholar/a49594e2e2b918f4d0c4
+#
+
+## General
+alias v.h='vagrant --help'
+alias v.update='vagrant box outdated --global && vagrant plugin repair && vagrant plugin update' # update all boxes
+
+## Work with running vm
+alias v.ssh='vagrant ssh'   ## SSH to curretnly running machine
+alias v.stop='vagrant stop' ## Stop the vagrant machine
+
+## Work with boxes
+alias v.list='vagrant box list' ## List currently running machines
+alias v.rm='vagrant box remove' ## <name> deletes a box from the machine
+
+# Oracle Virtual Box
+alias v.vms='VBoxManage list -l vms' ## List running vms
+alias v.lvmsrun='VBoxManage list runningvms' ## list all running oracle vms
+
+## Cloud
+alias v.open='open https://app.vagrantup.com/cloudkats/'
