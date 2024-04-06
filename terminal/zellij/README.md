@@ -15,4 +15,9 @@
 
 ```sh
 zellij setup --dump-config > config.kdl
+zellij setup --dump-layout default
+zellij setup --check
+zellij --layout /path/to/layout_file.kdl
+zellij action new-tab --layout /path/to/layout_file.kdl
+zellij --layout [layout_name]
 ```

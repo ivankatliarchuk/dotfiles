@@ -1,0 +1,7 @@
+layout {
+    pane
+    pane split_direction="vertical" {
+        pane
+        pane command="htop"
+    }
+}

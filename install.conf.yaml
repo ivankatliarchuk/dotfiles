@@ -48,16 +48,17 @@
     ~/Library/ApplicationSupport/iTerm2/DynamicProfiles:
       if: "[ `uname` = Darwin ]"
       path: terminal/iTerm/profiles
-      force: true
+      force: false
     ~/.config/iTerm2/colors/material-design-colors.itermcolors:
       if: "[ `uname` = Darwin ]"
       path: vendor/iterm2-material-design/material-design-colors.itermcolors
-      force: true
+      force: false
     ~/.config/iTerm2/xsfce-v2.png:
       if: "[ `uname` = Darwin ]"
       path: terminal/iTerm/xsfce-v2.png
-      force: true
+      force: false
     ~/.config/starship: terminal/starship
+    ~/.config/zellij: terminal/zellij
     ~/.config/tmuxp: terminal/tmux/configs
     ~/.tmux: terminal/tmux/config
     ~/.tmux.conf: terminal/tmux/config/.tmux.conf
