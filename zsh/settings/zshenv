@@ -8,8 +8,8 @@ fi
 #
 # Editors
 #
-if /usr/local/bin/code --version > /dev/null; then
-  export EDITOR="code --wait"
+if [[ -x $(which code) ]]; then
+  export EDITOR="$(which code) --wait"
 else
   export EDITOR='vim'
 fi
