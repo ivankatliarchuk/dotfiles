@@ -1,22 +1,27 @@
 # https://raw.githubusercontent.com/ivankatliarchuk/dotfiles/master/shell/aliases
 #
 # TMUX aliases.
-#
+# https://tmuxcheatsheet.com/
 
 # Tmux
 alias tmx.key='tmux -f /dev/null list-keys -T copy-mode-vi' # show current keys
-alias tmx.s='tmux list-sessions'     # list sessions in tmux
-alias tmx.skill='tmux kill-server'   # kill sessions in tmux
+alias tmx.killsrv='tmux kill-server'   # kill sessions in tmux
+alias tmx.killses='tmux kill-session' # kill all sessions
+alias tmx.killpane='tmux kill-pane' # kill current pane
 alias tmx.show='tmux show -g'
 alias tmx.so='tmux show-options -g'   # show options set
 alias tmx.man='man tmux'
 alias tmx.version='tmux -V'
-alias ext='tmx.skill'
+alias tmx.ls='tmux list-sessions'    # list sessions
+alias tmx.s='tmux list-sessions'     # list sessions in tmux
+alias tmx.connect='tmux a' # attach to sessin
+alias tmx.kill='tmux kill-session && tmux kill-server'
 
 if [[ -n "$TMUX" ]] ;then
   [[ -f ~/.tmux.conf ]] && alias tm.source='tmux source ~/.tmux.conf' # reload config
   [[ -f ~/.tmux.conf ]] && alias reload='. ~/.zshrc;tmux source ~/.tmux.conf;clear' # reload config
-  alias exit='tmx.skill'
+  alias exit='tmx.killpane'
+  alias eexit='tmx.kill'
 fi
 
 #END alias-definitions

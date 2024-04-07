@@ -1,0 +1,58 @@
+# https://tmuxp.git-pull.com/configuration/examples.html#short-hand-inline
+---
+session_name: vagrant
+environment:
+  VAGRANT: "true"
+windows:
+  - window_name: main
+    layout: even-vertical
+    options:
+      automatic-rename: true
+      remain-on-exit: true
+    shell_command_before:
+      - clear
+    panes:
+      - focus: true
+      - shell_command: vagrant ssh
+    options_after:
+      synchronize-panes: off
+  - window_name: first
+    layout: 025e,233x51,0,0{116x51,0,0,0,116x51,117,0[116x25,117,0,1,116x25,117,26,2]}
+    options:
+      automatic-rename: true
+    panes:
+      - focus: true
+      - start_directory: /var
+      - start_directory: /tmp
+  - window_name: second
+    layout: even-horizontal
+    options:
+      automatic-rename: true
+    panes:
+      - focus: true
+      - pane
+  - window_name: third
+    layout: even-vertical
+    options:
+      automatic-rename: true
+    shell_command_before:
+      - clear
+    panes:
+      - focus: true
+      - pane
+      - shell_command:
+          - whoami
+        start_directory: '~'
+
+
+# .------------------.------------------.
+# | (0) <focus here> | (1)              |
+# |                  |                  |
+# |                  |                  |
+# |                  |                  |
+# |                  |                  |
+# |                  |                  |
+# |                  |                  |
+# |                  |                  |
+# |                  |                  |
+# '------------------'------------------'

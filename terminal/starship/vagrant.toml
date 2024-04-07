@@ -1,0 +1,42 @@
+# https://github.com/ivankatliarchuk/dotfiles/blob/master/terminal/starship/tmux.toml
+
+format="""
+$directory\
+$username\
+$hostname\
+$cmd_duration\
+$character
+"""
+
+add_newline = false
+scan_timeout = 0
+
+[line_break]
+disabled = true
+
+[username]
+disabled = true
+
+[hostname]
+ssh_only = true
+disabled = false
+format =  "on [$hostname](bold red) "
+
+[character]
+error_symbol = "⚠️ (bold red)"
+
+[git_branch]
+symbol = " "
+format= "[$symbol$branch]($style) "
+style = "#d4d63e"
+
+[directory]
+truncation_symbol = ".."
+truncation_length = 2
+truncate_to_repo = true
+format = "[$path]($style)( [$read_only]($read_only_style)) "
+read_only = "🚧"
+
+[cmd_duration]
+min_time = 500
+format = "time [$duration](bold yellow)"

@@ -43,16 +43,25 @@ fi
 
 if [[ -n "$TMUX" ]];then
   export CURRENTPWD=$PWD
-  export STARSHIP_CONFIG=~/.config/starship/tmux.toml
+  if [[ -n "$VAGRANT" ]];then
+      export STARSHIP_CONFIG=~/.config/starship/vagrant.toml
+    else
+      export STARSHIP_CONFIG=~/.config/starship/tmux.toml
+  fi
   eval "$(starship init zsh)"
 else
-  export STARSHIP_CONFIG=~/.config/starship/main.toml
-  eval "$(starship init zsh)"
+  if [[ -n "$VAGRANT" ]];then
+      export STARSHIP_CONFIG=~/.config/starship/vagrant.toml
+    else
+      export STARSHIP_CONFIG=~/.config/starship/main.toml
+  fi
 fi
+eval "$(starship init zsh)"
 
-if [ -f "/usr/local/opt/asdf/libexec/asdf.sh" ]; then
-  . /usr/local/opt/asdf/libexec/asdf.sh
-fi
+# not required so often
+# if [ -f "/usr/local/opt/asdf/libexec/asdf.sh" ]; then
+#   . /usr/local/opt/asdf/libexec/asdf.sh
+# fi
 
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
 [[ -s "${HOME}/.krew/bin" ]] && export PATH="${PATH}:${HOME}/.krew/bin"
