@@ -7,7 +7,10 @@ windows:
       automatic-rename: true
     panes:
       - focus: true
-      - pane
+        shell_command:
+        - clear
+      - shell_command:
+        - clear
       - shell_command:
         - clear
         start_directory: '~'

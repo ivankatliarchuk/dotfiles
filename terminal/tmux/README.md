@@ -13,6 +13,8 @@
 
 # Tmux Configuration Files
 
+- [Wikipedia](https://github.com/tmux/tmux/wiki)
+- []()
 - [TmuxP](https://github.com/tmux-python/tmuxp)
 - [Docs](http://tmuxp.readthedocs.io/en/latest/)
 
@@ -27,7 +29,7 @@
 
 tmuxp load <config-file>
 tmux
-
+tmux show -g
 ```
 
 ## Config examples
@@ -35,6 +37,7 @@ tmux
 - [Tmux 11k](https://github.com/gpakosz/.tmux)
 - [MacOSX-pasteboard 2k](https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard)
 - [Tmux Config 1k](https://github.com/samoshkin/tmux-config)
+- [How To Tmux](https://hamvocke.com/blog/a-guide-to-customizing-your-tmux-conf/)
 
 ## How to get layour string
 

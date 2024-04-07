@@ -1,15 +1,19 @@
 # Zellij
 
-- [Zellij docs](https://zellij.dev/documentation/introduction)
-- [VsCode kdl plugin](https://github.com/kdl-org/vscode-kdl)
-
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**
 
+- [Docs and Blogs](#docs-and-blogs)
 - [Useful commands](#useful-commands)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+## Docs and Blogs
+
+- [Oficial Docs](https://zellij.dev/documentation)
+- [Zellij docs](https://zellij.dev/documentation/introduction)
+- [VsCode kdl plugin](https://github.com/kdl-org/vscode-kdl)
 
 ## Useful commands
 

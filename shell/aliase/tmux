@@ -4,16 +4,19 @@
 #
 
 # Tmux
-alias tm.key='tmux -f /dev/null list-keys -T copy-mode-vi' # show current keys
-alias tm.o='tmux show-options -g'   # show options set
-alias tm.s='tmux list-sessions'     # list sessions in tmux
-alias tm.skill='tmux kill-server'   # kill sessions in tmux
-alias ext='tm.skill'
+alias tmx.key='tmux -f /dev/null list-keys -T copy-mode-vi' # show current keys
+alias tmx.s='tmux list-sessions'     # list sessions in tmux
+alias tmx.skill='tmux kill-server'   # kill sessions in tmux
+alias tmx.show='tmux show -g'
+alias tmx.so='tmux show-options -g'   # show options set
+alias tmx.man='man tmux'
+alias tmx.version='tmux -V'
+alias ext='tmx.skill'
 
 if [[ -n "$TMUX" ]] ;then
   [[ -f ~/.tmux.conf ]] && alias tm.source='tmux source ~/.tmux.conf' # reload config
   [[ -f ~/.tmux.conf ]] && alias reload='. ~/.zshrc;tmux source ~/.tmux.conf;clear' # reload config
-  alias exit='tm.skill'
+  alias exit='tmx.skill'
 fi
 
 #END alias-definitions
