@@ -3,6 +3,114 @@
 # https://github.com/denysdovhan/spaceship-prompt/wiki/Presets
 # https://starship.rs/
 
+# format = """
+# [░▒▓](#a3aed2)\
+# [  ](bg:#a3aed2 fg:#090c0c)\
+# [](bg:#769ff0 fg:#a3aed2)\
+# $directory\
+# [](fg:#769ff0 bg:#394260)\
+# $git_branch\
+# $git_status\
+# [](fg:#394260 bg:#212736)\
+# $nodejs\
+# $rust\
+# $golang\
+# $php\
+# [](fg:#212736 bg:#1d2230)\
+# $time\
+# [ ](fg:#1d2230)\
+# \n$character"""
+
+# Which is equivalent to
+format = """
+$username\
+$hostname\
+$localip\
+$shlvl\
+$singularity\
+$kubernetes\
+$directory\
+$vcsh\
+$fossil_branch\
+$fossil_metrics\
+$git_branch\
+$git_commit\
+$git_state\
+$git_metrics\
+$git_status\
+$hg_branch\
+$pijul_channel\
+$docker_context\
+$package\
+$c\
+$cmake\
+$cobol\
+$daml\
+$dart\
+$deno\
+$dotnet\
+$elixir\
+$elm\
+$erlang\
+$fennel\
+$golang\
+$guix_shell\
+$haskell\
+$haxe\
+$helm\
+$java\
+$julia\
+$kotlin\
+$gradle\
+$lua\
+$nim\
+$nodejs\
+$ocaml\
+$opa\
+$perl\
+$php\
+$pulumi\
+$purescript\
+$python\
+$quarto\
+$raku\
+$rlang\
+$red\
+$ruby\
+$rust\
+$scala\
+$solidity\
+$swift\
+$terraform\
+$typst\
+$vlang\
+$vagrant\
+$zig\
+$buf\
+$nix_shell\
+$conda\
+$meson\
+$spack\
+$memory_usage\
+$aws\
+$gcloud\
+$openstack\
+$azure\
+$direnv\
+$env_var\
+$crystal\
+$custom\
+$sudo\
+$time$cmd_duration\
+$line_break\
+$jobs\
+$battery\
+$status\
+$os\
+$container\
+$shell\
+$character"""
+
 add_newline = false
 scan_timeout = 0
 
@@ -10,8 +118,9 @@ scan_timeout = 0
 disabled = false
 
 [character]
-success_symbol = "▶️ (bold green)"
-error_symbol = "⚠️ (bold red)"
+# Replace the '▶️' symbol in the prompt with '❯'
+success_symbol = "❯❯ (bold green)"
+error_symbol = "❌ (bold red)"
 
 [battery]
 full_symbol = "🔋"
@@ -29,11 +138,17 @@ truncate_to_repo = true
 format = "[$path]($style)( [$read_only]($read_only_style)) "
 read_only = "🚧"
 
+[directory.substitutions]
+"Documents" = "󰈙 documents"
+"Downloads" = " downloads"
+"Music" = " music"
+"Pictures" = " pictures"
+
 [docker_context]
 symbol = "🐳 "
 
 [git_status]
-format = '([$all_status$ahead_behind]($style)) '
+format = '([$all_status$ahead_behind]($style))'
 conflicted = "❌"
 # ahead = "☘️"
 # behind = "☣️"
@@ -93,10 +208,6 @@ style = "#abdbe3"
 detect_files = ["package.json", ".node-version", ".nvmrc"]
 detect_extensions = []
 
-[cmd_duration]
-min_time = 500
-format = "time [$duration](bold yellow)"
-
 # disabled
 [env_var]
 variable = "ENVIRONMENT"
@@ -124,3 +235,13 @@ disabled = true
 [ruby]
 detect_files = ["Gemfile", ".ruby-version"]
 detect_variables = ["RBENV_VERSION"]
+
+[cmd_duration]
+min_time = 500
+format = "took [$duration](bold yellow)"
+
+[time]
+disabled = false # This module is disabled by default.
+time_format = "%d/%m/%Y-%R" # Hour:Minute Format https://docs.rs/chrono/0.4.7/chrono/format/strftime/index.html
+style = "bg:#1d2230"
+format = ' [[ $time ](fg:#a0a9cb bg:#1d2230)]($style)'
