@@ -242,6 +242,6 @@ format = "took [$duration](bold yellow)"
 
 [time]
 disabled = false # This module is disabled by default.
-time_format = "%d/%m/%Y-%R" # Hour:Minute Format https://docs.rs/chrono/0.4.7/chrono/format/strftime/index.html
+time_format = "%d/%m/%Y[%R]" # Hour:Minute Format https://docs.rs/chrono/0.4.7/chrono/format/strftime/index.html
 style = "bg:#1d2230"
 format = ' [[ $time ](fg:#a0a9cb bg:#1d2230)]($style)'
