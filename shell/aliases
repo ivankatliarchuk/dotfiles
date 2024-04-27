@@ -229,6 +229,8 @@ alias nomore='find ./ -iname .DS_Store -delete & cleanup'
 alias chromekill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v extension-process | tr -s ' ' | cut -d ' ' -f2 | xargs kill"
 command -v shuttle > /dev/null && alias shuttle='sshuttle --dns -r uberspace 0/0'
 
+alias find.name='mdfind -name ' # + file name example.txt
+
 alias untar='tar xvf' # untar
 
 alias mk='make'
