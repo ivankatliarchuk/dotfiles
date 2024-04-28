@@ -120,7 +120,7 @@ disabled = false
 [character]
 # Replace the '▶️' symbol in the prompt with '❯'
 success_symbol = "❯❯(bold green)"
-error_symbol = "❌ (bold red)"
+error_symbol = "✖️❯ (bold red)"
 
 [battery]
 full_symbol = "🔋"
