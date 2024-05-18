@@ -110,6 +110,20 @@ alias to.folders=folders
 # Brewfile
 alias brewup='brew cu --cleanup -f -y && brew update && brew upgrade && brew upgrade --casks && brew cleanup'
 alias brewrepo='cd $(brew --repository)'
+alias brewl='brew-latest'
+alias brewlatest='brewl'
+
+function brew-latest() {
+  # install latest casks
+  brew install --cask visual-studio-code
+  brew install --cask slack
+  brew install --cask rancher
+  brew install --cask keybase
+  brew install --cask jetbrains-toolbox
+  brew install --cask firefox
+  brew install --cask iterm2
+  brew install --cask google-chrome
+}
 
 # Record videos
 alias asci-start='asciinema rec'

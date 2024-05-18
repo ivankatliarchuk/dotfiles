@@ -19,3 +19,16 @@ brew uninstall --force asdf
 brew deps --tree --installed
 brew update-reset
 ```
+
+Install latest
+
+```sh
+brew install --cask visual-studio-code
+brew install --cask slack
+brew install --cask rancher
+brew install --cask keybase
+brew install --cask jetbrains-toolbox
+brew install --cask firefox
+brew install --cask iterm2
+brew install --cask google-chrome
+```
