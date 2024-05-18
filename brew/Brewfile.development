@@ -94,6 +94,9 @@ cask "jetbrains-toolbox"
 # Visual Studio Code combines the simplicity of a code editor with what developers need for their core edit-build-debug cycle.
 # https://github.com/microsoft/vscode
 cask "visual-studio-code"
+# Community Visual Studio Code combines the simplicity of a code editor with what developers need for their core edit-build-debug cycle.
+# https://vscodium.com/
+cask "vscodium"
 cask "the-unarchiver"
 # https://macdown.uranusjr.com/
 cask "macdown"
