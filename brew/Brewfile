@@ -43,7 +43,7 @@ brew "archey"
 # The cross-shell prompt for astronauts
 # https://starship.rs/
 brew "starship"
-#
+# https://formulae.brew.sh/formula/reattach-to-user-namespace
 brew "reattach-to-user-namespace"
 # https://obsidian.md/
 # cask "obsidian"
