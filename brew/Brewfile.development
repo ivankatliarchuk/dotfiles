@@ -9,11 +9,11 @@ brew "yq"
 # https://stedolan.github.io/jq/
 brew "jq"
 # Bash Automated Testing System
-brew "bats-core"
+# brew "bats-core"
 # https://github.com/bats-core/bats-assert
-brew "bats-assert"
+# brew "bats-assert"
 # https://github.com/bats-core/bats-detik
-brew "bats-detik"
+# brew "bats-detik"
 # CloudFlare's PKI toolkit
 # https://github.com/cloudflare/cfssl
 brew "cfssl"
