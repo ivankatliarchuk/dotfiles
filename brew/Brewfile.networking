@@ -18,7 +18,7 @@ brew "tcptraceroute"
 # User interface to the TELNET protocol
 brew "telnet"
 # Directory/file & DNS busting tool written in Go
-brew "gobuster"
+# brew "gobuster"
 # https://github.com/sshuttle/sshuttle
 # https://sshuttle.readthedocs.io/en/stable/overview.html
 # where transparent proxy meets VPN meets ssh
