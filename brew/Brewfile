@@ -51,6 +51,8 @@ if OS.mac?
 # --- Casks
 # https://www.mozilla.org/en-GB/firefox/
 cask "firefox"
+# https://brave.com/
+cask "brave-brovser"
 # https://addons.mozilla.org/en-GB/firefox/addon/profile-switcher/
 brew "firefox-profile-switcher-connector"
 # https://www.opera.com/
