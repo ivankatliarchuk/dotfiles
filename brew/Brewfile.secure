@@ -5,7 +5,7 @@ brew "pass"
 # Pinentry for GPG on Mac
 brew "pinentry-mac"
 # Editor of encrypted files
-brew "sops"
+# brew "sops"
 # GNU Pretty Good Privacy (PGP) package
 brew "gnupg"
 # Tool for managing your YubiKey configuration

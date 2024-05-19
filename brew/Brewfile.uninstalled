@@ -7,3 +7,5 @@ tap "git-chglog/git-chglog"
 brew "git-chglog/git-chglog/git-chglog"
 # https://github.com/nicolargo/glances
 brew "glances"
+# macFUSE allows you to extend macOS's native file handling capabilities via third-party file systems.
+cask "osxfuse"

@@ -1,5 +1,5 @@
 # AWS IAM import and export tool
-brew "iamy"
+# brew "iamy"
 # Official Amazon AWS command-line interface
 # https://github.com/aws/aws-cli
 brew "awscli"
@@ -9,5 +9,5 @@ brew "chamber"
 if OS.mac?
 # AWS Vault is a tool to securely store and access AWS credentials in a development environment.
 # https://github.com/99designs/aws-vault
-cask "aws-vault"
+# cask "aws-vault"
 end

@@ -3,5 +3,3 @@
 # https://support.google.com/drive/answer/7329379?visit_id=637687515259013710-3737887891&p=file_stream&rd=1
 cask "google-drive"
 cask "dropbox"
-# macFUSE allows you to extend macOS's native file handling capabilities via third-party file systems.
-cask "osxfuse"

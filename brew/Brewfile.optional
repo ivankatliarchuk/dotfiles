@@ -24,3 +24,7 @@ cask "elgato-stream-deck"
 # https://github.com/Noovolari/leapp
 cask "leapp"
 end
+
+# Homebrew, but with Docker images
+# https://github.com/whalebrew/whalebrew
+brew "whalebrew"

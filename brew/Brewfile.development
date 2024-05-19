@@ -77,7 +77,7 @@ brew "curl"
 brew "hashicorp/tap/packer"
 # The universal file transfer tool duck which runs in your shell on Linux and OS X
 # https://duck.sh/
-brew "duck"
+# brew "duck"
 # Docker Machine driver for hyperkit
 # brew "docker-machine-driver-hyperkit"
 # terminal session recorder
@@ -99,10 +99,10 @@ cask "visual-studio-code"
 cask "vscodium"
 cask "the-unarchiver"
 # https://macdown.uranusjr.com/
-cask "macdown"
+# cask "macdown"
 # The Collaboration Platform for API Development.
 # https://github.com/postmanlabs
-cask "postman", greedy: true
+# cask "postman", greedy: true
 # A data templating language for app and tool developers
 # https://jsonnet.org/
 # https://formulae.brew.sh/formula/jsonnet
