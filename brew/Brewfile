@@ -1,7 +1,5 @@
 # https://github.com/Homebrew/homebrew-bundle
 tap "homebrew/bundle"
-tap "homebrew/cask"
-tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "denisidoro/tools"
 tap "buo/cask-upgrade"
