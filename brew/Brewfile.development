@@ -35,8 +35,6 @@ brew "pipenv" , link: true
 brew "go"
 # Go version management
 brew "goenv"
-# Go dependency management tool
-brew "dep"
 # Interactive system monitor, process viewer, and process manager for Unix
 # https://hisham.hm/htop/
 brew "htop"
