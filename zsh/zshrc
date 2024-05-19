@@ -48,7 +48,6 @@ if [[ -n "$TMUX" ]];then
     else
       export STARSHIP_CONFIG=~/.config/starship/tmux.toml
   fi
-  eval "$(starship init zsh)"
 else
   if [[ -n "$VAGRANT" ]];then
       export STARSHIP_CONFIG=~/.config/starship/vagrant.toml
@@ -56,7 +55,12 @@ else
       export STARSHIP_CONFIG=~/.config/starship/main.toml
   fi
 fi
-eval "$(starship init zsh)"
+
+if command -v starship >/dev/null 2>&1; then
+    eval "$(direnv init zsh)"
+  else
+    echo "!!! starship not installed"
+fi
 
 # not required so often
 # if [ -f "/usr/local/opt/asdf/libexec/asdf.sh" ]; then

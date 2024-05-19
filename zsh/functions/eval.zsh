@@ -5,7 +5,7 @@
 if command -v direnv >/dev/null 2>&1; then
     eval "$(direnv hook zsh)"
   else
-    echo "direnv not installed"
+    echo "!!! direnv not installed"
 fi
 
 # Load zprezto if it's installed
