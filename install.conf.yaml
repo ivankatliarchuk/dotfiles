@@ -48,7 +48,7 @@
     ~/Library/ApplicationSupport/iTerm2/DynamicProfiles:
       if: "[ `uname` = Darwin ]"
       path: terminal/iTerm/profiles
-      force: false
+      force: true
     ~/.config/iTerm2/colors/material-design-colors.itermcolors:
       if: "[ `uname` = Darwin ]"
       path: vendor/iterm2-material-design/material-design-colors.itermcolors
