@@ -43,8 +43,8 @@ repos:
       - id: requirements-txt-fixer
       - id: sort-simple-yaml
       - id: trailing-whitespace
-      - id: no-commit-to-branch
-        args: [--branch, master, --branch, main]
+      # - id: no-commit-to-branch
+      #   args: [--branch, master, --branch, main]
   - repo: meta
     hooks:
       - id: check-useless-excludes

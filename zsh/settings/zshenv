@@ -8,11 +8,12 @@ fi
 #
 # Editors
 #
-if [[ -x $(which code) ]]; then
-  export EDITOR="$(which code) --wait"
-else
-  export EDITOR='vim'
-fi
+export EDITOR="$(which code) --wait"
+# if [[ -x $(which code) ]]; then
+#   export EDITOR="$(which code) --wait"
+# else
+#   export EDITOR='vim'
+# fi
 
 export VISUAL='code'
 export PAGER=''
