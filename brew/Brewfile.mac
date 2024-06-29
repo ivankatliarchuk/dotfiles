@@ -11,3 +11,8 @@
 
 # https://github.com/exelban/stats
 brew "stats"
+# https://apps.apple.com/us/app/zsa-keymapp/id6472865291
+# https://configure.zsa.io/moonlander/layouts/YWgdw/latest/0
+# https://www.zsa.io/flash
+# https://formulae.brew.sh/cask/keymapp
+cask "keymapp"
