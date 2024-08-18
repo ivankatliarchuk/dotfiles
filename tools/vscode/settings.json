@@ -218,6 +218,7 @@
       {
         "scope": [
           "comment",
+          "punctuation.definition.comment",
           "comment.block.documentation",
           "comment.block.documentation.js",
           "comment.line.number-sign.js",
@@ -233,13 +234,30 @@
         ],
         "settings": {
           "fontStyle": "italic",
-          "foreground": "#a4b224"
+          "foreground": "#A4B224"
+        }
+      },
+      {
+        "scope": [
+          "punctuation.definition.comment.go",
+          "comment.line.double-slash.go",
+          "punctuation.definition.comment.begin.documentation",
+          "punctuation.definition.comment.end.documentation"
+        ],
+        "settings": {
+          "foreground": "#82DCFF"
         }
       },
       {
         "scope": "punctuation.definition.comment",
         "settings": {
-          "foreground": "#6ff124"
+          "foreground": "#6FF124"
+        }
+      },
+      {
+        "scope": "string.quoted.docstring.multi.python",
+        "settings": {
+          "foreground": "#90fc03"
         }
       }
     ],
