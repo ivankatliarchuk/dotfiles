@@ -68,6 +68,11 @@ alias k.gnowojsonl='kubectl get nodes --watch -o=json -l'
 # service with specific columns
 alias k.svc-get='kubectl get svc -o=custom-columns=NAME:.metadata.name,IP:.spec.clusterIP,PORT:.spec.ports[*].targetPort'
 
+# Deployments
+
+# list all deployments with label 'helm.sh/chart-version'
+kubectl get deployments -o custom-columns=NAME:.metadata.name,CHART_VERSION:".metadata.labels.helm\.sh/chart-version"
+
 # Config view
 alias k.c='kubectl config view'
 # validate with dex folder structure
