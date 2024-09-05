@@ -71,7 +71,7 @@ alias k.svc-get='kubectl get svc -o=custom-columns=NAME:.metadata.name,IP:.spec.
 # Deployments
 
 # list all deployments with label 'helm.sh/chart-version'
-kubectl get deployments -o custom-columns=NAME:.metadata.name,CHART_VERSION:".metadata.labels.helm\.sh/chart-version"
+alias k.dep-version='kubectl get deployments -o custom-columns=NAME:.metadata.name,CHART_VERSION:".metadata.labels.helm\.sh/chart-version"'
 
 # Config view
 alias k.c='kubectl config view'
