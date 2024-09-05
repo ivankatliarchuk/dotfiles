@@ -89,7 +89,8 @@ alias k.img-n="kubectl get pods -o jsonpath='{..image}' | tr -s '[[:space:]]' '\
 alias k.img-a="kubectl get pods -o jsonpath='{..image}' -A | tr -s '[[:space:]]' '\n' | sort | uniq -c | sort -r"
 alias k.img='k.imgn'
 alias k.img-ns='kubectl get pods -o=jsonpath='"'"'{range .items[*]}{"\n"}{.metadata.name}{":\t"}{range .spec.containers[*]}{.image}{", "}{end}{end}'"'"' --namespace ' # +namespace
-alias k.img-pod='kubectl get pods --all-namespaces -o=jsonpath='"'"'{range .items[*]}{"\n"}{.metadata.name}{":\t"}{range .spec.containers[*]}{.image}{", "}{end}{end}'"'"' | sort'
+alias k.img-pod='kubectl get pods -o=jsonpath='"'"'{range .items[*]}{"\n"}{.metadata.name}{":\t"}{range .spec.containers[*]}{.image}{", "}{end}{end}'"'"' | sort'
+alias k.img-pod-all='kubectl get pods --all-namespaces -o=jsonpath='"'"'{range .items[*]}{"\n"}{.metadata.name}{":\t"}{range .spec.containers[*]}{.image}{", "}{end}{end}'"'"' | sort'
 
 ## Labels
 alias k.labels-team-uniq="kubectl get pods -A -o jsonpath='{..labels.team}' | tr -s '[[:space:]]' '\n' | sort | uniq"
