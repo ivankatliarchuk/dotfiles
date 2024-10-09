@@ -34,7 +34,9 @@ load-tfswitch() {
     local tofu_version=$(tofu -version | head -n 1 | awk '{print $2}')
     local desired_version=$(cat "$tf_path")
     export TOFU_VERSION=$tofu_version
-    if [[ "$tofu_version" != "$desired_version" ]]; then
+    if [[ "$desired_version" =~ "$tofu_version" ]]; then
+      export TOFU_VERSION=$desired_version
+    else
       export TOFU_VERSION=$desired_version
       tfswitch --product opentofu $desired_version
     fi
