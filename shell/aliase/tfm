@@ -6,6 +6,8 @@
 alias hbicidr='grep -A10 "^### CIDR Ranges" ~/projects/paas/infrastructure/vpc/README.md'
 alias tfclean='rm -rf .terraform; rm -f .terraform.lock.hcl'
 alias tf='terraform'
+alias otf='tofu'
+alias tfswitch='tfswitch --product opentofu'
 alias tg='terragrunt'
 alias tf.cachecl="find . -type d -name '.terragrunt-cache' -prune -exec rm -rf {} \;"
 alias tf.lockcl="find . -type f -name '.terraform.lock.hcl' -ls -delete"
