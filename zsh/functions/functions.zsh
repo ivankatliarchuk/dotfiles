@@ -22,10 +22,22 @@ get_namespace_upper() {
 }
 
 load-tfswitch() {
+  # https://tfswitch.warrensbox.com/usage/ci-cd/
   local tfswitchrc_path=".tfswitchrc"
+  local tf_path=".opentofu-version"
 
   if [ -f "$tfswitchrc_path" ]; then
+    TF_PRODUCT=opentofu
     tfswitch
+  elif [ -f "$tf_path" ]; then
+    TF_PRODUCT=opentofu
+    local tofu_version=$(tofu -version | head -n 1 | awk '{print $2}')
+    local desired_version=$(cat "$tf_path")
+    export TOFU_VERSION=$tofu_version
+    if [[ "$tofu_version" != "$desired_version" ]]; then
+      export TOFU_VERSION=$desired_version
+      tfswitch --product opentofu $desired_version
+    fi
   fi
 }
 
