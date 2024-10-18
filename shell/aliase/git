@@ -61,7 +61,7 @@ alias gpull="git pull" # + remote & branch names
 alias g.pl=gpull
 # Work with tags
 alias g.t='_gtag'
-alias g.td='git log --tags --simplify-by-decoration --pretty="format:%ci %d"'
+alias g.td='git log --tags --simplify-by-decoration --reverse --pretty="format:%ci %d"'
 alias g.tremove='git-remove-tag' # + tag id
 
 ## FZF
