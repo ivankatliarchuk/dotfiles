@@ -184,3 +184,6 @@ vendor/*
 tmp/**
 **.log
 extras
+
+# updated sometimes with external tools
+zsh/zshrc
