@@ -89,6 +89,9 @@ if [ -f "/usr/local/bin/aws" ]; then
   alias aws="/usr/local/bin/aws"
 fi
 
+export GOPATH=$HOME
+export PATH="$GOPATH/bin:$PATH"
+
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
 export PATH="$HOME/.rd/bin:$PATH"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
