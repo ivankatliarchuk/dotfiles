@@ -11,3 +11,11 @@ alias tfswitch='tfswitch --product opentofu'
 alias tg='terragrunt'
 alias tf.cachecl="find . -type d -name '.terragrunt-cache' -prune -exec rm -rf {} \;"
 alias tf.lockcl="find . -type f -name '.terraform.lock.hcl' -ls -delete"
+alias tg-st-ls='terragrunt state list'
+alias tg-st-show='terragrunt show'
+
+_tg_show_id() {
+  terragrunt show -json | jq -c '.values.root_module.resources[] | .address + " " + .values.id' -r
+}
+
+alias tg-st-show-id='_tg_show_id'
