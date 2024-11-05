@@ -1098,6 +1098,8 @@ alias k.gpowowidesln='kubectl get pods --watch -o=wide --show-labels --namespace
 alias k.gwslowiden='kubectl get --watch --show-labels -o=wide --namespace'
 alias k.gdepwslowiden='kubectl get deployment --watch --show-labels -o=wide --namespace'
 alias k.gpowslowiden='kubectl get pods --watch --show-labels -o=wide --namespace'
+alias k.res-ns='kubectl api-resources --namespaced=true' # In a namespace
+alias k.res-not-ns='kubectl api-resources --namespaced=false' # Not in a namespace
 
 # Resource version
 alias k.apidep='kubectl get deployments.v1.apps -o yaml'
