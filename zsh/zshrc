@@ -1,3 +1,7 @@
 # https://raw.githubusercontent.com/ivankatliarchuk/dotfiles/master/zsh/zshrc
 
+if [[ $(uname -m) == 'arm64' ]]; then
+  export PATH="/opt/homebrew/bin:$PATH"
+fi
+
 [[ -f ${HOME}/.zsh/settings/settings.zsh ]] && source ${HOME}/.zsh/settings/bootstrap.zsh
