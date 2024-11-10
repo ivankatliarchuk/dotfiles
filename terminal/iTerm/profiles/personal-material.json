@@ -123,7 +123,8 @@
       "Bound Hosts": [],
       "Character Encoding": 4,
       "Close Sessions On End": true,
-      "Columns": 140,
+      "Columns": 120,
+      "Rows": 30,
       "Command": "",
       "Cursor Boost": 0.20556530898876405,
       "Cursor Color": {
@@ -392,7 +393,6 @@
       "Option Key Sends": 0,
       "Prompt Before Closing 2": false,
       "Right Option Key Sends": 0,
-      "Rows": 35,
       "Screen": -2,
       "Scrollback Lines": 0,
       "Selected Text Color": {

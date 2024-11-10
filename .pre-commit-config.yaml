@@ -38,7 +38,8 @@ repos:
         exclude: |
           (?x)(
               ^.vscode/|
-              ^tools/vscode/
+              ^tools/vscode/|
+              ^terminal/iTerm/profiles/
           )
       - id: requirements-txt-fixer
       - id: sort-simple-yaml

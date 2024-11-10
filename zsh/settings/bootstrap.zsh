@@ -67,8 +67,7 @@ fi
 #   . /usr/local/opt/asdf/libexec/asdf.sh
 # fi
 
-[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
-[[ -s "${HOME}/.krew/bin" ]] && export PATH="${PATH}:${HOME}/.krew/bin"
+[[ -s "${HOME}/.gvm/scripts/gvm" ]] && source "${HOME}/.gvm/scripts/gvm"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 # export PATH="$PATH:$HOME/.rvm/bin:$(go env GOPATH)/bin"
@@ -91,7 +90,7 @@ fi
 
 export GOPATH=$HOME
 export PATH="$GOPATH/bin:$PATH"
-
+[[ -s "${HOME}/.krew/bin" ]] && export PATH="${PATH}:${HOME}/.krew/bin"
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
 export PATH="$HOME/.rd/bin:$PATH"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)

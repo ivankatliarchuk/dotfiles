@@ -4,4 +4,4 @@ if [[ $(uname -m) == 'arm64' ]]; then
   export PATH="/opt/homebrew/bin:$PATH"
 fi
 
-[[ -f ${HOME}/.zsh/settings/settings.zsh ]] && source ${HOME}/.zsh/settings/bootstrap.zsh
+[[ -f ${HOME}/.zsh/settings/bootstrap.zsh ]] && source ${HOME}/.zsh/settings/bootstrap.zsh
