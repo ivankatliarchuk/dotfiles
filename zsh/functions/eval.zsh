@@ -9,6 +9,7 @@ if command -v direnv >/dev/null 2>&1; then
 fi
 
 # Load zprezto if it's installed
+# disabling this will remove compaudit
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
@@ -50,11 +51,4 @@ fi
 #------------------
 autoload -U add-zsh-hook
 
-# Path to the bash it configuration
-export BASH_IT="$HOME/.bash_it"
-# Load Bash It
-if [ -f "$BASH_IT"/bash_it.sh ]; then
-    source "$BASH_IT"/bash_it.sh
-fi
-
-for f in $(compaudit);do sudo chmod -R 755 $f;done;
+# for f in $(compaudit);do sudo chmod -R 755 $f;done;
