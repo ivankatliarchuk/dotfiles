@@ -5,6 +5,10 @@
 #
 
 # Git
+# configs
+alias g.cfg='git config --global --list --show-origin'
+alias g.cfg-edit='git config --edit --global'
+alias g.cfg-local='git config --list --show-origin'
 # cd to git root directory
 alias g=git
 alias g.root='cd "$(git rev-parse --show-toplevel)"'

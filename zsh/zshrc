@@ -1,7 +1,13 @@
 # https://raw.githubusercontent.com/ivankatliarchuk/dotfiles/master/zsh/zshrc
 
+if [[ -n "$DEBUG" ]];then
+set -x
+typeset -F SECONDS; setopt prompt_subst; PS4='$SECONDS+%N:%i> '
+fi
+
 if [[ $(uname -m) == 'arm64' ]]; then
   export PATH="/opt/homebrew/bin:$PATH"
 fi
 
 [[ -f ${HOME}/.zsh/settings/bootstrap.zsh ]] && source ${HOME}/.zsh/settings/bootstrap.zsh
+set +x

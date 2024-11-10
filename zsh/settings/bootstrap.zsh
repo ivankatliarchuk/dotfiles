@@ -1,5 +1,6 @@
 # https://raw.githubusercontent.com/ivankatliarchuk/dotfiles/master/zsh/zshrc
 umask 077
+[[ -n "${DEBUG:-}" ]] && set -x
 # Created by dotfiles
 [[ "$TERM" == "screen" ]] && export TERM=screen-256color
 

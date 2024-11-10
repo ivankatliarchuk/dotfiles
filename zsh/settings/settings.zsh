@@ -1,6 +1,7 @@
 #!/bin/env zsh
 # https://raw.githubusercontent.com/ivankatliarchuk/dotfiles/master/zsh/settings/settings.zsh
 # Initialize completion
+[[ -n "${DEBUG:-}" ]] && set -x
 autoload -U colors && colors
 autoload -Uz compinit && compinit -i
 zstyle ':completion:*' menu select=4

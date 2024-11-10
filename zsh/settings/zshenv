@@ -1,4 +1,6 @@
 # Local config
+[[ -n "${DEBUG:-}" ]] && set -x
+
 [[ -f ~/.zshenv.local ]] && source ~/.zshenv.local
 
 if [[ "$OSTYPE" == darwin* ]]; then
@@ -19,3 +21,7 @@ export VISUAL='code'
 export PAGER=''
 # ruby environment variables
 export RUBYOPT="-W0"
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+DISABLE_UNTRACKED_FILES_DIRTY="true"

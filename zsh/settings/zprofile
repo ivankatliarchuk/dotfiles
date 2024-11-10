@@ -9,6 +9,7 @@
 #
 # Browser
 #
+[[ -n "${DEBUG:-}" ]] && set -x
 
 ######################
 # History Configuration

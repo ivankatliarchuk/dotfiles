@@ -14,6 +14,7 @@
 
 [alias]
   alias=!git config -l | grep ^alias | cut -c 7- | sort
+  conf =!git config -l | grep ^alias | cut -c 7- | sort
   aliases = config --get-regexp alias # list aliases
   cfg = config -l                     # git configuration
   # Output output of all queried config options with the origin type and a scope
@@ -163,3 +164,7 @@
 [fetch]
     # If you want to have prune executed with every fetch operation, you can configure Git accordingly:
     prune = true
+
+[oh-my-zsh]
+  hide-info = 1
+	hide-dirty = 1
