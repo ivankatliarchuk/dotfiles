@@ -84,6 +84,7 @@ These scripts are meant to run only on OS X
 
 - [Bash Hacks](docs/bash-hints.md)
 - [Tools and guides](docs/tools.md)
+- [debug](docs/tools.md#debug-zsh)
 
 ### Evaluate Tools
 

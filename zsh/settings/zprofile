@@ -45,7 +45,7 @@ export NVM_LOCAL="/usr/local/opt/nvm"
 # shellcheck source=/dev/null
 [ -s "$NVM_LOCAL/nvm.sh" ] && source "$NVM_LOCAL/nvm.sh" --no-use  # This loads nvm
 # shellcheck source=/dev/null
-[ -s "$NVM_LOCAL/etc/bash_completion.d/nvm" ] && \. "$NVM_LOCAL/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+# [ -s "$NVM_LOCAL/etc/bash_completion.d/nvm" ] && \. "$NVM_LOCAL/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 [[ -f ~/.config/manage/python ]] && source ~/.config/manage/python
 
