@@ -21,7 +21,7 @@ get_namespace_upper() {
     echo "$1" | tr '[:lower:]' '[:lower:]'
 }
 
-load-tfswitch() {
+load-tofuswitch() {
   # https://tfswitch.warrensbox.com/usage/ci-cd/
   local tfswitchrc_path=".tfswitchrc"
   local tf_path=".opentofu-version"
@@ -51,8 +51,8 @@ load-tgswitch() {
   fi
 }
 
-add-zsh-hook chpwd load-tfswitch
-load-tfswitch
+add-zsh-hook chpwd load-tofuswitch
+load-tofuswitch
 
 add-zsh-hook chpwd load-tgswitch
 load-tgswitch
