@@ -1,6 +1,6 @@
 # https://raw.githubusercontent.com/ivankatliarchuk/dotfiles/master/zsh/zshrc
 
-printf '\33c\e[3J'
+printf '\33c\e[3J' # hides last logic command
 
 if [[ -n "$DEBUG" ]];then
 set -x
@@ -12,4 +12,5 @@ if [[ $(uname -m) == 'arm64' ]]; then
 fi
 
 [[ -f ${HOME}/.zsh/settings/bootstrap.zsh ]] && source ${HOME}/.zsh/settings/bootstrap.zsh
-set +x
+
+clear # clear the terminal in initialization from any initialization prints
