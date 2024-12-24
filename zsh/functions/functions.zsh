@@ -63,7 +63,6 @@ load-nvmrc() {
     local node_version="$(nvm version)"
     local nvmrc_path="$(nvm_find_nvmrc)"
     if [ -f .nvmrc  ]; then
-
       if [[ -n "$nvmrc_path" ]]; then
         if [[ "${$(nvm current)#"v"}" != "$(cat .nvmrc)" ]]; then
           local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
@@ -71,7 +70,7 @@ load-nvmrc() {
           if [ "$nvmrc_node_version" = "N/A" ]; then
             nvm install
           elif [ "$nvmrc_node_version" != "$node_version" ]; then
-            nvm use
+            nvm use $nvmrc_node_version
           fi
         fi
       elif [ "$node_version" != "$(nvm version default)" ]; then

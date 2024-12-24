@@ -89,6 +89,14 @@ if [ -f "/usr/local/bin/aws" ]; then
   alias aws="/usr/local/bin/aws"
 fi
 
+# pnpm
+export PNPM_HOME="~/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
 export GOPATH=$HOME
 export PATH="$GOPATH/bin:$PATH"
 [[ -s "${HOME}/.krew/bin" ]] && export PATH="${PATH}:${HOME}/.krew/bin"
