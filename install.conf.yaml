@@ -24,6 +24,7 @@
 
 - link:
     ~/.gitconfig: git/gitconfig
+    ~/.gitignore: git/gitcfg/gitignore_global
     ~/.gitattributes: git/gitattributes
     ~/.config/gitcfg: git/gitcfg
     ~/.aliases: shell/aliases

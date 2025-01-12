@@ -171,7 +171,7 @@
   "workbench.tips.enabled": true,
   "files.trimFinalNewlines": false,
   "files.trimTrailingWhitespace": true,
-  "explorer.confirmDelete": true,
+  "explorer.confirmDelete": false,
   "html.autoClosingTags": true,
   "html.format.contentUnformatted": "pre,code,textarea",
   "html.format.enable": true,
@@ -400,6 +400,5 @@
   "gitlens.statusBar.enabled": false,
   "gitlens.views.searchAndCompare.files.layout": "tree",
   "gitlens.views.repositories.showUpstreamStatus": false,
-  "window.commandCenter": false,
   "workbench.editor.tabActionLocation": "right"
 }
