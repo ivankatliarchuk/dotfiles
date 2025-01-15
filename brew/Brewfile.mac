@@ -16,3 +16,6 @@ brew "stats"
 # https://www.zsa.io/flash
 # https://formulae.brew.sh/cask/keymapp
 cask "keymapp"
+
+# https://github.com/aristocratos/btop?tab=readme-ov-file#installation
+brew "btop"
