@@ -264,6 +264,7 @@ alias fight="printf '(ง'̀-'́)ง' | pbcopy"
 ## Golang
 alias go.get='go get ./...; go get -t ./...'
 alias go.clean='go mod verify && go mod tidy -mod=mod'
+alias go.deps='go get -u ./... &&	go mod tidy'
 alias go.getall='go get -u -v -f all'
 
 ## Docker
