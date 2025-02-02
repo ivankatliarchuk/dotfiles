@@ -13,12 +13,12 @@ brew "coreutils"
 brew "libtool"
 # Terminal-based visual file manager
 # https://github.com/MidnightCommander/mc
-brew "midnight-commander"
+# brew "midnight-commander"
 # Keep your Mac's application settings in sync
 # https://github.com/lra/mackup
 # brew "mackup"
 # Ambitious Vim-fork focused on extensibility and agility
-brew "neovim"
+# brew "neovim"
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
 # Terminal multiplexer

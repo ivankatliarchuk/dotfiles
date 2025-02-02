@@ -9,7 +9,7 @@ cask "slack"
 cask "keybase"
 
 # Automate deployment, configuration, and upgrading
-brew "ansible"
+# brew "ansible"
 
 # multifunction utility
 cask "onyx"
