@@ -4,7 +4,7 @@ printf '\33c\e[3J' # hides last logic command
 
 if [[ -n "$DEBUG" ]];then
 set -x
-typeset -F SECONDS; setopt prompt_subst; PS4='$SECONDS+%N:%i> '
+  typeset -F SECONDS; setopt prompt_subst; PS4='$SECONDS+%N:%i> '
 fi
 
 if [[ $(uname -m) == 'arm64' ]]; then

@@ -151,7 +151,6 @@
   "sync.syncExtensions": true,
   "sync.forceUpload": true,
   "workbench.iconTheme": "vscode-great-icons",
-  "workbench.editor.enablePreview": false,
   "extensions.ignoreRecommendations": false,
   "window.newWindowDimensions": "maximized",
   "window.openFilesInNewWindow": "on",
