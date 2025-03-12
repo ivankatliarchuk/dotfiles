@@ -10,8 +10,6 @@ set -e
 # @todo: setup cron job e.g. execute once a month
 
 CHARTS=(
-  "incubator:charts.helm.sh/incubator"
-  "stable:charts.helm.sh/stable"
   "traefik:helm.traefik.io/traefik"
   "codecentric:codecentric.github.io/helm-charts"
   "chaos-mesh:charts.chaos-mesh.org"
