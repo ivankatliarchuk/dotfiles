@@ -1,7 +1,3 @@
-[submodule "vendor/bash-it"]
-	path = vendor/bash-it
-	url = https://github.com/Bash-it/bash-it.git
-	ignore = dirty
 [submodule "vendor/prezto"]
 	path = vendor/prezto
 	url = https://github.com/sorin-ionescu/prezto.git
