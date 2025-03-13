@@ -184,6 +184,16 @@ gpg-restart() {
   eval "$(gpg-agent --daemon --enable-ssh-support)"
 }
 
+# if gpg WARNING unsafe warning on homedir
+gpg-safe-directory() {
+  # Make sure that the .gnupg directory and its contents is accessibile by your user.
+  chown -R "$(whoami)" ~/.gnupg/
+
+  # Also correct the permissions and access rights on the directory
+  chmod 600 ~/.gnupg/*
+  chmod 700 ~/.gnupg
+}
+
 # WWW
 grep-ip() {
   grep -Eo \

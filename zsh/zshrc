@@ -8,6 +8,12 @@ set -x
 fi
 
 if [[ $(uname -m) == 'arm64' ]]; then
+  # make sure to link required things to path
+  # find . -type l -ls
+  # ln -s /opt/homebrew/bin/pinentry-mac /usr/local/bin/
+  # ls -s /opt/homebrew/bin/gpg /usr/local/bin/
+  # remove rm /usr/local/bin/bin
+  # on new mac run 'gpg-restart' to make directory safe
   export PATH="/opt/homebrew/bin:$PATH"
 fi
 

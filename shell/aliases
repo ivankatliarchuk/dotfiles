@@ -63,17 +63,21 @@ alias sshmd5="ssh-keygen -E md5 -lf ~/.ssh/id_rsa.pub | awk '{print $2}'"
 alias sshl="ssh-add -l -E md5"
 
 # GPG
-alias gpglist="gpg --list-keys"                   # list keys
-alias gpglist="gpg --list-secret-keys"            # list secret keys
-alias gpgtest="echo 'test' | gpg --clearsign"     # test if working
-alias gpgk="gpg -K --with-keygrip"                # find the keygrip
-alias gpggen="gpg --full-generate-key"            # full featured key pair generation
-alias gpgkill="gpgconf --kill gpg-agent"          # kill a given component
-alias gpgstart="gpg-agent --daemon"               # run in daemon mode (background)
-alias gpgfing="gpg --fingerprint"                   # list keys and fingerprints
-alias gpgcfg="gpg-connect-agent reloadagent /bye" # reload gpg configuration
-alias gpg!="gpgcfg"                               # reload gpg configuration
-alias gpgloc='cd ~/.gnupg'
+# how to gpg keys https://docs.github.com/en/authentication/managing-commit-signature-verification/checking-for-existing-gpg-keys
+# https://docs.github.com/en/authentication/managing-commit-signature-verification/generating-a-new-gpg-key
+alias gpg.list="gpg --list-keys --keyid-format=long"            # list keys
+alias gpg.list.sec="gpg --list-secret-keys --keyid-format=long" # list secret keys
+alias gpg.test="echo 'test' | gpg --clearsign"     # test if working
+alias gpg.k="gpg -K --with-keygrip"                # find the keygrip
+alias gpg.gen="gpg --full-generate-key"            # full featured key pair generation
+alias gpg.kill="gpgconf --kill gpg-agent"          # kill a given component
+alias gpg.start="gpg-agent --daemon"               # run in daemon mode (background)
+alias gpg.fing="gpg --fingerprint"                   # list keys and fingerprints
+alias gpg.cfg="gpg-connect-agent reloadagent /bye" # reload gpg configuration
+alias gpg!="gpgcfg"                                # reload gpg configuration
+alias gpg.export="gpg --armor --export"            # key id in form 90C.. gpg.list.sec
+alias gpg.loc='cd ~/.gnupg'
+aliast gpg.safedir='gpg-safe-directory'
 
 # Easier navigation Utilities
 alias ..="cd .."
