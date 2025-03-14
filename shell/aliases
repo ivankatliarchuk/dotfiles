@@ -77,7 +77,7 @@ alias gpg.cfg="gpg-connect-agent reloadagent /bye" # reload gpg configuration
 alias gpg!="gpgcfg"                                # reload gpg configuration
 alias gpg.export="gpg --armor --export"            # key id in form 90C.. gpg.list.sec
 alias gpg.loc='cd ~/.gnupg'
-aliast gpg.safedir='gpg-safe-directory'
+alias gpg.safedir='gpg-safe-directory'
 
 # Easier navigation Utilities
 alias ..="cd .."
