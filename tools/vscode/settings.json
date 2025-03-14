@@ -400,5 +400,5 @@
   "gitlens.views.searchAndCompare.files.layout": "tree",
   "gitlens.views.repositories.showUpstreamStatus": false,
   "workbench.editor.tabActionLocation": "right",
-  "workbench.editor.showTabs": true
+  "workbench.editor.showTabs": "multiple"
 }

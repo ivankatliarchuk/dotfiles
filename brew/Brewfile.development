@@ -84,6 +84,9 @@ brew "asciinema"
 # collection of unix tools
 # https://joeyh.name/code/moreutils/
 brew "moreutils"
+# required for pre-commit hook
+# https://formulae.brew.sh/formula/markdownlint-cli
+brew "markdownlint-cli"
 if OS.mac?
 # --- Casks
 # Manage your Jet Brains tools the easy way
