@@ -91,9 +91,10 @@
     "*.jsonnet": "jsonnet",
     "*.json5": "jsonc"
   },
-  "editor.fontFamily": "'Powerline', 'SourceCodePro+Powerline+Awesome Regular', 'Cascadia Code', 'Droid Sans Mono', 'SourceCodePro', 'Source Code Pro for Powerline' 'Apple Color Emoji', 'monospace', 'Droid Sans Fallback'",
+  "editor.fontFamily": "'Powerline',  'Cascadia Code', 'Droid Sans Mono', 'SourceCodePro', 'Source Code Pro for Powerline', 'Apple Color Emoji', 'monospace', 'Droid Sans Fallback'",
   "editor.fontWeight": "normal",
   "editor.lineHeight": 0,
+  "markdown.preview.fontFamily": "SourceCodePro, Optima, 'Apple Color Emoji'",
   // narrow space betwwen panes
   "editor.lineNumbers": "on",
   "editor.folding": false,
