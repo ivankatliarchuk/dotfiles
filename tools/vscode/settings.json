@@ -150,7 +150,7 @@
   "sync.removeExtensions": true,
   "sync.syncExtensions": true,
   "sync.forceUpload": true,
-  "workbench.iconTheme": "vscode-great-icons",
+  "workbench.iconTheme": "material-icon-theme",
   "extensions.ignoreRecommendations": false,
   "window.newWindowDimensions": "maximized",
   "window.openFilesInNewWindow": "on",
@@ -369,7 +369,6 @@
     "*.ipynb": "jupyter.notebook.ipynb"
   },
   "python.analysis.completeFunctionParens": true,
-  "workbench.colorTheme": "Cobalt2",
   "cSpell.userWords": [
     "argocd",
     "Banzaicloud",
@@ -401,5 +400,6 @@
   "gitlens.views.repositories.showUpstreamStatus": false,
   "workbench.editor.tabActionLocation": "right",
   "workbench.editor.showTabs": "multiple",
-  "editor.copyWithSyntaxHighlighting": "false"
+  "editor.copyWithSyntaxHighlighting": "false",
+  "workbench.colorTheme": "Cobalt2"
 }
