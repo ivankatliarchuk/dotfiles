@@ -83,3 +83,5 @@ _git_tag_it() {
 }
 
 alias g.tagit='_git_tag_it' # tag + message
+
+alias g.rbs='git -c sequence.editor="code --wait --reuse-window" rebase -i HEAD~' # add `.` to rebase the last commit or number of commits

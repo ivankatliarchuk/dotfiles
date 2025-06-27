@@ -15,3 +15,9 @@ git submodule deinit -f vendor/bash-it
 rm -rf .git/modules/vendor/bash-it
 git rm -f vendor/bash-it
 ```
+
+Rebase
+
+```
+git -c sequence.editor="code --wait --reuse-window" rebase -i HEAD~ # add `.` to rebase the last commit or number of commits
+```
