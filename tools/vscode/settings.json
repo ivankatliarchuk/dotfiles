@@ -276,7 +276,7 @@
           "scope": "comment",
           "settings": {
             "fontStyle": "italic",
-            "foreground": "#26bfe6",
+            "foreground": "#26bfe6"
           }
         }
       ]
@@ -403,5 +403,6 @@
   "workbench.editor.tabActionLocation": "right",
   "workbench.editor.showTabs": "multiple",
   "editor.copyWithSyntaxHighlighting": "false",
-  "workbench.colorTheme": "Cobalt2"
+  "workbench.colorTheme": "Cobalt2",
+  "workbench.editor.enablePreview": false
 }
