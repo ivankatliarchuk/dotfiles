@@ -401,8 +401,8 @@
   "gitlens.views.searchAndCompare.files.layout": "tree",
   "gitlens.views.repositories.showUpstreamStatus": false,
   "workbench.editor.tabActionLocation": "right",
-  "workbench.editor.showTabs": "multiple",
   "editor.copyWithSyntaxHighlighting": "false",
   "workbench.colorTheme": "Cobalt2",
+  "workbench.editor.showTabs": "multiple",
   "workbench.editor.enablePreview": false
 }

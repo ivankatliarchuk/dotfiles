@@ -168,3 +168,11 @@
 [oh-my-zsh]
   hide-info = 1
 	hide-dirty = 1
+# [user]
+#   # Use a placeholder name and email to avoid spam
+#   name = no-name
+#   initials = legend
+#   username = not-set
+#   email =
+[sequence]
+  editor = code --wait --reuse-window
