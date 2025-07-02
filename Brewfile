@@ -88,8 +88,6 @@ brew "hexedit"
 brew "htop"
 # Configurable static site generator
 brew "hugo"
-# Toolkit for embedding hypervisor capabilities in your application
-brew "hyperkit"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.9"
 # AWS IAM import and export tool
@@ -104,8 +102,6 @@ brew "jsonnet"
 brew "k6"
 # Kubernetes CLI To Manage Your Clusters In Style!
 brew "k9s"
-# kubernetes tail - pod log viewer
-brew "kail"
 # Run local Kubernetes cluster in Docker
 brew "kind"
 # Build and deploy Go applications on Kubernetes
