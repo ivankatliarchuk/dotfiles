@@ -3,7 +3,7 @@ if OS.mac?
 brew "mas"
 # packages
 # mas "1Password 7", id: 1333542190
-mas "Alfred", id: 405843582
+# mas "Alfred", id: 405843582
 # mas "app.seashore", id: 1448648921
 
 mas "HP Smart", id: 1474276998
