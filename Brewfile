@@ -50,8 +50,6 @@ brew "dnsmasq"
 brew "dotbot"
 # .NET Core
 brew "dotnet@8"
-# Command-line interface for Cyberduck (a multi-protocol file transfer tool)
-brew "duck"
 # Secure your credentials in environment variables
 brew "envchain"
 # Command-line fuzzy finder written in Go
@@ -140,8 +138,6 @@ brew "nmap"
 brew "nvm"
 # Open source, general-purpose policy engine
 brew "opa"
-# Development kit for the Java programming language
-brew "openjdk@8"
 # ISO-C API and CLI for generating UUIDs
 brew "ossp-uuid"
 # Display directories as trees (with optional color/HTML output)
