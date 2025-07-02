@@ -112,8 +112,6 @@ brew "krew"
 brew "kube-ps1"
 # Tool that can switch between kubectl contexts easily and create aliases
 brew "kubectx"
-# Decode all parts of a kubernetes secret, no more copypasting!
-brew "kubedecode"
 # Security and system auditing tool to harden systems
 brew "lynis"
 # Keep your Mac's application settings in sync
@@ -122,8 +120,6 @@ brew "mackup"
 brew "mas"
 # Run a Kubernetes cluster locally
 brew "minikube"
-# Minify and secure Docker images
-brew "mintoolkit"
 # Collection of tools that nobody wrote when UNIX was young
 brew "moreutils"
 # Utility for managing network connections
@@ -256,8 +252,6 @@ cask "macdown"
 cask "obsidian"
 # Cloud storage client
 cask "onedrive"
-# File system integration
-cask "osxfuse"
 # Quick Look plugin for mobile apps and provisioning profiles
 cask "provisionql"
 # Kubernetes and container management on the desktop
