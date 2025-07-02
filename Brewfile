@@ -240,8 +240,6 @@ cask "iterm2"
 cask "jetbrains-toolbox"
 # Password manager app
 cask "keepassxc"
-# End-to-end encryption software
-cask "keybase"
 # ZSA keyboard firmware flasher
 cask "keymapp"
 # Cloud credentials manager
