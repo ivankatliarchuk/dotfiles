@@ -182,8 +182,6 @@ brew "terraform-docs"
 brew "tflint"
 # Static analysis security scanner for your terraform code
 brew "tfsec"
-# Theme Kit is a tool kit for manipulating shopify themes
-brew "themekit"
 # Terminal multiplexer
 brew "tmux"
 # Anonymizing overlay network for TCP
