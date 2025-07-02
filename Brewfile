@@ -112,8 +112,6 @@ brew "krew"
 brew "kube-ps1"
 # Tool that can switch between kubectl contexts easily and create aliases
 brew "kubectx"
-# Decode all parts of a kubernetes secret, no more copypasting!
-brew "kubedecode"
 # Security and system auditing tool to harden systems
 brew "lynis"
 # Keep your Mac's application settings in sync
