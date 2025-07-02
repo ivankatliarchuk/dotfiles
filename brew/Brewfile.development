@@ -1,5 +1,5 @@
-tap "warrensbox/tap"
-tap "bats-core/bats-core"
+# tap "warrensbox/tap"
+# tap "bats-core/bats-core"
 # https://developer.hashicorp.com/packer/tutorials/docker-get-started/get-started-install-cli
 tap "hashicorp/tap"
 # Process YAML documents from the CLI
@@ -16,7 +16,7 @@ brew "jq"
 # brew "bats-detik"
 # CloudFlare's PKI toolkit
 # https://github.com/cloudflare/cfssl
-brew "cfssl"
+# brew "cfssl"
 # Extendable version manager with support for Ruby, Node.js, Erlang & more
 # https://asdf-vm.com/#/
 # brew "asdf"
@@ -25,6 +25,7 @@ brew "cfssl"
 brew "nvm"
 # Python version management
 # https://github.com/pyenv/pyenv
+brew "xz"
 brew "pyenv"
 # Python dependency management tool
 # https://pipenv.pypa.io/en/latest/

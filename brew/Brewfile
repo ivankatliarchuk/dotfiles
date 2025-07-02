@@ -3,7 +3,7 @@ tap "homebrew/bundle"
 tap "homebrew/core"
 tap "denisidoro/tools"
 tap "buo/cask-upgrade"
-tap "null-dev/firefox-profile-switcher"
+# tap "null-dev/firefox-profile-switcher"
 # Manage your dotfiles across multiple machines, securely
 # https://github.com/twpayne/chezmoi
 brew "chezmoi"
@@ -38,13 +38,12 @@ brew "z"
 # brew "denisidoro/tools/navi"
 # An archey script for OS X. archey -c
 # https://obihann.github.io/archey-osx/
-
 brew "archey"
 # The cross-shell prompt for astronauts
 # https://starship.rs/
 brew "starship"
 # https://formulae.brew.sh/formula/reattach-to-user-namespace
-brew "reattach-to-user-namespace"
+# brew "reattach-to-user-namespace"
 # https://obsidian.md/
 # cask "obsidian"
 if OS.mac?
@@ -52,7 +51,7 @@ if OS.mac?
 # https://www.mozilla.org/en-GB/firefox/
 cask "firefox"
 # https://brave.com/
-cask "brave-brovser"
+cask "brave-browser"
 # https://addons.mozilla.org/en-GB/firefox/addon/profile-switcher/
 brew "firefox-profile-switcher-connector"
 # https://www.opera.com/
