@@ -50,8 +50,6 @@ brew "dnsmasq"
 brew "dotbot"
 # .NET Core
 brew "dotnet@8"
-# Command-line interface for Cyberduck (a multi-protocol file transfer tool)
-brew "duck"
 # Secure your credentials in environment variables
 brew "envchain"
 # Command-line fuzzy finder written in Go
@@ -88,8 +86,6 @@ brew "hexedit"
 brew "htop"
 # Configurable static site generator
 brew "hugo"
-# Toolkit for embedding hypervisor capabilities in your application
-brew "hyperkit"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.9"
 # AWS IAM import and export tool
@@ -104,8 +100,6 @@ brew "jsonnet"
 brew "k6"
 # Kubernetes CLI To Manage Your Clusters In Style!
 brew "k9s"
-# kubernetes tail - pod log viewer
-brew "kail"
 # Run local Kubernetes cluster in Docker
 brew "kind"
 # Build and deploy Go applications on Kubernetes
@@ -144,8 +138,6 @@ brew "nmap"
 brew "nvm"
 # Open source, general-purpose policy engine
 brew "opa"
-# Development kit for the Java programming language
-brew "openjdk@8"
 # ISO-C API and CLI for generating UUIDs
 brew "ossp-uuid"
 # Display directories as trees (with optional color/HTML output)
@@ -158,8 +150,6 @@ brew "pinentry-mac"
 brew "pipenv", link: false
 # Python version management
 brew "pyenv"
-# Reattach process (e.g., tmux) to background
-brew "reattach-to-user-namespace"
 # Build applications with serverless architectures
 brew "serverless"
 # Static analysis and lint tool, for (ba)sh scripts
@@ -188,8 +178,6 @@ brew "terraform-docs"
 brew "tflint"
 # Static analysis security scanner for your terraform code
 brew "tfsec"
-# Theme Kit is a tool kit for manipulating shopify themes
-brew "themekit"
 # Terminal multiplexer
 brew "tmux"
 # Anonymizing overlay network for TCP
