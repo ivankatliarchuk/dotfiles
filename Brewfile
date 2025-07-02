@@ -154,8 +154,6 @@ brew "pinentry-mac"
 brew "pipenv", link: false
 # Python version management
 brew "pyenv"
-# Reattach process (e.g., tmux) to background
-brew "reattach-to-user-namespace"
 # Build applications with serverless architectures
 brew "serverless"
 # Static analysis and lint tool, for (ba)sh scripts
