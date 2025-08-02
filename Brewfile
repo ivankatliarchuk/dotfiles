@@ -11,7 +11,7 @@ brew "automake"
 # Text processing scripting language
 brew "awk"
 # Use AWS IAM credentials to authenticate to Kubernetes
-brew "aws-iam-authenticator"
+# brew "aws-iam-authenticator"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.13"
 # Official Amazon AWS command-line interface
@@ -23,19 +23,19 @@ brew "fontconfig"
 # Generic library support script
 brew "libtool"
 # CloudFlare's PKI toolkit
-brew "cfssl"
+# brew "cfssl"
 # CLI for managing secrets through AWS SSM Parameter Store
 brew "chamber"
 # Testing and linting Helm charts
 brew "chart-testing"
 # Manage your dotfiles across multiple diverse machines, securely
-brew "chezmoi"
+# brew "chezmoi"
 # Test your configuration files using Open Policy Agent
 brew "conftest"
 # GNU File, Shell, and Text utilities
 brew "coreutils"
 # Tool for interacting with remote images and registries
-brew "crane"
+# brew "crane"
 # CLI and validation tools for Kubelet Container Runtime Interface (CRI)
 brew "cri-tools"
 # Get a file from an HTTP, HTTPS or FTP server
@@ -121,7 +121,7 @@ brew "mas"
 # Run a Kubernetes cluster locally
 brew "minikube"
 # Collection of tools that nobody wrote when UNIX was young
-brew "moreutils"
+# brew "moreutils"
 # Utility for managing network connections
 brew "netcat"
 # HTTP/2 C Library
@@ -147,7 +147,7 @@ brew "pipenv", link: false
 # Python version management
 brew "pyenv"
 # Build applications with serverless architectures
-brew "serverless"
+# brew "serverless"
 # Static analysis and lint tool, for (ba)sh scripts
 brew "shellcheck"
 # HTTP regression testing and benchmarking utility
@@ -179,7 +179,7 @@ brew "tmux"
 # Anonymizing overlay network for TCP
 brew "tor"
 # Vulnerability scanner for container images, file systems, and Git repos
-brew "trivy"
+# brew "trivy"
 # Executes a program periodically, showing output fullscreen
 brew "watch"
 # Internet file retriever

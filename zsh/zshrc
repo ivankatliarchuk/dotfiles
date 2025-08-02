@@ -20,3 +20,9 @@ fi
 [[ -f ${HOME}/.zsh/settings/bootstrap.zsh ]] && source ${HOME}/.zsh/settings/bootstrap.zsh
 
 clear # clear the terminal in initialization from any initialization prints
+
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+export PATH="/Users/ik/.rd/bin:$PATH"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
+
+[[ -s "/Users/ik/.gvm/scripts/gvm" ]] && source "/Users/ik/.gvm/scripts/gvm"
