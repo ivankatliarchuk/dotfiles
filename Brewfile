@@ -85,7 +85,7 @@ brew "hexedit"
 # Improved top (interactive process viewer)
 brew "htop"
 # Configurable static site generator
-brew "hugo"
+# brew "hugo"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.9"
 # AWS IAM import and export tool
