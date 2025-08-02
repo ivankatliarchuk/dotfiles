@@ -41,7 +41,7 @@ brew "cri-tools"
 # Get a file from an HTTP, HTTPS or FTP server
 brew "curl"
 # Secure runtime for JavaScript and TypeScript
-brew "deno"
+# brew "deno"
 # Load/unload environment variables based on $PWD
 brew "direnv"
 # Lightweight DNS forwarder and DHCP server
@@ -77,7 +77,7 @@ brew "pkgconf"
 # Smarter Dockerfile linter to validate best practices
 brew "hadolint"
 # Open-source video transcoder available for Linux, Mac, and Windows
-brew "handbrake"
+# brew "handbrake"
 # Kubernetes package manager
 brew "helm"
 # View and edit files in hexadecimal or ASCII
@@ -125,7 +125,7 @@ brew "minikube"
 # Utility for managing network connections
 brew "netcat"
 # HTTP/2 C Library
-brew "nghttp2"
+# brew "nghttp2"
 # Web server scanner
 brew "nikto"
 # Port scanning utility for large networks
@@ -139,7 +139,7 @@ brew "ossp-uuid"
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
 # Password manager
-brew "pass"
+# brew "pass"
 # Pinentry for GPG on Mac
 brew "pinentry-mac"
 # Python dependency management tool
@@ -201,7 +201,7 @@ brew "zsh"
 # Fish shell like syntax highlighting for zsh
 brew "zsh-syntax-highlighting"
 # Packer
-brew "hashicorp/tap/packer"
+# brew "hashicorp/tap/packer"
 # Localstack cli packaged using pyinstaller
 brew "localstack/tap/localstack-cli"
 # The tfswitch command lets you switch between terraform versions.
@@ -247,9 +247,9 @@ cask "leapp"
 # Open-source Markdown editor
 cask "macdown"
 # Knowledge base that works on top of a local folder of plain text Markdown files
-cask "obsidian"
+# cask "obsidian"
 # Cloud storage client
-cask "onedrive"
+# cask "onedrive"
 # Quick Look plugin for mobile apps and provisioning profiles
 cask "provisionql"
 # Kubernetes and container management on the desktop
