@@ -101,7 +101,7 @@ esac
 
 export GOPATH=$HOME
 export PATH="$GOPATH/bin:$PATH"
-[[ -s "${HOME}/.krew/bin" ]] && export PATH="${PATH}:${HOME}/.krew/bin"
+[[ -s "${HOME}/.krew/bin" ]] && export PATH="${HOME}/.krew/bin:${PATH}"
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
 export PATH="$HOME/.rd/bin:$PATH"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
