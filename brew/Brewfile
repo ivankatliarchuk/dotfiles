@@ -1,6 +1,6 @@
 # https://github.com/Homebrew/homebrew-bundle
-tap "homebrew/bundle"
-tap "homebrew/core"
+# tap "homebrew/bundle"
+# tap "homebrew/core"
 tap "denisidoro/tools"
 tap "buo/cask-upgrade"
 # tap "null-dev/firefox-profile-switcher"
@@ -53,7 +53,7 @@ cask "firefox"
 # https://brave.com/
 cask "brave-browser"
 # https://addons.mozilla.org/en-GB/firefox/addon/profile-switcher/
-brew "firefox-profile-switcher-connector"
+# brew "firefox-profile-switcher-connector"
 # https://www.opera.com/
 # cask "opera"
 # https://www.google.com/intl/en_uk/chrome/

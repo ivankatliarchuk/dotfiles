@@ -21,7 +21,7 @@ brew-install: ## Install apps with Brew
 	# todo: install brew as well if not set
 	-@./brew/setup.sh
 	# todo: move to set.sh
-	@brew bundle --file=brew/Brewfile.mas --no-lock;
+	@brew bundle --file=brew/Brewfile.mas;
 
 osx-install: ## Install macOSx
 	@tools/os/setup.sh

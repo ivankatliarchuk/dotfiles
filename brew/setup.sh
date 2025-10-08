@@ -39,7 +39,7 @@ brew_install() {
     if [[ $i -gt 0 ]]; then
       local file="${files[$i-1]}"
       information "${file}"
-      if ! "${brewexec}" bundle --file="brew/${file}" --describe --no-lock -q; then
+      if ! "${brewexec}" bundle --file="brew/${file}" --describe -q; then
           error "failed to install ${file}! aborting..."
       fi
     fi
