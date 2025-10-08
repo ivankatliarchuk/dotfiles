@@ -214,8 +214,6 @@ cask "ccleaner"
 cask "clipy"
 # Multi-platform client-side cloud file encryption tool
 cask "cryptomator"
-# Client for the Dropbox cloud storage service
-# cask "dropbox"
 # Web browser
 cask "firefox"
 cask "font-3270-nerd-font"
@@ -270,18 +268,8 @@ cask "virtualbox"
 cask "visual-studio-code"
 # Binary releases of VS Code without MS branding/telemetry/licensing
 cask "vscodium"
-# Native desktop client for WhatsApp
-cask "whatsapp"
 mas "Battery Health 2", id: 1120214373
 mas "Bitwarden", id: 1352778147
-# mas "HP Smart", id: 1474276998
-# mas "Kindle Classic", id: 405399194
-# mas "Magnet", id: 441258766
-# mas "Microsoft Excel", id: 462058435
-# mas "Microsoft OneNote", id: 784801555
-# mas "Microsoft Outlook", id: 985367838
-# mas "Microsoft PowerPoint", id: 462062816
-# mas "Microsoft Word", id: 462054704
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "Xcode", id: 497799835
