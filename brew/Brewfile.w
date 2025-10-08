@@ -177,7 +177,7 @@ brew "tfsec"
 # Terminal multiplexer
 brew "tmux"
 # Anonymizing overlay network for TCP
-brew "tor"
+# brew "tor"
 # Vulnerability scanner for container images, file systems, and Git repos
 # brew "trivy"
 # Executes a program periodically, showing output fullscreen
@@ -215,7 +215,7 @@ cask "clipy"
 # Multi-platform client-side cloud file encryption tool
 cask "cryptomator"
 # Client for the Dropbox cloud storage service
-cask "dropbox"
+# cask "dropbox"
 # Web browser
 cask "firefox"
 cask "font-3270-nerd-font"
