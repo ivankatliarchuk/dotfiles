@@ -268,12 +268,6 @@ cask "virtualbox"
 cask "visual-studio-code"
 # Binary releases of VS Code without MS branding/telemetry/licensing
 cask "vscodium"
-mas "Battery Health 2", id: 1120214373
-mas "Bitwarden", id: 1352778147
-mas "Numbers", id: 409203825
-mas "Pages", id: 409201541
-mas "Xcode", id: 497799835
-mas "XMenu", id: 419332741
 vscode "4ops.terraform"
 vscode "aaron-bond.better-comments"
 vscode "ahmadalli.vscode-nginx-conf"
