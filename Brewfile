@@ -87,7 +87,7 @@ brew "htop"
 # Configurable static site generator
 # brew "hugo"
 # Interpreted, interactive, object-oriented programming language
-brew "python@3.9"
+# brew "python@3.9"
 # AWS IAM import and export tool
 brew "iamy"
 # Calculate various network masks, etc. from a given IP address
