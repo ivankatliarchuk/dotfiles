@@ -21,13 +21,17 @@ get_namespace_upper() {
     echo "$1" | tr '[:lower:]' '[:lower:]'
 }
 
+# Temporary fix until ....
+TF_DEFAULT_VERSION="1.7.5"
+TF_PRODUCT=terraform
+
 load-tofuswitch() {
   # https://tfswitch.warrensbox.com/usage/ci-cd/
   local tfswitchrc_path=".tfswitchrc"
   local tf_path=".opentofu-version"
 
   if [ -f "$tfswitchrc_path" ]; then
-    TF_PRODUCT=opentofu
+    TF_PRODUCT=terraform
     tfswitch
   elif [ -f "$tf_path" ]; then
     TF_PRODUCT=opentofu
