@@ -141,6 +141,12 @@ open                           Open repository
 ```
 <!-- END makefile-doc -->
 
+## GPG keys
+
+- [How to](https://docs.github.com/en/authentication/managing-commit-signature-verification/checking-for-existing-gpg-keys)
+- [How to v2](https://docs.github.com/en/authentication/managing-commit-signature-verification/telling-git-about-your-signing-key)
+- [How to test](https://claytonerrington.com/blog/view-public-gpg-fingerprints/)
+
 ### 📝 Guidelines
 
 - 📝 Use a succinct title and description.

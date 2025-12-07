@@ -71,9 +71,7 @@ git-submodule() {
 
 execute() {
 
-  bin/install \
-    --plugin-dir vendor/dotbot-brew \
-    --plugin-dir vendor/dotbot-pip "$@"
+  bin/install "$@"
 }
 
 cmds "$@"

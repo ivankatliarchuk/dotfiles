@@ -152,7 +152,7 @@
   "sync.removeExtensions": true,
   "sync.syncExtensions": true,
   "sync.forceUpload": true,
-  "workbench.iconTheme": "material-icon-theme",
+  "workbench.iconTheme": "vscode-icons",
   "extensions.ignoreRecommendations": false,
   "window.newWindowDimensions": "maximized",
   "window.openFilesInNewWindow": "on",
