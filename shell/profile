@@ -15,7 +15,3 @@ if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 export PATH="$PATH:$HOME/.rvm/bin:$(go env GOPATH)/bin"
 # shellcheck source=/dev/null
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
-### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
-export PATH="/Users/ik/.rd/bin:$PATH"
-### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
