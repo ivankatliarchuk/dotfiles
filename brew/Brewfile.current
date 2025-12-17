@@ -119,7 +119,7 @@ brew "mackup"
 # Mac App Store command-line interface
 brew "mas"
 # Run a Kubernetes cluster locally
-brew "minikube"
+# brew "minikube"
 # Collection of tools that nobody wrote when UNIX was young
 # brew "moreutils"
 # Utility for managing network connections
