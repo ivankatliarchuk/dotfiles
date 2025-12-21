@@ -418,5 +418,6 @@
   },
   "[github-actions-workflow]": {
     "editor.defaultFormatter": "redhat.vscode-yaml"
-  }
+  },
+  "github.copilot.nextEditSuggestions.enabled": false
 }
