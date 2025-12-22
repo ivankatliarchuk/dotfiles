@@ -48,8 +48,6 @@ brew "direnv"
 brew "dnsmasq"
 # Tool that bootstraps your dotfiles
 brew "dotbot"
-# .NET Core
-brew "dotnet@8"
 # Secure your credentials in environment variables
 brew "envchain"
 # Command-line fuzzy finder written in Go
