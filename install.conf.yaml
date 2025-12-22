@@ -80,6 +80,7 @@
     ~/.pyenvrc: tools/pyenvrc
     ~/.zprezto: vendor/prezto
     ~/.bash-it: vendor/bash-it
+    ~/.claude: tools/claude
     # vscode
     ~/Library/ApplicationSupport/Code/User/settings.json:
       path: tools/vscode/settings.json
