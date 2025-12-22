@@ -187,3 +187,5 @@ extras
 
 # updated sometimes with external tools
 zsh/zshrc
+tools/claude/*
+!tools/claude/settings.json
