@@ -217,6 +217,26 @@
         }
       },
       {
+      "scope": [
+          "comment.line.double-slash.shell",
+          "comment.line.double-slash.makefile",
+          "source.makefile",
+          "keyword.control.export.makefile"
+        ],
+        "settings": {
+          "foreground": "#c3da64",
+          "fontStyle": ""
+        }
+      },
+      {
+        "scope": [
+          "variable.parameter.url.css",
+        ],
+        "settings": {
+          "foreground": "#f0f"
+        }
+      },
+      {
         "scope": [
           "comment",
           "punctuation.definition.comment",
@@ -419,5 +439,5 @@
   "[github-actions-workflow]": {
     "editor.defaultFormatter": "redhat.vscode-yaml"
   },
-  "github.copilot.nextEditSuggestions.enabled": false
+  "github.copilot.nextEditSuggestions.enabled": false,
 }
