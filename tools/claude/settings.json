@@ -1,9 +1,26 @@
 {
   "permissions": {
     "allow": [
+      "Read(~/source/**)",
       "Bash(wc:*)",
       "Bash(lc:*)",
+      "Bash(find:*)",
+      "Bash(grep:*)",
       "Bash(go test:*)"
+    ],
+    "deny": [
+      "Read(~/.ssh/**)",
+      "Read(~/.aws/**)",
+      "Read(~/.config/**)",
+      "Read(~/**)",
+      "Read(!/~/source/**)",
+      "Edit(~/**)",
+      "Edit(!/~/source/**)",
+      "Edit(/etc/**)",
+      "Edit(~/Library/**)",
+      "Bash(curl:*)",
+      "Read(./.env)",
+      "Read(./.envrc)"
     ]
   }
 }
