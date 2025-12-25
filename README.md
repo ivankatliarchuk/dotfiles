@@ -94,6 +94,12 @@ These scripts are meant to run only on OS X
 
 - [Emoji: github](https://github.com/ikatyang/emoji-cheat-sheet)
 
+### Commands
+
+```sh
+git check-ignore -v tools/claude/plans/
+```
+
 ## #️⃣ TODO
 
 - ✅ ZSH (zsh-config)

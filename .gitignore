@@ -189,3 +189,4 @@ extras
 zsh/zshrc
 tools/claude/*
 !tools/claude/settings.json
+!tools/claude/plans/
