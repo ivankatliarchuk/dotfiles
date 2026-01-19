@@ -217,7 +217,7 @@
         }
       },
       {
-      "scope": [
+        "scope": [
           "comment.line.double-slash.shell",
           "comment.line.double-slash.makefile",
           "source.makefile",
@@ -440,4 +440,6 @@
     "editor.defaultFormatter": "redhat.vscode-yaml"
   },
   "github.copilot.nextEditSuggestions.enabled": false,
+  "gitlens.ai.model": "vscode",
+  "gitlens.ai.vscode.model": "copilot:gpt-4.1",
 }
