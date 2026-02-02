@@ -22,5 +22,8 @@
       "Read(./.env)",
       "Read(./.envrc)"
     ]
+  },
+  "enabledPlugins": {
+    "claude-mem@thedotmack": false
   }
 }
