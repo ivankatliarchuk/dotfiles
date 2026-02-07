@@ -95,6 +95,7 @@ _git_pr4ai() {
   local issue_comments=$(gh pr view "$pr" -R "$repo" --json comments --jq '.comments[] | {id, body, author: .author.login, createdAt}')
   local review_comments=$(gh api "/repos/$repo/pulls/$pr/comments" --jq '.[] | {id, body, path, line, author: .user.login, createdAt}')
 
+  echo "copied to clipboard"
   {
     echo "=== Diff ==="
     echo "$diff"
@@ -104,7 +105,7 @@ _git_pr4ai() {
     echo
     echo "=== Review Comments ==="
     echo "$review_comments"
-  } | base64 -w 0
+  } | base64 -w 0 | pbcopy
 }
 
 # g.pr4ai kubernetes-sigs/external-dns 6017
