@@ -13,3 +13,6 @@
 [submodule "vendor/iterm2-material-design"]
 	path = vendor/iterm2-material-design
 	url = https://github.com/MartinSeeler/iterm2-material-design.git
+[submodule "vendor/zsh-autosuggestions"]
+	path = vendor/zsh-autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions

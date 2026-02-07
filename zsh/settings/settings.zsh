@@ -14,3 +14,9 @@ setopt interactivecomments
 
 # Time to wait for additional characters in a sequence
 KEYTIMEOUT=1 # corresponds to 10ms
+
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+plugins=(
+    zsh-autosuggestions
+)

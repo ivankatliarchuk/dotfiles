@@ -64,6 +64,7 @@
     ~/.config/.cmds: shell/cmds
     # @todo: group rc files
     ~/.zshrc: zsh/zshrc
+    ~/.zsh/zsh-autosuggestions: vendor/zsh-autosuggestions
     ~/.bashrc: shell/bashrc
     ~/.vimrc: tools/vimrc
     ~/.curlrc: tools/curlrc
