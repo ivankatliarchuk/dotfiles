@@ -15,6 +15,7 @@ setopt interactivecomments
 # Time to wait for additional characters in a sequence
 KEYTIMEOUT=1 # corresponds to 10ms
 
+# https://github.com/zsh-users/zsh-autosuggestions/tree/master?tab=readme-ov-file
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 plugins=(
