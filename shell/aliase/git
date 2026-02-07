@@ -85,3 +85,27 @@ _git_tag_it() {
 alias g.tagit='_git_tag_it' # tag + message
 
 alias g.rbs='git -c sequence.editor="code --wait --reuse-window" rebase -i HEAD~' # add `.` to rebase the last commit or number of commits
+
+_git_pr4ai() {
+  local repo="$1" pr="$2"
+  [[ -z "$repo" || -z "$pr" ]] && { echo "Usage: $0 REPO PR#"; return 1; }
+
+  # Capture diff, issue comments, review comments using ONLY gh
+  local diff=$(gh pr diff "$pr" -R "$repo")
+  local issue_comments=$(gh pr view "$pr" -R "$repo" --json comments --jq '.comments[] | {id, body, author: .author.login, createdAt}')
+  local review_comments=$(gh api "/repos/$repo/pulls/$pr/comments" --jq '.[] | {id, body, path, line, author: .user.login, createdAt}')
+
+  {
+    echo "=== Diff ==="
+    echo "$diff"
+    echo
+    echo "=== Issue Comments ==="
+    echo "$issue_comments"
+    echo
+    echo "=== Review Comments ==="
+    echo "$review_comments"
+  } | base64 -w 0
+}
+
+# g.pr4ai kubernetes-sigs/external-dns 6017
+alias g.pr4ai='_git_pr4ai' # + repo e.g. ivankatliarchuk/cheatsheet-git + pr number e.g. 123
