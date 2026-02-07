@@ -233,7 +233,7 @@ command -v sha1sum > /dev/null || alias sha1sum="shasum" # OS X has no `sha1sum`
 alias update="source ~/.zshrc"
 alias update-ps="source ~/.profile"
 alias reload!='. ~/.zshrc'
-alias reload='. ~/.zshrc; clear'
+alias reload='. ~/.zshrc'
 alias rel='reload'
 
 # MacOS

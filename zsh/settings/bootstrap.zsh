@@ -69,7 +69,7 @@ fi
 # fi
 
 # https://github.com/moovweb/gvm/issues/463
-unalias cd
+# unalias cd
 [[ -s "${HOME}/.gvm/scripts/gvm" ]] && source "${HOME}/.gvm/scripts/gvm"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
