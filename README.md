@@ -115,6 +115,7 @@ git check-ignore -v tools/claude/plans/
 - ✅ Tmux configs Setup/Document
 - ✅ macOS setup [docs](tools/os/README.md)
 - [X] Speed up shell
+- [ ] ZSH plugins https://github.com/zsh-users/zsh-autosuggestions/tree/master?tab=readme-ov-file
 - [ ] POV [Yadm: dotfiles manager](https://formulae.brew.sh/formula/yadm)
 - [ ] Firefox [auto config docs](tools/browser/firefox/readme.md)
 - [ ] Hammersppoon config opensource [docs](tools/hammerspoon/readme.md)

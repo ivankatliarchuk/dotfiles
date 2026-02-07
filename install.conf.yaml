@@ -60,10 +60,6 @@
       force: false
     ~/.config/starship: terminal/starship
     ~/.config/zellij: terminal/zellij
-    ~/.config/tmuxp: terminal/tmux/configs
-    ~/.tmux: terminal/tmux/config
-    ~/.tmux.conf: terminal/tmux/config/.tmux.conf
-    ~/.tmuxp/aliases: terminal/tmux/aliases
     ~/.config/scripts: scripts
     ~/.config/.cmds: shell/cmds
     # @todo: group rc files
