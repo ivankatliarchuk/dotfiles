@@ -1,0 +1,6 @@
+# MacOS aliases
+
+alias mac.log='log show --last 10m --style syslog'
+# log show --predicate 'process == "sudo"' --last 10m --style syslog
+alias mac.log.predicate='log show --last 100m --style syslog --predicate' # + 'process == "sudo"
+alias mac.log.sudo='log show --last 10m --style syslog --predicate \'process == "sudo"\''
