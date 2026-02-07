@@ -110,3 +110,4 @@ _git_pr4ai() {
 
 # g.pr4ai kubernetes-sigs/external-dns 6017
 alias g.pr4ai='_git_pr4ai' # + repo e.g. ivankatliarchuk/cheatsheet-git + pr number e.g. 123
+alias gcf='git commit --all --amend --no-edit' # amend last commit without changing the message'
