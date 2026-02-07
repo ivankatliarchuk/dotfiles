@@ -68,18 +68,14 @@
     ~/.config/.cmds: shell/cmds
     # @todo: group rc files
     ~/.zshrc: zsh/zshrc
-    ~/.zpreztorc: zsh/settings/zpreztorc
     ~/.bashrc: shell/bashrc
     ~/.vimrc: tools/vimrc
     ~/.curlrc: tools/curlrc
     ~/.wgetrc: tools/wgetrc
     ~/.gemrc: tools/gemrc
-    # ~/.rvmrc: tools/rvmrc
     ~/.gvmrc: tools/gvmrc
     ~/.nvmrc: tools/nvmrc
     ~/.pyenvrc: tools/pyenvrc
-    ~/.zprezto: vendor/prezto
-    ~/.bash-it: vendor/bash-it
     ~/.claude: tools/claude
     # vscode
     ~/Library/ApplicationSupport/Code/User/settings.json:

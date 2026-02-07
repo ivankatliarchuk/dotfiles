@@ -4,7 +4,6 @@
 [[ -n "${DEBUG:-}" ]] && set -x
 autoload -U colors && colors
 autoload -Uz compinit && compinit -i
-zstyle ':completion:*' menu select=4
 zmodload zsh/complist
 
 rehash
