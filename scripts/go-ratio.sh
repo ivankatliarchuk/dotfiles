@@ -17,9 +17,13 @@ NON_TEST=$(git diff "$BASE_BRANCH"...HEAD --stat -- '*.go' ':!*_test.go' | tail 
 # Get added lines for test files
 TEST=$(git diff "$BASE_BRANCH"...HEAD --stat -- '*_test.go' | tail -1 | grep -oE '[0-9]+ insertion' | grep -oE '[0-9]+' || echo 0)
 
+# Get added lines for doc files
+DOCS=$(git diff "$BASE_BRANCH"...HEAD --stat -- '*.md' '*.mdx' '*.rst' '*.adoc' '*.asciidoc' | tail -1 | grep -oE '[0-9]+ insertion' | grep -oE '[0-9]+' || echo 0)
+
 # Handle empty values
 NON_TEST=${NON_TEST:-0}
 TEST=${TEST:-0}
+DOCS=${DOCS:-0}
 
 # Calculate ratio
 if [ "$NON_TEST" -gt 0 ] && [ "$TEST" -gt 0 ]; then
@@ -41,5 +45,7 @@ printf "│ Non-test │ +%-4s │\n" "$NON_TEST"
 printf "├──────────┼───────┤\n"
 printf "│ Test     │ +%-4s │\n" "$TEST"
 printf "├──────────┼───────┤\n"
-printf "│ Ratio    │ %-5s│\n" "$RATIO_STR"
+printf "│ Docs     │ +%-4s │\n" "$DOCS"
+printf "├──────────┼───────┤\n"
+printf "│ Ratio    │ %-5s │\n" "$RATIO_STR"
 printf "└──────────┴───────┘\n"

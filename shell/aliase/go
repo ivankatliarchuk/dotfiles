@@ -1,2 +1,3 @@
 
+# ratio of lines of code to comments in a Go project
 alias go.ratio='go-ratio.sh'
