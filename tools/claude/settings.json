@@ -1,4 +1,8 @@
 {
+  "statusLine": {
+    "type": "command",
+    "command": "bash /Users/ik/.claude/statusline-command.sh"
+  },
   "permissions": {
     "allow": [
       "Read(~/source/**)",
