@@ -241,7 +241,7 @@ cask "keepassxc"
 # ZSA keyboard firmware flasher
 cask "keymapp"
 # Cloud credentials manager
-cask "leapp"
+# cask "leapp"
 # Open-source Markdown editor
 cask "macdown"
 # Knowledge base that works on top of a local folder of plain text Markdown files

@@ -19,10 +19,10 @@ cask "bitwarden"
 # Bitwarden clit to work with vaults https://github.com/bitwarden/cli
 brew "bitwarden-cli"
 
-cask "elgato-stream-deck"
+# cask "elgato-stream-deck"
 # https://www.leapp.cloud/
 # https://github.com/Noovolari/leapp
-cask "leapp"
+# cask "leapp"
 end
 
 # Homebrew, but with Docker images
