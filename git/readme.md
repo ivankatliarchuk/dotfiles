@@ -21,3 +21,16 @@ Rebase
 ```
 git -c sequence.editor="code --wait --reuse-window" rebase -i HEAD~ # add `.` to rebase the last commit or number of commits
 ```
+
+## Stash
+
+```sh
+Summary (files changed):
+git stash show stash@{1}
+
+Full diff:
+git stash show -p stash@{1}
+
+List all stashes:
+git stash list
+```
