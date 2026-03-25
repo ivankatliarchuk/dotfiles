@@ -1,0 +1,5 @@
+# Default
+# https://code.claude.com/docs/en/skills
+# Universal Command Line Interface for Claude CLI
+
+alias claude.kill="ps aux | grep '/opt/homebrew/bin/claude' | grep -v grep | awk '{print \$2}' | xargs kill"
