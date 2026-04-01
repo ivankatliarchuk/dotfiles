@@ -89,7 +89,8 @@
     "*.libsonnet": "jsonnet",
     "**/*.libsonnet": "jsonnet",
     "*.jsonnet": "jsonnet",
-    "*.json5": "jsonc"
+    "*.json5": "jsonc",
+    "Makefile*": "makefile"
   },
   "editor.fontFamily": "'Powerline', 'SourceCodePro+Powerline+Awesome Regular',Operator Mono, Menlo, Monaco, 'Courier New', monospace,'SourceCodePro', 'Source Code Pro for Powerline', 'Awesome Regular','Droid Sans Mono', 'Courier New', monospace, 'Droid Sans Fallback'",
   "editor.fontWeight": "normal",
