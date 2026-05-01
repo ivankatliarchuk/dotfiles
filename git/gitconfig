@@ -160,6 +160,7 @@
 
 [http]
 	postBuffer = 157286400
+	cookiefile = abc
 
 [fetch]
     # If you want to have prune executed with every fetch operation, you can configure Git accordingly:
