@@ -111,3 +111,40 @@ _git_pr4ai() {
 # g.pr4ai kubernetes-sigs/external-dns 6017
 alias g.pr4ai='_git_pr4ai' # + repo e.g. ivankatliarchuk/cheatsheet-git + pr number e.g. 123
 alias gcf='git commit --all --amend --no-edit' # amend last commit without changing the message'
+
+_git_wt_rm() {
+  local name="$1"
+  [[ -z "$name" ]] && { echo "Usage: g.wt-rm <name>"; return 1; }
+
+  local wt_path
+  wt_path=$(git worktree list | awk -v n="$name" '$0 ~ n { print $1; exit }')
+  [[ -z "$wt_path" ]] && { echo "Worktree '$name' not found"; return 1; }
+
+  local branch
+  branch=$(git worktree list --porcelain | awk -v p="$wt_path" '
+    /^worktree/ { cur=$2 }
+    /^branch/ && cur==p { sub("refs/heads/","", $2); print $2; exit }
+  ')
+
+  git worktree remove --force "$wt_path"
+  [[ -n "$branch" ]] && git branch -D "$branch"
+}
+alias g.wt-rm='_git_wt_rm' # + worktree name e.g. agent-aacb65e4
+
+_git_wt_clean() {
+  local main_wt
+  main_wt=$(git worktree list --porcelain | awk '/^worktree/ { print $2; exit }')
+
+  git worktree list --porcelain | awk '/^worktree/ { print $2 }' | while read -r wt_path; do
+    [[ "$wt_path" == "$main_wt" ]] && continue
+    local branch
+    branch=$(git worktree list --porcelain | awk -v p="$wt_path" '
+      /^worktree/ { cur=$2 }
+      /^branch/ && cur==p { sub("refs/heads/","", $2); print $2; exit }
+    ')
+    git worktree remove --force "$wt_path"
+    [[ -n "$branch" ]] && git branch -D "$branch"
+  done
+}
+alias g.wt-clean='_git_wt_clean' # remove all worktrees and their branches
+
