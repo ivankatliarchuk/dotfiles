@@ -16,7 +16,6 @@
       "Read(~/.ssh/**)",
       "Read(~/.aws/**)",
       "Read(~/.config/**)",
-      "Read(~/**)",
       "Read(!/~/source/**)",
       "Edit(~/**)",
       "Edit(!/~/source/**)",
