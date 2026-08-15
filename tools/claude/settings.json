@@ -17,7 +17,6 @@
       "Read(~/.aws/**)",
       "Read(~/.config/**)",
       "Read(!/~/source/**)",
-      "Edit(~/**)",
       "Edit(!/~/source/**)",
       "Edit(/etc/**)",
       "Edit(~/Library/**)",

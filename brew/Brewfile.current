@@ -112,8 +112,6 @@ brew "kube-ps1"
 brew "kubectx"
 # Security and system auditing tool to harden systems
 brew "lynis"
-# Keep your Mac's application settings in sync
-brew "mackup"
 # Mac App Store command-line interface
 brew "mas"
 # Run a Kubernetes cluster locally
@@ -174,8 +172,6 @@ brew "tflint"
 brew "tfsec"
 # Terminal multiplexer
 brew "tmux"
-# Anonymizing overlay network for TCP
-brew "tor"
 # Vulnerability scanner for container images, file systems, and Git repos
 # brew "trivy"
 # Executes a program periodically, showing output fullscreen
@@ -240,10 +236,6 @@ cask "jetbrains-toolbox"
 cask "keepassxc"
 # ZSA keyboard firmware flasher
 cask "keymapp"
-# Cloud credentials manager
-# cask "leapp"
-# Open-source Markdown editor
-cask "macdown"
 # Knowledge base that works on top of a local folder of plain text Markdown files
 # cask "obsidian"
 # Cloud storage client

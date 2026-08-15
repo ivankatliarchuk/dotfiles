@@ -179,3 +179,6 @@ Submit a pull request
 Currently maintained by [Ivan Katliarchuk](https://github.com/ivankatliarchuk) and these [awesome contributors](https://github.com/ivankatliarchuk/dotfiles/graphs/contributors).
 
 [![ForTheBadge uses-git](http://ForTheBadge.com/images/badges/uses-git.svg)](https://GitHub.com/)
+
+
+curl -vI https://hd-queue.uat.tmtickets.li 2>&1 | grep -E "expire|start date|issue"

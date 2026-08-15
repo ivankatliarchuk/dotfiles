@@ -14,3 +14,12 @@
 - [macOS: change settings](https://pawelgrzybek.com/change-macos-user-preferences-via-command-line)
 - [Github: macos setup](https://github.com/atomantic/dotfiles/blob/5cd3cfb617ec519e4d24a2b8daaa4d30b6eb193f/install.sh)
 - [Github: macos setup](https://github.com/mathiasbynens/dotfiles/blob/main/.macos)
+
+## TBD
+
+```
+defaults -currentHost write com.apple.controlcenter AirplayReceiverEnabled -bool false
+killall ControlCenter
+
+check sudo lsof -iTCP:5000 -iTCP:7000 -sTCP:LISTEN -n -P
+```
