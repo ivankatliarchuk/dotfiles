@@ -17,9 +17,10 @@
 
 ## TBD
 
-```
+```sh
 defaults -currentHost write com.apple.controlcenter AirplayReceiverEnabled -bool false
 killall ControlCenter
 
-check sudo lsof -iTCP:5000 -iTCP:7000 -sTCP:LISTEN -n -P
+# check it
+sudo lsof -iTCP:5000 -iTCP:7000 -sTCP:LISTEN -n -P
 ```
