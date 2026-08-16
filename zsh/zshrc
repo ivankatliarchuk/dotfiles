@@ -15,6 +15,8 @@ if [[ $(uname -m) == 'arm64' ]]; then
   # remove rm /usr/local/bin/bin
   # on new mac run 'gpg-restart' to make directory safe
   export PATH="/opt/homebrew/bin:$PATH"
+  #  Homebrew puts admin/daemon-style tools (things traditionally requiring root, like network daemons) in sbin.
+  export PATH="/opt/homebrew/sbin:$PATH"
 fi
 
 [[ -f ${HOME}/.zsh/settings/bootstrap.zsh ]] && source ${HOME}/.zsh/settings/bootstrap.zsh
