@@ -1,8 +1,4 @@
 {
-  "statusLine": {
-    "type": "command",
-    "command": "bash /Users/ik/.claude/statusline-command.sh"
-  },
   "permissions": {
     "allow": [
       "Read(~/source/**)",
@@ -16,8 +12,6 @@
       "Read(~/.ssh/**)",
       "Read(~/.aws/**)",
       "Read(~/.config/**)",
-      "Read(!/~/source/**)",
-      "Edit(!/~/source/**)",
       "Edit(/etc/**)",
       "Edit(~/Library/**)",
       "Bash(curl:*)",
@@ -25,7 +19,9 @@
       "Read(./.envrc)"
     ]
   },
-  "enabledPlugins": {
-  }
+  "statusLine": {
+    "type": "command",
+    "command": "bash /Users/ik/.claude/statusline-command.sh"
+  },
+  "enabledPlugins": {}
 }
-
