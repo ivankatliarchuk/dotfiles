@@ -1,0 +1,32 @@
+# Default
+# SSH aliases
+
+_ssh_helper() {
+  awk '
+    /^# / { desc = substr($0, 3); next }
+    /^alias ssh\./ {
+      name = $0
+      sub(/^alias /, "", name)
+      sub(/=.*/, "", name)
+      c = ""
+      if (match($0, /# .*/)) c = substr($0, RSTART + 2)
+      printf "%-12s %s\n", name, c
+      desc = ""
+      next
+    }
+  ' "${HOME}/.config/aliases/ssh"
+}
+alias ssh.helper='_ssh_helper'
+alias ssh.help='ssh.helper'
+alias ssh.h='ssh.helper'
+
+alias ssh.config='cat ~/.ssh/config' # show ssh config
+alias ssh.edit='$EDITOR ~/.ssh/config' # edit ssh config
+alias ssh.hosts='grep "^Host " ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2- | tr " " "\n"' # list configured host aliases, one per line, wildcards excluded
+alias ssh.cmds='ssh.hosts | sed "s/^/ssh /"' # print ready-to-run `ssh <host>` commands for every configured host
+alias ssh.keys='ls ~/.ssh/*.pub' # list public keys
+alias ssh.agent='ssh-add -l' # list keys loaded in the agent
+alias ssh.keygen='ssh-keygen -t ed25519 -C "$(whoami)@$(hostname)"' # generate a new key with sane defaults
+alias ssh.jump='ssh -J' # + bastion-host target-host (comma-separate bastions to chain jumpboxes)
+
+alias ssh.complete='[ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2- | tr " " "\n")" scp sftp ssh' # enable host tab-completion for scp/sftp/ssh (run once per session)

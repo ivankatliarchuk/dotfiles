@@ -1,28 +1,53 @@
 # Default
 # https://github.com/aws/aws-cli
+# https://docs.aws.amazon.com/cli/v1/userguide/cli-configure-files.html
 # Universal Command Line Interface for Amazon Web Services
 #
 
-alias a=aws
-alias a.id="aws sts get-caller-identity"
-alias a.whoami="a.id"
+_aws_helper() {
+  awk '
+    $0 ~ /^alias a\.|^alias aws\.|^alias a=/ {
+      name = $0
+      sub(/^alias /, "", name)
+      sub(/=.*/, "", name)
+      c = ""
+      if (match($0, /# .*/)) c = substr($0, RSTART + 2)
+      printf "%-16s %s\n", name, c
+      next
+    }
+  ' "${HOME}/.config/aliases/aws"
+}
+alias aws.helper='_aws_helper'
+alias aws.help='aws.helper'
+alias aws.h='aws.helper'
+alias aws.helper='aws.helper'
+
+alias aws.id="aws sts get-caller-identity" # show caller identity
+alias aws.id='aws.id' # show caller identity
+alias aws.whoami="aws.id" # show caller identity
+alias aws.whoami='aws.whoami' # show caller identity
+alias aws.profiles='aws configure list-profiles' # list profiles from ~/.aws/credentials & ~/.aws/config
+alias aws.profiles='aws.profiles' # list profiles from ~/.aws/credentials & ~/.aws/config
 
 # eks
-alias a.eks-kcg='aws eks update-kubeconfig --name' # aws eks cluster name
+alias aws.eks-kcg='aws eks update-kubeconfig --name' # + eks cluster name
+alias aws.eks-kcg='aws.eks-kcg' # + eks cluster name
 
 _eks_oidc_id() {
   # eks cluster oidc id
   aws eks describe-cluster --name "$1" --query "cluster.identity.oidc.issuer" --output text | sed -e "s/^https:\/\///"
 }
-alias a.eks-oidc='_eks_oidc_id'
-alias aws.eks-oidc='a.eks-oidc'
+alias aws.eks-oidc='_eks_oidc_id' # + eks cluster name, print its OIDC issuer id
+alias aws.eks-oidc='aws.eks-oidc' # + eks cluster name, print its OIDC issuer id
 
 # s3
-alias a.s3-ls='aws s3 ls'
-alias aws.s3-ls='a.s3-ls'
+alias aws.s3-ls='aws s3 ls' # list s3 buckets, or + bucket name to list its objects
+alias aws.s3-ls='aws.s3-ls' # list s3 buckets, or + bucket name to list its objects
 
 # iam
-alias a.sts='aws sts get-caller-identity --output json'
-alias a.sts-id='aws sts get-caller-identity --query "Account" --output text'
-alias a.sts-who='aws sts get-caller-identity --query "UserId" --output json'
-alias aws.sts-id='a.sts-id'
+alias aws.sts='aws sts get-caller-identity --output json' # show caller identity (json)
+alias aws.sts='aws.sts' # show caller identity (json)
+alias aws.sts-id='aws sts get-caller-identity --query "Account" --output text' # show account id
+alias aws.sts-id='aws.sts-id' # show account id
+alias aws.sts-who='aws sts get-caller-identity --query "UserId" --output json' # show caller user id
+alias aws.sts-who='aws.sts-who' # show caller user id

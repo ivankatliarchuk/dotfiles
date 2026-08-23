@@ -45,9 +45,6 @@ if command -v brew >/dev/null 2>&1; then
   autoload -Uz compinit
 fi
 
-# Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
-[ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2- | tr ' ' '\n')" scp sftp ssh;
-
 #------------------
 # Zsh hooks
 #------------------
