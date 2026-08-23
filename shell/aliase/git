@@ -148,3 +148,9 @@ _git_wt_clean() {
 }
 alias g.wt-clean='_git_wt_clean' # remove all worktrees and their branches
 
+alias g.workflow.patch='echo "Create & apply a patch:
+  1. git diff HEAD > changes.patch    # create patch from current changes
+  2. git apply --stat changes.patch   # preview what the patch touches
+  3. git apply --check changes.patch  # dry-run validate it applies cleanly
+  4. git apply changes.patch          # apply the patch"'
+
