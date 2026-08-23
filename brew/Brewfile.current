@@ -238,10 +238,6 @@ cask "keepassxc"
 cask "keymapp"
 # Knowledge base that works on top of a local folder of plain text Markdown files
 # cask "obsidian"
-# Cloud storage client
-# cask "onedrive"
-# Quick Look plugin for mobile apps and provisioning profiles
-cask "provisionql"
 # Kubernetes and container management on the desktop
 cask "rancher"
 # Team communication and collaboration software
@@ -254,12 +250,8 @@ cask "the-unarchiver"
 cask "vagrant"
 # Calling and messaging application focusing on security
 cask "viber"
-# Virtualiser for x86 hardware
-cask "virtualbox"
 # Open-source code editor
 cask "visual-studio-code"
-# Binary releases of VS Code without MS branding/telemetry/licensing
-cask "vscodium"
 # Native desktop client for WhatsApp
 cask "whatsapp"
 mas "Battery Health 2", id: 1120214373
