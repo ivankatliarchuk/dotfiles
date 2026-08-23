@@ -34,8 +34,9 @@ brew "pipenv" , link: true
 # ---start--- GO
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
-# Go version management
-brew "goenv"
+# https://formulae.brew.sh/formula/mise
+# Polyglot runtime manager (asdf rust clone)
+brew "mise"
 # Interactive system monitor, process viewer, and process manager for Unix
 # https://hisham.hm/htop/
 brew "htop"
@@ -98,7 +99,7 @@ cask "jetbrains-toolbox"
 cask "visual-studio-code"
 # Community Visual Studio Code combines the simplicity of a code editor with what developers need for their core edit-build-debug cycle.
 # https://vscodium.com/
-cask "vscodium"
+# cask "vscodium"
 cask "the-unarchiver"
 # https://macdown.uranusjr.com/
 # cask "macdown"

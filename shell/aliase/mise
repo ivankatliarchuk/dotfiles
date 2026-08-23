@@ -1,0 +1,32 @@
+# Default
+# https://mise.jdx.dev
+# mise (polyglot runtime/tool version manager) aliases
+
+_mise_helper() {
+  awk '
+    /^# / { desc = substr($0, 3); next }
+    /^alias m\./ {
+      name = $0
+      sub(/^alias /, "", name)
+      sub(/=.*/, "", name)
+      c = ""
+      if (match($0, /# .*/)) c = substr($0, RSTART + 2)
+      printf "%-12s %s\n", name, c
+      desc = ""
+      next
+    }
+  ' "${HOME}/.config/aliases/mise"
+}
+alias m.helper='_mise_helper'
+alias m.help='m.helper'
+alias m.h='m.helper'
+
+alias m.use='mise use' # + tool@version, e.g. m.use go@latest
+alias m.use-g='mise use -g' # set a global tool version
+alias m.bootstrap='mise install' # install versions pinned in config
+alias m.ls='mise ls' # list installed tool versions
+alias m.current='mise current' # active versions in this directory
+alias m.ls-remote='mise ls-remote' # + tool name, e.g. m.ls-remote go
+alias m.up='mise upgrade' # upgrade tools to latest matching version
+alias m.doctor='mise doctor' # diagnose PATH/shim issues
+alias m.prune='mise prune' # remove unused installed versions

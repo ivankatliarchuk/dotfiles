@@ -87,36 +87,22 @@ load-nvmrc() {
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
 
-# Automatically switch and load golang versions when a directory has an `.gvmrc` or `go.mod` files
+# Automatically switch golang version via mise when a directory has a `go.mod` file
 load-go-version() {
-  if exists gvm; then
-    if [ -f .gvmrc  ] || [ -f go.mod  ]; then
-        local GO_VERSION=$(go version | { read _ _ v _; echo ${v#go}; })
-        if [ -f .gvmrc  ]; then
-            local GO_GVMRC_VERSION=$(cat .gvmrc)
-            if ! go version | grep "$GO_GVMRC_VERSION" >/dev/null 2>&1; then
-              gvm use $GO_GVMRC_VERSION >/dev/null 2>&1
-            fi
-          if [ $? -eq 1 ]
-          then
-            gvm install $GO_GVMRC_VERSION
-            gvm use $GO_GVMRC_VERSION >/dev/null 2>&1
-          fi
-        fi
-        if [ -f go.mod  ]; then
-          local GO_LOCAL_VERSION=$(go list -f {{.GoVersion}} -m)
-          if [[ "$GO_VERSION" == "$GO_LOCAL_VERSION" ]]; then
-              # echo "version match"
-            else
-              gvm use ${GO_LOCAL_VERSION} 2>&1
-          fi
-          if [ $? -eq 1 ]
-          then
-            gvm install go${GO_LOCAL_VERSION}
-            gvm use ${GO_LOCAL_VERSION} 2>&1
-          fi
+  if exists mise; then
+    if [ -f go.mod ]; then
+      local GO_LOCAL_VERSION
+      GO_LOCAL_VERSION=$(go list -f '{{.GoVersion}}' -m 2>/dev/null)
+      if [ -n "$GO_LOCAL_VERSION" ]; then
+        local GO_CURRENT_VERSION
+        GO_CURRENT_VERSION=$(go version | { read _ _ v _; echo ${v#go}; })
+        if [ "$GO_CURRENT_VERSION" != "$GO_LOCAL_VERSION" ]; then
+          echo "mise: switching go ${GO_CURRENT_VERSION} -> ${GO_LOCAL_VERSION}"
+          mise install -q "go@${GO_LOCAL_VERSION}" >/dev/null 2>&1
+          mise shell "go@${GO_LOCAL_VERSION}" >/dev/null 2>&1
         fi
       fi
+    fi
   fi
 }
 add-zsh-hook chpwd load-go-version

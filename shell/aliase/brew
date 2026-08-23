@@ -1,0 +1,68 @@
+# Default
+# Homebrew aliases
+
+_brew_helper() {
+  awk '
+    /^# / { desc = substr($0, 3); next }
+    /^alias b\./ {
+      name = $0
+      sub(/^alias /, "", name)
+      sub(/=.*/, "", name)
+      c = ""
+      if (match($0, /# .*/)) c = substr($0, RSTART + 2)
+      printf "%-12s %s\n", name, c
+      desc = ""
+      next
+    }
+    /^function b\./ {
+      name = $0
+      sub(/^function /, "", name)
+      sub(/\(\).*/, "", name)
+      printf "%-12s %s\n", name, desc
+      desc = ""
+      next
+    }
+  ' "${HOME}/.config/aliases/brew"
+}
+alias b.helper='_brew_helper'
+alias b.help='b.helper'
+alias b.h='b.helper'
+
+# Lifecycle
+alias b.upgrade='brew cu --cleanup -f -y && brew update && brew upgrade && brew upgrade --casks && brew cleanup' # full update/upgrade/cleanup sweep
+alias b.up='brew update && brew upgrade' # update & upgrade only
+alias b.cu='brew cu -y' # cask upgrades only
+alias b.clean='brew autoremove && brew cleanup' # autoremove unused deps & clear cache
+alias b.doctor='brew doctor' # run brew's health check
+alias b.fix='cd "$(brew --repository)" && git --git-dir "$(brew --repository)/.git" reset origin/master --hard && git --git-dir "$(brew --repository)/.git" clean -fd' # reset homebrew's own git repo to origin/master
+
+# Repo / navigation
+alias b.repo='cd $(brew --repository)' # cd to homebrew's repository directory
+
+# Bundle / Brewfile management
+alias b.dump='brew bundle dump --file=brew/Brewfile.current --force' # snapshot installed packages to Brewfile.current
+alias b.check='brew bundle check --file=brew/Brewfile.current' # check installed state against Brewfile.current
+alias b.install='brew bundle --file=brew/Brewfile.current' # install packages from Brewfile.current
+
+# Inspection
+alias b.leaves='brew leaves' # installed formulae nothing else depends on
+alias b.deps='brew deps --tree --installed' # dependency tree of installed formulae
+alias b.info='brew info' # + formula/cask name
+alias b.casks='brew list --cask -1' # list installed casks
+alias b.formulae='brew list --formula' # list installed formulae
+alias b.outdated='brew outdated --cask && brew outdated --formula' # list outdated casks & formulae
+
+# Taps
+alias b.taps='brew tap' # list taps
+alias b.untap='brew untap' # + tap name
+
+# Install a fixed set of daily-driver casks
+function b.latest() {
+  brew install --cask visual-studio-code
+  brew install --cask slack
+  brew install --cask rancher
+  brew install --cask jetbrains-toolbox
+  brew install --cask firefox
+  brew install --cask iterm2
+  brew install --cask google-chrome
+}

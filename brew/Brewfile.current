@@ -1,6 +1,5 @@
 tap "buo/cask-upgrade"
 tap "hashicorp/tap"
-tap "localstack/tap"
 tap "warrensbox/tap"
 # Record and share terminal sessions
 brew "asciinema"
@@ -128,6 +127,8 @@ brew "nikto"
 brew "nmap"
 # Manage multiple Node.js versions
 brew "nvm"
+# Manage multiple versions
+brew "mise"
 # Open source, general-purpose policy engine
 brew "opa"
 # ISO-C API and CLI for generating UUIDs
@@ -170,8 +171,6 @@ brew "terraform-docs"
 brew "tflint"
 # Static analysis security scanner for your terraform code
 brew "tfsec"
-# Terminal multiplexer
-brew "tmux"
 # Vulnerability scanner for container images, file systems, and Git repos
 # brew "trivy"
 # Executes a program periodically, showing output fullscreen
@@ -248,8 +247,9 @@ cask "stats"
 cask "the-unarchiver"
 # Development environment
 cask "vagrant"
-# Calling and messaging application focusing on security
-cask "viber"
+# https://formulae.brew.sh/formula/mise
+# Polyglot runtime manager (asdf rust clone)
+brew "mise"
 # Open-source code editor
 cask "visual-studio-code"
 # Native desktop client for WhatsApp

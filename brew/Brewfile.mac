@@ -19,3 +19,5 @@ cask "keymapp"
 
 # https://github.com/aristocratos/btop?tab=readme-ov-file#installation
 brew "btop"
+# Calling and messaging application focusing on security
+cask "viber"

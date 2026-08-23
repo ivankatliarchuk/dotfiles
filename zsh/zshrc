@@ -24,4 +24,4 @@ fi
 clear # clear the terminal in initialization from any initialization prints
 
 
-[[ -s "/Users/ik/.gvm/scripts/gvm" ]] && source "/Users/ik/.gvm/scripts/gvm"
+command -v mise >/dev/null && eval "$(mise activate zsh)"

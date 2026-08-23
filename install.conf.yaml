@@ -70,9 +70,9 @@
     ~/.curlrc: tools/curlrc
     ~/.wgetrc: tools/wgetrc
     ~/.gemrc: tools/gemrc
-    ~/.gvmrc: tools/gvmrc
     ~/.nvmrc: tools/nvmrc
     ~/.pyenvrc: tools/pyenvrc
+    ~/.config/mise/config.toml: tools/mise/config.toml
     ~/.claude: tools/claude
     # vscode
     ~/Library/ApplicationSupport/Code/User/settings.json:
