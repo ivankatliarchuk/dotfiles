@@ -4,13 +4,13 @@
 
 _docker_helper() {
   awk '
-    $0 ~ /^alias d\.|^alias docker\.|^alias d=/ {
+    $0 ~ /^alias docker\.|^alias d=/ {
       name = $0
       sub(/^alias /, "", name)
       sub(/=.*/, "", name)
       c = ""
       if (match($0, /# .*/)) c = substr($0, RSTART + 2)
-      printf "%-16s %s\n", name, c
+      printf "%-24s %s\n", name, c
       next
     }
   ' "${HOME}/.config/aliases/docker"
@@ -18,29 +18,31 @@ _docker_helper() {
 alias docker.helper='_docker_helper'
 alias docker.help='docker.helper'
 alias docker.h='docker.helper'
-alias d.helper='docker.helper'
 
 alias d=docker # shorthand for docker
 alias docker.rmi=docker-rmi # remove a docker image, + image name
-alias d.rmi='docker.rmi' # remove a docker image, + image name
 alias docker.rm='docker image prune' # remove dangling (untagged) images
-alias d.rm='docker.rm' # remove dangling (untagged) images
 alias docker.rms='docker system prune' # remove stopped containers, dangling images, unused networks
-alias d.rms='docker.rms' # remove stopped containers, dangling images, unused networks
 alias docker.i='docker images' # list images
-alias d.i='docker.i' # list images
 alias docker.sp='docker system prune -a' # remove all unused containers, images, networks & volumes
-alias d.sp='docker.sp' # remove all unused containers, images, networks & volumes
 
 # https://github.com/containers/skopeo
 _docker_inspect() {
   skopeo inspect "docker://$1"
 }
 alias docker.inspect='_docker_inspect' # + image path e.g. "docker.inspect registry.fedoraproject.org/fedora:latest"
-alias d.inspect='docker.inspect' # + image path e.g. "d.inspect registry.fedoraproject.org/fedora:latest"
 
 _docker_list_tags() {
   skopeo list-tags "docker://$1"
 }
 alias docker.list-tags='_docker_list_tags' # + image path e.g. "docker.list-tags registry.k8s.io/git-sync"
-alias d.list-tags='docker.list-tags' # + image path e.g. "d.list-tags registry.k8s.io/git-sync"
+
+_docker_list_tags_digests() {
+  local repo="$1"
+  skopeo list-tags "docker://$repo" | jq -r '.Tags[]' | while read -r tag; do
+    local digest
+    digest=$(skopeo inspect "docker://$repo:$tag" --override-os linux --format '{{.Digest}}' 2>/dev/null)
+    echo "$tag $digest"
+  done
+}
+alias docker.list-tags-digests='_docker_list_tags_digests' # + image path, list every tag with its digest e.g. "docker.list-tags-digests docker.io/library/hello-world"

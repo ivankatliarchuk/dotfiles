@@ -4,69 +4,87 @@
 # Git aliases
 #
 
-# Git
-# configs
-alias g.cfg='git config --global --list --show-origin'
-alias g.cfg-edit='git config --edit --global'
-alias g.cfg-local='git config --list --show-origin'
-# cd to git root directory
-alias g=git
-alias g.root='cd "$(git rev-parse --show-toplevel)"'
+_git_helper() {
+  awk '
+    /^# / { desc = substr($0, 3); next }
+    $0 ~ /^alias git\.|^alias g=/ {
+      name = $0
+      sub(/^alias /, "", name)
+      sub(/=.*/, "", name)
+      c = desc
+      if (match($0, /# .*/)) c = substr($0, RSTART + 2)
+      printf "%-16s %s\n", name, c
+      desc = ""
+      next
+    }
+  ' "${HOME}/.config/aliases/git"
+}
+alias git.helper='_git_helper'
+alias git.help='git.helper'
+alias git.h='git.helper'
+
+## Git
+## configs
+alias git.cfg='git config --global --list --show-origin'
+alias git.cfg-edit='git config --edit --global'
+alias git.cfg-local='git config --list --show-origin'
+alias g=git # shorthand for git
+alias git.root='cd "$(git rev-parse --show-toplevel)"' # cd to git root directory
 # -< gac "My commit message"
 alias gac= "add .;git commit -m 'wip'" # + commit message
-alias g.ci='git ci -s -m ' # + commit message with signoff
-alias g.cis='git ci -s -m ' # + commit message with signoff
-alias g.dff=_gdif
-alias g.diff=_gdif
-# branch
+alias git.ci='git ci -s -m ' # + commit message with signoff
+alias git.cis='git ci -s -m ' # + commit message with signoff
+alias git.diff='git diff' # show diff for all changed files
+alias git.diff-pick=_gdif # pick a changed file via fzf, with a live diff preview
+## branch
 alias gbn="git branch" # + branch name
 alias gb='gbn'
 alias gba='git ba' # list branches with author and commit date
-alias g.b='git branch --sort=-committerdate | fzf | xargs git checkout'
+alias git.b='git branch --sort=-committerdate | fzf | xargs git checkout'
 # https://dev.to/chilcutt/smarter-git-checkout-with-fzf-2k5n
-alias g.br="git for-each-ref --format='%(refname:short)' refs/heads | fzf | xargs git checkout"
-alias g.bc='fzf-git-checkout'
-alias g.bl='git branch --sort=-committerdate'
+alias git.br="git for-each-ref --format='%(refname:short)' refs/heads | fzf | xargs git checkout"
+alias git.bc='fzf-git-checkout'
+alias git.bl='git branch --sort=-committerdate'
 alias gc="git checkout" # + branch name
 alias gcb="git checkout -b" # + branch name
-alias g.cb="git checkout -b" # + branch name
-alias g.ch='g.cb'
-alias g.d='git branch -D' # + branch name
-alias g.open='_gopen'
-alias g.o='_gopen'
+alias git.cb="git checkout -b" # + branch name
+alias git.ch='git.cb'
+alias git.d='git branch -D' # + branch name
+alias git.open='_gopen'
+alias git.o='_gopen'
 # diff with branch
-alias g.diffany='git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative master..' # + branch name
+alias git.diffany='git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative master..' # + branch name
 # switch to master
-alias g.master="git checkout master"
+alias git.master="git checkout master"
 alias gmaster=master
-alias master=g.master
+alias master=git.master
 alias main='git checkout main'
 alias develop='git checkout develop'
 alias checkout='git checkout ' # + branch name
-alias g.main="git checkout main" # switch to main
-alias g.s='git status'
+alias git.main="git checkout main" # switch to main
+alias git.s='git status'
 # list all branches
-alias g.list="git blist"
-alias g.l="git blist"
-alias blist='g.list'
-alias g.repolist="find . -type d -exec sh -c 'cd {}; git rev-parse --git-dir 2> /dev/null 1>&2;' \; -prune -print"
-alias repos='g.rep'
-alias g.rep='_grepo'
-alias g.rmb=git-remove-remote
-alias g.who=iam
-alias g.search='fzf-git-search-clone' # + user name e.g. ivankatliarchuk
-# push
+alias git.list="git blist"
+alias git.l="git blist"
+alias blist='git.list'
+alias git.repolist="find . -type d -exec sh -c 'cd {}; git rev-parse --git-dir 2> /dev/null 1>&2;' \; -prune -print"
+alias repos='git.rep'
+alias git.rep='_grepo'
+alias git.rmb=git-remove-remote
+alias git.who=iam
+alias git.search='fzf-git-search-clone' # + user name e.g. ivankatliarchuk
+## push
 alias gpush="git push" # + remote & branch names
-alias g.push='git push'
-alias g.ps='git push'
-alias g.psf='git psf'
-# pull
+alias git.push='git push'
+alias git.ps='git push'
+alias git.psf='git psf'
+## pull
 alias gpull="git pull" # + remote & branch names
-alias g.pl=gpull
-# Work with tags
-alias g.t='_gtag'
-alias g.td='git log --tags --simplify-by-decoration --reverse --pretty="format:%ci %d"'
-alias g.tremove='git-remove-tag' # + tag id
+alias git.pl=gpull
+## Work with tags
+alias git.t='_gtag'
+alias git.td='git log --tags --simplify-by-decoration --reverse --pretty="format:%ci %d"'
+alias git.tremove='git-remove-tag' # + tag id
 
 ## FZF
 
@@ -82,9 +100,9 @@ _git_tag_it() {
   git tag -a $1 -m "$2"
 }
 
-alias g.tagit='_git_tag_it' # tag + message
+alias git.tagit='_git_tag_it' # tag + message
 
-alias g.rbs='git -c sequence.editor="code --wait --reuse-window" rebase -i HEAD~' # add `.` to rebase the last commit or number of commits
+alias git.rbs='git -c sequence.editor="code --wait --reuse-window" rebase -i HEAD~' # add `.` to rebase the last commit or number of commits
 
 _git_pr4ai() {
   local repo="$1" pr="$2"
@@ -108,13 +126,13 @@ _git_pr4ai() {
   } | base64 -w 0 | pbcopy
 }
 
-# g.pr4ai kubernetes-sigs/external-dns 6017
-alias g.pr4ai='_git_pr4ai' # + repo e.g. ivankatliarchuk/cheatsheet-git + pr number e.g. 123
+# git.pr4ai kubernetes-sigs/external-dns 6017
+alias git.pr4ai='_git_pr4ai' # + repo e.g. ivankatliarchuk/cheatsheet-git + pr number e.g. 123
 alias gcf='git commit --all --amend --no-edit' # amend last commit without changing the message'
 
 _git_wt_rm() {
   local name="$1"
-  [[ -z "$name" ]] && { echo "Usage: g.wt-rm <name>"; return 1; }
+  [[ -z "$name" ]] && { echo "Usage: git.wt-rm <name>"; return 1; }
 
   local wt_path
   wt_path=$(git worktree list | awk -v n="$name" '$0 ~ n { print $1; exit }')
@@ -129,7 +147,7 @@ _git_wt_rm() {
   git worktree remove --force "$wt_path"
   [[ -n "$branch" ]] && git branch -D "$branch"
 }
-alias g.wt-rm='_git_wt_rm' # + worktree name e.g. agent-aacb65e4
+alias git.wt-rm='_git_wt_rm' # + worktree name e.g. agent-aacb65e4
 
 _git_wt_clean() {
   local main_wt
@@ -146,11 +164,11 @@ _git_wt_clean() {
     [[ -n "$branch" ]] && git branch -D "$branch"
   done
 }
-alias g.wt-clean='_git_wt_clean' # remove all worktrees and their branches
+alias git.wt-clean='_git_wt_clean' # remove all worktrees and their branches
 
-alias g.workflow.patch='echo "Create & apply a patch:
+# print the create/inspect/apply patch workflow steps
+alias git.flow.patch='echo "Create & apply a patch:
   1. git diff HEAD > changes.patch    # create patch from current changes
   2. git apply --stat changes.patch   # preview what the patch touches
   3. git apply --check changes.patch  # dry-run validate it applies cleanly
   4. git apply changes.patch          # apply the patch"'
-
