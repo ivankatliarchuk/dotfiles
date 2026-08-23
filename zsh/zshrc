@@ -1,27 +1,5 @@
 # https://raw.githubusercontent.com/ivankatliarchuk/dotfiles/master/zsh/zshrc
-
-printf '\33c\e[3J' # hides last logic command
-
-if [[ -n "$DEBUG" ]];then
-set -x
-  typeset -F SECONDS; setopt prompt_subst; PS4='$SECONDS+%N:%i> '
-fi
-
-if [[ $(uname -m) == 'arm64' ]]; then
-  # make sure to link required things to path
-  # find . -type l -ls
-  # ln -s /opt/homebrew/bin/pinentry-mac /usr/local/bin/
-  # ls -s /opt/homebrew/bin/gpg /usr/local/bin/
-  # remove rm /usr/local/bin/bin
-  # on new mac run 'gpg-restart' to make directory safe
-  export PATH="/opt/homebrew/bin:$PATH"
-  #  Homebrew puts admin/daemon-style tools (things traditionally requiring root, like network daemons) in sbin.
-  export PATH="/opt/homebrew/sbin:$PATH"
-fi
-
+# This file is intentionally minimal. All setup logic (PATH, debug, functions,
+# aliases, starship, etc.) lives in settings/bootstrap.zsh — add new init
+# there, not here.
 [[ -f ${HOME}/.zsh/settings/bootstrap.zsh ]] && source ${HOME}/.zsh/settings/bootstrap.zsh
-
-clear # clear the terminal in initialization from any initialization prints
-
-
-command -v mise >/dev/null && eval "$(mise activate zsh)"

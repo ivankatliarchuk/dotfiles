@@ -3,7 +3,7 @@
 # Initialize completion
 [[ -n "${DEBUG:-}" ]] && set -x
 autoload -U colors && colors
-autoload -Uz compinit && compinit -i
+autoload -Uz compinit
 zmodload zsh/complist
 
 rehash

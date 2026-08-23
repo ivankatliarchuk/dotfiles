@@ -1,13 +1,34 @@
-# https://raw.githubusercontent.com/ivankatliarchuk/dotfiles/master/zsh/zshrc
+# https://raw.githubusercontent.com/ivankatliarchuk/dotfiles/master/zsh/settings/bootstrap.zsh
+printf '\33c\e[3J' # hides last logic command
+
+if [[ -n "$DEBUG" ]]; then
+  typeset -F SECONDS; setopt prompt_subst; PS4='$SECONDS+%N:%i> '
+  set -x
+fi
+
+if [[ $(uname -m) == 'arm64' ]]; then
+  # make sure to link required things to path
+  # find . -type l -ls
+  # ln -s /opt/homebrew/bin/pinentry-mac /usr/local/bin/
+  # ls -s /opt/homebrew/bin/gpg /usr/local/bin/
+  # remove rm /usr/local/bin/bin
+  # on new mac run 'gpg-restart' to make directory safe
+  export PATH="/opt/homebrew/bin:$PATH"
+  #  Homebrew puts admin/daemon-style tools (things traditionally requiring root, like network daemons) in sbin.
+  export PATH="/opt/homebrew/sbin:$PATH"
+fi
+
 umask 077
-[[ -n "${DEBUG:-}" ]] && set -x
 # Created by dotfiles
 [[ "$TERM" == "screen" ]] && export TERM=screen-256color
 
 # load custom executable functions
-for function in ~/.zsh/functions/*; do
-  source $function
+for func in ~/.zsh/functions/*; do
+  if [[ -r "$func" ]] && [[ -f "$func" ]]; then
+    source "$func"
+  fi
 done
+unset func
 
 for cmd in ~/.config/.cmds/*; do
 	if [[ -r "$cmd" ]] && [[ -f "$cmd" ]]; then
@@ -73,7 +94,7 @@ fi
 if command -v go >/dev/null 2>&1; then
     export PATH="$PATH:$(go env GOPATH)/bin"
   else
-    echo "!!! GVM and GO not installed"
+    echo "!!! GO not installed"
 fi
 # curl is keg-only, which means it was not symlinked into /usr/local
 [[ -s "/usr/local/opt/curl" ]] && export PATH="/usr/local/opt/curl/bin:$PATH"
@@ -88,14 +109,14 @@ if [ -f "/usr/local/bin/aws" ]; then
 fi
 
 # pnpm
-export PNPM_HOME="/Users/$(whoami)/Library/pnpm"
+export PNPM_HOME="$HOME/Library/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
 
-export GOPATH=$HOME
+export GOPATH=$HOME/go
 export PATH="$GOPATH/bin:$PATH"
 [[ -s "${HOME}/.krew/bin" ]] && export PATH="${HOME}/.krew/bin:${PATH}"
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
@@ -103,3 +124,7 @@ export PATH="$HOME/.rd/bin:$PATH"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
 export PATH="/usr/local/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
+
+command -v mise >/dev/null && eval "$(mise activate zsh)"
+
+clear # clear the terminal in initialization from any initialization prints

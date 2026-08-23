@@ -18,12 +18,8 @@ get_cluster_short() {
 }
 
 get_namespace_upper() {
-    echo "$1" | tr '[:lower:]' '[:lower:]'
+    echo "$1" | tr '[:lower:]' '[:upper:]'
 }
-
-# Temporary fix until ....
-TF_DEFAULT_VERSION="1.7.5"
-TF_PRODUCT=terraform
 
 load-tofuswitch() {
   # https://tfswitch.warrensbox.com/usage/ci-cd/
@@ -31,10 +27,8 @@ load-tofuswitch() {
   local tf_path=".opentofu-version"
 
   if [ -f "$tfswitchrc_path" ]; then
-    TF_PRODUCT=terraform
     tfswitch
   elif [ -f "$tf_path" ]; then
-    TF_PRODUCT=opentofu
     local tofu_version=$(tofu -version | head -n 1 | awk '{print $2}')
     local desired_version=$(cat "$tf_path")
     export TOFU_VERSION=$tofu_version
@@ -66,20 +60,18 @@ load-nvmrc() {
   if exists nvm && [[ "$PWD" != "$HOME" ]]; then
     local node_version="$(nvm version)"
     local nvmrc_path="$(nvm_find_nvmrc)"
-    if [ -f .nvmrc  ]; then
-      if [[ -n "$nvmrc_path" ]]; then
-        if [[ "${$(nvm current)#"v"}" != "$(cat .nvmrc)" ]]; then
-          local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
+    if [[ -n "$nvmrc_path" ]]; then
+      if [[ "${$(nvm current)#"v"}" != "$(cat "${nvmrc_path}")" ]]; then
+        local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
 
-          if [ "$nvmrc_node_version" = "N/A" ]; then
-            nvm install
-          elif [ "$nvmrc_node_version" != "$node_version" ]; then
-            nvm use $nvmrc_node_version
-          fi
+        if [ "$nvmrc_node_version" = "N/A" ]; then
+          nvm install
+        elif [ "$nvmrc_node_version" != "$node_version" ]; then
+          nvm use $nvmrc_node_version
         fi
-      elif [ "$node_version" != "$(nvm version default)" ]; then
-        nvm use default
       fi
+    elif [ "$node_version" != "$(nvm version default)" ]; then
+      nvm use default
     fi
   fi
 }
@@ -134,13 +126,14 @@ load-pyenv() {
 add-zsh-hook chpwd load-pyenv
 load-pyenv
 
+zcompdump="${ZDOTDIR:-$HOME}/.zcompdump"
+
 if [[ -n "$TMUX" ]] ;then
 : # do nothhing
 else
 # Execute code that does not affect the current session in the background.
 {
   # Compile the completion dump to increase startup speed.
-  zcompdump="${ZDOTDIR:-$HOME}/.zcompdump"
   if [[ -s "$zcompdump" && (! -s "${zcompdump}.zwc" || "$zcompdump" -nt "${zcompdump}.zwc") ]]; then
     zcompile "$zcompdump"
   fi
@@ -148,7 +141,7 @@ else
 fi
 
 # Cache completion if nothing changed - faster startup time
-typeset -i updated_at=$(date +'%j' -r ~/.zcompdump 2>/dev/null || stat -f '%Sm' -t '%j' ~/.zcompdump 2>/dev/null)
+typeset -i updated_at=$(date +'%j' -r "$zcompdump" 2>/dev/null || stat -f '%Sm' -t '%j' "$zcompdump" 2>/dev/null)
 if [ $(date +'%j') != $updated_at ]; then
   compinit -i
 else
