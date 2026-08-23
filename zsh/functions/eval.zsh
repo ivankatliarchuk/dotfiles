@@ -42,7 +42,6 @@ if command -v brew >/dev/null 2>&1; then
 	brew_prefix="$(brew --prefix)"
 	[ -f "$brew_prefix/etc/profile.d/z.sh" ] && source "$brew_prefix/etc/profile.d/z.sh"
 	unset brew_prefix
-  autoload -Uz compinit
 fi
 
 #------------------

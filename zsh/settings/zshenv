@@ -10,11 +10,13 @@ fi
 #
 # Editors
 #
-if [[ -x "$(which code)" ]]; then
-  export EDITOR="$(which code) --wait"
+code_path="$(command -v code)"
+if [[ -n "$code_path" ]]; then
+  export EDITOR="$code_path --wait"
 else
   export EDITOR='vim'
 fi
+unset code_path
 
 export VISUAL='code'
 export PAGER=''

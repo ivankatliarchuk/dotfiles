@@ -1,6 +1,10 @@
 # https://raw.githubusercontent.com/ivankatliarchuk/dotfiles/master/zsh/settings/bootstrap.zsh
 printf '\33c\e[3J' # hides last logic command
 
+# Ensure PATH-like arrays stay deduplicated for the life of this shell,
+# regardless of whether zprofile ran (it only sources for login shells).
+typeset -gU cdpath fpath mailpath path
+
 if [[ -n "$DEBUG" ]]; then
   typeset -F SECONDS; setopt prompt_subst; PS4='$SECONDS+%N:%i> '
   set -x
@@ -54,7 +58,7 @@ done
 unset al
 
 # run only on new shell creation
-if which utils > /dev/null; then
+if command -v utils > /dev/null; then
   source utils
 fi
 

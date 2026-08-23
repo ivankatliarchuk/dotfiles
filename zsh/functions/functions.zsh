@@ -49,12 +49,6 @@ load-tgswitch() {
   fi
 }
 
-add-zsh-hook chpwd load-tofuswitch
-load-tofuswitch
-
-add-zsh-hook chpwd load-tgswitch
-load-tgswitch
-
 # https://github.com/nvm-sh/nvm
 load-nvmrc() {
   if exists nvm && [[ "$PWD" != "$HOME" ]]; then
@@ -75,9 +69,6 @@ load-nvmrc() {
     fi
   fi
 }
-# Run load-nvmrc on initial shell load
-add-zsh-hook chpwd load-nvmrc
-load-nvmrc
 
 # Automatically switch golang version via mise when a directory has a `go.mod` file
 load-go-version() {
@@ -97,8 +88,6 @@ load-go-version() {
     fi
   fi
 }
-add-zsh-hook chpwd load-go-version
-load-go-version
 
 # Automatically switch and load python versions when a directory has an `.python-version` or `.pyrc` file
 load-pyenv() {
@@ -123,14 +112,20 @@ load-pyenv() {
     fi
   fi
 }
-add-zsh-hook chpwd load-pyenv
-load-pyenv
+
+# Run all directory-based tool-version switchers on cd, and once on shell load
+load-dir-hooks() {
+  load-tofuswitch
+  load-tgswitch
+  load-nvmrc
+  load-go-version
+  load-pyenv
+}
+add-zsh-hook chpwd load-dir-hooks
+load-dir-hooks
 
 zcompdump="${ZDOTDIR:-$HOME}/.zcompdump"
 
-if [[ -n "$TMUX" ]] ;then
-: # do nothhing
-else
 # Execute code that does not affect the current session in the background.
 {
   # Compile the completion dump to increase startup speed.
@@ -138,15 +133,12 @@ else
     zcompile "$zcompdump"
   fi
 } &!
-fi
 
 # Cache completion if nothing changed - faster startup time
+autoload -Uz compinit
 typeset -i updated_at=$(date +'%j' -r "$zcompdump" 2>/dev/null || stat -f '%Sm' -t '%j' "$zcompdump" 2>/dev/null)
 if [ $(date +'%j') != $updated_at ]; then
   compinit -i
 else
   compinit -C -i
 fi
-
-# Enhanced form of menu completion called `menu selection'
-zmodload -i zsh/complist
