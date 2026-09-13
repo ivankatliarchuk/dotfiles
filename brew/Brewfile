@@ -10,7 +10,7 @@ brew "chezmoi"
 # GNU File, Shell, and Text utilities
 brew "coreutils"
 # Generic library support script
-brew "libtool"
+# brew "libtool"
 # Terminal-based visual file manager
 # https://github.com/MidnightCommander/mc
 # brew "midnight-commander"
@@ -22,7 +22,7 @@ brew "libtool"
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
 # Terminal multiplexer
-brew "tmux"
+# brew "tmux"
 # Terminal multiplexer
 # https://github.com/zellij-org/zellij
 # https://zellij.dev/documentation/

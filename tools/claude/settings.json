@@ -23,5 +23,6 @@
     "type": "command",
     "command": "bash /Users/ik/.claude/statusline-command.sh"
   },
-  "enabledPlugins": {}
+  "enabledPlugins": {},
+  "agentPushNotifEnabled": true
 }
