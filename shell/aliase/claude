@@ -6,6 +6,7 @@
 # Run `claude.help` (or `c.help`) to list them all with descriptions.
 
 mkalias c claude help 'alias_help "${HOME}/.config/aliases/claude"'
+mkalias c claude h 'alias_help "${HOME}/.config/aliases/claude"'
 mkalias c claude kill "pkill -f 'claude'"
 mkalias c claude kill.strict "ps aux | grep '/opt/homebrew/bin/claude' | grep -v grep | awk '{print \$2}' | xargs kill"
 mkalias c claude ps "pgrep -l -f 'claude'"
