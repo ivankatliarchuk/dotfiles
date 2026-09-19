@@ -68,6 +68,8 @@ Dotfiles setup
 
 **Warning:** If you want to give these dotfiles a try, you should first fork this repository, review the code, and remove things you don’t want or need. Don’t blindly use my settings unless you know what that entails. Use at your own risk!
 
+Symlinks are currently installed by [Dotbot](https://github.com/anishathalye/dotbot) via `bin/install` and `install.conf.yaml`. A parallel `mise.toml` also declares the same links under `[dotfiles]`, applied with `mise bootstrap dotfiles apply` (see [mise dotfiles docs](https://mise.jdx.dev/dotfiles.html)). It's being evaluated as a Dotbot replacement; both configs currently produce the same result, and Dotbot remains the source of truth until the migration is complete.
+
 ## Caveats
 
 These scripts are meant to run only on OS X

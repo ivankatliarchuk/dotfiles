@@ -1,0 +1,150 @@
+# Dotfiles managed via mise (https://mise.jdx.dev/dotfiles.html), run from
+# the repo root with `mise bootstrap dotfiles apply`.
+#
+# This is a parallel path to dotbot's install.conf.yaml, not a replacement
+# yet. Sources are resolved relative to this file's directory (the repo
+# root), matching install.conf.yaml's paths.
+
+# ~/.config/gitcfg.local is not a symlink target of anything below, so it
+# needs to be declared explicitly (mise auto-creates parent directories for
+# [dotfiles] symlink targets, which covers every other create: entry from
+# install.conf.yaml). Mode pinned to match dotbot's existing 0777 dir so
+# applying this doesn't silently tighten permissions to mise's 0755 default.
+[bootstrap.directories."~/.config/gitcfg.local"]
+mode = "0777"
+
+[dotfiles."~/.gitconfig"]
+source = "git/gitconfig"
+
+[dotfiles."~/.gitignore"]
+source = "git/gitcfg/gitignore_global"
+
+[dotfiles."~/.gitattributes"]
+source = "git/gitattributes"
+
+[dotfiles."~/.config/gitcfg"]
+source = "git/gitcfg"
+
+[dotfiles."~/.aliases"]
+source = "shell/aliases"
+
+[dotfiles."~/.config/aliases"]
+source = "shell/aliase"
+
+[dotfiles."~/.exports"]
+source = "shell/exports"
+
+[dotfiles."~/.functions"]
+source = "shell/functions"
+
+[dotfiles."~/.profile"]
+source = "shell/profile"
+
+[dotfiles."~/.config/manage/python"]
+source = "shell/manage-python"
+
+[dotfiles."~/.python-version"]
+source = ".python-version"
+
+[dotfiles."~/.locals"]
+source = "locals"
+
+[dotfiles."~/.zshenv"]
+source = "zsh/settings/zshenv"
+
+[dotfiles."~/.zprofile"]
+source = "zsh/settings/zprofile"
+
+[dotfiles."~/.zsh/functions"]
+source = "zsh/functions"
+
+[dotfiles."~/.zsh/settings"]
+source = "zsh/settings"
+
+[dotfiles."~/.gnupg/gpg.conf"]
+source = "tools/gnupg/gpg.conf"
+
+[dotfiles."~/.gnupg/gpg-agent.conf"]
+source = "tools/gnupg/gpg-agent.conf"
+
+[dotfiles."~/.config/mc/ini"]
+source = "tools/mc.ini"
+
+[dotfiles."~/.config/starship"]
+source = "terminal/starship"
+
+[dotfiles."~/.config/zellij"]
+source = "terminal/zellij"
+
+[dotfiles."~/.config/scripts"]
+source = "scripts"
+
+[dotfiles."~/.config/.cmds"]
+source = "shell/cmds"
+
+[dotfiles."~/.zshrc"]
+source = "zsh/zshrc"
+
+[dotfiles."~/.zsh/zsh-autosuggestions"]
+source = "vendor/zsh-autosuggestions"
+
+[dotfiles."~/.bashrc"]
+source = "shell/bashrc"
+
+[dotfiles."~/.vimrc"]
+source = "tools/vimrc"
+
+[dotfiles."~/.curlrc"]
+source = "tools/curlrc"
+
+[dotfiles."~/.wgetrc"]
+source = "tools/wgetrc"
+
+[dotfiles."~/.gemrc"]
+source = "tools/gemrc"
+
+[dotfiles."~/.nvmrc"]
+source = "tools/nvmrc"
+
+[dotfiles."~/.pyenvrc"]
+source = "tools/pyenvrc"
+
+[dotfiles."~/.config/mise/config.toml"]
+source = "tools/mise/config.toml"
+
+[dotfiles."~/.claude"]
+source = "tools/claude"
+
+# macOS-only, mirrors install.conf.yaml's `if: "[ \`uname\` = Darwin ]"` guard.
+# Note: install.conf.yaml's literal target path is "ApplicationSupport"
+# (no space), which does not match the real macOS "Application Support"
+# directory - ported as-is here to preserve existing (buggy) behavior;
+# not fixed as part of this migration.
+[dotfiles.iterm2-dynamic-profiles]
+source = "terminal/iTerm/profiles"
+variants = [
+  { os = "macos", target = "~/Library/ApplicationSupport/iTerm2/DynamicProfiles" },
+]
+
+# force: false in install.conf.yaml (won't overwrite a pre-existing real
+# file) - apply these two WITHOUT --force, separately from the rest.
+[dotfiles.iterm2-material-design-colors]
+source = "vendor/iterm2-material-design/material-design-colors.itermcolors"
+variants = [
+  { os = "macos", target = "~/.config/iTerm2/colors/material-design-colors.itermcolors" },
+]
+
+[dotfiles.iterm2-xsfce-background]
+source = "terminal/iTerm/xsfce-v2.png"
+variants = [
+  { os = "macos", target = "~/.config/iTerm2/xsfce-v2.png" },
+]
+
+# install.conf.yaml also links these to a second, no-space "ApplicationSupport"
+# path, which looks like a stray typo/duplicate rather than a real macOS
+# path - intentionally dropped here, only the correct path is kept.
+[dotfiles."~/Library/Application Support/Code/User/settings.json"]
+source = "tools/vscode/settings.json"
+
+[dotfiles."~/Library/Application Support/Code/User/keybindings.json"]
+source = "tools/vscode/keybindings.json"
