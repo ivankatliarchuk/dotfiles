@@ -93,13 +93,6 @@ fi
 #   . /usr/local/opt/asdf/libexec/asdf.sh
 # fi
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-# export PATH="$PATH:$HOME/.rvm/bin:$(go env GOPATH)/bin"
-if command -v go >/dev/null 2>&1; then
-    export PATH="$PATH:$(go env GOPATH)/bin"
-  else
-    echo "!!! GO not installed"
-fi
 # curl is keg-only, which means it was not symlinked into /usr/local
 [[ -s "/usr/local/opt/curl" ]] && export PATH="/usr/local/opt/curl/bin:$PATH"
 

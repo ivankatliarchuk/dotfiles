@@ -41,9 +41,4 @@ if command -v brew >/dev/null 2>&1; then
 	unset brew_prefix
 fi
 
-#------------------
-# Zsh hooks
-#------------------
-autoload -U add-zsh-hook
-
 # for f in $(compaudit);do sudo chmod -R 755 $f;done;

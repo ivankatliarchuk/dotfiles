@@ -99,6 +99,9 @@ load-dir-hooks() {
   load-go-version
   load-pyenv
 }
+# Declared here rather than relying on eval.zsh's load order (this file's
+# name used to just happen to sort after eval.zsh's autoload).
+autoload -U add-zsh-hook
 add-zsh-hook chpwd load-dir-hooks
 load-dir-hooks
 
