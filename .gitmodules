@@ -1,18 +1,7 @@
-[submodule "vendor/prezto"]
-	path = vendor/prezto
-	url = https://github.com/sorin-ionescu/prezto.git
-	ignore = dirty
 [submodule "vendor/powerline-fonts"]
 	path = vendor/powerline-fonts
 	url = https://github.com/powerline/fonts.git
 	ignore = dirty
-[submodule "vendor/dotbot"]
-	path = vendor/dotbot
-	url = https://github.com/anishathalye/dotbot
-	ignore = dirty
-[submodule "vendor/iterm2-material-design"]
-	path = vendor/iterm2-material-design
-	url = https://github.com/MartinSeeler/iterm2-material-design.git
 [submodule "vendor/zsh-autosuggestions"]
 	path = vendor/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions

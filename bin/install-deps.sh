@@ -4,8 +4,6 @@
 
 set -e
 
-: "${GVM_NO_UPDATE_PROFILE:=1}"
-
 [[ -n "${DEBUG:-}" ]] && set -x
 # shellcheck source=/dev/null
 [[ -f "scripts/utils" ]] && source scripts/utils
@@ -19,7 +17,6 @@ show_help() {
 cat << EOF
 Usage: $(basename "$0") :do:
     install powerline fonts
-    install gvm (Go Version Manager)
     install node with NVM (Node Version Manage https://github.com/nvm-sh/nvm)
     install python with Pyenv (https://realpython.com/intro-to-pyenv)
     install helm charts
@@ -36,22 +33,6 @@ install_fonts() {
     ./install.sh
   popd
   ok "$1"
-}
-
-install_gvm() {
-  action "$1"
-  local noerr=true
-  [[ -d "${HOME}/.gvm" ]] && echo "exist"
-  if ! exists gvm; then
-    [[ -d "${HOME}/.gvm" ]] && rm -rf "${HOME}/.gvm"
-    if ! $SHELL < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer); then
-      error "failed '$1' aborting..."
-      noerr=false
-    fi
-  fi
-  if [[ -z "${noerr}" ]]; then
-    ok "$1"
-  fi
 }
 
 install_node() {
@@ -131,9 +112,6 @@ core() {
   msg='install/update and reset fonts cache'
   install_local "install_fonts" "$msg"
 
-  msg='install gvm'
-  install_local "install_gvm" "$msg"
-
   msg='install & update helm repositories'
   install_local "install_helm" "$msg"
 
@@ -155,7 +133,6 @@ Usage: $(basename "$0") <options>
     -h, --help       Display help
     -a, --all        Run all
     -n, --node       Install Node
-    -g, --go         Install GVM for Go sdk
     -p, --python     Install Python and Pyenv
     -o, --osx        Sycn OSX settings
 EOF
@@ -170,10 +147,6 @@ cmds() {
           ;;
         -n|--node)
           install_node
-          break
-          ;;
-        -g|--go)
-          install_gvm "$@"
           break
           ;;
         -p|--python)

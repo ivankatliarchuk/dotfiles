@@ -11,9 +11,9 @@
 Remove submodule
 
 ```sh
-git submodule deinit -f vendor/bash-it
-rm -rf .git/modules/vendor/bash-it
-git rm -f vendor/bash-it
+git submodule deinit -f vendor/<name>
+rm -rf .git/modules/vendor/<name>
+git rm -f vendor/<name>
 ```
 
 Rebase

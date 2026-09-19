@@ -39,10 +39,7 @@ vm-dowm: ## Run on Mac. Down
 
 ignore-dirty: ## Ignore dirty commits
 	@git config --file .gitmodules --get-regexp path | awk '{ print $2 }'
-	@git config -f .gitmodules submodule.vendor/bash-it.ignore dirty
-	@git config -f .gitmodules submodule.vendor/prezto.ignore dirty
 	@git config -f .gitmodules submodule.vendor/powerline-fonts.ignore dirty
-	@git config -f .gitmodules submodule.vendor/dotbot.ignore dirty
 
 install-deps: ## Install dependencies
 	@bin/install-deps.sh

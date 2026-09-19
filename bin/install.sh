@@ -25,7 +25,7 @@ cmds() {
           break
           ;;
         -n|--no-shell)
-          execute --except shell
+          execute --no-shell
           break
           ;;
         -h|--help)
@@ -48,7 +48,7 @@ cmds() {
 function _docs() {
   declare -a docs=(
     "https://github.com/ivankatliarchuk/dotfiles"
-    "https://github.com/anishathalye/dotbot"
+    "https://mise.jdx.dev/dotfiles.html"
   )
   for el in "${docs[@]}" ; do
     KEY="${el%%}"

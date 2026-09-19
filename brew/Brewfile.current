@@ -45,8 +45,6 @@ brew "curl"
 brew "direnv"
 # Lightweight DNS forwarder and DHCP server
 brew "dnsmasq"
-# Tool that bootstraps your dotfiles
-brew "dotbot"
 # Secure your credentials in environment variables
 brew "envchain"
 # Command-line fuzzy finder written in Go

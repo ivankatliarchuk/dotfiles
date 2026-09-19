@@ -28,7 +28,7 @@ if [ ! -d $localrepo_vc_dir ]
 then
     git clone $reposrc $localrepo
 fi
-echo "dotbot -c dotfiles/dotbot.conf.yaml" > run.sh
+echo "mise bootstrap dotfiles apply --force --yes -C dotfiles" > run.sh
 chmod +x run.sh
 SCRIPT
 

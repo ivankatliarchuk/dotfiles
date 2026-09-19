@@ -19,7 +19,6 @@ Dotfiles setup
 - [Installation](#installation)
 - [Caveats](#caveats)
 - [Motivation](#motivation)
-- [Dotbot Plugins](#dotbot-plugins)
 - [🔖 Documentation](#-documentation)
   - [Evaluate Tools](#evaluate-tools)
   - [®️ Emojies](#-emojies)
@@ -48,7 +47,6 @@ Dotfiles setup
   │   └── gitconfig.include
   ├── gnupg
   ├── iTerm
-  ├── install.conf.yaml
   ├── locals
   ├── py
   ├── scripts
@@ -68,7 +66,7 @@ Dotfiles setup
 
 **Warning:** If you want to give these dotfiles a try, you should first fork this repository, review the code, and remove things you don’t want or need. Don’t blindly use my settings unless you know what that entails. Use at your own risk!
 
-Symlinks are currently installed by [Dotbot](https://github.com/anishathalye/dotbot) via `bin/install` and `install.conf.yaml`. A parallel `mise.toml` also declares the same links under `[dotfiles]`, applied with `mise bootstrap dotfiles apply` (see [mise dotfiles docs](https://mise.jdx.dev/dotfiles.html)). It's being evaluated as a Dotbot replacement; both configs currently produce the same result, and Dotbot remains the source of truth until the migration is complete.
+Symlinks are installed via [mise](https://mise.jdx.dev/dotfiles.html): `bin/install` runs `mise bootstrap dotfiles apply` against the `[dotfiles]` table in `mise.toml`. This replaces [Dotbot](https://github.com/anishathalye/dotbot), which this repo used previously.
 
 ## Caveats
 
@@ -79,8 +77,6 @@ These scripts are meant to run only on OS X
 - [ThoughBot](https://github.com/thoughtbot/dotfiles)
 - [Dotfiles](https://dotfiles.github.io/)
 - [Dotfiles: awesome](https://project-awesome.org/webpro/awesome-dotfiles)
-
-## Dotbot Plugins
 
 ## 🔖 Documentation
 
@@ -125,7 +121,7 @@ git check-ignore -v tools/claude/plans/
 - [ ] Support Linux/Debian
 - [ ] [DNS Crypt](https://github.com/drduh/config/blob/master/dnscrypt-proxy.toml)
 - [ ] Document github setup, blog it as well
-- [ ] Dotbot templater plugin
+- [ ] Templated dotfiles (mise supports `mode = "template"` natively now, no plugin needed - just not adopted anywhere yet)
 - [X] Review new Terminal Options
 
 ## Awailable Commands

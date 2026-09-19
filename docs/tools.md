@@ -26,7 +26,7 @@
 
 ## Mixed
 
-- [DotBot](https://github.com/anishathalye/dotbot/wiki)
+- [mise dotfiles](https://mise.jdx.dev/dotfiles.html)
 - [Chezmoi Quick Start](https://www.chezmoi.io/docs/quick-start/)
 
 - [Github Hub](https://hub.github.com/)
@@ -102,7 +102,6 @@ brew shellenv
 
 ## Dotfiles
 
-- [Dotbot examples](https://github.com/anishathalye/dotbot/wiki/Users)
 - [Macos dotfiles](https://github.com/mathiasbynens/dotfiles/blob/main/.macos)
 - [Macos dotfiles](https://github.com/BarryMode/macos-prime/blob/master/dotfiles/.macos)
 - [Macos dotfiles](https://github.com/powerline/fonts)

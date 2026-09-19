@@ -8,12 +8,6 @@ if command -v direnv >/dev/null 2>&1; then
     echo "!!! DIRENV not installed"
 fi
 
-# Load zprezto if it's installed
-# disabling this will remove compaudit
-if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
-  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
-fi
-
 if [ -n "$ZSH_VERSION" ]; then
   autoload -U bashcompinit
   bashcompinit

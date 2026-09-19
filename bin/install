@@ -2,16 +2,51 @@
 
 set -e
 
-CONFIG="install.conf.yaml"
-DOTBOT_DIR="vendor/dotbot"
-DOTBOT_BIN="bin/dotbot"
-BASEDIR="$(pwd)"
+if ! command -v mise >/dev/null 2>&1; then
+  echo "error: mise is required but not installed." >&2
+  echo "Install it with one of:" >&2
+  echo "  brew install mise" >&2
+  echo "  curl https://mise.run | sh" >&2
+  exit 1
+fi
 
-if ! [ -x "$(command -v dotbot)" ]; then
-    cd "${BASEDIR}"
-    (cd "${DOTBOT_DIR}" && git submodule update --init --recursive)
-    "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}"
-  else
-    # brew install dotbot
-    dotbot -d "${BASEDIR}" -c "${CONFIG}" "${@}"
+BASEDIR="$(pwd)"
+cd "${BASEDIR}"
+
+RUN_SHELL_STEPS=true
+for arg in "${@}"; do
+  [[ "${arg}" == "--no-shell" ]] && RUN_SHELL_STEPS=false
+done
+
+# Targets dotbot used to link with force: false - never force-overwrite
+# a pre-existing real file at these paths (mise's --force is all-or-nothing
+# per invocation, so they're applied in a separate, unforced call).
+PROTECTED_TARGETS=(
+  "~/.config/iTerm2/xsfce-v2.png"
+)
+
+mise trust "${BASEDIR}" >/dev/null
+
+mise bootstrap files apply --yes
+
+mapfile -t ALL_TARGETS < <(mise bootstrap dotfiles status --json | jq -r '.files[].target')
+
+BULK_TARGETS=()
+for t in "${ALL_TARGETS[@]}"; do
+  protected=false
+  for p in "${PROTECTED_TARGETS[@]}"; do
+    [[ "${t}" == "${p}" ]] && protected=true && break
+  done
+  "${protected}" || BULK_TARGETS+=("${t}")
+done
+
+mise bootstrap dotfiles apply --force --yes "${BULK_TARGETS[@]}"
+mise bootstrap dotfiles apply --yes "${PROTECTED_TARGETS[@]}" \
+  || echo "warning: pre-existing real file(s) found at protected paths, left untouched: ${PROTECTED_TARGETS[*]}" >&2
+
+if "${RUN_SHELL_STEPS}"; then
+  git submodule update --init --recursive
+  make install-deps
+  make brew-install
+  echo "My current 'shell' is '${SHELL}'"
 fi

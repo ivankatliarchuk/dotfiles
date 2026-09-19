@@ -1,15 +1,13 @@
 # Dotfiles managed via mise (https://mise.jdx.dev/dotfiles.html), run from
-# the repo root with `mise bootstrap dotfiles apply`.
-#
-# This is a parallel path to dotbot's install.conf.yaml, not a replacement
-# yet. Sources are resolved relative to this file's directory (the repo
-# root), matching install.conf.yaml's paths.
+# the repo root with `mise bootstrap dotfiles apply` (bin/install does this
+# by default). Sources are resolved relative to this file's directory (the
+# repo root). Replaces dotbot, which this repo used previously.
 
 # ~/.config/gitcfg.local is not a symlink target of anything below, so it
 # needs to be declared explicitly (mise auto-creates parent directories for
-# [dotfiles] symlink targets, which covers every other create: entry from
-# install.conf.yaml). Mode pinned to match dotbot's existing 0777 dir so
-# applying this doesn't silently tighten permissions to mise's 0755 default.
+# [dotfiles] symlink targets). Mode pinned to 0777 to match the directory's
+# existing permissions, so applying this doesn't silently tighten it to
+# mise's 0755 default.
 [bootstrap.directories."~/.config/gitcfg.local"]
 mode = "0777"
 
@@ -115,34 +113,27 @@ source = "tools/mise/config.toml"
 [dotfiles."~/.claude"]
 source = "tools/claude"
 
-# macOS-only, mirrors install.conf.yaml's `if: "[ \`uname\` = Darwin ]"` guard.
-# Note: install.conf.yaml's literal target path is "ApplicationSupport"
-# (no space), which does not match the real macOS "Application Support"
-# directory - ported as-is here to preserve existing (buggy) behavior;
-# not fixed as part of this migration.
+# macOS-only. Note: the target path is "ApplicationSupport" (no space),
+# which does not match the real macOS "Application Support" directory -
+# a pre-existing bug carried over from dotbot's install.conf.yaml, not
+# fixed here.
 [dotfiles.iterm2-dynamic-profiles]
 source = "terminal/iTerm/profiles"
 variants = [
   { os = "macos", target = "~/Library/ApplicationSupport/iTerm2/DynamicProfiles" },
 ]
 
-# force: false in install.conf.yaml (won't overwrite a pre-existing real
-# file) - apply these two WITHOUT --force, separately from the rest.
-[dotfiles.iterm2-material-design-colors]
-source = "vendor/iterm2-material-design/material-design-colors.itermcolors"
-variants = [
-  { os = "macos", target = "~/.config/iTerm2/colors/material-design-colors.itermcolors" },
-]
-
+# dotbot linked this with force: false (won't overwrite a pre-existing
+# real file) - apply this WITHOUT --force, separately from the rest.
 [dotfiles.iterm2-xsfce-background]
 source = "terminal/iTerm/xsfce-v2.png"
 variants = [
   { os = "macos", target = "~/.config/iTerm2/xsfce-v2.png" },
 ]
 
-# install.conf.yaml also links these to a second, no-space "ApplicationSupport"
-# path, which looks like a stray typo/duplicate rather than a real macOS
-# path - intentionally dropped here, only the correct path is kept.
+# dotbot also linked these to a second, no-space "ApplicationSupport" path,
+# which looks like a stray typo/duplicate rather than a real macOS path -
+# intentionally dropped here, only the correct path is kept.
 [dotfiles."~/Library/Application Support/Code/User/settings.json"]
 source = "tools/vscode/settings.json"
 
