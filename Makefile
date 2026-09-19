@@ -29,6 +29,12 @@ macos-defaults-status: ## Show drift between mise.toml and current macOS default
 macos-defaults-apply: ## Apply macOS defaults from mise.toml (writes real system prefs)
 	@mise bootstrap macos defaults apply
 
+mise-install: ## Install tools from mise.toml (node, go, ...)
+	@mise install
+
+mise-lock-global: ## Regenerate the global mise.lock (tools/mise/mise.lock)
+	@mise lock --global
+
 hooks: ## Setup pre commit.
 	@pre-commit install
 	@pre-commit gc
@@ -62,4 +68,4 @@ git-module-remove: ## Remove submodule MODULE=something
 open: ## Open repository
 	@open $(shell git config --get remote.origin.url)
 
-.PHONY: vm-up vm-dowm validate hooks brew-install git-submodule macos-defaults-status macos-defaults-apply
+.PHONY: vm-up vm-dowm validate hooks brew-install git-submodule macos-defaults-status macos-defaults-apply mise-install mise-lock-global

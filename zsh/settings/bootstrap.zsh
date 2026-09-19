@@ -130,5 +130,3 @@ export PATH="/usr/local/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
 
 command -v mise >/dev/null && eval "$(mise activate zsh)"
-
-clear # clear the terminal in initialization from any initialization prints

@@ -110,6 +110,9 @@ source = "tools/pyenvrc"
 [dotfiles."~/.config/mise/config.toml"]
 source = "tools/mise/config.toml"
 
+[dotfiles."~/.config/mise/mise.lock"]
+source = "tools/mise/mise.lock"
+
 [dotfiles."~/.claude"]
 source = "tools/claude"
 

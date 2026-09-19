@@ -49,27 +49,6 @@ load-tgswitch() {
   fi
 }
 
-# https://github.com/nvm-sh/nvm
-load-nvmrc() {
-  if exists nvm && [[ "$PWD" != "$HOME" ]]; then
-    local node_version="$(nvm version)"
-    local nvmrc_path="$(nvm_find_nvmrc)"
-    if [[ -n "$nvmrc_path" ]]; then
-      if [[ "${$(nvm current)#"v"}" != "$(cat "${nvmrc_path}")" ]]; then
-        local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
-
-        if [ "$nvmrc_node_version" = "N/A" ]; then
-          nvm install
-        elif [ "$nvmrc_node_version" != "$node_version" ]; then
-          nvm use $nvmrc_node_version
-        fi
-      fi
-    elif [ "$node_version" != "$(nvm version default)" ]; then
-      nvm use default
-    fi
-  fi
-}
-
 # Automatically switch golang version via mise when a directory has a `go.mod` file
 load-go-version() {
   if exists mise; then
@@ -117,7 +96,6 @@ load-pyenv() {
 load-dir-hooks() {
   load-tofuswitch
   load-tgswitch
-  load-nvmrc
   load-go-version
   load-pyenv
 }

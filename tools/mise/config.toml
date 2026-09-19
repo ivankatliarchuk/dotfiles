@@ -1,3 +1,9 @@
 # https://github.com/jdx/mise
+[settings]
+# Let mise read .nvmrc/.node-version directly for projects not yet migrated
+# to their own mise.toml - https://mise.jdx.dev/lang/node.html#nvmrc-node-version-and-package-json-support
+idiomatic_version_file_enable_tools = ["node"]
+
 [tools]
 go = "1.27"
+node = "26.9.0"

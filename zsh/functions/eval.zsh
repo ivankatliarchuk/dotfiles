@@ -27,7 +27,10 @@ fi
 # 	source <(kubectl completion zsh)
 # fi
 
-if [ $commands[kubectx] ]; then
+# Opt-in: set KUBECTX_AUTO_UNSET=1 (e.g. in ~/.zshenv.local) to clear the
+# current kubectl context on every new shell. Off by default so it doesn't
+# fire just because kubectx happens to be installed.
+if [[ -n "$KUBECTX_AUTO_UNSET" ]] && [ $commands[kubectx] ]; then
   kubectx --unset >/dev/null 2>&1
 fi
 
