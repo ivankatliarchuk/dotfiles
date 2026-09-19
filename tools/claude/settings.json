@@ -1,4 +1,6 @@
 {
+  "agentPushNotifEnabled": true,
+  "enabledPlugins": {},
   "permissions": {
     "allow": [
       "Read(~/source/**)",
@@ -20,9 +22,7 @@
     ]
   },
   "statusLine": {
-    "type": "command",
-    "command": "bash /Users/ik/.claude/statusline-command.sh"
-  },
-  "enabledPlugins": {},
-  "agentPushNotifEnabled": true
+    "command": "bash /Users/ik/.claude/statusline-command.sh",
+    "type": "command"
+  }
 }

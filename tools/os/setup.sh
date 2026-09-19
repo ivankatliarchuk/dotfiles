@@ -18,8 +18,7 @@ while true; do
         [Yyes]* )
           break;;
         [Nn]* )
-          exit 0;
-          break;
+          exit 0
           ;;
         * ) echo "Please answer yes or no.";;
     esac

@@ -27,7 +27,9 @@ done
 unset cmd
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin:$(go env GOPATH)/bin"
+rvm_go_gopath="$(go env GOPATH)"
+export PATH="$PATH:$HOME/.rvm/bin:${rvm_go_gopath}/bin"
+unset rvm_go_gopath
 
 # Unmute the stdout and stderr, if we muted them at the beginning, and
 # close the temporary FDs used for the purpose.

@@ -1,3 +1,7 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 Review the current branch and prepare a PR summary:
 
 1. Run `git branch --show-current` to get the branch name

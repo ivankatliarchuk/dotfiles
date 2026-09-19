@@ -21,6 +21,7 @@ done
 # Targets dotbot used to link with force: false - never force-overwrite
 # a pre-existing real file at these paths (mise's --force is all-or-nothing
 # per invocation, so they're applied in a separate, unforced call).
+# shellcheck disable=SC2088 # literal - matches mise's own "~/..." target strings, not meant to expand
 PROTECTED_TARGETS=(
   "~/.config/iTerm2/xsfce-v2.png"
 )

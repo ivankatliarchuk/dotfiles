@@ -21,9 +21,11 @@ Dotfiles setup
 - [Motivation](#motivation)
 - [🔖 Documentation](#-documentation)
   - [Evaluate Tools](#evaluate-tools)
-  - [®️ Emojies](#-emojies)
+  - [®️ Emojies](#%EF%B8%8F-emojies)
+  - [Commands](#commands)
 - [#️⃣ TODO](#%EF%B8%8F%E2%83%A3-todo)
 - [Awailable Commands](#awailable-commands)
+- [GPG keys](#gpg-keys)
   - [📝 Guidelines](#-guidelines)
 - [🔖 License](#-license)
 - [How to Contribute](#how-to-contribute)
@@ -34,32 +36,30 @@ Dotfiles setup
 ## Project Structure
 
 ```
-  .
-  ├── bin
-  ├── brew
-  ├── browser
-  │   ├── firefox
-  │   └── tor
-  ├── git
-  │   ├── gitattributes
-  │   ├── gitcfg
-  │   ├── gitconfig
-  │   └── gitconfig.include
-  ├── gnupg
-  ├── iTerm
-  ├── locals
-  ├── py
-  ├── scripts
-  ├── shell
-  ├── tmux
-  ├── tools
-  ├── vendor
-  ├── vim
-  └── zsh
-  ├── LICENSE
-  ├── Makefile
-  ├── Vagrantfile
-  └── README.md
+.
+├── bin
+├── brew
+├── docs
+├── git
+│   ├── gitattributes
+│   ├── gitcfg
+│   ├── gitconfig
+│   └── gitconfig.include
+├── locals
+├── py
+├── scripts
+├── shell
+├── terminal
+│   ├── iTerm
+│   ├── starship
+│   └── zellij
+├── tools               # gnupg, vim, browser, os, mise, and other tool configs
+├── vendor
+├── zsh
+├── LICENSE
+├── Makefile
+├── mise.toml
+└── README.md
 ```
 
 ## Installation
@@ -67,6 +67,11 @@ Dotfiles setup
 **Warning:** If you want to give these dotfiles a try, you should first fork this repository, review the code, and remove things you don’t want or need. Don’t blindly use my settings unless you know what that entails. Use at your own risk!
 
 Symlinks are installed via [mise](https://mise.jdx.dev/dotfiles.html): `bin/install` runs `mise bootstrap dotfiles apply` against the `[dotfiles]` table in `mise.toml`. This replaces [Dotbot](https://github.com/anishathalye/dotbot), which this repo used previously.
+
+mise also manages the rest of the machine bootstrap from the same `mise.toml`:
+
+- `make mise-install` installs the dev tools pinned in `tools/mise/config.toml` (node, go, ...); `make mise-lock-global` regenerates their lockfile/checksums (`tools/mise/mise.lock`).
+- `make macos-defaults-status` shows drift between `mise.toml`'s `[bootstrap.macos.*]` tables and the machine's current macOS preferences; `make macos-defaults-apply` writes them for real.
 
 ## Caveats
 
@@ -111,7 +116,7 @@ git check-ignore -v tools/claude/plans/
 - ✅ Pyenv correct setup
 - ✅ Proper configre macup
 - ✅ Tmux configs Setup/Document
-- ✅ macOS setup [docs](tools/os/README.md)
+- ✅ macOS setup [docs](tools/os/readme.md)
 - [X] Speed up shell
 - [ ] ZSH plugins https://github.com/zsh-users/zsh-autosuggestions/tree/master?tab=readme-ov-file
 - [ ] POV [Yadm: dotfiles manager](https://formulae.brew.sh/formula/yadm)
@@ -135,10 +140,12 @@ install                        Install dotfiles without running shell
 install-all                    Install all dotfiles
 brew-install                   Install apps with Brew
 osx-install                    Install macOSx
+macos-defaults-status          Show drift between mise.toml and current macOS defaults
+macos-defaults-apply           Apply macOS defaults from mise.toml (writes real system prefs)
+mise-install                   Install tools from mise.toml (node, go, ...)
+mise-lock-global               Regenerate the global mise.lock (tools/mise/mise.lock)
 hooks                          Setup pre commit.
 validate                       Validate files with pre-commit hooks
-vm-up                          Run on Mac. Up
-vm-dowm                        Run on Mac. Down
 ignore-dirty                   Ignore dirty commits
 install-deps                   Install dependencies
 git-submodule                  Git submodules update

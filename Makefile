@@ -43,12 +43,6 @@ hooks: ## Setup pre commit.
 validate: ## Validate files with pre-commit hooks
 	@pre-commit run --all-files
 
-vm-up: ## Run on Mac. Up
-	@vagrant up
-
-vm-dowm: ## Run on Mac. Down
-	@vagrant down
-
 ignore-dirty: ## Ignore dirty commits
 	@git config --file .gitmodules --get-regexp path | awk '{ print $2 }'
 	@git config -f .gitmodules submodule.vendor/powerline-fonts.ignore dirty
@@ -68,4 +62,4 @@ git-module-remove: ## Remove submodule MODULE=something
 open: ## Open repository
 	@open $(shell git config --get remote.origin.url)
 
-.PHONY: vm-up vm-dowm validate hooks brew-install git-submodule macos-defaults-status macos-defaults-apply mise-install mise-lock-global
+.PHONY: validate hooks brew-install git-submodule macos-defaults-status macos-defaults-apply mise-install mise-lock-global

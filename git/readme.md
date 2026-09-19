@@ -3,6 +3,7 @@
 **Table of Contents**
 
 - [Git Readme](#git-readme)
+  - [Stash](#stash)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 

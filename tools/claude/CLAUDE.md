@@ -1,3 +1,18 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**
+
+- [My Personal AI Customizations](#my-personal-ai-customizations)
+  - [My Preferences](#my-preferences)
+  - [Skill Loading](#skill-loading)
+  - [Planning Requirements](#planning-requirements)
+  - [Git Platform Detection](#git-platform-detection)
+  - [Git Operations](#git-operations)
+  - [Current Projects](#current-projects)
+  - [Tools I Use](#tools-i-use)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # My Personal AI Customizations
 
 > This file is safe to edit - it will never be overwritten by tech-pass.
