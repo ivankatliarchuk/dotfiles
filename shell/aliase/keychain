@@ -1,0 +1,38 @@
+# Keychain aliases
+#
+# Every alias below comes in two equivalent forms: keychain.<name> and kc.<name>.
+# Run `keychain.help` (or `kc.help`) to list them all with descriptions.
+
+_KC_GREEN=$'\033[1;38;2;26;236;138m'
+_KC_RED=$'\033[1;38;2;255;95;86m'
+_KC_RESET=$'\033[0m'
+
+_KC_WORKFLOW="Typical workflow: ${_KC_GREEN}keychain.create${_KC_RESET} -> ${_KC_GREEN}keychain.add${_KC_RESET} -> ${_KC_GREEN}keychain.add-pwd${_KC_RESET} / ${_KC_GREEN}keychain.find-pwd${_KC_RESET}"
+mkalias kc keychain help 'alias_help "${HOME}/.config/aliases/keychain" "$_KC_WORKFLOW"'
+mkalias kc keychain h 'alias_help "${HOME}/.config/aliases/keychain" "$_KC_WORKFLOW"'
+mkalias kc keychain list 'security list-keychains -d user' # list keychains in the user's search list
+mkalias kc keychain create 'security create-keychain my-local.keychain-db' # create the default local keychain (prompts for password)
+mkalias kc keychain unlock 'security unlock-keychain my-local.keychain-db' # unlock the default local keychain (prompts for password)
+mkalias kc keychain add 'security list-keychains -d user -s ~/Library/Keychains/my-local.keychain-db $(security list-keychains -d user | sed "s/[\" ]//g")' # add my-local.keychain-db to the user search list, keeping existing keychains
+
+_keychain_add_password() {
+  local service="$1" secret="$2" out
+  if out=$(security add-generic-password -a "$USER" -s "$service" -w "$secret" ~/Library/Keychains/my-local.keychain-db 2>&1); then
+    print -- "${_KC_GREEN}stored secret for '${service}' in my-local.keychain-db${_KC_RESET}"
+  else
+    print -- "${_KC_RED}failed to store secret for '${service}': ${out}${_KC_RESET}" >&2
+    return 1
+  fi
+}
+mkalias kc keychain add-pwd '_keychain_add_password' # + service secret -> store a generic password in my-local.keychain-db
+
+_keychain_find_password() {
+  local service="$1" out
+  if out=$(security find-generic-password -a "$USER" -s "$service" -w ~/Library/Keychains/my-local.keychain-db 2>&1); then
+    print -- "${_KC_GREEN}${out}${_KC_RESET}"
+  else
+    print -- "${_KC_RED}failed to find secret for '${service}': ${out}${_KC_RESET}" >&2
+    return 1
+  fi
+}
+mkalias kc keychain find-pwd '_keychain_find_password' # + service -> print the stored secret from my-local.keychain-db

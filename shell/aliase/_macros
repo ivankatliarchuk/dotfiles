@@ -12,9 +12,14 @@ mkalias() {
   alias "${long}.${name}=$*"
 }
 
-# alias_help <file>
+# alias_help <file> [header_text] [footer_text]
 # Prints colorized "run <short>.<name> or <long>.<name>  <comment>" for every mkalias call in <file>.
+# If given, <header_text> is printed before the listing and <footer_text> after it.
 alias_help() {
+  if [[ -n "$2" ]]; then
+    print -- "$2"
+    print
+  fi
   awk '
     function pad(s, width,    n, out) {
       out = s
@@ -50,4 +55,8 @@ alias_help() {
     }
     { desc = "" }
   ' "$1"
+  if [[ -n "$3" ]]; then
+    print
+    print -- "$3"
+  fi
 }
