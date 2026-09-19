@@ -1,7 +1,11 @@
 # Default
 # https://code.claude.com/docs/en/skills
 # Universal Command Line Interface for Claude CLI
+#
+# Every alias below comes in two equivalent forms: claude.<name> and c.<name>.
+# Run `claude.help` (or `c.help`) to list them all with descriptions.
 
-alias claude.kill="pkill -f 'claude'"
-alias claude.kill.strict="ps aux | grep '/opt/homebrew/bin/claude' | grep -v grep | awk '{print \$2}' | xargs kill"
-alias claude.ps="pgrep -l -f 'claude'"
+mkalias c claude help 'alias_help "${HOME}/.config/aliases/claude"'
+mkalias c claude kill "pkill -f 'claude'"
+mkalias c claude kill.strict "ps aux | grep '/opt/homebrew/bin/claude' | grep -v grep | awk '{print \$2}' | xargs kill"
+mkalias c claude ps "pgrep -l -f 'claude'"

@@ -1,0 +1,53 @@
+# Shared helpers for defining dual-prefixed aliases (e.g. git.<name> + g.<name>)
+# and generating their `*.help` listings. Sourced before the other files in
+# ~/.config/aliases/* because of the leading underscore (zsh/settings/bootstrap.zsh:52).
+
+# mkalias <short> <long> <name> <cmd...>
+# Defines both <short>.<name> and <long>.<name> as aliases for the same command.
+# Pass "-" as <short> to skip the short mirror (single-prefix tools, e.g. go).
+mkalias() {
+  local short="$1" long="$2" name="$3"
+  shift 3
+  [[ "$short" != "-" ]] && alias "${short}.${name}=$*"
+  alias "${long}.${name}=$*"
+}
+
+# alias_help <file>
+# Prints colorized "run <short>.<name> or <long>.<name>  <comment>" for every mkalias call in <file>.
+alias_help() {
+  awk '
+    function pad(s, width,    n, out) {
+      out = s
+      n = width - length(s)
+      while (n-- > 0) out = out " "
+      return out
+    }
+    BEGIN {
+      RUN_C = "\033[1;38;2;142;217;216m"   # bold #8ED9D8
+      NAME_C = "\033[1;38;2;26;236;138m"   # bold #1AEC8A
+      COMMENT_C = "\033[1;38;2;229;233;18m" # bold #E5E912
+      RESET = "\033[0m"
+    }
+    /^$/ { desc = ""; next }
+    /^# / { desc = substr($0, 3); next }
+    /^mkalias / {
+      short = $2; long = $3; name = $4
+      if (short == "-") {
+        plain = "run " long "." name
+        line = RUN_C "run " RESET NAME_C long "." name RESET
+      } else {
+        plain = "run " short "." name " or " long "." name
+        line = RUN_C "run " RESET NAME_C short "." name RESET " or " NAME_C long "." name RESET
+      }
+      trailing = pad("", 40 - length(plain))
+      c = desc
+      if (match($0, /# .*/)) c = substr($0, RSTART + 2)
+      line = line trailing
+      if (c != "") line = line " " COMMENT_C c RESET
+      print line
+      desc = ""
+      next
+    }
+    { desc = "" }
+  ' "$1"
+}

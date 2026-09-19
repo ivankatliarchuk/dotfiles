@@ -3,18 +3,24 @@
 # https://cheatsheet.dennyzhang.com/cheatsheet-helm-a4
 # Kubernetes & Helm aliases.
 #
+# Every alias below comes in two equivalent forms: helm.<name> and h.<name>.
+# Run `helm.help` (or `h.help`) to list them all with descriptions.
 
 ## Helm
-alias h.du="helm dependency update" # sync chart dependencies
-alias h.ru="helm repo update"       # update information of available charts locally
-alias h.l="helm repo list"          # list chart repositories
-alias h.list="h.l"
-alias h.se="helm search repo --versions "  # + chart name search for a chart e.g. eks-charts/aws-vpc-cni
-alias h.search="h.se"                # + chart name search for a chart
-alias h.sort="helm list --short | awk '{ print length, \$0 }' | sort -n -s -r" # sort helm releases descending
-alias h.test="helm template test . --output-dir result --values values.yaml" # create tes k8s manifest out of helm templates
-alias h.filter="helm ls --all --filter " #  + a regular expression. Any releases that match the expression will be included in the result
-alias h.values="helm get values -o yaml " # + RELEASE_NAME [flags]. Get the values for helm chart
+mkalias h helm helper 'alias_help "${HOME}/.config/aliases/helm"'
+mkalias h helm help 'helm.helper'
+mkalias h helm h 'helm.helper'
+
+mkalias h helm du "helm dependency update" # sync chart dependencies
+mkalias h helm ru "helm repo update"       # update information of available charts locally
+mkalias h helm l "helm repo list"          # list chart repositories
+mkalias h helm list "h.l"
+mkalias h helm se "helm search repo --versions "  # + chart name search for a chart e.g. eks-charts/aws-vpc-cni
+mkalias h helm search "h.se"                # + chart name search for a chart
+mkalias h helm sort "helm list --short | awk '{ print length, \$0 }' | sort -n -s -r" # sort helm releases descending
+mkalias h helm test "helm template test . --output-dir result --values values.yaml" # create tes k8s manifest out of helm templates
+mkalias h helm filter "helm ls --all --filter " #  + a regular expression. Any releases that match the expression will be included in the result
+mkalias h helm values "helm get values -o yaml " # + RELEASE_NAME [flags]. Get the values for helm chart
 
 # This will render the NOTES.txt file.
 function h.notes {
@@ -23,3 +29,4 @@ function h.notes {
   local except_first=$@
   helm install ${chart} --dry-run  --generate-name ${except_first}
 }
+alias helm.notes='h.notes' # render the NOTES.txt file, + chart name

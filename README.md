@@ -124,9 +124,7 @@ git check-ignore -v tools/claude/plans/
 - [ ] [DNS Crypt](https://github.com/drduh/config/blob/master/dnscrypt-proxy.toml)
 - [ ] Document github setup, blog it as well
 - [ ] Dotbot templater plugin
-- [ ] Review new Terminal Options
-  - [ ] [wezterm](https://github.com/wezterm/wezterm)
-  - [ ] [zelij](https://zellij.dev/)
+- [X] Review new Terminal Options
 
 ## Awailable Commands
 

@@ -1,41 +1,34 @@
 # Default
 # https://www.docker.com/
 # Docker aliases
+#
+# Every alias below comes in two equivalent forms: docker.<name> and d.<name>.
+# Run `docker.help` (or `d.help`) to list them all with descriptions.
 
 _docker_helper() {
-  awk '
-    $0 ~ /^alias docker\.|^alias d=/ {
-      name = $0
-      sub(/^alias /, "", name)
-      sub(/=.*/, "", name)
-      c = ""
-      if (match($0, /# .*/)) c = substr($0, RSTART + 2)
-      printf "%-24s %s\n", name, c
-      next
-    }
-  ' "${HOME}/.config/aliases/docker"
+  alias_help "${HOME}/.config/aliases/docker"
 }
-alias docker.helper='_docker_helper'
-alias docker.help='docker.helper'
-alias docker.h='docker.helper'
+mkalias d docker helper '_docker_helper'
+mkalias d docker help 'docker.helper'
+mkalias d docker h 'docker.helper'
 
 alias d=docker # shorthand for docker
-alias docker.rmi=docker-rmi # remove a docker image, + image name
-alias docker.rm='docker image prune' # remove dangling (untagged) images
-alias docker.rms='docker system prune' # remove stopped containers, dangling images, unused networks
-alias docker.i='docker images' # list images
-alias docker.sp='docker system prune -a' # remove all unused containers, images, networks & volumes
+mkalias d docker rmi docker-rmi # remove a docker image, + image name
+mkalias d docker rm 'docker image prune' # remove dangling (untagged) images
+mkalias d docker rms 'docker system prune' # remove stopped containers, dangling images, unused networks
+mkalias d docker i 'docker images' # list images
+mkalias d docker sp 'docker system prune -a' # remove all unused containers, images, networks & volumes
 
 # https://github.com/containers/skopeo
 _docker_inspect() {
   skopeo inspect "docker://$1"
 }
-alias docker.inspect='_docker_inspect' # + image path e.g. "docker.inspect registry.fedoraproject.org/fedora:latest"
+mkalias d docker inspect '_docker_inspect' # + image path e.g. "docker.inspect registry.fedoraproject.org/fedora:latest"
 
 _docker_list_tags() {
   skopeo list-tags "docker://$1"
 }
-alias docker.list-tags='_docker_list_tags' # + image path e.g. "docker.list-tags registry.k8s.io/git-sync"
+mkalias d docker list-tags '_docker_list_tags' # + image path e.g. "docker.list-tags registry.k8s.io/git-sync"
 
 _docker_list_tags_digests() {
   local repo="$1"
@@ -45,4 +38,4 @@ _docker_list_tags_digests() {
     echo "$tag $digest"
   done
 }
-alias docker.list-tags-digests='_docker_list_tags_digests' # + image path, list every tag with its digest e.g. "docker.list-tags-digests docker.io/library/hello-world"
+mkalias d docker list-tags-digests '_docker_list_tags_digests' # + image path, list every tag with its digest e.g. "docker.list-tags-digests docker.io/library/hello-world"

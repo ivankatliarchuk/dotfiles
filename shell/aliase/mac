@@ -1,6 +1,10 @@
 # MacOS aliases
+#
+# Every alias below comes in two equivalent forms: mac.<name> and mc.<name>.
+# Run `mac.help` (or `mc.help`) to list them all with descriptions.
 
-alias mac.log='log show --last 10m --style syslog'
+mkalias mc mac help 'alias_help "${HOME}/.config/aliases/mac"'
+mkalias mc mac log 'log show --last 10m --style syslog'
 # log show --predicate 'process == "sudo"' --last 10m --style syslog
-alias mac.log.predicate='log show --last 100m --style syslog --predicate' # + 'process == "sudo"
-alias mac.log.sudo="log show --last 10m --style syslog --predicate 'process == \"sudo\"'"
+mkalias mc mac log.predicate 'log show --last 100m --style syslog --predicate' # + 'process == "sudo"
+mkalias mc mac log.sudo "log show --last 10m --style syslog --predicate 'process == \"sudo\"'"

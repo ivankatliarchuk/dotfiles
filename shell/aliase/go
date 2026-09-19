@@ -1,45 +1,28 @@
 # Default
 # Go aliases
+#
+# Every alias below is go.<name> only (no short mirror: `g` is git's).
+# Run `go.help` to list them all with descriptions.
 
 _go_helper() {
-  awk '
-    /^# / { desc = substr($0, 3); next }
-    /^alias go\./ {
-      name = $0
-      sub(/^alias /, "", name)
-      sub(/=.*/, "", name)
-      c = ""
-      if (match($0, /# .*/)) c = substr($0, RSTART + 2)
-      printf "%-12s %s\n", name, c
-      desc = ""
-      next
-    }
-    /^function go\./ {
-      name = $0
-      sub(/^function /, "", name)
-      sub(/\(\).*/, "", name)
-      printf "%-12s %s\n", name, desc
-      desc = ""
-      next
-    }
-  ' "${HOME}/.config/aliases/go"
+  alias_help "${HOME}/.config/aliases/go"
 }
-alias go.helper='_go_helper'
-alias go.help='go.helper'
-alias go.h='go.helper'
 
-alias go.build='go build ./...' # build all packages
-alias go.run='go run .' # run the current package
-alias go.test='go test ./...' # run all tests
-alias go.testv='go test -v ./...' # run all tests, verbose
-alias go.cover='go test -cover ./...' # run tests with coverage
-alias go.vet='go vet ./...' # static analysis / suspicious constructs
-alias go.fmt='gofmt -l -w .' # format all files in place
-alias go.tidy='go mod tidy' # add missing & remove unused modules
-alias go.deps='go list -m all' # list all module dependencies
-alias go.clean='go clean -cache -testcache' # clear build & test caches
+mkalias - go help '_go_helper'
+mkalias - go h 'go.helper'
+
+mkalias - go build 'go build ./...' # build all packages
+mkalias - go run 'go run .' # run the current package
+mkalias - go test 'go test ./...' # run all tests
+mkalias - go testv 'go test -v ./...' # run all tests, verbose
+mkalias - go cover 'go test -cover ./...' # run tests with coverage
+mkalias - go vet 'go vet ./...' # static analysis / suspicious constructs
+mkalias - go fmt 'gofmt -l -w .' # format all files in place
+mkalias - go tidy 'go mod tidy' # add missing & remove unused modules
+mkalias - go deps 'go list -m all' # list all module dependencies
+mkalias - go clean 'go clean -cache -testcache' # clear build & test caches
 # Install the go.mod-declared version
-function go.bootstrap() {
+_go_bootstrap() {
   if [ -n "$1" ]; then
     mise install "$1"
   else
@@ -52,5 +35,6 @@ function go.bootstrap() {
     mise install "go@${v}"
   fi
 }
+mkalias - go bootstrap '_go_bootstrap' # install the go.mod-declared version
 
-alias go.ratio='go-ratio.sh' # ratio of lines of code to comments in a Go project
+mkalias - go ratio 'go-ratio.sh' # ratio of lines of code to comments in a Go project

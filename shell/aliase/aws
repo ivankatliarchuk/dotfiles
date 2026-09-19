@@ -3,51 +3,33 @@
 # https://docs.aws.amazon.com/cli/v1/userguide/cli-configure-files.html
 # Universal Command Line Interface for Amazon Web Services
 #
+# Every alias below comes in two equivalent forms: aws.<name> and a.<name>.
+# Run `aws.help` (or `a.help`) to list them all with descriptions.
 
 _aws_helper() {
-  awk '
-    $0 ~ /^alias a\.|^alias aws\.|^alias a=/ {
-      name = $0
-      sub(/^alias /, "", name)
-      sub(/=.*/, "", name)
-      c = ""
-      if (match($0, /# .*/)) c = substr($0, RSTART + 2)
-      printf "%-16s %s\n", name, c
-      next
-    }
-  ' "${HOME}/.config/aliases/aws"
+  alias_help "${HOME}/.config/aliases/aws"
 }
-alias aws.helper='_aws_helper'
-alias aws.help='aws.helper'
-alias aws.h='aws.helper'
-alias aws.helper='aws.helper'
 
-alias aws.id="aws sts get-caller-identity" # show caller identity
-alias aws.id='aws.id' # show caller identity
-alias aws.whoami="aws.id" # show caller identity
-alias aws.whoami='aws.whoami' # show caller identity
-alias aws.profiles='aws configure list-profiles' # list profiles from ~/.aws/credentials & ~/.aws/config
-alias aws.profiles='aws.profiles' # list profiles from ~/.aws/credentials & ~/.aws/config
+mkalias a aws help '_aws_helper'
+mkalias a aws h '_aws_helper'
+
+mkalias a aws id "aws sts get-caller-identity" # show caller identity
+mkalias a aws whoami "aws.id" # show caller identity
+mkalias a aws profiles 'aws configure list-profiles' # list profiles from ~/.aws/credentials & ~/.aws/config
 
 # eks
-alias aws.eks-kcg='aws eks update-kubeconfig --name' # + eks cluster name
-alias aws.eks-kcg='aws.eks-kcg' # + eks cluster name
+mkalias a aws eks-kcg 'aws eks update-kubeconfig --name' # + eks cluster name
 
 _eks_oidc_id() {
   # eks cluster oidc id
   aws eks describe-cluster --name "$1" --query "cluster.identity.oidc.issuer" --output text | sed -e "s/^https:\/\///"
 }
-alias aws.eks-oidc='_eks_oidc_id' # + eks cluster name, print its OIDC issuer id
-alias aws.eks-oidc='aws.eks-oidc' # + eks cluster name, print its OIDC issuer id
+mkalias a aws eks-oidc '_eks_oidc_id' # + eks cluster name, print its OIDC issuer id
 
 # s3
-alias aws.s3-ls='aws s3 ls' # list s3 buckets, or + bucket name to list its objects
-alias aws.s3-ls='aws.s3-ls' # list s3 buckets, or + bucket name to list its objects
+mkalias a aws s3-ls 'aws s3 ls' # list s3 buckets, or + bucket name to list its objects
 
 # iam
-alias aws.sts='aws sts get-caller-identity --output json' # show caller identity (json)
-alias aws.sts='aws.sts' # show caller identity (json)
-alias aws.sts-id='aws sts get-caller-identity --query "Account" --output text' # show account id
-alias aws.sts-id='aws.sts-id' # show account id
-alias aws.sts-who='aws sts get-caller-identity --query "UserId" --output json' # show caller user id
-alias aws.sts-who='aws.sts-who' # show caller user id
+mkalias a aws sts 'aws sts get-caller-identity --output json' # show caller identity (json)
+mkalias a aws sts-id 'aws sts get-caller-identity --query "Account" --output text' # show account id
+mkalias a aws sts-who 'aws sts get-caller-identity --query "UserId" --output json' # show caller user id
