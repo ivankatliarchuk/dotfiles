@@ -101,9 +101,6 @@ source = "tools/wgetrc"
 [dotfiles."~/.gemrc"]
 source = "tools/gemrc"
 
-[dotfiles."~/.nvmrc"]
-source = "tools/nvmrc"
-
 [dotfiles."~/.pyenvrc"]
 source = "tools/pyenvrc"
 

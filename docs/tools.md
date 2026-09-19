@@ -19,7 +19,6 @@
 - [Dotfiles](#dotfiles)
 - [GPG Setup](#gpg-setup)
 - [ZSH](#zsh)
-- [NVM](#nvm)
   - [Debug ZSH](#debug-zsh)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -42,7 +41,6 @@
 - [Prezto](https://github.com/sorin-ionescu/prezto)
 
 - [Ybikey Guide](https://github.com/drduh/YubiKey-Guide)
-- [NVMRC](https://github.com/nvm-sh/nvm#nvmrc)
 
 ## Git
 
@@ -118,11 +116,6 @@ brew shellenv
 - [Multiple ZSH profiles](https://www.donielsmith.com/blog/2020-04-12-multiple-zsh-config-in-iterm)
 - [What should go in .zshrc](https://unix.stackexchange.com/questions/71253/what-should-shouldnt-go-in-zshenv-zshrc-zlogin-zprofile-zlogout)
 
-## NVM
-
-- [NVM](https://github.com/nvm-sh/nvm)
-- [NVM: speed up](https://github.com/wzrdtales/nvm-ng)
-
 ### Debug ZSH
 
 ```sh
@@ -139,8 +132,6 @@ $ time zsh -i -c exit
 > zsh -i -c exit  1.01s user 0.66s system 94% cpu 1.780 total
 
 $ zsh -xv
-
-$ time source ~/.nvm/nvm.sh --no-use
 
 $ do /usr/bin/time bash -i -c exit; done
 
