@@ -139,3 +139,60 @@ source = "tools/vscode/settings.json"
 
 [dotfiles."~/Library/Application Support/Code/User/keybindings.json"]
 source = "tools/vscode/keybindings.json"
+
+# macOS user defaults (https://mise.jdx.dev/bootstrap/macos-defaults.html),
+# captured from `defaults read` on 2026-09-19. This file alone changes
+# nothing - `mise bootstrap macos defaults apply` is what writes these.
+# Dock autohide-delay/autohide-time-modifier and keyboard key_repeat/
+# initial_key_repeat/fn_state are intentionally omitted: `defaults read`
+# shows them unset on this machine, meaning macOS is using a compiled-in
+# default that isn't exposed to `defaults read`. Guessing a number here
+# risks `apply` silently changing real behavior instead of just recording
+# it.
+[bootstrap.macos.dock]
+autohide = false
+orientation = "bottom"
+tilesize = 86
+largesize = 86
+magnification = true
+show_recents = true
+mru_spaces = false
+
+[bootstrap.macos.finder]
+sort_folders_first = false
+save_new_documents_to_cloud = true
+show_all_files = false
+show_pathbar = false
+show_status_bar = false
+show_extensions_warning = true
+preferred_view_style = "list"
+
+[bootstrap.macos.keyboard]
+automatic_capitalization = false
+automatic_spelling_correction = true
+press_and_hold = true
+
+[bootstrap.macos.trackpad]
+tap_to_click = false
+three_finger_drag = false
+
+# iTerm2 has no friendly section, so this is raw. Found by diffing
+# `defaults read com.googlecode.iterm2 > /tmp/after.txt` against a
+# /tmp/before.txt taken before toggling Appearance > Panes in Preferences.
+[bootstrap.macos.defaults."com.googlecode.iterm2"]
+TerminalVMargin = 24
+
+# Appearance > General. Values verified against iTermPreferences.h/.m in
+# /Users/ik/source/self/go-work/iterm2-clone - all three already match the
+# compiled default (TAB_STYLE_LIGHT / TAB_POSITION_TOP / positionTop = 0),
+# recorded explicitly rather than because they differ from stock.
+TabStyleWithAutomaticOption = 0 # Theme: Regular
+TabViewType = 0 # Tab bar location: top
+StatusBarPosition = 0 # Status bar location: top
+SplitPaneDimmingAmount = 0.4 # Dimming: 40
+
+# Profiles > default profile. GUID is fixed (not machine-random) inside the
+# Dynamic Profile this repo deploys - terminal/iTerm/profiles/main.json,
+# profile "personal" - via [dotfiles.iterm2-dynamic-profiles] below, so this
+# stays valid on a fresh machine once dotfiles are applied.
+"Default Bookmark Guid" = "D6A6B3B1-64CE-42CD-AB1E-7B9185072032"

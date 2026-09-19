@@ -23,6 +23,12 @@ brew-install: ## Install apps with Brew
 osx-install: ## Install macOSx
 	@tools/os/setup.sh
 
+macos-defaults-status: ## Show drift between mise.toml and current macOS defaults
+	@mise bootstrap macos defaults status
+
+macos-defaults-apply: ## Apply macOS defaults from mise.toml (writes real system prefs)
+	@mise bootstrap macos defaults apply
+
 hooks: ## Setup pre commit.
 	@pre-commit install
 	@pre-commit gc
@@ -56,4 +62,4 @@ git-module-remove: ## Remove submodule MODULE=something
 open: ## Open repository
 	@open $(shell git config --get remote.origin.url)
 
-.PHONY: vm-up vm-dowm validate hooks brew-install git-submodule
+.PHONY: vm-up vm-dowm validate hooks brew-install git-submodule macos-defaults-status macos-defaults-apply
