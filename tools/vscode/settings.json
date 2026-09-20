@@ -326,6 +326,9 @@
   "files.insertFinalNewline": false,
   "git.enableCommitSigning": true,
   "explorer.autoReveal": false,
+  "explorer.openEditors.minVisible": 0,
+  "explorer.openEditors.visible": 0,
+  "explorer.confirmDragAndDrop": false,
   "[go]": {
     "editor.formatOnSave": true,
     "editor.insertSpaces": false
@@ -333,8 +336,6 @@
   "[yaml]": {
     "editor.defaultFormatter": "redhat.vscode-yaml"
   },
-  "explorer.openEditors.minVisible": 0,
-  "explorer.openEditors.visible": 0,
   "indentRainbow.colors": [
     "rgba(16,16,16,0.1)",
     "rgba(16,16,16,0.2)",
