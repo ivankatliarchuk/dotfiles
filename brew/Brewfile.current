@@ -125,8 +125,6 @@ brew "nikto"
 brew "nmap"
 # Manage multiple Node.js versions
 brew "nvm"
-# Manage multiple versions
-brew "mise"
 # Open source, general-purpose policy engine
 brew "opa"
 # ISO-C API and CLI for generating UUIDs
@@ -245,9 +243,6 @@ cask "stats"
 cask "the-unarchiver"
 # Development environment
 cask "vagrant"
-# https://formulae.brew.sh/formula/mise
-# Polyglot runtime manager (asdf rust clone)
-brew "mise"
 # Open-source code editor
 cask "visual-studio-code"
 # Native desktop client for WhatsApp

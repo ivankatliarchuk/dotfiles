@@ -4,8 +4,7 @@ set -e
 
 if ! command -v mise >/dev/null 2>&1; then
   echo "error: mise is required but not installed." >&2
-  echo "Install it with one of:" >&2
-  echo "  brew install mise" >&2
+  echo "Install it with:" >&2
   echo "  curl https://mise.run | sh" >&2
   exit 1
 fi

@@ -34,9 +34,6 @@ brew "pipenv" , link: true
 # ---start--- GO
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
-# https://formulae.brew.sh/formula/mise
-# Polyglot runtime manager (asdf rust clone)
-brew "mise"
 # Interactive system monitor, process viewer, and process manager for Unix
 # https://hisham.hm/htop/
 brew "htop"
