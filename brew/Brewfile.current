@@ -89,12 +89,6 @@ brew "iamy"
 brew "ipcalc"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
-# Domain specific configuration language for defining JSON data
-brew "jsonnet"
-# Modern load testing tool, using Go and JavaScript
-brew "k6"
-# Kubernetes CLI To Manage Your Clusters In Style!
-brew "k9s"
 # Run local Kubernetes cluster in Docker
 brew "kind"
 # Build and deploy Go applications on Kubernetes
@@ -103,8 +97,6 @@ brew "ko"
 brew "kubernetes-cli"
 # Package manager for kubectl plugins
 brew "krew"
-# Kubernetes prompt info for bash and zsh
-brew "kube-ps1"
 # Tool that can switch between kubectl contexts easily and create aliases
 brew "kubectx"
 # Security and system auditing tool to harden systems
