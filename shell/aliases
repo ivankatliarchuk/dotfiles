@@ -137,12 +137,17 @@ alias chosts='cat /etc/hosts'
 alias vhosts='sudo vim /etc/hosts'
 alias nfsfolders='cat /etc/exports'
 
-# Detect which `ls` flavor is in use
-if ls --color > /dev/null 2>&1; then # GNU `ls`
+# Detect which `ls` flavor is in use. GNU ls and macOS 13+ ls both take --color,
+# so only spawn `ls` to probe on older macOS (saves a fork on every shell). darwin22 == macOS 13.
+darwin_major="${OSTYPE#darwin}"; darwin_major="${darwin_major%%.*}"
+if [[ "$OSTYPE" != darwin* ]] || (( darwin_major >= 22 )); then
+	colorflag="--color"
+elif ls --color > /dev/null 2>&1; then # GNU `ls` on old macOS
 	colorflag="--color"
 else # OS X `ls`
 	colorflag="-G"
 fi
+unset darwin_major
 
 # shellcheck disable=SC2139
 alias l="ls -lhF ${colorflag}"      # List all files colorized in long format

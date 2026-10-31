@@ -4,14 +4,16 @@
 
 # Ensure PATH-like arrays stay deduplicated for the life of this shell,
 # regardless of whether zprofile ran (it only sources for login shells).
+# Note: -U only applies to array assignments (path=(...)); `export PATH="x:$PATH"` bypasses it.
 typeset -gU cdpath fpath mailpath path
 
-# Source a tool's init script from a cache, regenerated only when the resolved binary changes (upgrade or move).
+# Source a tool's init script from a cache, regenerated only when the resolved binary (named by <name>) or the generator command changes.
+# usage: _cached_eval <name> <command...>
 _cached_eval() {
   local name="$1"; shift
-  local bin="${commands[$1]:A}"
+  local bin="${commands[$name]:A}"
   [[ -n "$bin" ]] || return 1
-  local cache="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/${name}.zsh" header="# cached from ${bin}" first_line='' output=''
+  local cache="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/${name}.zsh" header="# cached from ${bin}: $*" first_line='' output=''
   [[ -r "$cache" ]] && read -r first_line < "$cache"
   if [[ "$first_line" != "$header" ]]; then
     output="$("$@" 2>/dev/null)" || return 1
@@ -98,7 +100,15 @@ else
   fi
 fi
 
-_cached_eval starship starship init zsh --print-full-init || echo "!!! STARSHIP not installed"
+# starship's init forks `starship prompt --continuation` for PROMPT2 on every shell; single-quote it so
+# prompt_subst only runs it when a continuation line is actually drawn.
+_starship_init() {
+  local init
+  init="$(starship init zsh --print-full-init)" || return 1
+  print -r -- "$init" | sed -E "s/^PROMPT2=\"(.*)\"\$/PROMPT2='\1'/"
+}
+_cached_eval starship _starship_init || echo "!!! STARSHIP not installed"
+unfunction _starship_init
 
 # not required so often
 # if [ -f "/usr/local/opt/asdf/libexec/asdf.sh" ]; then
@@ -134,6 +144,10 @@ export PATH="$HOME/.rd/bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
+
+# Collapse duplicates introduced by the `export PATH=...` lines above (see typeset -U note at the top),
+# before mise snapshots PATH as its baseline.
+path=($path)
 
 # Not cached: `mise activate` output embeds the current PATH, so a cached copy would go stale.
 command -v mise >/dev/null && eval "$(mise activate zsh)"
