@@ -190,6 +190,7 @@ zsh/zshrc
 tools/claude/*
 !tools/claude/CLAUDE.local.md
 !tools/claude/CLAUDE.personal.md
+!tools/claude/MIGRATION.md
 !tools/claude/settings.local.json
 !tools/claude/statusline-command.sh
 !tools/claude/commands/

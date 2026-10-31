@@ -19,8 +19,9 @@ cd "${BASEDIR}"
 # run until ~/.claude is a real directory on this machine.
 if [[ -L "${HOME}/.claude" ]]; then
   echo "error: ~/.claude is a symlink (-> $(readlink "${HOME}/.claude"))." >&2
-  echo "       Migrate it to a real directory first (back up its real contents," >&2
-  echo "       remove the symlink, mkdir ~/.claude, restore contents), then rerun." >&2
+  echo "       Migrate it to a real directory first. Follow the guide:" >&2
+  echo "         ${BASEDIR}/tools/claude/MIGRATION.md" >&2
+  echo "       (or view it on your Git host). Rerun make install once done." >&2
   exit 1
 fi
 
