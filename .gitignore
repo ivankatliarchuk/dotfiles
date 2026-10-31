@@ -189,7 +189,8 @@ extras
 zsh/zshrc
 tools/claude/*
 !tools/claude/CLAUDE.local.md
-!tools/claude/settings.json
+!tools/claude/CLAUDE.personal.md
+!tools/claude/settings.local.json
 !tools/claude/statusline-command.sh
 !tools/claude/commands/
 tools/claude/commands/*

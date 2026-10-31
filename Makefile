@@ -6,6 +6,8 @@ MAKEFLAGS += --no-builtin-rules
 
 INSTALL_BREW ?= false
 
+.DEFAULT_GOAL := help
+
 include tools/mise/helper.mk
 
 help:

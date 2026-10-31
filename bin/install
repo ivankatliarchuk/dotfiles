@@ -12,6 +12,18 @@ fi
 BASEDIR="$(pwd)"
 cd "${BASEDIR}"
 
+# Guard against the whole-dir ~/.claude symlink: if ~/.claude points INTO the
+# repo (which this dotfiles setup used to do), any mise bootstrap dotfiles
+# apply targeting ~/.claude/<name> resolves back into tools/claude/<name>
+# and clobbers the repo contents with self-referential symlinks. Refuse to
+# run until ~/.claude is a real directory on this machine.
+if [[ -L "${HOME}/.claude" ]]; then
+  echo "error: ~/.claude is a symlink (-> $(readlink "${HOME}/.claude"))." >&2
+  echo "       Migrate it to a real directory first (back up its real contents," >&2
+  echo "       remove the symlink, mkdir ~/.claude, restore contents), then rerun." >&2
+  exit 1
+fi
+
 RUN_SHELL_STEPS=true
 for arg in "${@}"; do
   [[ "${arg}" == "--no-shell" ]] && RUN_SHELL_STEPS=false
@@ -33,16 +45,24 @@ mapfile -t ALL_TARGETS < <(mise bootstrap dotfiles status --json | jq -r '.files
 
 BULK_TARGETS=()
 for t in "${ALL_TARGETS[@]}"; do
-  protected=false
+  skip=false
   for p in "${PROTECTED_TARGETS[@]}"; do
-    [[ "${t}" == "${p}" ]] && protected=true && break
+    [[ "${t}" == "${p}" ]] && skip=true && break
   done
-  "${protected}" || BULK_TARGETS+=("${t}")
+  "${skip}" || BULK_TARGETS+=("${t}")
 done
 
 mise bootstrap dotfiles apply --force --yes "${BULK_TARGETS[@]}"
 mise bootstrap dotfiles apply --yes "${PROTECTED_TARGETS[@]}" \
   || echo "warning: pre-existing real file(s) found at protected paths, left untouched: ${PROTECTED_TARGETS[*]}" >&2
+
+# Personal-only placeholder deploy: copy CLAUDE.md and settings.json from
+# the repo's *.personal/*.local.* files if the target does not exist yet.
+# Not symlinks, so later edits in ~/.claude/ do not flow back into the repo.
+if [[ "${DOTFILES_PROFILE:-personal}" == "personal" ]]; then
+  [[ -e "${HOME}/.claude/CLAUDE.md" ]]      || cp "${BASEDIR}/tools/claude/CLAUDE.personal.md"    "${HOME}/.claude/CLAUDE.md"
+  [[ -e "${HOME}/.claude/settings.json" ]]  || cp "${BASEDIR}/tools/claude/settings.local.json"   "${HOME}/.claude/settings.json"
+fi
 
 if "${RUN_SHELL_STEPS}"; then
   git submodule update --init --recursive

@@ -103,8 +103,20 @@ source = "../../tools/mise/config.toml"
 [dotfiles."~/.config/mise/mise.lock"]
 source = "../../tools/mise/mise.lock"
 
-[dotfiles."~/.claude"]
-source = "../../tools/claude"
+# ~/.claude must be a real directory on each machine (bin/install guards this).
+# Shared/versioned files below are symlinked. CLAUDE.md and settings.json are
+# NOT managed by mise: bin/install copies the placeholders (CLAUDE.personal.md,
+# settings.local.json) to the target names on personal only, if missing, so
+# edits in ~/.claude/ do not flow back into the repo and Tech Pass's local
+# copies on work stay untouched.
+[dotfiles."~/.claude/CLAUDE.local.md"]
+source = "../../tools/claude/CLAUDE.local.md"
+
+[dotfiles."~/.claude/statusline-command.sh"]
+source = "../../tools/claude/statusline-command.sh"
+
+[dotfiles."~/.claude/commands"]
+source = "../../tools/claude/commands"
 
 # macOS-only. Note: the target path is "ApplicationSupport" (no space),
 # which does not match the real macOS "Application Support" directory -
