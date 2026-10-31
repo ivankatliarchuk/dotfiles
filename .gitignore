@@ -194,3 +194,7 @@ tools/claude/*
 !tools/claude/commands/
 tools/claude/commands/*
 !tools/claude/commands/ik.*.md
+
+# mise work-specific and per-machine config
+mise/conf.d/tm.toml
+mise.local.toml

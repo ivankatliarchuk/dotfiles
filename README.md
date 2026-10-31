@@ -58,7 +58,7 @@ Dotfiles setup
 ├── zsh
 ├── LICENSE
 ├── Makefile
-├── mise.toml
+├── mise               # conf.d fragments (dotfiles symlinks and macOS defaults)
 └── README.md
 ```
 
@@ -66,12 +66,12 @@ Dotfiles setup
 
 **Warning:** If you want to give these dotfiles a try, you should first fork this repository, review the code, and remove things you don’t want or need. Don’t blindly use my settings unless you know what that entails. Use at your own risk!
 
-Symlinks are installed via [mise](https://mise.jdx.dev/dotfiles.html): `bin/install` runs `mise bootstrap dotfiles apply` against the `[dotfiles]` table in `mise.toml`. This replaces [Dotbot](https://github.com/anishathalye/dotbot), which this repo used previously.
+Symlinks are installed via [mise](https://mise.jdx.dev/dotfiles.html): `bin/install` runs `mise bootstrap dotfiles apply` against the `[dotfiles]` table in `mise/conf.d/blueprint.toml`. mise discovers the fragments through its project-level `./mise/conf.d/*.toml` lookup. This replaces [Dotbot](https://github.com/anishathalye/dotbot), which this repo used previously.
 
-mise also manages the rest of the machine bootstrap from the same `mise.toml`:
+mise also manages the rest of the machine bootstrap from the same `mise/conf.d/` fragments:
 
 - `make mise-install` installs the dev tools pinned in `tools/mise/config.toml` (node, go, ...); `make mise-lock-global` regenerates their lockfile/checksums (`tools/mise/mise.lock`).
-- `make macos-defaults-status` shows drift between `mise.toml`'s `[bootstrap.macos.*]` tables and the machine's current macOS preferences; `make macos-defaults-apply` writes them for real.
+- `make macos-defaults-status` shows drift between `mise/conf.d/macos.toml`'s `[bootstrap.macos.*]` tables and the machine's current macOS preferences; `make macos-defaults-apply` writes them for real.
 
 ## Caveats
 
@@ -141,15 +141,17 @@ install                        Install dotfiles without running shell
 install-all                    Install all dotfiles
 brew-install                   Install apps with Brew
 osx-install                    Install macOSx
-macos-defaults-status          Show drift between mise.toml and current macOS defaults
-macos-defaults-apply           Apply macOS defaults from mise.toml (writes real system prefs)
-mise-install                   Install tools from mise.toml (node, go, ...)
+macos-defaults-status          Show drift between mise/conf.d/macos.toml and current macOS defaults
+macos-defaults-apply           Apply macOS defaults from mise/conf.d/macos.toml (writes real system prefs)
+mise-install                   Install tools from the global mise config (node, go, ...)
 mise-lock-global               Regenerate the global mise.lock (tools/mise/mise.lock)
 mise-status                    List configured mise tools and resolved versions
 mise-doctor                    Full mise diagnostics (PATH, shims, plugins, cache)
 mise-self-update               Update mise itself to the latest release
 mise-upgrade-dry-run           Preview tool upgrades without applying them
 mise-upgrade-bump              Bump pinned tool versions to latest and upgrade
+mise-dotfiles-status           Show dotfiles drift against mise/conf.d fragments
+mise-dotfiles-apply            Apply dotfiles symlinks (raw, no protected-targets filter)
 hooks                          Setup pre commit.
 validate                       Validate files with pre-commit hooks
 ignore-dirty                   Ignore dirty commits
