@@ -127,8 +127,7 @@ brew "tree"
 # brew "pass"
 # Pinentry for GPG on Mac
 brew "pinentry-mac"
-# Python dependency management tool
-brew "pipenv", link: false
+# pipenv is managed by mise (tools/mise/config.toml) via its pipx backend, not brew
 # Build applications with serverless architectures
 # brew "serverless"
 # Static analysis and lint tool, for (ba)sh scripts

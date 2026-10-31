@@ -68,6 +68,16 @@ url = "https://nodejs.org/dist/v26.9.0/node-v26.9.0-darwin-x64.tar.gz"
 checksum = "sha256:c8af870b5b3e9789a6cbdb30270e7c212e12d76a7afa7fc7f21b6b21cc22a71b"
 url = "https://nodejs.org/dist/v26.9.0/node-v26.9.0-win-x64.zip"
 
+[[tools."pipx:pipenv"]]
+version = "2026.10.4"
+backend = "pipx:pipenv"
+specifiers = ["latest"]
+
+[[tools."pipx:pre-commit"]]
+version = "4.7.0"
+backend = "pipx:pre-commit"
+specifiers = ["latest"]
+
 [[tools.python]]
 version = "3.14.10"
 backend = "core:python"

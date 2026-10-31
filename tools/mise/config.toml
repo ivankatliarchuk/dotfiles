@@ -9,3 +9,5 @@ idiomatic_version_file_enable_tools = ["node", "python"]
 go = "1.27"
 node = "26.9.0"
 python = "3.14"
+"pipx:pipenv" = "latest"
+"pipx:pre-commit" = "latest"
