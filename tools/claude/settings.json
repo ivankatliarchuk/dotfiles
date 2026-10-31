@@ -1,6 +1,7 @@
 {
   "agentPushNotifEnabled": true,
   "enabledPlugins": {},
+  "model": "claude-opus-4-7",
   "permissions": {
     "allow": [
       "Read(~/source/**)",
@@ -22,7 +23,8 @@
     ]
   },
   "statusLine": {
-    "command": "bash /Users/ik/.claude/statusline-command.sh",
+    "command": "bash $HOME/.claude/statusline-command.sh",
     "type": "command"
-  }
+  },
+  "switchModelsOnFlag": false
 }

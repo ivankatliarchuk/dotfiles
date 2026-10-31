@@ -1,16 +1,32 @@
 # https://raw.githubusercontent.com/ivankatliarchuk/dotfiles/master/zsh/settings/bootstrap.zsh
-printf '\33c\e[3J' # hides last logic command
+# Clears the terminal on new tabs (interactive login shells) only, not in nested shells or scripts.
+[[ -o login && -o interactive ]] && printf '\33c\e[3J'
 
 # Ensure PATH-like arrays stay deduplicated for the life of this shell,
 # regardless of whether zprofile ran (it only sources for login shells).
 typeset -gU cdpath fpath mailpath path
+
+# Source a tool's init script from a cache, regenerated only when the resolved binary changes (upgrade or move).
+_cached_eval() {
+  local name="$1"; shift
+  local bin="${commands[$1]:A}"
+  [[ -n "$bin" ]] || return 1
+  local cache="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/${name}.zsh" header="# cached from ${bin}" first_line='' output=''
+  [[ -r "$cache" ]] && read -r first_line < "$cache"
+  if [[ "$first_line" != "$header" ]]; then
+    output="$("$@" 2>/dev/null)" || return 1
+    mkdir -p "${cache:h}"
+    print -r -- "${header}"$'\n'"${output}" >! "$cache"
+  fi
+  source "$cache"
+}
 
 if [[ -n "$DEBUG" ]]; then
   typeset -F SECONDS; setopt prompt_subst; PS4='$SECONDS+%N:%i> '
   set -x
 fi
 
-if [[ $(uname -m) == 'arm64' ]]; then
+if [[ "$CPUTYPE" == 'arm64' ]]; then
   # make sure to link required things to path
   # find . -type l -ls
   # ln -s /opt/homebrew/bin/pinentry-mac /usr/local/bin/
@@ -82,11 +98,7 @@ else
   fi
 fi
 
-if command -v starship >/dev/null 2>&1; then
-    eval "$(starship init zsh)"
-  else
-    echo "!!! STARSHIP not installed"
-fi
+_cached_eval starship starship init zsh --print-full-init || echo "!!! STARSHIP not installed"
 
 # not required so often
 # if [ -f "/usr/local/opt/asdf/libexec/asdf.sh" ]; then
@@ -123,4 +135,5 @@ export PATH="/usr/local/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
+# Not cached: `mise activate` output embeds the current PATH, so a cached copy would go stale.
 command -v mise >/dev/null && eval "$(mise activate zsh)"

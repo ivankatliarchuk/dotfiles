@@ -16,7 +16,7 @@ export LANG="en_US.UTF-8";
 export LC_ALL="en_US.UTF-8";
 # Avoid issues with `gpg` as installed via Homebrew.
 # https://stackoverflow.com/a/42265848/96656
-GPG_TTY=$(tty);
+GPG_TTY="${TTY:-$(tty)}"; # zsh sets $TTY, so only bash spawns tty
 export GPG_TTY;
 if [[ -n "$SSH_CONNECTION" ]] ;then
     export PINENTRY_USER_DATA="USE_CURSES=1"

@@ -68,36 +68,12 @@ load-go-version() {
   fi
 }
 
-# Automatically switch and load python versions when a directory has an `.python-version` or `.pyrc` file
-load-pyenv() {
-  if exists pyenv; then
-    if [ -f .python-version  ] || [ -f .pyrc  ]; then
-        local version=''
-        if [ -f .python-version  ];then
-          version=$(cat .python-version)
-        fi
-        if [ -f .pyrc  ];then
-          version=$(cat .pyrc)
-        fi
-        if [[ "$version" != "$PYENV_VERSION" ]]; then
-          if ! pyenv versions | grep $version >/dev/null 2>&1; then
-            pyenv install $version --skip-existing
-            pyenv rehash # if version do not match
-          fi
-        fi
-        PYENV_VERSION=$version
-    else
-      PYENV_VERSION=$PYENV_GLOBAL_VERSION
-    fi
-  fi
-}
-
 # Run all directory-based tool-version switchers on cd, and once on shell load
+# Python is not switched here: pyenv's shims already resolve `.python-version` per directory.
 load-dir-hooks() {
   load-tofuswitch
   load-tgswitch
   load-go-version
-  load-pyenv
 }
 # Declared here rather than relying on eval.zsh's load order (this file's
 # name used to just happen to sort after eval.zsh's autoload).
@@ -115,11 +91,14 @@ zcompdump="${ZDOTDIR:-$HOME}/.zcompdump"
   fi
 } &!
 
-# Cache completion if nothing changed - faster startup time
+# Full compinit at most once a day, otherwise trust the cached dump; the glob qualifier avoids spawning date/stat.
 autoload -Uz compinit
-typeset -i updated_at=$(date +'%j' -r "$zcompdump" 2>/dev/null || stat -f '%Sm' -t '%j' "$zcompdump" 2>/dev/null)
-if [ $(date +'%j') != $updated_at ]; then
-  compinit -i
-else
-  compinit -C -i
-fi
+() {
+  setopt local_options extended_glob
+  if [[ ! -s "$zcompdump" || -n $zcompdump(#qN.mh+24) ]]; then
+    compinit -i
+    touch "$zcompdump" # compinit skips rewriting an unchanged dump, so refresh its age explicitly
+  else
+    compinit -C -i
+  fi
+}

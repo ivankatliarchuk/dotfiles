@@ -152,6 +152,7 @@ install-deps                   Install dependencies
 git-submodule                  Git submodules update
 git-module-remove              Remove submodule MODULE=something
 open                           Open repository
+shell-bench                    Time 5 new login shells (what a new terminal tab costs)
 ```
 <!-- END makefile-doc -->
 

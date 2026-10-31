@@ -62,4 +62,7 @@ git-module-remove: ## Remove submodule MODULE=something
 open: ## Open repository
 	@open $(shell git config --get remote.origin.url)
 
-.PHONY: validate hooks brew-install git-submodule macos-defaults-status macos-defaults-apply mise-install mise-lock-global
+shell-bench: ## Time 5 new login shells (what a new terminal tab costs)
+	@for i in 1 2 3 4 5; do /usr/bin/time -p zsh -l -i -c exit 2>&1 >/dev/null | grep real; done
+
+.PHONY: validate hooks brew-install git-submodule macos-defaults-status macos-defaults-apply mise-install mise-lock-global shell-bench

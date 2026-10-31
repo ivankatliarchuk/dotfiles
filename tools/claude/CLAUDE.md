@@ -21,6 +21,10 @@
 
 You MUST NEVER use markdown blockquotes (the `>` syntax) or literal vertical-bar characters (`|`) in text output to me. They render with a leading vertical bar in my terminal and break copy-paste.
 
+Do NOT use markdown blockquotes when replying to me, ever. No line may
+start with `>`. To quote or hand over a block of text, use a fenced code
+block or plain text instead.
+
 You MUST NEVER use em dashes (—) in text output to me. Use a comma, period, or parentheses instead.
 
 ## Skill Loading

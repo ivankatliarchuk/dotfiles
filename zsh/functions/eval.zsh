@@ -2,11 +2,7 @@
 # https://raw.githubusercontent.com/ivankatliarchuk/dotfiles/master/zsh/functions/eval.zsh
 # -*- mode: sh -*-
 
-if command -v direnv >/dev/null 2>&1; then
-    eval "$(direnv hook zsh)"
-  else
-    echo "!!! DIRENV not installed"
-fi
+_cached_eval direnv direnv hook zsh || echo "!!! DIRENV not installed"
 
 if [ -n "$ZSH_VERSION" ]; then
   autoload -U bashcompinit
@@ -34,11 +30,13 @@ if [[ -n "$KUBECTX_AUTO_UNSET" ]] && [ $commands[kubectx] ]; then
   kubectx --unset >/dev/null 2>&1
 fi
 
-if command -v brew >/dev/null 2>&1; then
-	# Load rupa's z if installed
-	brew_prefix="$(brew --prefix)"
-	[ -f "$brew_prefix/etc/profile.d/z.sh" ] && source "$brew_prefix/etc/profile.d/z.sh"
-	unset brew_prefix
-fi
+# Load rupa's z if installed, checking known Homebrew prefixes instead of spawning `brew --prefix`
+for brew_prefix in "${HOMEBREW_PREFIX:-/opt/homebrew}" /usr/local; do
+	if [[ -f "$brew_prefix/etc/profile.d/z.sh" ]]; then
+		source "$brew_prefix/etc/profile.d/z.sh"
+		break
+	fi
+done
+unset brew_prefix
 
 # for f in $(compaudit);do sudo chmod -R 755 $f;done;
