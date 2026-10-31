@@ -188,9 +188,9 @@ extras
 # updated sometimes with external tools
 zsh/zshrc
 tools/claude/*
+!tools/claude/CLAUDE.local.md
 !tools/claude/settings.json
-!tools/claude/commands/
-!tools/claude/commands/*
-!tools/claude/CLAUDE.md
-tools/claude/plans/
 !tools/claude/statusline-command.sh
+!tools/claude/commands/
+tools/claude/commands/*
+!tools/claude/commands/ik.*.md
