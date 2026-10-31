@@ -6,9 +6,11 @@ MAKEFLAGS += --no-builtin-rules
 
 INSTALL_BREW ?= false
 
+include tools/mise/helper.mk
+
 help:
 	@printf "Usage: make [target] [VARIABLE=value]\nTargets:\n"
-	@grep -E '^[a-zA-Z0-9_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
+	@grep -hE '^[a-zA-Z0-9_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
 install: ## Install dotfiles without running shell
 	-@bin/install.sh --no-shell
@@ -21,24 +23,6 @@ brew-install: ## Install apps with Brew
 
 osx-install: ## Install macOSx
 	@tools/os/setup.sh
-
-macos-defaults-status: ## Show drift between mise.toml and current macOS defaults
-	@mise bootstrap macos defaults status
-
-macos-defaults-apply: ## Apply macOS defaults from mise.toml (writes real system prefs)
-	@mise bootstrap macos defaults apply
-
-mise-install: ## Install tools from mise.toml (node, go, ...)
-	@mise install
-
-mise-lock-global: ## Regenerate the global mise.lock (tools/mise/mise.lock)
-	@mise lock --global
-
-mise-status: ## List configured mise tools and resolved versions
-	@mise ls --current
-
-mise-doctor: ## Full mise diagnostics (PATH, shims, plugins, cache)
-	@mise doctor
 
 hooks: ## Setup pre commit.
 	@pre-commit install
@@ -70,4 +54,4 @@ open: ## Open repository
 shell-bench: ## Time 5 new login shells (what a new terminal tab costs)
 	@for i in 1 2 3 4 5; do /usr/bin/time -p zsh -l -i -c exit 2>&1 >/dev/null | grep real; done
 
-.PHONY: validate hooks brew-install git-submodule macos-defaults-status macos-defaults-apply mise-install mise-lock-global mise-status mise-doctor shell-bench
+.PHONY: validate hooks brew-install git-submodule shell-bench

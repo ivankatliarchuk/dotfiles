@@ -147,6 +147,9 @@ mise-install                   Install tools from mise.toml (node, go, ...)
 mise-lock-global               Regenerate the global mise.lock (tools/mise/mise.lock)
 mise-status                    List configured mise tools and resolved versions
 mise-doctor                    Full mise diagnostics (PATH, shims, plugins, cache)
+mise-self-update               Update mise itself to the latest release
+mise-upgrade-dry-run           Preview tool upgrades without applying them
+mise-upgrade-bump              Bump pinned tool versions to latest and upgrade
 hooks                          Setup pre commit.
 validate                       Validate files with pre-commit hooks
 ignore-dirty                   Ignore dirty commits
