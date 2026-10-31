@@ -69,7 +69,7 @@ load-go-version() {
 }
 
 # Run all directory-based tool-version switchers on cd, and once on shell load
-# Python is not switched here: pyenv's shims already resolve `.python-version` per directory.
+# Python is not switched here: mise reads `.python-version` per directory (tools/mise/config.toml).
 load-dir-hooks() {
   load-tofuswitch
   load-tgswitch

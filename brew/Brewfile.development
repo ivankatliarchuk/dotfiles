@@ -23,10 +23,8 @@ brew "jq"
 # Manage multiple Node.js versions
 # https://github.com/nvm-sh/nvm
 brew "nvm"
-# Python version management
-# https://github.com/pyenv/pyenv
+# Python versions are managed by mise (tools/mise/config.toml), not pyenv
 brew "xz"
-brew "pyenv"
 # Python dependency management tool
 # https://pipenv.pypa.io/en/latest/
 # https://github.com/Homebrew/homebrew-bundle/issues/932

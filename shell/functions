@@ -285,20 +285,20 @@ pip-install() {
 }
 
 python-local() {
-  # python-local 2.7.15
-  pyenv local "${@}"
+  # python-local 3.13 (writes .python-version, which mise reads, then installs it)
+  printf '%s\n' "${1:?usage: python-local <version>}" > .python-version && mise install "python@${1}"
 }
 
 python-shell() {
-  # pyenv shell 3.8-dev
-  pyenv shell "${@}"
+  # python-shell 3.13 (this shell only)
+  mise shell "python@${1:?usage: python-shell <version>}"
 }
 
 # Different versions
 versions() {
   echo "python >> "
-  pyenv versions
-  echo "python pip: $(pyenv which pip)"
+  mise ls python
+  echo "python pip: $(mise which pip)"
   [[ -f ~/.python-version ]] && cat .python-version
   echo "go version: $(go version)"
   echo "ruby version: $(ruby --version)"

@@ -5,7 +5,6 @@ MAKEFLAGS += --warn-undefined-variables
 MAKEFLAGS += --no-builtin-rules
 
 INSTALL_BREW ?= false
-export PYENV_LOCATION ?= $(shell which pyenv)
 
 help:
 	@printf "Usage: make [target] [VARIABLE=value]\nTargets:\n"
@@ -34,6 +33,12 @@ mise-install: ## Install tools from mise.toml (node, go, ...)
 
 mise-lock-global: ## Regenerate the global mise.lock (tools/mise/mise.lock)
 	@mise lock --global
+
+mise-status: ## List configured mise tools and resolved versions
+	@mise ls --current
+
+mise-doctor: ## Full mise diagnostics (PATH, shims, plugins, cache)
+	@mise doctor
 
 hooks: ## Setup pre commit.
 	@pre-commit install
@@ -65,4 +70,4 @@ open: ## Open repository
 shell-bench: ## Time 5 new login shells (what a new terminal tab costs)
 	@for i in 1 2 3 4 5; do /usr/bin/time -p zsh -l -i -c exit 2>&1 >/dev/null | grep real; done
 
-.PHONY: validate hooks brew-install git-submodule macos-defaults-status macos-defaults-apply mise-install mise-lock-global shell-bench
+.PHONY: validate hooks brew-install git-submodule macos-defaults-status macos-defaults-apply mise-install mise-lock-global mise-status mise-doctor shell-bench

@@ -9,7 +9,7 @@ fi
 # shellcheck source=/dev/null
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+command -v mise > /dev/null && eval "$(mise activate bash)"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 rvm_go_gopath="$(go env GOPATH)"

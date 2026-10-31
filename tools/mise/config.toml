@@ -2,8 +2,10 @@
 [settings]
 # Let mise read .nvmrc/.node-version directly for projects not yet migrated
 # to their own mise.toml - https://mise.jdx.dev/lang/node.html#nvmrc-node-version-and-package-json-support
-idiomatic_version_file_enable_tools = ["node"]
+# Python likewise reads `.python-version` files, replacing pyenv - https://mise.jdx.dev/lang/python.html
+idiomatic_version_file_enable_tools = ["node", "python"]
 
 [tools]
 go = "1.27"
 node = "26.9.0"
+python = "3.14"

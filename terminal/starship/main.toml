@@ -183,7 +183,7 @@ symbol = "⛵ "
 
 [python]
 symbol = " "
-pyenv_version_name = true
+pyenv_version_name = false # Python comes from mise now, so read the version from `python` itself
 pyenv_prefix = "python "
 format = '[${symbol}(${version} )(\($virtualenv\))]($style)'
 # format = '[${pyenv_prefix}${symbol} (${version} )(\($virtualenv\))]($style)'

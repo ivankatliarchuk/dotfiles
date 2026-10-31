@@ -38,8 +38,6 @@ setopt hist_verify               # Don't execute immediately upon history expans
 # Ensure path arrays do not contain duplicates.
 typeset -gU cdpath fpath mailpath path
 
-[[ -f ~/.config/manage/python ]] && source ~/.config/manage/python
-
 path=(
   $path
   /usr/local/{bin,sbin}

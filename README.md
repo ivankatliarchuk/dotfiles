@@ -114,7 +114,7 @@ git check-ignore -v tools/claude/plans/
 - ✅ Move configs to own folders
 - ✅ Install powerline fonts
 - ✅ wgetrc & curlrc
-- ✅ Pyenv correct setup
+- ✅ Python managed by mise (replaces pyenv)
 - ✅ Proper configre macup
 - ✅ Tmux configs Setup/Document
 - ✅ macOS setup [docs](tools/os/readme.md)
@@ -145,6 +145,8 @@ macos-defaults-status          Show drift between mise.toml and current macOS de
 macos-defaults-apply           Apply macOS defaults from mise.toml (writes real system prefs)
 mise-install                   Install tools from mise.toml (node, go, ...)
 mise-lock-global               Regenerate the global mise.lock (tools/mise/mise.lock)
+mise-status                    List configured mise tools and resolved versions
+mise-doctor                    Full mise diagnostics (PATH, shims, plugins, cache)
 hooks                          Setup pre commit.
 validate                       Validate files with pre-commit hooks
 ignore-dirty                   Ignore dirty commits

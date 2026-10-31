@@ -238,10 +238,10 @@ alias mk='make'
 # editors
 
 # languages
-alias python='python3' # resolved on each call, so pyenv or mise can switch versions per directory
+alias python='python3' # resolved on each call, so mise can switch versions per directory
 alias pip='pip3'
-alias py.v='pyenv versions'
-alias py.pip='pyenv which pip'
+alias py.v='mise ls python'
+alias py.pip='mise which pip'
 
 # Emoji
 alias shrug="printf '¯\_(ツ)_/¯' | pbcopy"

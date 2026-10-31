@@ -38,9 +38,6 @@ source = "shell/functions"
 [dotfiles."~/.profile"]
 source = "shell/profile"
 
-[dotfiles."~/.config/manage/python"]
-source = "shell/manage-python"
-
 [dotfiles."~/.python-version"]
 source = ".python-version"
 
@@ -100,9 +97,6 @@ source = "tools/wgetrc"
 
 [dotfiles."~/.gemrc"]
 source = "tools/gemrc"
-
-[dotfiles."~/.pyenvrc"]
-source = "tools/pyenvrc"
 
 [dotfiles."~/.config/mise/config.toml"]
 source = "tools/mise/config.toml"

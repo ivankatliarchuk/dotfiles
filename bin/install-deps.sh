@@ -18,7 +18,7 @@ cat << EOF
 Usage: $(basename "$0") :do:
     install powerline fonts
     install node with NVM (Node Version Manage https://github.com/nvm-sh/nvm)
-    install python with Pyenv (https://realpython.com/intro-to-pyenv)
+    install python with mise (https://mise.jdx.dev/lang/python.html)
     install helm charts
 EOF
 }
@@ -77,7 +77,7 @@ install_helm() {
 
 install_python() {
   action "$1"
-  pyenv local && python3 -m pip install -U -r py/requirements.txt && python3 -m pip install --upgrade pip
+  mise install python && mise exec -- python3 -m pip install -U -r py/requirements.txt && mise exec -- python3 -m pip install --upgrade pip
   ok "$1"
 }
 
@@ -115,7 +115,7 @@ core() {
   msg='install & update helm repositories'
   install_local "install_helm" "$msg"
 
-  msg='install & update python and pyenv'
+  msg='install & update python (mise)'
   install_local "install_python" "$msg"
 
   msg='sync OSX settings'
@@ -133,7 +133,7 @@ Usage: $(basename "$0") <options>
     -h, --help       Display help
     -a, --all        Run all
     -n, --node       Install Node
-    -p, --python     Install Python and Pyenv
+    -p, --python     Install Python (mise)
     -o, --osx        Sycn OSX settings
 EOF
 }
