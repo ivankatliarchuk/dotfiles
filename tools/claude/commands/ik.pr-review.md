@@ -28,6 +28,7 @@ Output concisely:
 **Branch:** <branch name>
 **Suggested branch name:** <kebab-case name derived from the diff>
 **Title:** <short imperative title, max 72 chars, starting with the story key, e.g. `SPES-XXXX: ...`>
+**Value:** <1-3 bullets: impact for the business or team — risk, toil, cost, speed, compliance; not the technical change>
 **Why:** <bullets: motivation or problem being solved>
 **What:** <bullets of key changes: features and intent, not files>
 

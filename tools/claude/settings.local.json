@@ -11,6 +11,13 @@
       "Bash(grep:*)",
       "Bash(go test:*)"
     ],
+    "ask": [
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(git revert:*)",
+      "Bash(glab api:*)",
+      "Bash(gh api:*)"
+    ],
     "deny": [
       "Read(~/.ssh/**)",
       "Read(~/.aws/**)",
