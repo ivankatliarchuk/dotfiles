@@ -16,6 +16,7 @@ You are allowed to run the git commands below, because the operator explicitly a
 **Suggested branch name:** <kebab-case name derived from the diff, e.g. `feat/add-login-timeout` or `fix/null-pointer-on-checkout`>
 **Title:** <short imperative title, max 72 chars. should start with story e.g `SPES-XXXX: ....`>
 **Why:** <bullet points: motivation or problem being solved>
+**Value:** <1-3 bullets: impact for the business or team — risk, toil, cost, speed, compliance; not the technical change>
 **What:** <bullet points of key changes. Must be WHAT aka features and intent, not files>
 
 Do not post, commit, or push anything. This is for review only.
