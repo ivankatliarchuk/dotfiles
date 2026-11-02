@@ -196,6 +196,10 @@ tools/claude/*
 !tools/claude/commands/
 tools/claude/commands/*
 !tools/claude/commands/ik.*.md
+!tools/claude/rules-work/
+!tools/claude/rules-work/*.md
+!tools/claude/rules-personal/
+!tools/claude/rules-personal/*.md
 
 # mise work-specific and per-machine config
 mise/conf.d/tm.toml

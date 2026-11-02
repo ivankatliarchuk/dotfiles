@@ -1,0 +1,3 @@
+# Loaded only when MISE_ENV=personal (requires env_conf_d = true in miserc.toml).
+[dotfiles."~/.claude/rules"]
+source = "../../tools/claude/rules-personal"

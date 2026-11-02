@@ -1,0 +1,2 @@
+export DOTFILES_PROFILE="{{ exec(command='security find-generic-password -s dotfiles-profile -a "$USER" -w 2>/dev/null || echo personal') | trim }}"
+export MISE_ENV="$DOTFILES_PROFILE"

@@ -55,6 +55,13 @@ source = "../../zsh/functions"
 [dotfiles."~/.zsh/settings"]
 source = "../../zsh/settings"
 
+# Rendered at mise sync; resolves DOTFILES_PROFILE from macOS Keychain
+# (fallback: personal) and sets MISE_ENV. Sourced by zshenv.
+# Target lives outside ~/.zsh/settings to avoid overlapping the dir mapping above.
+[dotfiles."~/.config/dotfiles/profile.local.sh"]
+source = "../../tools/mise/templates/profile.local.sh.tera"
+mode = "template"
+
 [dotfiles."~/.gnupg/gpg.conf"]
 source = "../../tools/gnupg/gpg.conf"
 
@@ -109,8 +116,8 @@ source = "../../tools/mise/mise.lock"
 # settings.local.json) to the target names on personal only, if missing, so
 # edits in ~/.claude/ do not flow back into the repo and Tech Pass's local
 # copies on work stay untouched.
-[dotfiles."~/.claude/CLAUDE.local.md"]
-source = "../../tools/claude/CLAUDE.local.md"
+[dotfiles."~/.config/mise/miserc.toml"]
+source = "../../tools/mise/miserc.toml"
 
 [dotfiles."~/.claude/statusline-command.sh"]
 source = "../../tools/claude/statusline-command.sh"

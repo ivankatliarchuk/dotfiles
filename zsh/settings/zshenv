@@ -3,6 +3,9 @@
 
 [[ -f ~/.zshenv.local ]] && source ~/.zshenv.local
 
+# Per-machine env exports, rendered by mise from tools/mise/templates/profile.local.sh.tera.
+[[ -f ~/.config/dotfiles/profile.local.sh ]] && source ~/.config/dotfiles/profile.local.sh
+
 if [[ "$OSTYPE" == darwin* ]]; then
   export BROWSER='open'
 fi

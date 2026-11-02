@@ -1,0 +1,7 @@
+# mise runtime config (not a mise.toml). Set via miserc so these apply before
+# any mise.toml is loaded.
+# https://mise.jdx.dev/configuration/settings.html
+
+# Opt in to environment-specific conf.d filenames (e.g. rules.work.toml loads
+# only when MISE_ENV=work). Becomes default in mise 2027.8.10.
+env_conf_d = true

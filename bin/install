@@ -12,6 +12,12 @@ fi
 BASEDIR="$(pwd)"
 cd "${BASEDIR}"
 
+# Pick up DOTFILES_PROFILE and MISE_ENV from .envrc without relying on direnv
+# being active. Lets the first `mise bootstrap` below see MISE_ENV so the
+# env-selector conf.d files (rules.<env>.toml) load on first install.
+# shellcheck disable=SC1091
+[[ -f "${BASEDIR}/.envrc" ]] && source "${BASEDIR}/.envrc"
+
 # Guard against the whole-dir ~/.claude symlink: if ~/.claude points INTO the
 # repo (which this dotfiles setup used to do), any mise bootstrap dotfiles
 # apply targeting ~/.claude/<name> resolves back into tools/claude/<name>
