@@ -156,6 +156,41 @@ _git_wt_clean() {
 }
 mkalias g git wt-clean '_git_wt_clean' # remove all worktrees and their branches
 
+_git_bcleanup() {
+  local default current
+  default=$(git symbolic-ref --quiet --short refs/remotes/origin/HEAD 2>/dev/null)
+  default=${default#origin/}
+  if [[ -z "$default" ]]; then
+    if git show-ref --verify --quiet refs/heads/main; then
+      default=main
+    elif git show-ref --verify --quiet refs/heads/master; then
+      default=master
+    else
+      echo "git.bcleanup: cannot determine default branch (no origin/HEAD, no main, no master)" >&2
+      return 1
+    fi
+  fi
+
+  current=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
+  if [[ -z "$current" ]]; then
+    echo "git.bcleanup: not inside a git repository" >&2
+    return 1
+  fi
+
+  echo "git.bcleanup: default=$default current=$current"
+  local branch deleted=0
+  while IFS= read -r branch; do
+    [[ -z "$branch" ]] && continue
+    if [[ "$branch" == "$default" || "$branch" == "$current" ]]; then
+      echo "  keep   $branch"
+      continue
+    fi
+    git branch -D "$branch" && deleted=$((deleted + 1))
+  done < <(git for-each-ref --format='%(refname:short)' refs/heads)
+  echo "git.bcleanup: deleted $deleted branch(es)"
+}
+mkalias g git bcleanup '_git_bcleanup' # remove all local branches except the default branch and current branch
+
 # print the create/inspect/apply patch workflow steps
 mkalias g git flow.patch 'echo "Create & apply a patch:
   1. git diff HEAD > changes.patch    # create patch from current changes
