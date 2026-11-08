@@ -30,11 +30,8 @@ mkalias ml moonlander strings 'strings -n 6'
 # Open the Downloads folder in Finder (where Oryx builds land)
 mkalias ml moonlander flashdir 'open ~/Downloads'
 
-# Jump to the local ZSA QMK fork working tree
-mkalias ml moonlander source 'cd /Users/ik/source/self/keyboard/qmk_firmware-fork'
-
 # Open the current Oryx layout in the default browser
 mkalias ml moonlander oryx 'open https://configure.zsa.io/moonlander/layouts/RyYle/v6Bd9r/0'
 
 # Jump to the Moonlander notes in the keyboard repo
-mkalias ml moonlander notes 'cd /Users/ik/source/self/personal/my-keyboard-s-/moonlander && open TROUBLESHOOTING.md'
+mkalias ml moonlander notes 'cd ~/source/self/personal/my-keyboard-s-/moonlander && open TROUBLESHOOTING.md'
