@@ -1,0 +1,40 @@
+# Moonlander (ZSA) keyboard diagnostic aliases
+#
+# Every alias below comes in two equivalent forms: moonlander.<name> and ml.<name>.
+# Run `moonlander.help` (or `ml.help`) to list them all with descriptions.
+
+# Show this help listing
+mkalias ml moonlander help 'alias_help "${HOME}/.config/aliases/moonlander"'
+
+# Check if the Moonlander is currently attached to USB
+mkalias ml moonlander status 'ioreg -p IOUSB -l -w 0 | grep -A 20 -i "Moonlander Mark I"'
+
+# Show the Moonlander power state and link speed
+mkalias ml moonlander power 'ioreg -p IOUSB -l -w 0 | grep -B 2 -A 30 "Moonlander Mark I" | grep -iE "PowerState|UsbLinkSpeed|USBSpeed|CurrentConfiguration|retain"'
+
+# List all USB devices with vendor and product names
+mkalias ml moonlander usb 'ioreg -p IOUSB -l -w 0 | grep -iE "idProduct|idVendor|USB Product Name|USB Vendor Name"'
+
+# Search macOS logs for Moonlander events in the last 2 hours
+mkalias ml moonlander logs '/usr/bin/log show --last 2h --info --predicate '"'"'eventMessage CONTAINS "Moonlander"'"'"' | tail -n 60'
+
+# Search USB subsystem logs for disconnect, suspend or reset events in the last 2 hours
+mkalias ml moonlander logs.usb '/usr/bin/log show --last 2h --info --predicate '"'"'subsystem == "com.apple.iokit.IOUSBHostFamily"'"'"' | grep -iE "disconnect|reset|suspend|resume|detach|attach|moonlander"'
+
+# Show macOS power management settings (displaysleep, sleep, standby, hibernatemode)
+mkalias ml moonlander pmset 'pmset -g'
+
+# Extract QMK, RGB, idle and version markers from a firmware .bin (append path)
+mkalias ml moonlander strings 'strings -n 6'
+
+# Open the Downloads folder in Finder (where Oryx builds land)
+mkalias ml moonlander flashdir 'open ~/Downloads'
+
+# Jump to the local ZSA QMK fork working tree
+mkalias ml moonlander source 'cd /Users/ik/source/self/keyboard/qmk_firmware-fork'
+
+# Open the current Oryx layout in the default browser
+mkalias ml moonlander oryx 'open https://configure.zsa.io/moonlander/layouts/RyYle/v6Bd9r/0'
+
+# Jump to the Moonlander notes in the keyboard repo
+mkalias ml moonlander notes 'cd /Users/ik/source/self/personal/my-keyboard-s-/moonlander && open TROUBLESHOOTING.md'
